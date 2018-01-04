@@ -1,0 +1,170 @@
+/* ---------------------------------------------- /*
+ * Professional page - section INFO
+/* ---------------------------------------------- */
+#page-espace-pro-section-info {
+    .header {
+        background-color: $secondaire-noir;
+        h2 {
+            @include md {
+                 padding-left: 100px;
+            }
+
+            @include xs-md{
+                text-align: center;
+            }
+            padding: 50px 0 50px;
+            @include setup-font($lovelo, #fff, 300);
+            @include responsive-font(0, 3rem)
+        }
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Professional page - section FORM
+/* ---------------------------------------------- */
+#page-espace-pro-section-form{
+    background-color: $secondaire-bleu;
+
+    h3{
+        @include md{
+            padding: 20px 0 20px 0;
+        }
+        @include setup-font($lovelo, #000, 300);
+        @include responsive-font(0,2.4rem)
+    }
+    .form-offer, .form-compagny{
+        padding-top: 50px;
+        background-color: $tertiaire-gris-blanc;
+    }
+    .form-offer{
+        @include md {
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+        padding-bottom: 50px;
+    }
+    .form-compagny{
+        @include md {
+            margin-top: 50px;
+        }
+        margin-bottom: 100px;
+
+        padding-bottom: 50px;
+        .btn-psm-green{
+            margin-bottom: -100px;
+        }
+    }
+    #submit-job-form {
+        input[type='submit']{
+            width: 100%;
+        }
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Professional page - section FORM (PREVIEW)
+ * Single Offer page
+/* ---------------------------------------------- */
+#job_preview, #job_single{
+    min-height: 100vh;
+    background-color: $secondaire-bleu;
+
+    .single_job_listing{
+
+        .job_listing_preview, .modality_listing_preview{
+            p{
+                @include responsive-font(0.5,2rem);
+
+                span , a {
+                    display: inline-block;
+                    text-transform: lowercase;
+                }
+                span::first-letter, a::first-letter{
+                    display: none;
+                    text-transform: uppercase!important;
+                }
+                a.compagny-website{
+                    display: inline;
+                }
+            }
+
+            @include xs{
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+            @include md{
+                padding: 50px;
+            }
+            background-color: $tertiaire-gris-blanc;
+            border: none;
+
+            h2{
+                padding: 20px 0 20px 0;
+                @include setup-font($lovelo, #000, 300);
+                @include responsive-font(0,3.6rem, 3.2rem, 2.8rem, 2.8rem, 2.8rem)
+            }
+        }
+        .job_listing_preview{
+            .row:nth-of-type(2){
+                height: auto;
+            }
+        }
+
+        .buttons-job-preview{
+            @include xs-xl{
+                background-color: $tertiaire-gris-blanc;
+            }
+            @include xl {
+                margin-top: -40px;
+            }
+            input[type='submit']{
+                width: 100%;
+            }
+
+            .job_application{
+                width: 100%;
+                overflow: initial;
+                input{
+                    display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+            }
+        }
+        .modality_listing_preview{
+            @include xl {
+                margin-left: 30px;
+            }
+            td{
+                &:first-of-type{
+                    text-align: center;
+                    i{
+                        color: $secondaire-bleu;
+                        font-size: 2rem;
+                    }
+                }
+
+                p {
+                    padding-left: 10px;
+                }
+
+            }
+        }
+    }
+}
+
+#job_preview{
+    @include xs{
+        margin-top: 70px;
+    }
+
+    @include md{
+        margin-top: 130px;
+    }
+    .single_job_listing {
+        @include xl {
+            margin-bottom: 100px;
+        }
+    }
+}
+

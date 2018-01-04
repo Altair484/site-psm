@@ -1,0 +1,24 @@
+/* ---------------------------------------------- /*
+ * NEWS page - section articles
+/* ---------------------------------------------- */
+
+#page-news-section-news {
+    margin-top: 25px;
+    @include lg {
+        min-height: calc(100vh - 100px);
+        margin-top: 0px;
+    }
+    background-color: $tertiaire-gris-blanc;
+    .row:first-of-type{
+        padding-top: 0px;
+    }
+
+    .row:nth-of-type(2){
+        ul.posts-navigation{
+            li{
+                display: inline-block;
+                list-style: none;
+            }
+        }
+    }
+}

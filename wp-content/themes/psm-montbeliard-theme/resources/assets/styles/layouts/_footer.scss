@@ -1,0 +1,62 @@
+/* ---------------------------------------------- /*
+ * FOOTER
+/* ---------------------------------------------- */
+
+footer{
+    position: relative;
+    z-index: 1;
+    padding: 30px 0 30px 0;
+    height:auto;
+
+    background-color: $secondaire-noir;
+    .textwidget {
+        height:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        padding: 30px;
+        h4{
+            color: #fff;
+            padding: 10px 0 10px 0;
+        }
+        p, a {
+            @include setup-font($sourceSansPro, white, normal);
+            @include responsive-font(0,2rem);
+
+        }
+        a:hover{
+            color: $primaire-vert;
+        }
+        .social-medias, .university-logos{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            a{
+                i {
+                    @include setup-font($fontAwsome, white, normal);
+                    @include responsive-font(0,4rem);
+                    &:hover{
+                        color: $primaire-vert;
+                    }
+                }
+            }
+            img{
+                max-width: 122px;
+                align-self: center;
+            }
+        }
+    }
+}
+//Keyframes
+@-webkit-keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+@keyframes shine {
+    100% {
+        left: 125%;
+    }
+}

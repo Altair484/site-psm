@@ -1,0 +1,70 @@
+/* ---------------------------------------------- /*
+ * Offer page - section FORM
+/* ---------------------------------------------- */
+div.job_listings{
+    margin: 0;
+}
+#page_offer_section_form{
+    margin-top: -50px;
+    background-color: $secondaire-bleu;
+    min-height: 200px;
+    input{
+        margin-left: 0;
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Offer page - section RESULTS
+/* ---------------------------------------------- */
+#page_offer_section_results{
+    background-color: $secondaire-bleu;
+    min-height: 100vh;
+    padding-bottom: 50px;
+
+    .offer{
+        margin-bottom: 30px;
+        min-height: 500px;
+        @include md{
+            margin-bottom: 50px;
+        }
+
+
+        .offer-content{
+            min-height: 500px;
+            position: relative;
+            padding-top: 30px;
+            background-color: $tertiaire-gris-blanc;
+
+
+            h3{
+                text-align: center;
+            }
+
+            .location, .compagny{
+                text-align: center;
+                font-style: italic;
+                @include setup-font($sourceSansPro, #000, 300);
+                @include responsive-font(0, 2.7rem);
+            }
+
+            .excerpt{
+                padding: 15px 15px 0 15px;
+            }
+
+            .date{
+                padding: 0 15px 45px 15px;
+                font-style: italic;
+            }
+
+            .btn-container {
+                position: absolute;
+                width: 200px;
+                bottom: -35px;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}

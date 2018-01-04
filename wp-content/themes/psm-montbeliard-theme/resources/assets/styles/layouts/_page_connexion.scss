@@ -1,0 +1,56 @@
+#connexion_page_section_form, #mot_de_passe_oublie_page_section_form{
+   .row:first-of-type{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+
+       min-height: 100vh;
+       background-color: $secondaire-bleu;
+       .form-content{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+
+           padding: 15px;
+           @include lg{
+               margin-top: 100px;
+               padding: 50px;
+           }
+
+           img{
+               max-width: 200px;
+               padding-bottom: 30px;
+           }
+
+           label, p{
+               color: #fff;
+           }
+
+           .login-submit, .forgot-password-submit{
+               display: flex;
+               justify-content: center;
+               input{
+                   border: none;
+                   width: 100%;
+               }
+           }
+
+           .login-links{
+               span{
+                   color: white;
+                   font-size: 1.2rem;
+               }
+               a{
+                   display: inline-block;
+                   color: white;
+                   font-size: 1.2rem;
+                   &:hover{
+                       color: $primaire-vert;
+                   }
+               }
+           }
+
+       }
+   }
+}

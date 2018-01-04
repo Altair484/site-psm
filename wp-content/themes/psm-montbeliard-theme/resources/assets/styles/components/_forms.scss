@@ -1,0 +1,202 @@
+/** Search form */
+.search-form {
+  @extend .form-inline;
+}
+
+.search-form label {
+  @extend .form-group;
+
+  font-weight: normal;
+}
+
+.search-form .search-field {
+  @extend .form-control;
+}
+
+.search-form .search-submit {
+  @extend .btn;
+  @extend .btn-secondary;
+}
+
+textarea.wp-editor-area{
+    @include setup-font($sourceSansPro, inherit, normal);
+    @include responsive-font(0, 1.5rem);
+}
+
+/* do not group these rules */
+*::-webkit-input-placeholder {
+    @include setup-font($sourceSansPro, lightgray, 300);
+    @include responsive-font(0.5, 2rem, 2rem, 2rem, 1.6rem, 1.4rem);
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    @include setup-font($sourceSansPro, lightgray, 300);
+    @include responsive-font(0.5, 2rem, 2rem, 2rem, 1.6rem, 1.4rem);
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    @include setup-font($sourceSansPro, lightgray, 300);
+    @include responsive-font(0.5, 2rem, 2rem, 2rem, 1.6rem, 1.4rem);
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    @include setup-font($sourceSansPro, lightgray, 300);
+    @include responsive-font(0.5, 2rem, 2rem, 2rem, 1.6rem, 1.4rem);
+}
+select, textarea, input:not([type='checkbox']):not([type='submit']){
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-bottom: 3px solid lightgray;
+    padding-left: 20px;
+
+    @include setup-font($sourceSansPro, black, 300);
+    @include responsive-font(0.5, 2rem, 2rem, 2rem, 1.6rem, 1.4rem);
+}
+
+input[type='checkbox']{
+    margin-left: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.wp-editor-wrap{
+    width: 100%;
+    border-bottom: 3px solid lightgray;
+}
+
+input, select, label, textarea, .wp-editor-wrap{
+    margin: 10px 0 10px 0;
+    &[type='submit']:focus,&[type='button']:focus{
+        outline: none!important;
+        border: none!important;
+        box-shadow: none!important;
+    }
+    &:focus:valid{
+        outline: none!important;
+        border-color: $primaire-vert;
+
+    }
+
+    &:focus:invalid{
+        outline: none!important;
+        border-color: $rouge;
+    }
+}
+
+textarea{
+    padding-top: 10px;
+    height: 200px;
+}
+label {
+    text-transform: uppercase;
+    @include setup-font($sourceSansPro, black, 400);
+    @include responsive-font(0.5, 2rem);
+}
+
+
+/* Forms pop-ups */
+.form-errors{
+    width: 100%;
+    border-top: 3px solid $rouge;
+    background-color: $tertiaire-gris-blanc;
+    padding: 15px;
+    margin: 15px 0 15px 0;
+    p{
+        color: $rouge!important;
+        padding: 5px 0 5px 0;
+        &:before{
+            color: #b81c23;
+            content: "\00d7";
+            font-weight: 700;
+        }
+    }
+}
+
+.form-success{
+    width: 100%;
+    border-top: 3px solid $primaire-vert;
+    background-color: $tertiaire-gris-blanc;
+    padding: 15px;
+    margin: 15px 0 15px 0;
+    p{
+        color: $primaire-vert!important;
+        padding: 5px 0 5px 0;
+        &:before{
+            color: $primaire-vert;
+            content: "\2713";
+            font-weight: 700;
+        }
+    }
+}
+
+.form-info{
+    width: 100%;
+    border-top: 3px solid #1e85be;
+    background-color: $tertiaire-gris-blanc;
+    padding: 15px;
+    margin: 15px 0 15px 0;
+    p{
+        color: #000!important;
+        padding: 5px 0 5px 0;
+    }
+}
+
+.form-warning{
+    text-align: center;
+    width: 100%;
+    border-top: 3px solid #be3e22;
+    background-color: $tertiaire-gris-blanc;
+    padding: 15px;
+    margin: 15px 0 15px 0;
+
+    .fa{
+        color: #be3e22;
+    }
+
+    p{
+        color: #000!important;
+        padding: 5px 0 5px 0;
+    }
+}
+
+/*Job manager form pop-ups*/
+.job-manager-error, .job-manager-message, .job-manager-info{
+    max-width: 600px;
+    margin: 30px auto 30px auto !important;
+    text-align: center;
+    @include setup-font($sourceSansPro, inherit, 300);
+    @include responsive-font(0.5, 2rem);
+}
+
+.job-manager-error {
+    color: $rouge!important;
+}
+
+.job-manager-message{
+    p{
+        color: $primaire-vert!important;
+    }
+}
+
+/*Contact form pop ups*/
+.wpcf7-response-output, .wpcf7-display-none, .wpcf7-validation-errors{
+    text-align: center;
+    width: 100%;
+    border: none!important;
+    border-top: 3px solid $rouge !important;
+    background-color: #fff;
+    padding: 30px 15px 30px 15px !important;
+    margin: 15px 0 15px 0 !important;
+    color: #000;
+    @include responsive-font(0,2rem);
+    &:before{
+        color: #b81c23;
+        content: "\00d7";
+        font-weight: 700;
+    }
+}
+
+.wpcf7-not-valid-tip{
+    font-size: 1.6rem!important;
+}

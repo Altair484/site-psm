@@ -1,0 +1,726 @@
+/* ---------------------------------------------- /*
+ * Formations pages - Section BACKGROUND VIDEO
+/* ---------------------------------------------- */
+
+.psm-formations-background-video-section{
+
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+
+    .losange{
+
+        @include lg{
+            @include transition(all 1s ease);
+            &:nth-of-type(1) {
+                z-index: 1;
+                bottom:-12.5vw;
+                left:5%;
+                height: 25vw;
+                width: 25vw;
+                background-color: $secondaire-bleu;
+            }
+
+            &:nth-of-type(2) {
+                z-index: 1;
+                bottom:10%;
+                left: -5%;
+                height: 10vw;
+                width: 10vw;
+                background-color: $primaire-vert;
+            }
+
+            position: absolute;
+            transform: rotate(-45deg);
+        }
+    }
+
+    h1{
+        position: absolute;
+        z-index: 3;
+
+        @include xs {
+            i{
+                display: none;
+            }
+            text-align: center;
+            vertical-align: middle;
+            margin: auto;
+            bottom:45%;
+            right: 0;
+            left: 0;
+        }
+        @include md{
+            i{
+                //display: block;
+            }
+            height: 100px;
+            margin: auto;
+            bottom: 0;
+            top:0;
+        }
+
+        @include setup-font($sourceSansPro,white,300);
+        @include responsive-font(0,3.6rem,3.3rem,3.1rem,2.8rem,2.5rem);
+    }
+
+    .video-background {
+        @include background-image-opacity(null,rgba(23, 35, 45, 0.7),1);
+        &:hover .filter:after{
+            pointer-events: auto!important;
+        }
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background-color: $secondaire-noir;
+        @include transition(all 0.5s ease);
+
+        &.swipped:not(.miniature){
+            left: 0!important;
+        }
+        &.miniature{
+            height: auto;
+
+            @include xs {
+                width: 142px;
+                height: 80px;
+                top: calc(100% - 80px - 10px);
+                left: calc(100% - 142px - 10px);
+            }
+
+            @include md{
+                width: 196px;
+                height: 110px;
+                top: calc(100% - 110px - 10px);
+                left: calc(100% - 196px - 10px);
+            }
+
+            @include lg{
+                width: 249px;
+                height: 140px;
+                top: calc(100% - 140px - 10px);
+                left: calc(100% - 249px - 10px);
+            }
+
+            @include xl{
+                width: 320px;
+                height: 180px;
+                top: calc(100% - 180px - 10px);
+                left: calc(100% - 320px - 10px);
+            }
+
+            z-index: 3!important;
+        }
+
+        .video-foreground, .video-foreground > iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &:not(.miniature) {
+            @media (min-aspect-ratio: 16/9) {
+                &{ height: 300%; top: -100%; }
+            }
+            @media (max-aspect-ratio: 16/9) {
+                &{ width: 300%; left: -100%; }
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Formations pages - Section TOGGLES FORMATIONS
+/* ---------------------------------------------- */
+
+#masters {
+    #toggle-masters {
+        height: 20vh;
+        width: 100%;
+        overflow: hidden;
+        background-color: $secondaire-noir;
+        z-index: 1;
+        position: relative;
+
+        .choose-training{
+            @include transition(all 0.5s ease);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content:center;
+            align-items: center;
+
+            background-color: $secondaire-noir;
+
+            &:hover{
+                cursor: pointer;
+                background-color: $primaire-vert;
+            }
+
+            button{
+                outline: none;
+                background-color: transparent;
+                border: none;
+                @include setup-font($lovelo,white,normal);
+                @include responsive-font(0,3.6rem,3rem,3rem,3rem,2.5rem);
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            &.active{
+                background-color: $primaire-vert;
+            }
+        }
+    }
+
+    #master-1,#master-2 {
+        display: none;
+        &.selected {
+            display: block!important;
+        }
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Formations pages - Section PRESENTATION
+/* ---------------------------------------------- */
+
+.psm-formations-presentation-section {
+    .text{
+        h2{
+            color: #000 !important;
+        }
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Formations pages - Section PROGRAMMES
+/* ---------------------------------------------- */
+.psm-formations-programme-section{
+    position: relative;
+    z-index: 2;
+
+    @include lg{
+        height: 100vh;
+    }
+
+    .header {
+        height: 30vh;
+        background-color: $secondaire-noir;
+
+        div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                @include setup-font($lovelo,white,normal);
+                @include responsive-font(0,3rem,3rem,2.5rem,2.2rem,2rem);
+                @include lined-title(#ffffff);
+                @include lg{
+                    margin-right: 20vw;
+                }
+            }
+
+            h3 {
+                padding-top: 30px;
+                @include setup-font($lovelo,$primaire-vert,normal);
+                @include responsive-font(0,2.4rem);
+            }
+        }
+    }
+    //Programmes Content
+    .programme-container {
+        @include lg {
+            height: 70vh;
+        }
+        background-color: $tertiaire-gris-blanc;
+        @include lg {
+            display: flex;
+            justify-content: center;
+        }
+        .programme-content{
+            width: 100%;
+            @include lg{
+                width: $screen-lg;
+            }
+            @include xl{
+                width: $screen-xl;
+            }
+            .losanges-container{
+                @include lg {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                }
+                .losange-origine {
+                    @include xs {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    @include sm{
+                        flex-direction: row;
+                    }
+                    @include lg{
+                        position: relative;
+                        margin-top: 100px;
+                        transform: rotate(-45deg);
+                        height: 150px;
+                        width: 150px;
+                    }
+                    @include xl {
+                        height: 200px;
+                        width: 200px;
+                    }
+
+                    div.losange {
+                        overflow: hidden;
+                        box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+                        transition-duration: 0.5s;
+                        color: white;
+                        background-color: $secondaire-bleu;
+
+
+                        @include xs{
+                            position: relative;
+                        }
+
+                        @include sm-lg{
+                            display: flex;
+                            flex-direction: column;
+                            &:not(.no-hover){
+                                flex:1;
+                            }
+                        }
+
+                        @include xs-sm{
+                            &:last-of-type{
+                                flex:2;
+                            }
+                        }
+
+                        @include lg {
+                            height: 100%;
+                            width: 100%;
+                            line-height: 150px;
+                            position: absolute;
+
+                            &:nth-child(1) {
+                                top: -55%;
+                                left: 55%;
+                            }
+                            &:nth-child(2) {
+                                background-color: $secondaire-noir;
+                                top: 55%;
+                                left: 55%;
+                            }
+                            &:nth-child(3) {
+                                top: 55%;
+                                left: -55%;
+                            }
+                            &:nth-child(4) {
+                                top: -55%;
+                                left: -55%;
+                            }
+                            &:hover {
+                                &:not(.no-hover) {
+                                    z-index: 5;
+                                    cursor: pointer;
+                                    background-color: $primaire-vert;
+
+                                }
+
+                            }
+
+                            i {
+                                opacity: 1;
+                                @include transition(all 0.5s ease);
+                            }
+                        }
+                        @include xl{
+                            line-height: 200px;
+                        }
+
+                        &.active {
+                            background-color: $primaire-vert;
+                        }
+                    }
+
+
+                    .losange h4 {
+                        @include setup-font($lovelo, white, normal);
+                        @include responsive-font(0,2rem, 1.3rem, 2rem,2rem,2rem);
+
+
+                        @include xs-sm{
+                            padding-left: 20px;
+                        }
+
+                        @include xs {
+                            text-align: center;
+                            display: inline;
+                        }
+
+                        @include lg{
+                            display: inline-block;
+                            text-indent: -1000px;
+                            height: 150px;
+                            width: 150px;
+                            line-height: 150px;
+
+                            text-align: center;
+                            transform: rotate(45deg);
+                            transition: 0.5s ease;
+                        }
+
+                        @include xl{
+                            height: 200px;
+                            width: 200px;
+                            line-height: 200px;
+                        }
+                    }
+
+                    .losange:hover{
+                        @include lg{
+                            h4{  text-indent: 0;  }
+
+                            i{ opacity: 0; }
+                        }
+                    }
+
+                    i{
+                        font-size: 3rem;
+                        text-align: center;
+
+                        padding:15px 0 15px 0;
+
+                        @include xs-sm{
+                            padding-left: 20px;
+                        }
+
+                        @include lg{
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto;
+                            left: 0;
+                            right: 0;
+
+                            height: 90px;
+                            width: 100px;
+
+                            padding: 0;
+                            font-size: 8rem;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+
+            //Accordion
+            .accordeon-container{
+                @include xl{
+                    position: relative;
+                }
+
+                .accordeon {
+                    width: 100%;
+                    @include transition(all 1s ease);
+
+                    &.show {  display: block;  }
+
+                    &.hide {  display: none;  }
+
+                    @include lg {
+                        width: 120%;
+                        position: absolute;
+                        top:69px;
+                        left:-131px;
+                    }
+                    @include xl {
+                        top:59px;
+                        left:-145px;
+                    }
+                    .accordeon-title {
+                        text-transform: lowercase;
+                        &:first-letter{
+                            text-transform: uppercase;
+                        }
+                        @include setup-font($lovelo,white,300);
+                        @include responsive-font(0,2rem);
+                        background-color: $secondaire-noir;
+                        padding: 15px 10px 15px 10px;
+                        cursor: pointer;
+                        border-bottom: 1px solid $tertiaire-gris-blanc;
+                        margin: 0;
+
+                        i{
+                            float: right;
+                        }
+                        i:after{
+                            @include transition(all 0.3s ease);
+                            content: '\f067 ';
+                            display: inline-block;
+                            font-size: 0.8em;
+                            color: $tertiaire-gris-blanc;
+                            width: 20px;
+                            height: 20px;
+                            line-height: 20px;
+                            text-align: center;
+                        }
+                    }
+
+                    .accordeon-title.is-opened{
+                        i:after {
+                            content: '\f067';
+                            color: $primaire-vert;
+                            -webkit-transform: rotate(45deg);
+                            -moz-transform: rotate(45deg);
+                            -o-transform: rotate(45deg);
+                            -ms-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                            transform-origin: center;
+                        }
+                    }
+
+
+                    .accordeon-content {
+                        padding: 15px;
+                        border-bottom: 1px solid $tertiaire-gris-blanc;
+                        p{
+                            @include setup-font($sourceSansPro,white,300);
+                            @include responsive-font(0,2rem);
+                            padding: 15px 0 15px 0;
+                        }
+
+                        background-color: $secondaire-noir;
+                        display: none;
+
+                        hr{
+                            width: 100px;
+                            border-color: $tertiaire-gris-blanc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Formations pages - Section PROJECTS
+/* ---------------------------------------------- */
+.psm-formations-project-section {
+    .row {
+        .content {
+            background-color: $secondaire-bleu;
+            h2, p {
+                color: #fff!important;
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Formations pages - Section TESTOMONIALS
+/* ---------------------------------------------- */
+
+.psm-formations-testimony-section{
+    position: relative;
+    z-index: 1;
+    .header {
+        min-height: 30vh;
+        background-color: $secondaire-noir;
+
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include lg{
+                padding-left: 50px;
+                justify-content: flex-start;
+            }
+            h2 {
+                @include setup-font($lovelo,white,normal);
+                @include responsive-font(0,3rem,3rem,2.5rem,2.2rem,1.8rem);
+                @include lined-title(#ffffff);
+            }
+
+            h3 {
+                padding-top: 30px;
+                @include setup-font($lovelo,$primaire-vert,normal);
+                @include responsive-font(0,2.4rem);
+            }
+        }
+    }
+
+    .row:nth-of-type(2){
+        justify-content: center;
+        background-color: $secondaire-bleu;
+        .hexagone-container{
+            width: 100%;
+            @include xs-lg{
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                padding-bottom: 100px;
+            }
+            @include lg {
+                width: 930px;
+                padding-top: 15vh;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .hexagone-item{
+                width: 300px;
+                height: 300px;
+                @include xs-lg{
+                    margin: 60px 5px 0 5px;
+                }
+                @include lg{
+                    position: relative;
+                    width: 300px;
+                    margin: -30px 5px 0 5px;
+                    height: 300px;
+                    float:left;
+
+                    &:nth-child(1),
+                    &:nth-child(2) { margin-top: 0; }
+
+                    &:nth-child(7n - 1),
+                    &:nth-child(1) {
+                        margin-left: 160px;
+                    }
+                }
+
+                .hexagone {
+                    position: absolute;
+                    width: 300px;
+                    height: 173.21px;
+                    margin: 86.60px 0;
+                    background-color: $secondaire-noir;
+
+
+
+                    .hexagone-texts{
+                        padding: 10px;
+                        position: relative;
+                        z-index: 3;
+                        text-align: center;
+
+                        blockquote{
+                            @include setup-font($sourceSansPro, white, 300);
+                            @include responsive-font(0,1.4rem);
+                            font-style: italic;
+                        }
+
+                        h3.exergue-number {
+                            @include setup-font($lovelo, white, 500);
+                            @include responsive-font(0,2rem);
+                            span{
+                                @include responsive-font(0, 4rem);
+                            }
+                        }
+                        h4{
+                            @include setup-font($sourceSansPro, white, 500);
+                            @include responsive-font(0,2rem);
+                        }
+
+                        p{
+                            @include setup-font($sourceSansPro, white, 300);
+                            @include responsive-font(0,1.4rem);
+                        }
+                    }
+
+                    &.img{
+
+                        &--1 {
+                            background-size: auto 346.4102px;
+                            background-position: center;
+                        }
+
+                        &--2 {
+                            background-size: auto 346.4102px;
+                            background-position: center;
+                        }
+                    }
+
+                    .hexTop,
+                    .hexBottom {
+                        position: absolute;
+                        z-index: 1;
+                        width: 212.13px;
+                        height: 212.13px;
+                        overflow: hidden;
+                        -webkit-transform: scaleY(0.5774) rotate(-45deg);
+                        -ms-transform: scaleY(0.5774) rotate(-45deg);
+                        transform: scaleY(0.5774) rotate(-45deg);
+                        background: inherit;
+                        left: 43.93px;
+                    }
+
+                    /*counter transform the bg image on the caps*/
+                    .hexTop:after,
+                    .hexBottom:after {
+                        content: "";
+                        position: absolute;
+                        width: 300.0000px;
+                        height: 173.20508075688775px;
+                        -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-86.6025px);
+                        -ms-transform: rotate(45deg) scaleY(1.7321) translateY(-86.6025px);
+                        transform: rotate(45deg) scaleY(1.7321) translateY(-86.6025px);
+                        -webkit-transform-origin: 0 0;
+                        -ms-transform-origin: 0 0;
+                        transform-origin: 0 0;
+                        background: inherit;
+                    }
+
+                    .hexTop {
+                        top: -106.0660px;
+                    }
+
+                    .hexTop:after {
+                        background-position: center top;
+                    }
+
+                    .hexBottom {
+                        bottom: -106.0660px;
+                    }
+
+                    .hexBottom:after {
+                        background-position: center bottom;
+                    }
+
+                    &:after {
+                        @include lg {
+                            content: "";
+                            position: absolute;
+                            top: 0.0000px;
+                            left: 0;
+                            width: 300.0000px;
+                            height: 173.2051px;
+                            z-index: 2;
+                            background: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

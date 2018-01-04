@@ -1,0 +1,34 @@
+//Additional styles on _page_espace_pro.scss
+#job_single{
+    @include md{
+        padding-top: 130px;
+    }
+
+    .application_details{
+        box-shadow: none;
+        border: none;
+        &:before{
+            content: none;
+        }
+
+        &:after{
+            content: none;
+        }
+        .job-manager-message{
+            position: relative;
+            &:before{
+                content: "";
+                position: absolute;
+                margin: -10px 0 0 0;
+                top: 0;
+                left: 49%;
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid $primaire-vert;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,47 @@
+#page_inscription_section_form{
+    .row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-height: 100vh;
+        background-color: $secondaire-bleu;
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            @include lg{
+                margin-top: 100px;
+                padding: 50px;
+            }
+
+            img{
+                max-width: 200px;
+                padding-bottom: 30px;
+            }
+
+            .field_container{
+                width: 100%;
+                label{
+                    color: #fff;
+                }
+            }
+
+            small{
+                color: #fff;
+                font-size: 12px;
+                font-style: italic;
+            }
+
+            .register-submit{
+                display: flex;
+                justify-content: center;
+                input#login_submit{
+                    border: none;
+                }
+            }
+        }
+    }
+}

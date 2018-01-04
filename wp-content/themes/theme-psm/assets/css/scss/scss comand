@@ -1,0 +1,5 @@
+input : css/scss/main.scss
+output : css/main.css
+Write :
+sass --watch wp-content/themes/theme-psm/assets/css/scss/main.scss:wp-content/themes/theme-psm/assets/css/main.css
+sass --watch css/scss/main.scss:css/main.css

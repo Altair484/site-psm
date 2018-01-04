@@ -1,0 +1,135 @@
+.btn, #login_submit {
+    @include setup-font($sourceSansPro, inherit, 300);
+    @include responsive-font(0,2.1rem);
+
+    min-width: 100px;
+
+    @include sm {
+        min-width: 200px;
+    }
+
+    text-transform: uppercase;
+    border-radius: 0!important;
+    padding: 10px 10px 10px 10px;
+    margin: 15px 0 15px 0;
+
+    &.btn-psm {
+        color: #fff;
+        background-color: $secondaire-bleu;
+        &:hover{background-color: $primaire-vert;cursor: pointer}
+        &:active{background-color: $primaire-vert}
+    }
+
+    &.btn-psm-white {
+        color: #000;
+        background-color: $tertiaire-gris-blanc;
+        &:hover{background-color: $primaire-vert;color: #fff;cursor: pointer}
+        &:active{background-color: $primaire-vert}
+    }
+
+    &.btn-transparent {
+        color: #fff;
+        border: 1px solid white;
+        background-color: transparent;
+        &:hover{background-color: white;color: black!important;cursor: pointer}
+        &:active{background-color: white;color: black;}
+    }
+
+    &.btn-psm-green, &#login_submit {
+        color: #fff;
+        background-color: $primaire-vert;
+        &:hover{background-color: $secondaire-noir;color: #fff;cursor: pointer}
+        &:active{background-color: $secondaire-noir}
+    }
+
+    //Social medias
+    &.btn-facebook{
+        margin: 7px 0 7px 0;
+        text-align: center;
+        @include setup-font($sourceSansPro, inherit, 500);
+        @include responsive-font(0, 2rem);
+        width: 100%;
+        background-color: #445f9f;
+        color: white;
+        border: 2px solid #445f9f;
+        i{
+            color: white;
+        }
+
+        &:hover{
+            background-color: #fff ;
+            color: #445f9f;
+            cursor: pointer;
+            i{
+                color: #445f9f;
+            }
+        }
+        &:active{
+            background-color: #fff;
+            outline: none;
+            i{
+                color: #445f9f;
+            }
+        }
+    }
+
+    &.btn-twitter{
+        margin: 7px 0 7px 0;
+        text-align: center;
+        @include setup-font($sourceSansPro, inherit, 500);
+        @include responsive-font(0, 2rem);
+        width: 100%;
+        background-color: #4baaf4;
+        color: white;
+        border: 2px solid #4baaf4;
+        i{
+            color: white;
+        }
+
+        &:hover{
+            background-color: #fff ;
+            color: #4baaf4;
+            cursor: pointer;
+            i{
+                color: #4baaf4;
+            }
+        }
+        &:active{
+            background-color: #fff;
+            outline: none;
+            i{
+                color: #4baaf4;
+            }
+        }
+    }
+
+    &.btn-google-plus{
+        margin: 7px 0 7px 0;
+        text-align: center;
+        @include setup-font($sourceSansPro, inherit, 500);
+        @include responsive-font(0, 2rem);
+        width: 100%;
+        background-color: #e15030;
+        color: white;
+        border: 2px solid #e15030;
+        i{
+            color: white;
+        }
+
+        &:hover{
+            background-color: #fff ;
+            color: #e15030;
+            cursor: pointer;
+            i{
+                color: #e15030;
+            }
+        }
+        &:active{
+            background-color: #fff;
+            outline: none;
+            i{
+                color: #e15030;
+            }
+        }
+    }
+}

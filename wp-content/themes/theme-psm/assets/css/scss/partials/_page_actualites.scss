@@ -1,0 +1,21 @@
+/* ---------------------------------------------- /*
+ * NEWS page - section articles
+/* ---------------------------------------------- */
+
+#page-news-section-news {
+  @include lg {
+    min-height: calc(100vh - 100px);
+    margin-top: 100px;
+  }
+  background-color: $tertiaire-gris-blanc;
+  .row:first-of-type{
+    padding-top: 0px;
+  }
+
+  .row:nth-of-type(2){
+    p{
+      @include setup-font($sourceSansPro, black, 300);
+      @include responsive-font(0, 1.6rem);
+    }
+  }
+}

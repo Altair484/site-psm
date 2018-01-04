@@ -1,0 +1,32 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+$theme-colors: (
+  primary: #27ae60
+);
+
+// Colors
+$rouge: #b81c23;
+$light-grey: #8e8e8e;
+$tertiaire-gris-blanc: #e8e8e8;
+$secondaire-bleu : #34495e;
+$secondaire-noir : #17232d;
+$primaire-vert: #8dbc1f;
+
+//Font names :
+$lovelo: 'Lovelo';
+$sourceSansPro: 'Source Sans Pro';
+$fontAwsome: 'FontAwesome';
+
+// Media queries
+// Small tablets and large smartphones (landscape view)
+$screen-sm: 576px;
+
+// Small tablets (portrait view)
+$screen-md: 768px;
+
+// Tablets and small desktops
+$screen-lg: 992px;
+
+// Large tablets and desktops
+$screen-xl: 1200px;

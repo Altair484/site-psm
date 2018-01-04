@@ -1,0 +1,30 @@
+#page-contact-section-contact-form{
+    background-color: $secondaire-bleu;
+    min-height: 100vh;
+    h3{
+        @include md{
+            padding: 20px 0 20px 0;
+        }
+        @include setup-font($lovelo, #000, 300);
+        @include responsive-font(0,2.4rem)
+    }
+
+    .wpcf7-form{
+        position: relative;
+        padding-top: 50px;
+        background-color: $tertiaire-gris-blanc;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+        @include md {
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+        input[type='submit']{
+            &.btn-psm-green{
+                position: absolute;
+                bottom: -85px;
+            }
+        }
+
+    }
+}

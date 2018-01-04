@@ -1,0 +1,660 @@
+/* ---------------------------------------------- /*
+ * Welcome page - Section WELCOME
+/* ---------------------------------------------- */
+#welcome-section {
+    @include background-image-opacity("../img/dept-mm.jpg", rgba(32, 49, 60, 0.8));
+
+    .row{
+        position: relative;
+        z-index: 1;
+        flex-direction: row;
+        @include xs-md{
+            flex-direction: column-reverse;
+        }
+    }
+
+    #welcome-left-collumn {
+        height: 100vh;
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        @include xs-sm{
+            align-content: flex-start;
+        }
+
+        @media screen and (orientation:portrait) {
+            height:60vh;
+        }
+
+        #logo-welcome{
+            display: none;
+            @include lg{
+                display: block;
+            }
+            svg,object,img {
+                padding-bottom: 5%;
+                width: 75%;
+
+            }
+        }
+
+        #svg-slider-texte {
+            overflow: hidden;
+            #text-slider-container{
+                @include xs-lg{
+                    padding-top: 20px;
+                }
+                text-align: left;
+                color:#e8e8e8;
+                display: flex;
+
+                h3{
+                    @include setup-font($lovelo,$primaire-vert, normal);
+                    @include responsive-font(0,3.6rem,2.8rem, 2.8rem, 1.8rem, 1.8rem);
+                }
+
+                p{
+                    @include setup-font($sourceSansPro,$tertiaire-gris-blanc, normal);
+                    @include responsive-font(0,2.4rem, 2.4rem, 2.4rem, 1.8rem, 1.8rem);
+                }
+            }
+        }
+
+        ul#svg-slider-nav{
+            li{
+                @include xs-md{
+                    /*padding-top: 30px;
+                    &:first-of-type,&:last-of-type{
+                        display: none;
+                    }*/
+                    display: none;
+                }
+                list-style: none;
+                &:first-of-type i, &:last-of-type i{font-size:5rem}
+                i {
+                    @include setup-font($fontAwsome,$tertiaire-gris-blanc,700);
+                    transition-duration: 0.2s;
+                    &.inactive { color: $light-grey;}
+                    &.inactive:hover {color: $light-grey; cursor: default;}
+                    &.selected {color: $primaire-vert;}
+                    &:hover {cursor: pointer; color: $primaire-vert;}
+                }
+            }
+        }
+    }
+
+    #welcome-right-collumn {
+        height: 100vh;
+        background-color: $secondaire-bleu;
+        //transition-duration: 0.5s;
+        overflow: hidden;
+
+        @include xs-md{
+            /* Portrait */
+            @media screen and (orientation:portrait) {
+                height: 40vh;
+            }
+        }
+
+        #animations_home{
+            display: flex;
+            height: 100%;
+            .svg-container{
+                svg,object,img{
+                    width:100%;
+                    max-height: 100%;
+                    @include landscapeTablettePhones{
+                        margin-top: 100px;
+                        height: 60%;
+                    }
+                }
+            }
+        }
+    }
+
+    .mouse{
+        display: none;
+        @include md{
+            display: block;
+        }
+    }
+
+    .swipe-container{
+        display: block;
+        @include md{
+            display: none;
+        }
+    }
+
+}
+
+/* ---------------------------------------------- /*
+ * Welcome page - Section PRESENTATION
+/* ---------------------------------------------- */
+
+#presentation-section {
+    overflow: hidden;
+    .row {
+        position: relative;
+        z-index: 1;
+    }
+    @include xs-md {
+        min-height: 100vh;
+    }
+    @include md{
+        height:100vh;
+    }
+    width: 100%;
+    background-color: $secondaire-bleu;
+
+    #presentation-content{
+        height: 100%;
+        position: relative;
+        z-index: 1;
+
+        @include xs-md {
+            padding: 30px 0 30px 0;
+            min-height: 100vh;
+        }
+
+        @include md{
+            flex-direction: row;
+            height: 75vh;
+        }
+
+        @include xl(){
+            height: 50vh;
+        }
+
+
+
+        background-color: $tertiaire-gris-blanc;
+        #presentation-picture{
+            svg,object,img {
+                @include md(){
+                    height: 100%;
+                    width: 300%;
+                    position: absolute;
+                    margin: auto;
+                    left:-150%;
+                    top:0;
+                    bottom: 0;
+
+                }
+            }
+        }
+
+        #presentation-text {
+
+            @include xs-md(){
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            h2{
+                padding-top: 30px;
+                @include setup-font($lovelo, $primaire-vert, 300);
+                @include responsive-font(0,2.4rem)
+            }
+
+            p{
+                @include setup-font($sourceSansPro, black, 300);
+                @include responsive-font(1,2rem)
+            }
+        }
+    }
+
+    .losange{
+        @include transition(all 1s ease);
+        &:nth-of-type(1) {
+            z-index: -1;
+            margin:auto;
+            top:0;
+            left:0;
+            bottom: 0;
+            right:0;
+            height: 200px;
+            width: 200px;
+            background-color: $primaire-vert;
+        }
+
+        &:nth-of-type(2) {
+            z-index: -3;
+            top:80%;
+            left: 5%;
+            height: 300px;
+            width: 300px;
+            background-color: $secondaire-noir;
+        }
+        &:nth-of-type(3) {
+            z-index: -2;
+            top:20%;
+            left: 20%;
+            height: 150px;
+            width: 150px;
+            background-color: $primaire-vert;
+        }
+
+        &:nth-of-type(4) {
+            z-index: -4;
+            bottom:110%;
+            right: 2%;
+            height: 150px;
+            width: 150px;
+            background-color: $secondaire-noir;
+        }
+
+        position: absolute;
+        transform: rotate(-45deg);
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Welcome page - Section FORMATION
+/* ---------------------------------------------- */
+
+#formations-section{
+    height: 100vh;
+    @include landscapeTablettePhones{
+        height: 300vh!important;
+    }
+
+    .formations {
+        align-items: stretch;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+
+        @include xs{
+            flex-direction: column;
+        }
+
+        @include md{
+            flex-direction: row;
+        }
+
+        @include landscapeTablettePhones{
+            flex-direction: column!important;
+        }
+
+        .formation {
+            display: flex;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            background-color: #ccc;
+            min-width: 10%;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+
+            &:nth-child(1) {
+                @include background-image-opacity(null, rgba(52, 73, 94, 0.8));
+            }
+
+            &:nth-child(2) {
+                @include background-image-opacity(null, rgba(32, 49, 60, 0.8));
+            }
+
+            &:nth-child(3) {
+                @include background-image-opacity(null, rgba(141, 188, 31, 0.8));
+            }
+
+            @include lg{
+                &:hover {
+                    -webkit-box-flex: 2;
+                    -ms-flex-positive: 2;
+                    flex-grow: 3;
+
+                    .filter::after{
+                        background-color:transparent;
+                    }
+                }
+            }
+
+            .filter.activeScroll{
+                &:after{
+                    background-color:transparent;
+                }
+            }
+
+            .filter:after{
+                @include transition(all 0.5s ease);
+            }
+
+            h2, h2 > span.writing-letter>span{
+                //Remove to trigger initial JS speed
+                position: relative;
+                z-index: 1;
+                @include setup-font($lovelo, white!important, normal);
+                @include responsive-font(0,5rem);
+
+                span.writing-letter>span{
+                    display:inline-block;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Welcome page - Section PROJECTS
+/* ---------------------------------------------- */
+
+#projects-section {
+    width: 100%;
+    background-color: $secondaire-noir;
+    overflow: hidden;
+
+    .row {
+        position: relative;
+        z-index: 1;
+        @include xs-md {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+    @include xs-md {
+        min-height: 100vh;
+    }
+    @include md{
+        height:100vh;
+    }
+
+
+    #projects-content{
+        height: 100%;
+        position: relative;
+        z-index: 1;
+
+        @include xs-md {
+            padding: 30px 0 30px 0;
+            min-height: 100vh;
+        }
+
+        @include md{
+            min-height: 75vh;
+            max-height: 90vh;
+            flex-direction: row;
+        }
+
+        @include xl(){
+            min-height: 50vh;
+            height: 50vh;
+        }
+
+        background-color: $tertiaire-gris-blanc;
+        #projects-picture{
+            svg,object,img {
+                width: 100%;
+                @include md(){
+                    height: 100%;
+                    width: 150%;
+                    position: absolute;
+                    margin: auto;
+                    right:-75%;
+                    top:0;
+                    bottom: 0;
+
+                }
+            }
+        }
+
+        #projects-text {
+            @include xs(){
+                justify-content: center !important;
+                align-items: center !important;
+            }
+
+            @include md(){
+                align-items: flex-start !important;
+            }
+            h2{
+                padding-top: 30px;
+                @include setup-font($lovelo, $primaire-vert, 300);
+                @include responsive-font(0,2.4rem)
+            }
+
+            p{
+                @include setup-font($sourceSansPro, black, 300);
+                @include responsive-font(1,2rem);
+                @include md(){
+                    text-align: left;
+                }
+            }
+            .btns-box{
+
+                @include xs-sm() {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+
+                a.btn:first-of-type {
+                    @include sm() {
+                        margin-right: 30px !important;
+                    }
+                }
+            }
+        }
+    }
+    @include xs-md() {
+        div.col-md-2 {
+            display: none;
+        }
+    }
+
+    .losange{
+        @include transition(all 1s ease);
+        &:nth-of-type(1) {
+            z-index: -1;
+            top:29%;
+            left:43%;
+            height: 30vw;
+            width: 30vw;
+            background-color: $secondaire-bleu;
+        }
+
+        &:nth-of-type(2) {
+            z-index: -2;
+            top:15%;
+            right: 11%;
+            height: 20vw;
+            width: 20vw;
+            background-color: $primaire-vert;
+        }
+        &:nth-of-type(3) {
+            z-index: -3;
+            bottom:80%;
+            right: 29%;
+            height: 10vw;
+            width: 10vw;
+            background-color: $primaire-vert;
+        }
+
+        position: absolute;
+        transform: rotate(-45deg);
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Welcome page - Section NEWS
+/* ---------------------------------------------- */
+
+#news-section{
+    background-color: $tertiaire-gris-blanc;
+    padding-top: 75px;
+    .thumbnail{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        .line {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            width: 0px;
+            height: 5px;
+            background-color: $primaire-vert;
+            @include transition(all 0.5s ease);
+        }
+
+        figure{
+            position: relative;
+            margin: 0!important;
+            padding: 0!important;
+        }
+
+
+        @include transition(all 0.5s ease);
+
+        img{
+            @include transition(all 0.5s ease);
+            width: 100%;
+            height: auto;
+            min-height: 100%;
+        }
+
+
+        &.active{
+            &::before {
+                position: absolute;
+                top: 0;
+                left: -75%;
+                z-index: 2;
+                display: block;
+                content: '';
+                width: 50%;
+                height: 100%;
+                background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+                background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+                -webkit-transform: skewX(-25deg);
+                transform: skewX(-25deg);
+            }
+            &::before {
+                -webkit-animation: shine .75s;
+                animation: shine .75s;
+            }
+
+            img{
+                width: 110%;
+            }
+            .line {
+                width: 100%;
+                @include transition(all 0.5s ease);
+                position: absolute;
+            }
+
+        }
+    }
+    .see-all-news{
+        height: 33vh;
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Welcome page - Section PROFESSIONAL
+/* ---------------------------------------------- */
+#professional-section {
+    overflow: hidden;
+    .row {
+        position: relative;
+        z-index: 1;
+    }
+    @include xs-md {
+        min-height: 100vh;
+    }
+    @include md{
+        height:100vh;
+    }
+    width: 100%;
+    background-color: $secondaire-bleu;
+
+    #professional-content{
+        height: 100%;
+        position: relative;
+        z-index: 1;
+
+        @include xs-md {
+            padding: 30px 0 30px 0;
+            min-height: 100vh;
+        }
+
+        @include md{
+            flex-direction: row;
+            height: 75vh;
+        }
+
+        @include xl(){
+            height: 50vh;
+        }
+
+
+
+        background-color: $tertiaire-gris-blanc;
+        #professional-picture{
+            svg,object,img {
+                padding: 25px;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        #professional-text {
+
+            @include xs-md(){
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            h2{
+                padding-top: 30px;
+                @include setup-font($lovelo, $primaire-vert, 300);
+                @include responsive-font(0,2.4rem)
+            }
+
+            p{
+                @include setup-font($sourceSansPro, black, 300);
+                @include responsive-font(1,2rem)
+            }
+        }
+    }
+
+    .losange{
+        @include transition(all 1s ease);
+        &:nth-of-type(1) {
+            z-index: -1;
+            top:20%;
+            left:18%;
+            height: 30vw;
+            width: 30vw;
+            background-color: $secondaire-noir;
+        }
+
+        &:nth-of-type(2) {
+            z-index: -3;
+            top:40%;
+            right: 11%;
+            height: 20vw;
+            width: 20vw;
+            background-color: $secondaire-noir;
+        }
+        &:nth-of-type(3) {
+            z-index: -2;
+            top:5%;
+            left: 15%;
+            height: 10vw;
+            width: 10vw;
+            background-color: $primaire-vert;
+        }
+
+        position: absolute;
+        transform: rotate(-45deg);
+    }
+}

@@ -1,0 +1,40 @@
+@import "common/variables";
+//Import mixins
+@import '/mixins/_mixins';
+
+/** Import everything from autoload */
+@import "./autoload/**/*";
+
+/**
+ * Import npm dependencies
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+ */
+// @import "~some-node-module";
+
+/** Import theme styles */
+@import "common/global";
+@import "components/customiser";
+@import "components/buttons";
+@import "components/comments";
+@import "components/forms";
+@import "components/wp-classes";
+@import "components/keyframes";
+@import "layouts/header";
+@import "layouts/sidebar";
+@import "layouts/footer";
+@import "layouts/pages";
+@import "layouts/posts";
+@import "layouts/tinymce";
+@import "layouts/page_accueil";
+@import "layouts/page_actualites";
+@import "layouts/page_projets";
+@import "layouts/single-new";
+@import "layouts/page_formations";
+@import "layouts/page_espace_pro";
+@import "layouts/page_offres";
+@import "layouts/single_offre";
+@import "layouts/page_connexion";
+@import "layouts/page_inscription";
+@import "layouts/page_contact";

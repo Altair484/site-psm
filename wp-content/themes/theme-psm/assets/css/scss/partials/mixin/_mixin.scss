@@ -1,0 +1,117 @@
+// Media queries
+// Very small to small
+@mixin xs-sm { @media (max-width: #{$screen-sm}) { @content;  } }
+@mixin xs-md { @media (min-width: #{1px}) and (max-width: #{$screen-md}) { @content;  } }
+@mixin xs-lg { @media (min-width: #{1px}) and (max-width: #{$screen-lg}) { @content;  } }
+// Very small and more
+@mixin xs { @media (min-width: 1px) { @content;  } }
+// Small to medium
+@mixin sm-md { @media (min-width: #{$screen-sm}) and (max-width: #{$screen-md}) { @content; } }
+@mixin sm-lg { @media (min-width: #{$screen-sm}) and (max-width: #{$screen-lg}) { @content; } }
+// Small and more
+@mixin sm { @media (min-width: #{$screen-sm}) { @content; } }
+// Medium to large
+@mixin md-lg { @media (min-width: #{$screen-md}) and (max-width: #{$screen-lg}) { @content; } }
+// Medium and more
+@mixin md { @media (min-width: #{$screen-md}) { @content; } }
+// Large to extra large
+@mixin lg-xl { @media (min-width: #{$screen-lg}) and (max-width: #{$screen-xl}) { @content; } }
+// Large and more
+@mixin lg { @media (min-width: #{$screen-lg}) { @content; } }
+// TV large devices
+@mixin xl { @media (min-width: #{$screen-xl}) { @content; } }
+
+@mixin landscapeTablettePhones(){
+    @media (min-width: #{1px}) and (max-width:#{$screen-xl}) and (orientation: #{landscape}){
+        @content;
+    }
+}
+
+@mixin landscapePhones(){
+    @media (min-width: #{1px}) and (max-width:#{$screen-md}) and (orientation: #{landscape}){
+        @content;
+    }
+}
+
+//Mixin for background image opacity, no hover
+@mixin background-image-opacity($imgUrl:null, $backgroundColor:false, $z-index:false) {
+    @if $imgUrl != null {
+        background-image: url($imgUrl);
+        background-position: center center;
+        background-size: cover;
+    }@else{
+        background-position: center center;
+        background-size: cover;
+    }
+    overflow: hidden;
+    position: relative;
+    @if $z-index {z-index: $z-index;}
+
+
+    .filter::after {
+        background-color: $backgroundColor;
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 100%;
+        pointer-events: none;
+        @if $z-index {z-index: ($z-index+1);}@else{z-index: 1}
+    }
+}
+
+@mixin setup-font($fontName:false, $colour: false, $weight: false) {
+    font-family: $fontName, Helvetica, Arial, sans-serif;
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+}
+
+@mixin responsive-font($offsetLineHeight:0,$sizeXl:null, $sizeLg:null, $sizeMd:null, $sizeSm:null, $sizeXs:null){
+    @if ($sizeXl != null and $sizeLg != null and $sizeMd != null and $sizeSm != null and $sizeXs != null){
+        @include xs{
+            @if $sizeXs { font-size: $sizeXs; line-height: $sizeXs+$offsetLineHeight}
+        }
+        @include sm{
+            @if $sizeSm { font-size: $sizeSm; line-height: $sizeSm+$offsetLineHeight}
+        }
+        @include md{
+            @if $sizeMd { font-size: $sizeMd; line-height: $sizeMd+$offsetLineHeight}
+        }
+        @include lg{
+            @if $sizeLg { font-size: $sizeLg; line-height: $sizeLg+$offsetLineHeight}
+        }
+        @include xl{
+            @if $sizeXl { font-size: $sizeXl; line-height: $sizeXl+$offsetLineHeight}
+        }
+    }@else{
+        font-size: $sizeXl; line-height: $sizeXl+$offsetLineHeight;
+    }
+}
+
+@mixin lined-title ($color){
+    &:before,&:after {
+        display: inline-block;
+        margin: 0 0.5em;
+        width: 0.75em;
+        height: 0.06em;
+        background: $color;
+        content: '';
+        vertical-align: middle;
+        transition: all 0.3s;
+    }
+}
+
+@mixin transition($transition) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-duration($duration) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
