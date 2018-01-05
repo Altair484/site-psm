@@ -94,6 +94,28 @@ add_action('customize_register',  function( $wp_customize ) {
      * HOMEPAGE - WELCOME SECTION FIELDS
     /* ---------------------------------------------- */
 
+        //Image Licence
+        $wp_customize->add_setting( 'home_page_welcome_section_img', array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'default' => \App\App::get_image_page_header('dept-mm', 'jpg'),
+        ));
+
+        //Image Licence control
+        $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'home_page_welcome_section_img', array(
+            'label' => 'Image de fond',
+            'section' => 'home_page_welcome_section',
+            'settings' => 'home_page_welcome_section_img'
+        )));
+
+        // Little pencil logo pointer shortcut
+        $wp_customize->selective_refresh->add_partial('home_page_welcome_section_img', [
+            'selector' => '.home_page_welcome_section_img',
+            'render_callback' => function () {
+                return get_theme_mod('home_page_welcome_section_img');
+            }
+        ]);
+
         $defaultSliderTitles = array(
             'Berceau d\'idées innovantes', 'Des compétences de leader', 'Partager, valoriser, réussir', 'La qualité avant tout'
         );

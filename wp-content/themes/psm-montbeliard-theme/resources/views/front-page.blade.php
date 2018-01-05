@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-	<section id="welcome-section">
+	<section id="welcome-section" style="background-image: url('{!! get_theme_mod('home_page_welcome_section_img',\App\App::get_image_page_header('dept-mm', 'jpg')) !!}')">
 		<div class="filter"></div>
 		<div class="row">
 			<div id="welcome-left-collumn" class="col-12 col-md-7">

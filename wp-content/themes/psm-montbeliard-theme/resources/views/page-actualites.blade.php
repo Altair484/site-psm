@@ -8,7 +8,7 @@
     @endphp
 
     <section id="page_news_section_header" class="page-header">
-        <div class="row header" style="background-image: url('{!! get_theme_mod('',\App\App::get_image_page_header()) !!}')">
+        <div class="row header" style="background-image: url('{!! get_theme_mod('news_page_header_section_img',\App\App::get_image_page_header()) !!}')">
             <div class="filter"></div>
             <div class="header-content">
                 <span class="d-flex justify-content-center" style="width: 100%;">

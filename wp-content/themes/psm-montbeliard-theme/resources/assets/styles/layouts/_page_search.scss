@@ -1,0 +1,43 @@
+#page-search-section-result{
+    min-height: 100vh;
+    background-color: $secondaire-bleu;
+    h1{
+        color: white;
+        text-align: center;
+        padding: 100px 0 100px 0;
+    }
+    @include lg{
+        margin-top: 100px;
+    }
+
+    article{
+        background-color: $tertiaire-gris-blanc;
+        margin-bottom: 20px;
+        .thumnail-search{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                padding: 15px;
+                max-width: 600px;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .entry{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h2{
+                padding: 15px 0 15px 0;
+            }
+
+            .entry-summary{
+                padding-bottom: 15px;
+            }
+        }
+    }
+}

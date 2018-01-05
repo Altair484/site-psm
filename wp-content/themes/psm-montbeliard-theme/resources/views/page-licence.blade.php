@@ -74,17 +74,17 @@
                         <div class="losange-origine">
                             <div class="losange active">
                                 <i class="fa fa-code"></i>
-                                <h4>Développement</h4>
+                                <h4>{!! $get_school_subjects_list[1]->name !!}</h4>
                             </div>
                             <div class="losange no-hover">
                             </div>
                             <div class="losange">
                                 <i class="fa fa-plus"></i>
-                                <h4>Autres</h4>
+                                <h4>{!! $get_school_subjects_list[0]->name !!}</h4>
                             </div>
                             <div class="losange">
                                 <i class="fa fa-tasks"></i>
-                                <h4>Gestion de projet</h4>
+                                <h4>{!! $get_school_subjects_list[2]->name !!}</h4>
                             </div>
                         </div>
                     </div>
@@ -92,89 +92,59 @@
                     <!-- ACCORDEON DEVELOPPEMENT -->
                     <div class="accordeon-container col-12 col-lg-6 no-padding">
                         <div class="accordeon">
-                            <h4 class="accordeon-title">Ergonomie des interfaces<i class="fa"></i></h4>
-                            <div class="accordeon-content">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-                                <p>Volume horaire : 8 heures CM - 4 heures TP</p>
-                            </div>
-                            <h4 class="accordeon-title">Image de synthèse<i class="fa"></i></h4>
-                            <div class="accordeon-content">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-                                <p>Volume horaire : 8 heures CM - 4 heures TP</p>
-                            </div>
-                            <h4 class="accordeon-title">Réalité virtuelle et augmentée<i class="fa"></i></h4>
-                            <div class="accordeon-content">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-                                <p>Volume horaire : 8 heures CM - 4 heures TP</p>
-                            </div>
-                            <h4 class="accordeon-title">Atelier Professionnel<i class="fa"></i></h4>
-                            <div class="accordeon-content">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-                                <p>Volume horaire : 8 heures CM - 4 heures TP</p>
-                            </div>
+                            @while($get_programme_licence_3['school-subject-dev']->have_posts())
+                                @php
+                                    $get_programme_licence_3['school-subject-dev']->the_post();
+                                    $ue = get_the_terms($get_programme_licence_3['school-subject-dev']->ID, 'unite-enseignement')[0]->name;
+                                @endphp
+                                <h4 class="accordeon-title">{{ get_the_title() }} <i class="fa"></i></h4>
+
+                                <div class="accordeon-content">
+                                    <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
+                                    <hr>
+                                    {!! wpautop( get_the_content() ) !!}
+                                </div>
+                            @endwhile
                         </div>
                         <!-- END  ACCORDEON DEVELOPPEMENT-->
 
                         <!-- ACCORDEON GESTION DE PROJETS-->
                         <div class="accordeon">
-                            <h4 class="accordeon-title">Gestion de projet - UE 1<i class="fa"></i></h4>
-                            <div class="accordeon-content">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-                                <p>Volume horaire : 8 heures CM - 4 heures TP</p>
-                            </div>
-                            <h4 class="accordeon-title">Gestion de projet - UE 2<i class="fa"></i></h4>
-                            <div class="accordeon-content">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-                                <p>Volume horaire : 8 heures CM - 4 heures TP</p>
-                            </div>
-                            <h4 class="accordeon-title">Gestion de projet - UE 3<i class="fa"></i></h4>
-                            <div class="accordeon-content">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-                                <p>Volume horaire : 8 heures CM - 4 heures TP</p>
-                            </div>
-                            <h4 class="accordeon-title">Gestion de projet - UE 4<i class="fa"></i></h4>
-                            <div class="accordeon-content">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-                                <p>Volume horaire : 8 heures CM - 4 heures TP</p>
-                            </div>
+                            @while($get_programme_licence_3['school-subject-project-managment']->have_posts())
+                                @php
+                                    $get_programme_licence_3['school-subject-project-managment']->the_post();
+                                    $ue = get_the_terms($get_programme_licence_3->ID, 'unite-enseignement')[0]->name;
+                                @endphp
+                                <h4 class="accordeon-title">{{ get_the_title() }} <i class="fa"></i></h4>
+
+                                <div class="accordeon-content">
+                                    <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
+                                    <hr>
+                                    {!! wpautop( get_the_content() ) !!}
+                                </div>
+                            @endwhile
+
                         </div>
                         <!-- END  ACCORDEON GESTION DE PROJETS-->
 
                         <!-- ACCORDEON AUTRES-->
                         <div class="accordeon">
-                            <h4 class="accordeon-title">Autres - UE 1<i class="fa"></i></h4>
-                            <div class="accordeon-content">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-                                <p>Volume horaire : 8 heures CM - 4 heures TP</p>
-                            </div>
-                            <h4 class="accordeon-title">Autres - UE 2<i class="fa"></i></h4>
-                            <div class="accordeon-content">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-                                <p>Volume horaire : 8 heures CM - 4 heures TP</p>
-                            </div>
-                            <h4 class="accordeon-title">Autres - UE 3<i class="fa"></i></h4>
-                            <div class="accordeon-content">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-                                <p>Volume horaire : 8 heures CM - 4 heures TP</p>
-                            </div>
-                            <h4 class="accordeon-title">Autres - UE 4<i class="fa"></i></h4>
-                            <div class="accordeon-content">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-                                <p>Volume horaire : 8 heures CM - 4 heures TP</p>
-                            </div>
+                            {{--Todo: Remplacer "school-subject-others" par le vrai nom--}}
+                            @while($get_programme_licence_3['school-subject-others']->have_posts())
+                                @php
+                                    $get_programme_licence_3['school-subject-others']->the_post();
+                                    $ue = get_the_terms($get_programme_licence_3->ID, 'unite-enseignement')[0]->name;
+                                @endphp
+                                <h4 class="accordeon-title">{{ get_the_title() }} <i class="fa"></i></h4>
+
+                                <div class="accordeon-content">
+                                    <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
+                                    <hr>
+                                    {!! wpautop( get_the_content() ) !!}
+                                </div>
+                            @endwhile
                         </div>
+                        @php(wp_reset_postdata())
                     </div>
                     <!-- END  ACCORDEON AUTRES-->
                 </div>
