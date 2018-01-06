@@ -746,6 +746,7 @@ export default {
         new ScrollMagic.Scene({
             triggerElement: "#presentation-section .picture",
             triggerHook: "0.5",
+            reverse: false,
         })
             .addIndicators({name: "Writing guy", indent: 300}) // add indicators (requires plugin)
             .addTo(controllerPresentationSection)

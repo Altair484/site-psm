@@ -38,7 +38,6 @@
     }
     .form-offer{
         @include md {
-            margin-top: 100px;
             margin-bottom: 50px;
         }
         padding-bottom: 50px;
@@ -154,17 +153,8 @@
 }
 
 #job_preview{
-    @include xs{
-        margin-top: 70px;
-    }
-
-    @include md{
-        margin-top: 130px;
-    }
     .single_job_listing {
-        @include xl {
-            margin-bottom: 100px;
-        }
+        margin-bottom: 100px;
     }
 }
 

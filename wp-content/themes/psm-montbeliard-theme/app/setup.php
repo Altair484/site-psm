@@ -13,7 +13,6 @@ use Roots\Sage\Template\BladeProvider;
 add_action('wp_enqueue_scripts', function () {
     //wp_dequeue_style( 'wp-job-manager-frontend' );
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_style('sage/font-awesome.css', asset_path('styles/font-awesome.css'), false, null);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
 }, 100);
 
@@ -254,3 +253,6 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
+/*Comment those lines exept if you want to test the website on smarphones*/
+define('WP_HOME','http://localhost/wordpress/site-psm-back/');
+define('WP_SITEURL','http://localhost/wordpress/site-psm-back/');

@@ -1,6 +1,6 @@
 <section id="page-news-single-section-header" class="page-header">
     @while(have_posts())  @php(the_post())
-    <div class="row header" style="background-image: url('{!! \App\App::get_default_image_page_header() !!}')">
+    <div class="row header" style="background-image: url('{!! \App\App::get_image_page_header() !!}')">
         <div class="filter"></div>
         <div class="header-content">
             <h1>{!! the_title()!!}</h1>

@@ -20,8 +20,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 </style>
 
 <form method="post" id="job_preview" action="<?php echo esc_url( $form->get_action() );?>">
-    <div class="job-manager-info">
-        <p>Pour soumettre l'offre, cliquez sur "Poster"</p>
+    <div class="col-12 col-md-12 col-xl-6 offset-xl-1 no-padding">
+        <div class="form-info">
+            <div class="emoji">
+                ℹ️
+            </div>
+            <div class="content-text">
+                <p>Pour soumettre l'offre, cliquez sur "Poster"</p>
+            </div>
+        </div>
     </div>
     <?php get_job_manager_template_part( 'content-single', 'job_listing' ); ?>
 

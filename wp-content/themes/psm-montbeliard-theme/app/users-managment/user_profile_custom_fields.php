@@ -12,15 +12,16 @@ function extra_user_profile_fields($user)
             <tr>
                 <th><label for="formation">Formation actuelle</label></th>
                 <td>
-                    <select id="formation" name="user_formation" required="">
-                        <?php for ($i = 0; $i < count(\App\Inscription::get_formation_names()); $i++) {
-                            $formation_name = \App\Inscription::get_formation_names()[$i]->name;
-                            $formation_post_value = esc_attr(get_the_author_meta('user_formation', $user->ID)); ?>
+                    <?php $formation_post_value = esc_attr(get_the_author_meta('user_formation', $user->ID));?>
+                    <select id="formation" name="user_formation" required=""
+                        <?php for ($i = -1; $i < count(\App\Inscription::get_formation_names()); $i++) {
+                            $formation_name = \App\Inscription::get_formation_names()[$i]->name; ?>
                             <option
                                 value="<?php _e(\App\Inscription::get_formation_names()[$i]->name) ?>" <?php $formation_post_value == $formation_name ? _e('selected') : null ?>>
                                 <?php _e(\App\Inscription::get_formation_names()[$i]->name) ?>
                             </option>
                         <?php } ?>
+                            <option <?php get_the_author_meta('user_formation', $user->ID) == 'Ancien étudiant' ? _e('selected') : null ?> value="Ancien étudiant">Ancien étudiant</option>
                     </select>
                 </td>
             </tr>

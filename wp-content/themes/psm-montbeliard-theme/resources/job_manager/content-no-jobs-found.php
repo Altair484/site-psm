@@ -17,11 +17,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <?php if ( defined( 'DOING_AJAX' ) ) : ?>
-    <div class="job-manager-info">
-        <p>Aucune offre ne correspond à votre recherche.</p>
+    <div class="col-12 col-xl-6 offset-xl-3 no-padding">
+        <div class="form-info">
+            <div class="emoji">
+                😕
+            </div>
+            <div class="content-text">
+                <p>Aucune offre ne correspond à votre recherche.</p>
+            </div>
+        </div>
     </div>
 <?php else : ?>
-    <div class="job-manager-info">
-        <p>Aucune offre ne correspond à votre recherche.</p>
+    <div class="col-12 col-xl-6 offset-xl-3 no-padding">
+        <div class="form-info">
+            <div class="emoji">
+                😕
+            </div>
+            <div class="content-text">
+                <p>Aucune offre ne correspond à votre recherche.</p>
+            </div>
+        </div>
     </div>
 <?php endif; ?>

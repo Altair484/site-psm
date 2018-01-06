@@ -6,7 +6,7 @@
 		<div class="row">
 			<div id="welcome-left-collumn" class="col-12 col-md-7">
 				<div id="logo-welcome" class="col-7 offset-1 no-padding hidden-md-down">
-					<img src="{!! _e(get_template_directory_uri().'/../dist/images/svg/psm-logo.svg') !!}" alt="Logo de la seciton accueil du site PSM">
+					<img src="{!! _e(get_template_directory_uri().'/assets/images/svg/psm-logo.svg') !!}" alt="Logo de la seciton accueil du site PSM">
 				</div>
 				<div id="svg-slider-texte" class="col-12 col-sm-10 offset-sm-1 no-padding">
 					<div id="text-slider-container">
@@ -92,7 +92,8 @@
 			<div id="welcome-right-collumn" class="col-12 col-md-5">
 				<div id="animations_home">
 					<div class="col-8 offset-2 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="idee">
-						{!! get_template_part('../dist/images/svg/inline', 'idee.svg') !!}
+						{!! get_template_part('/assets/images/svg/inline', 'idee.svg') !!}
+
 					</div>
 					<div class="col-8 offset-4 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="reunion">
 						{!! get_template_part('../dist/images/svg/inline', 'reunion.svg') !!}
@@ -125,7 +126,7 @@
 			<div class="content offset-0 offset-md-2 col-12 col-md-9">
 				<div class="row">
 					<div class="picture col-12 col-md-4 no-padding">
-						{!! get_template_part('../dist/images/svg/inline', 'anac1.svg') !!}
+                            {!! get_template_part('/assets/images/svg/inline', 'anac1.svg') !!}
 					</div>
 					<div class="text col-12 col-md-8 d-flex justify-content-center align-items-start flex-column">
 						<h2 class="home_page_presentation_section_title">
@@ -233,7 +234,7 @@
 						</div>
 					</div>
 					<div class="picture col-12 col-md-4">
-						{!! get_template_part('../dist/images/svg/inline', 'anac2.svg') !!}
+                        {!! get_template_part('/assets/images/svg/inline', 'anac2.svg') !!}
 					</div>
 				</div>
 			</div>

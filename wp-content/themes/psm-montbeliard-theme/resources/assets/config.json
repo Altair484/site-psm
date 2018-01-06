@@ -8,7 +8,7 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/wordpress/site-psm-back/wp-content/themes/sage-theme-psm",
+  "publicPath": "/wordpress/site-psm-back/wp-content/themes/psm-montbeliard-theme",
   "devUrl": "http://localhost/wordpress/site-psm-back",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",

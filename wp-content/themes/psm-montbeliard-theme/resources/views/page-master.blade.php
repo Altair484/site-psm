@@ -36,7 +36,7 @@
                     <div class="content offset-0 offset-md-2 col-12 col-md-9">
                         <div class="row">
                             <div class="picture col-12 col-md-4 no-padding">
-                                {!! get_template_part('../dist/images/svg/inline', 'anmas1.svg') !!}
+                                {!! get_template_part('/assets/images/svg/inline', 'anmas1.svg') !!}
                             </div>
                             <div class="text col-12 col-md-8 d-flex justify-content-center align-items-start flex-column">
                                 <h2 class="master1_page_presentation_section_title">
@@ -193,7 +193,7 @@
                                 </div>
                             </div>
                             <div class="picture col-12 col-md-4">
-                                {!! get_template_part('../dist/images/svg/inline', 'anmas2.svg') !!}
+                                {!! get_template_part('/assets/images/svg/inline', 'anmas2.svg') !!}
                             </div>
                         </div>
                     </div>
@@ -208,7 +208,7 @@
                     <div class="content offset-0 offset-md-2 col-12 col-md-9">
                         <div class="row">
                             <div class="picture col-12 col-md-4 no-padding">
-                                {!! get_template_part('../dist/images/svg/inline', 'anmas3.svg') !!}
+                                {!! get_template_part('/assets/images/svg/inline', 'anmas3.svg') !!}
                             </div>
                             <div class="text col-12 col-md-8 d-flex justify-content-center align-items-start flex-column">
                                 <h2 class="master2_page_presentation_section_title">
@@ -366,7 +366,7 @@
                                 </div>
                             </div>
                             <div class="picture col-12 col-md-4">
-                                <img src="http://via.placeholder.com/960x540" alt="">
+                                {!! get_template_part('/assets/images/svg/inline', 'anmas4.svg') !!}
                             </div>
                         </div>
                     </div>

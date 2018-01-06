@@ -10,9 +10,14 @@
                     {{--Errors / Valdiation messages --}}
                     @if ($validate_fields)
                         <div class="form-errors">
-                            @foreach ($validate_fields->get_error_messages() as $error)
-                                <p> {{ $error }}</p>
-                            @endforeach
+                            <div class="emoji">
+                                😐
+                            </div>
+                            <div class="content-text">
+                                @foreach ($validate_fields->get_error_messages() as $error)
+                                    <p> {{ $error }}</p>
+                                @endforeach
+                            </div>
                         </div>
                     @elseif(count($validate_fields) == 0 && isset($reg_errors)){
                     <p>Inscription réussie ! <a href="{{ home_url() }}/connexion">Connectez vous</a></p>
@@ -89,6 +94,5 @@
             @endif
         </div>
     </section>
-
 @endsection
 

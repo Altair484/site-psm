@@ -1,6 +1,13 @@
 .page-or-news-content{
+    background-color: $secondaire-bleu;
     padding-top: 50px;
+    padding-bottom: 50px;
     .content{
+        padding-top: 30px;
+        @include lg{
+            border-right: 15px solid $secondaire-bleu;
+        }
+        background-color: $tertiaire-gris-blanc;
         h1,h2,h3,h4,h5,h6{
             padding-top: 20px;
         }
@@ -33,6 +40,10 @@
         li > ul, li > ol {
             margin-bottom: 0;
             margin-left: 1.5em;
+        }
+
+        ul, ol{
+            margin-left: 15px;
         }
         .alignleft{
             float: left;
@@ -88,6 +99,8 @@
     }
 
     .sidebar{
+        height: max-content;
+        background-color: $tertiaire-gris-blanc;
         h3 {
             margin-top: 30px;
         }

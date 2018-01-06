@@ -24,7 +24,7 @@
                 <div class="content offset-0 offset-md-2 col-12 col-md-9">
                     <div class="row">
                         <div class="picture col-12 col-md-3 no-padding">
-                            {!! get_template_part('../dist/images/svg/inline', 'anlic1.svg') !!}
+                            {!! get_template_part('/assets/images/svg/inline', 'anlic1.svg') !!}
                         </div>
                         <div class="text col-12 col-md-9 d-flex justify-content-center align-items-start flex-column">
                             <h2 class="licence_page_presentation_section_title">
@@ -182,7 +182,7 @@
                             </div>--}}
                         </div>
                         <div class="picture col-12 col-md-3">
-                            {!! get_template_part('../dist/images/svg/inline', 'anlic2.svg') !!}
+                            {!! get_template_part('/assets/images/svg/inline', 'anlic2.svg') !!}
                         </div>
                     </div>
                 </div>

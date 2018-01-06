@@ -19,9 +19,16 @@ global $job_manager;
 ?>
 <?php
 if ( isset( $resume_edit ) && $resume_edit ) : ?>
-    <div class="job-manager-info">
-        <p>Vous êtes en train d'éditer une offre déjà existante.</p>
-        <a href="?new=1&key=<?php  _e($resume_edit) ?> ">Créer une nouvelle offre</a>
+    <div class="col-12 col-md-10 offset-md-1 col-xl-8 offset-xl-3 no-padding">
+        <div class="form-info">
+            <div class="emoji">
+                ℹ️
+            </div>
+            <div class="content-text">
+                <p>Vous êtes en train d'éditer une offre déjà existante.</p>
+                <a class="btn btn-psm-green" href="?new=1&key=<?php  _e($resume_edit) ?> ">Créer une nouvelle offre</a>
+            </div>
+        </div>
     </div>
 <?php endif; ?>
 <form action="<?php echo esc_url( $action ); ?>" method="post" id="submit-job-form" class="job-manager-form" enctype="multipart/form-data">

@@ -224,6 +224,7 @@ header {
                         }
                     }
                     ul.sub-menu {
+                        padding-left: 0;
                         background-color: transparent;
 
                         @include lg{

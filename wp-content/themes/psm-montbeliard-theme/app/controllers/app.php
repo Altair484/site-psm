@@ -98,7 +98,12 @@ class App extends Controller
 
     public static function check_logged_in(){
         if ( is_user_logged_in()) {
-            wp_redirect( home_url() ); exit;
+            if($_GET['redirection']){
+                wp_redirect($_GET['redirection']);
+            }else{
+                wp_redirect( home_url() );
+            }
+            exit;
         }
     }
 

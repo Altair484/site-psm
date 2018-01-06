@@ -58,10 +58,10 @@ export default {
             if ($(window).width() > 1024) {
                 thumbnail_news.mouseover(function () {
                     $(this).addClass("active");
-                })
+                });
                 thumbnail_news.mouseout(function () {
                     $(this).removeClass("active");
-                })
+                });
                 //Scroll toggle class on smaller devices
             } else {
                 thumbnail_news.each(function () {
@@ -161,7 +161,7 @@ export default {
              *  @author Jeff Jardon
              */
 
-            var controllerParralaxSections = new ScrollMagic.Controller();
+
 
             /*var sections = $('section > .row').map(function(){
              return $(this).length;
@@ -169,24 +169,26 @@ export default {
 
              alert(sections);*/
 
+            if($(window).width() > 992) {
+                var controllerParralaxSections = new ScrollMagic.Controller();
+                var sections = $('section > .row');
+                sections.each(function () {
+                    var tl_parralax_sections = new TimelineMax;
+                    var current_element = this;
+                    var section_name = "Parralax Section : " + $(this).parent().parent().attr('id');
+                    var section = this.parentNode;
 
-            var sections = $('section > .row');
-            sections.each(function () {
-                var tl_parralax_sections = new TimelineMax;
-                var current_element = this;
-                var section_name = "Parralax Section : " + $(this).parent().parent().attr('id');
-                var section = this.parentNode;
+                    tl_parralax_sections.from(current_element, 1, {y: 100, opacity: 0, ease: Power4.easeOut});
 
-                tl_parralax_sections.from(current_element, 1, {y: 100, opacity: 0, ease: Power4.easeOut});
-
-                new ScrollMagic.Scene({
-                    triggerElement: section,
-                    triggerHook: 0.6,
-                })
-                .setTween(tl_parralax_sections)
-                .addIndicators({name: section_name}) // add indicators (requires plugin)
-                .addTo(controllerParralaxSections);
-            });
+                    new ScrollMagic.Scene({
+                        triggerElement: section,
+                        triggerHook: 0.6,
+                    })
+                        .setTween(tl_parralax_sections)
+                        .addIndicators({name: section_name}) // add indicators (requires plugin)
+                        .addTo(controllerParralaxSections);
+                });
+            }
 
 
             /**

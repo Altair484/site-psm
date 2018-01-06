@@ -96,67 +96,89 @@ label {
 
 
 /* Forms pop-ups */
-.form-errors{
+.form-errors, .form-success, .form-info, .form-warning{
     width: 100%;
-    border-top: 3px solid $rouge;
     background-color: $tertiaire-gris-blanc;
     padding: 15px;
     margin: 15px 0 15px 0;
-    p{
-        color: $rouge!important;
-        padding: 5px 0 5px 0;
-        &:before{
-            color: #b81c23;
-            content: "\00d7";
-            font-weight: 700;
+    justify-content: center;
+    @include sm{
+        display: flex;
+    }
+
+    div.emoji, &>i{
+        font-size: 50px;
+        padding-right: 30px;
+        display: flex;
+        align-items: center;
+        @include xs-sm{
+            padding: 0;
+            justify-content: center;
+        }
+    }
+    div.content-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        a{
+            display: block;
+            font-size: 2rem;
+            &.btn{
+                max-width: 300px;
+                display: flex;
+                justify-content: center;
+                margin: 0;
+            }
         }
     }
 }
 
+.form-errors{
+    border-top: 3px solid $rouge;
+    div.emoji, &>i{
+        color: $rouge;
+    }
+
+    div.content-text{
+        p{
+            color: $rouge!important;
+        }
+    }
+}
 .form-success{
-    width: 100%;
     border-top: 3px solid $primaire-vert;
-    background-color: $tertiaire-gris-blanc;
-    padding: 15px;
-    margin: 15px 0 15px 0;
-    p{
-        color: $primaire-vert!important;
-        padding: 5px 0 5px 0;
-        &:before{
-            color: $primaire-vert;
-            content: "\2713";
-            font-weight: 700;
+    div.emoji, &>i{
+        color: $primaire-vert;
+    }
+    div.content-text{
+        p{
+            color: $primaire-vert!important;
         }
     }
 }
 
 .form-info{
-    width: 100%;
     border-top: 3px solid #1e85be;
-    background-color: $tertiaire-gris-blanc;
-    padding: 15px;
-    margin: 15px 0 15px 0;
-    p{
-        color: #000!important;
-        padding: 5px 0 5px 0;
+    div.emoji, &>i{
+        color: #1e85be;
+    }
+    div.content-text{
+        p{
+            color: #1e85be!important;
+        }
     }
 }
 
 .form-warning{
-    text-align: center;
-    width: 100%;
     border-top: 3px solid #be3e22;
-    background-color: $tertiaire-gris-blanc;
-    padding: 15px;
-    margin: 15px 0 15px 0;
-
-    .fa{
+    div.emoji, &>i{
         color: #be3e22;
     }
-
-    p{
-        color: #000!important;
-        padding: 5px 0 5px 0;
+    div.content-text{
+        p{
+            color: #be3e22!important;
+        }
     }
 }
 

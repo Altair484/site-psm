@@ -5,29 +5,44 @@
     <div class="row justify-content-center">
         <div class="col-12 col-lg-6 col-xl-4 form-content">
             <img src="{!! _e(get_template_directory_uri().'/../dist/images/svg/psm-logo.svg') !!}" alt="Vignette de connexion, image d'un étudiant.">
-            <!-- Errors section -->
-            @if (is_wp_error($get_login_errors))
-                @foreach($get_login_errors ->get_error_messages() as $error)
-                    <div class="form-errors">
-                            <p> {{ $error }}</p>
-                    </div>
-                @endforeach
-            @endif
 
             <!-- Trys left -->
             @if($get_trys == 0 && get_option('activate_login_brute_force_protection') == 'true')
                 <!-- Anti Brute force -->
-                <div class="form-warning">
-                    @if($get_remaining_time['minutes_showing'] == true)
-                        <p class="anti-brute-force-message"><i class="fa fa-warning"></i> Connexion bloquée. Réésayez dans {{ $get_remaining_time['time_left'] }} minutes</p>
-                    @else
-                        <p class="anti-brute-force-message"><i class="fa fa-warning"></i> Connexion bloquée. Réésayez dans {{ $get_remaining_time['time_left'] }} secondes</p>
-                    @endif
+                <div class="form-errors">
+                    <div class="emoji">
+                        ✋
+                    </div>
+                    <div class="content-text">
+                        @if($get_remaining_time['minutes_showing'] == true)
+                            <p class="anti-brute-force-message">Connexion bloquée. Réésayez dans {{ $get_remaining_time['time_left'] }} minutes</p>
+                        @else
+                            <p class="anti-brute-force-message">Connexion bloquée. Réésayez dans {{ $get_remaining_time['time_left'] }} secondes</p>
+                        @endif
+                    </div>
                 </div>
             @else
+                <!-- Errors section -->
+                @if (is_wp_error($get_login_errors))
+                    @foreach($get_login_errors ->get_error_messages() as $error)
+                        <div class="form-errors">
+                            <div class="emoji">
+                                😲
+                            </div>
+                            <div class="content-text">
+                                <p> {{ $error }}</p>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
                 @if($_GET['justRegistered'] == "true")
-                    <div class="job-manager-message">
-                        <p>Votre compte vient d'être créé, vous pouvez vous connecter :)</p>
+                    <div class="form-success">
+                        <div class="emoji">
+                            😄
+                        </div>
+                        <div class="content-text">
+                            <p>Votre compte vient d'être créé, vous pouvez vous connecter</p>
+                        </div>
                     </div>
                 @endif
                 {{ \App\Connexion::login_form() }}
