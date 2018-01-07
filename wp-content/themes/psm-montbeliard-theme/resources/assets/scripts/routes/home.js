@@ -432,7 +432,7 @@ export default {
          * @author Jeff Jardon
          *
          */
-        $('#svg-slider-nav').find('li').find('i').click(function () {
+        $('#svg-slider-buttons').find('li').find('i').click(function () {
             switch ($(this).attr("id")) {
                 case "prev":
                     precedent()
@@ -506,7 +506,7 @@ export default {
          */
         $(function () {
             //Enable swiping...
-            $("#text-slider-container, #animations_home").swipe({
+            $("#text-slider-container, #animations_home, .swipe-container").swipe({
                 //Generic swipe handler for all directions
                 swipe: function (event, direction) {
                     switch (active) {

@@ -105,7 +105,7 @@ class Email_contents extends Controller
         wp_mail($email, $subject, $messageForOfferer, $headers);
         //Message de mail pour les administrateurs et les contributeurs
         $subject = '['. get_bloginfo().']'.' Une offre vient d\'être postée';
-        $redirection = site_url().'/connexion/?redirection='. get_admin_url().'edit.php?post_status=pending/?post_type=job_listing';
+        $redirection = site_url().'/connexion/?redirection='. get_admin_url(). 'edit.php/?post_type=job_listing';
         $messageForAdmin = '
         <html>
             <body>

@@ -109,7 +109,10 @@
                                     $get_programme_master_1['school-subject-dev']->the_post();
                                     $ue = get_the_terms($get_programme_master_1['school-subject-dev']->ID, 'unite-enseignement')[0]->name;
                                 @endphp
-                                <h4 class="accordeon-title">{{ get_the_title() }} <i class="fa"></i></h4>
+                                    <div class="accordeon-title">
+                                        <h4 >{{ get_the_title() }}</h4>
+                                        <i class="fa"></i>
+                                    </div>
 
                                 <div class="accordeon-content">
                                     <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
@@ -127,7 +130,10 @@
                                         $get_programme_master_1['school-subject-project-managment']->the_post();
                                         $ue = get_the_terms($get_programme_master_1->ID, 'unite-enseignement')[0]->name;
                                     @endphp
-                                    <h4 class="accordeon-title">{{ get_the_title() }} <i class="fa"></i></h4>
+                                    <div class="accordeon-title">
+                                        <h4 >{{ get_the_title() }}</h4>
+                                        <i class="fa"></i>
+                                    </div>
 
                                     <div class="accordeon-content">
                                         <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
@@ -147,7 +153,10 @@
                                 $get_programme_master_1['school-subject-others']->the_post();
                                 $ue = get_the_terms($get_programme_master_1->ID, 'unite-enseignement')[0]->name;
                                 @endphp
-                                <h4 class="accordeon-title">{{ get_the_title() }} <i class="fa"></i></h4>
+                                    <div class="accordeon-title">
+                                        <h4 >{{ get_the_title() }}</h4>
+                                        <i class="fa"></i>
+                                    </div>
 
                                 <div class="accordeon-content">
                                     <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
@@ -281,7 +290,10 @@
                                         $get_programme_master_2['school-subject-dev']->the_post();
                                         $ue = get_the_terms($get_programme_master_2['school-subject-dev']->ID, 'unite-enseignement')[0]->name;
                                     @endphp
-                                    <h4 class="accordeon-title">{{ get_the_title() }} <i class="fa"></i></h4>
+                                    <div class="accordeon-title">
+                                        <h4 >{{ get_the_title() }}</h4>
+                                        <i class="fa"></i>
+                                    </div>
 
                                     <div class="accordeon-content">
                                         <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
@@ -299,7 +311,10 @@
                                         $get_programme_master_2['school-subject-project-managment']->the_post();
                                         $ue = get_the_terms($get_programme_master_2->ID, 'unite-enseignement')[0]->name;
                                     @endphp
-                                    <h4 class="accordeon-title">{{ get_the_title() }} <i class="fa"></i></h4>
+                                    <div class="accordeon-title">
+                                        <h4 >{{ get_the_title() }}</h4>
+                                        <i class="fa"></i>
+                                    </div>
 
                                     <div class="accordeon-content">
                                         <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
@@ -319,7 +334,10 @@
                                         $get_programme_master_2['school-subject-others']->the_post();
                                         $ue = get_the_terms($get_programme_master_2->ID, 'unite-enseignement')[0]->name;
                                     @endphp
-                                    <h4 class="accordeon-title">{{ get_the_title() }} <i class="fa"></i></h4>
+                                    <div class="accordeon-title">
+                                        <h4 >{{ get_the_title() }}</h4>
+                                        <i class="fa"></i>
+                                    </div>
 
                                     <div class="accordeon-content">
                                         <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>

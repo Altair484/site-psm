@@ -21,12 +21,12 @@
     <div id="licence">
         <section class="psm-formations-presentation-section section-image-left-content-right">
             <div class="row justify-content-center align-items-center">
-                <div class="content offset-0 offset-md-2 col-12 col-md-9">
+                <div class="content offset-0 offset-md-1 col-12 col-md-10">
                     <div class="row">
-                        <div class="picture col-12 col-md-3 no-padding">
+                        <div class="picture col-12 offset-md-1 col-md-3 no-padding">
                             {!! get_template_part('/assets/images/svg/inline', 'anlic1.svg') !!}
                         </div>
-                        <div class="text col-12 col-md-9 d-flex justify-content-center align-items-start flex-column">
+                        <div class="text col-12 col-md-8 d-flex justify-content-center align-items-start flex-column">
                             <h2 class="licence_page_presentation_section_title">
                                 {{ get_theme_mod(
                                     'licence_page_presentation_section_title',
@@ -97,9 +97,12 @@
                                     $get_programme_licence_3['school-subject-dev']->the_post();
                                     $ue = get_the_terms($get_programme_licence_3['school-subject-dev']->ID, 'unite-enseignement')[0]->name;
                                 @endphp
-                                <h4 class="accordeon-title">{{ get_the_title() }} <i class="fa"></i></h4>
+                                <div class="accordeon-title">
+                                    <h4 >{{ get_the_title() }}</h4>
+                                    <i class="fa"></i>
+                                </div>
 
-                                <div class="accordeon-content">
+                                <div class="accordeon-content" >
                                     <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
                                     <hr>
                                     {!! wpautop( get_the_content() ) !!}
@@ -115,7 +118,10 @@
                                     $get_programme_licence_3['school-subject-project-managment']->the_post();
                                     $ue = get_the_terms($get_programme_licence_3->ID, 'unite-enseignement')[0]->name;
                                 @endphp
-                                <h4 class="accordeon-title">{{ get_the_title() }} <i class="fa"></i></h4>
+                                <div class="accordeon-title">
+                                    <h4 >{{ get_the_title() }}</h4>
+                                    <i class="fa"></i>
+                                </div>
 
                                 <div class="accordeon-content">
                                     <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
@@ -135,7 +141,10 @@
                                     $get_programme_licence_3['school-subject-others']->the_post();
                                     $ue = get_the_terms($get_programme_licence_3->ID, 'unite-enseignement')[0]->name;
                                 @endphp
-                                <h4 class="accordeon-title">{{ get_the_title() }} <i class="fa"></i></h4>
+                                <div class="accordeon-title">
+                                    <h4 >{{ get_the_title() }}</h4>
+                                    <i class="fa"></i>
+                                </div>
 
                                 <div class="accordeon-content">
                                     <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>

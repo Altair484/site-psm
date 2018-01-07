@@ -1,16 +1,3 @@
-{{--<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8' />
-    <title>Add custom icons with Markers</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
-    <style>
-
-    </style>
-</head>
-<body>--}}
 @extends('layouts.app')
 @section('content')
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js'></script>
@@ -21,7 +8,7 @@
     .marker {
         z-index: 10;
         display: block;
-        width: 70px;
+        width: 30px;
         height: auto;
         border: none;
         cursor: pointer;

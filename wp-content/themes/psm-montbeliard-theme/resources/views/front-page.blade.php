@@ -5,8 +5,8 @@
 		<div class="filter"></div>
 		<div class="row">
 			<div id="welcome-left-collumn" class="col-12 col-md-7">
-				<div id="logo-welcome" class="col-7 offset-1 no-padding hidden-md-down">
-					<img src="{!! _e(get_template_directory_uri().'/assets/images/svg/psm-logo.svg') !!}" alt="Logo de la seciton accueil du site PSM">
+				<div id="logo-welcome" class="col-9 col-sm-7 offset-sm-1 no-padding hidden-md-down">
+					<h1>{{bloginfo()}}</h1>
 				</div>
 				<div id="svg-slider-texte" class="col-12 col-sm-10 offset-sm-1 no-padding">
 					<div id="text-slider-container">
@@ -78,22 +78,27 @@
                                 ) !!}</p>
 						</div>
 					</div>
+                  {{--  <div class="swipe-container">
+                        {!! get_template_part('../dist/images/svg/inline', 'swipe.svg') !!}
+                    </div>--}}
 				</div>
 
-				<ul id="svg-slider-nav" class="col-10 offset-1 d-flex no-padding justify-content-between align-items-center">
-					<li><i id="prev" class="inactive fa fa-backward"></i></li>
-					<li><i id="sel_idee" class="selected fa fa-circle"></i></li>
-					<li><i id="sel_reunion" class="fa fa-circle"></i></li>
-					<li><i id="sel_travail" class="fa fa-circle"></i></li>
-					<li><i id="sel_deploiement" class="fa fa-circle"></i></li>
-					<li><i id="next" class="fa fa-forward"></i></li>
-				</ul>
+                <div class="slider-nav col-12 col-sm-10 offset-sm-1 no-padding">
+                    <ul id="svg-slider-buttons" class="col-10 offset-1 d-flex no-padding justify-content-between align-items-center">
+                        <li><i id="prev" class="inactive fa fa-angle-double-left "></i></li>
+                        <li><i id="sel_idee" class="selected fa fa-circle"></i></li>
+                        <li><i id="sel_reunion" class="fa fa-circle"></i></li>
+                        <li><i id="sel_travail" class="fa fa-circle"></i></li>
+                        <li><i id="sel_deploiement" class="fa fa-circle"></i></li>
+                        <li><i id="next" class="fa fa-angle-double-right"></i></li>
+                    </ul>
+                </div>
+
 			</div>
 			<div id="welcome-right-collumn" class="col-12 col-md-5">
 				<div id="animations_home">
 					<div class="col-8 offset-2 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="idee">
 						{!! get_template_part('/assets/images/svg/inline', 'idee.svg') !!}
-
 					</div>
 					<div class="col-8 offset-4 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="reunion">
                         {!! get_template_part('/assets/images/svg/inline', 'reunion.svg') !!}
@@ -109,9 +114,6 @@
 		</div>
 		<div class="mouse">
 			<div class="scroll"></div>
-		</div>
-		<div class="swipe-container">
-			{!! get_template_part('../dist/images/svg/inline', 'swipe.svg') !!}
 		</div>
 	</section>
 	<!-- Welcome section end -->

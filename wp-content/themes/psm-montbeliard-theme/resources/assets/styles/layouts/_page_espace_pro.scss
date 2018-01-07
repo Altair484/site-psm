@@ -24,7 +24,7 @@
 /* ---------------------------------------------- */
 #page-espace-pro-section-form{
     background-color: $secondaire-bleu;
-    @include  lg{
+    @include lg{
         padding-top: 50px;
     }
 
@@ -127,9 +127,17 @@
                 width: 100%;
                 overflow: initial;
                 input{
+                    border: none;
+                    background-color: $primaire-vert;
+                    color: #fff;
+                    max-width: 300px;
                     display: block;
                     margin-right: auto;
                     margin-left: auto;
+                    &:hover, &:focus,&:active{
+                        background-color: $secondaire-bleu;
+                        border: 1px solid $tertiaire-gris-blanc !important;
+                    }
                 }
             }
         }

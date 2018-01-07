@@ -348,6 +348,9 @@ export default {
             accordeons.addClass('hide');
             accordeons.first().removeClass('hide').addClass('show');
             accordeons.eq(3).removeClass('hide').addClass('show');
+            $('.accordeon:first-of-type > :nth-child(2)').css("display","block");
+
+
 
             losanges.on('click', function(){
                 if ($(this).index() != 1){

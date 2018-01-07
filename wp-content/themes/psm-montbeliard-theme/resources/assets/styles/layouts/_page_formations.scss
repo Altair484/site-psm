@@ -455,17 +455,20 @@
                         left:-145px;
                     }
                     .accordeon-title {
-                        text-transform: lowercase;
-                        &:first-letter{
-                            text-transform: uppercase;
-                        }
-                        @include setup-font($lovelo,white,300);
-                        @include responsive-font(0,2rem);
+                        display: flex;
+                        justify-content: space-between;
                         background-color: $secondaire-noir;
                         padding: 15px 10px 15px 10px;
                         cursor: pointer;
                         border-bottom: 1px solid $tertiaire-gris-blanc;
                         margin: 0;
+                        h4{
+                            text-transform: lowercase;
+                            &:first-letter{
+                                text-transform: uppercase;
+                            }
+                            @include setup-font($lovelo,white,300);
+                        }
 
                         i{
                             float: right;
@@ -474,7 +477,7 @@
                             @include transition(all 0.3s ease);
                             content: '\f067 ';
                             display: inline-block;
-                            font-size: 0.8em;
+                            font-size: 1.6em;
                             color: $tertiaire-gris-blanc;
                             width: 20px;
                             height: 20px;

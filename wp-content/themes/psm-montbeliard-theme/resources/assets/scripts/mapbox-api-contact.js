@@ -22,10 +22,10 @@ var geojson = {
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/dark-v9',
-    center: [6.8047813, 47.4953441],
-    zoom: 19.47,
-    pitch: 39,
-    bearing: -40.1,
+    center: [6.804415, 47.495072],
+    zoom: 17.99,
+    pitch: 20.00,
+    bearing: 12.7,
     hash: false,
 });
 

@@ -1,3 +1,10 @@
+#page-contact-section-map{
+    @include xs-md{
+        .marker {
+            width: 15px;
+        }
+    }
+}
 #page-contact-section-contact-form{
     background-color: $secondaire-bleu;
     min-height: 100vh;

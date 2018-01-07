@@ -47,7 +47,7 @@
     .anmas1_st43{font-family:'Lato-Light';}
     .anmas1_st44{font-size:18.1154px;}
     .anmas1_st45{opacity:0.4;}
-    .anmas1_st46{font-family:'SourceSansPro-Black';}
+    .anmas1_st46{font-family:'Source Sans Pro';}
     .anmas1_st47{font-size:79.5892px;}
     .anmas1_st48{fill:url(#anmas1_svgid_20_);}
     .anmas1_st49{clip-path:url(#clipper-ecrAccueil-anmas1_1_);}

@@ -24,7 +24,7 @@ function onYouTubeIframeAPIReady() {
         playerVars:{
             "showinfo":0,
             "rel":0,
-            "controls":0,
+            "controls":1,
             "autoplay":1,
             "loop":1,
             "playlist": you_video_tube_id,
@@ -66,9 +66,10 @@ document.addEventListener("mozfullscreenchange", onFullScreenChange, false);
 function onFullScreenChange() {
     var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
     if(fullscreenElement == null){
-        player.mute();
+        //player.mute();
     }else {
         player.seekTo(0);
+        player.playVideo();
         player.unMute();
     }
 }

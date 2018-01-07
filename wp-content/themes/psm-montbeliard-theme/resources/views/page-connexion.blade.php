@@ -9,11 +9,11 @@
             <!-- Trys left -->
             @if($get_trys == 0 && get_option('activate_login_brute_force_protection') == 'true')
                 <!-- Anti Brute force -->
-                <div class="form-errors">
-                    <div class="emoji">
-                        ✋
-                    </div>
-                    <div class="content-text">
+                    <div class="form-errors">
+                        <div class="emoji">
+                            ✋
+                        </div>
+                        <div class="content-text">
                         @if($get_remaining_time['minutes_showing'] == true)
                             <p class="anti-brute-force-message">Connexion bloquée. Réésayez dans {{ $get_remaining_time['time_left'] }} minutes</p>
                         @else

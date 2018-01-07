@@ -202,8 +202,9 @@ label {
 }
 
 /*Contact form pop ups*/
-.wpcf7-response-output, .wpcf7-display-none, .wpcf7-validation-errors{
-    text-align: center;
+.wpcf7-validation-errors{
+    display: flex;
+    align-items: center;
     width: 100%;
     border: none!important;
     border-top: 3px solid $rouge !important;
@@ -213,12 +214,28 @@ label {
     color: #000;
     @include responsive-font(0,2rem);
     &:before{
-        color: #b81c23;
-        content: "\00d7";
-        font-weight: 700;
+        font-size: 50px;
+        content: "😕";
     }
 }
 
 .wpcf7-not-valid-tip{
     font-size: 1.6rem!important;
+}
+
+.wpcf7-mail-sent-ok{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: none!important;
+    border-top: 3px solid $primaire-vert !important;
+    background-color: #fff;
+    padding: 30px 15px 30px 15px !important;
+    margin: 15px 0 15px 0 !important;
+    color: #000;
+    @include responsive-font(0,2rem);
+    &:before{
+        font-size: 50px;
+        content: "😃";
+    }
 }

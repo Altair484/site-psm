@@ -55,7 +55,7 @@ h6 {
 }
 
 p{
-    @include setup-font($sourceSansPro, inherit, normal);
+    @include setup-font($sourceSansPro, inherit, 300);
     @include responsive-font(0, 2rem);
 }
 
@@ -129,14 +129,22 @@ b {
 }
 
 //Swipe icon
+.swipe-container {
+    padding-top:15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    @include md {
+        display: none;
+    }
+}
 .swipe-icon {
-    position: absolute;
     z-index: 10;
     overflow: visible!important;
     width: 36px;
     height: 60px;
-    bottom: 50px;
-    left: 50%;
     margin-left: -12px;
     border-radius: 15px;
 }
@@ -157,12 +165,12 @@ b {
     //background-color: $secondaire-noir;
 }
 
-pre {
+/*pre {
     background-color: white;
     position: absolute;
     z-index: 9999;
     font-size: 1.6rem;
-}
+}*/
 
 #wpadminbar {
     z-index: 1000;

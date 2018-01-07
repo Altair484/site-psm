@@ -35,7 +35,6 @@ footer{
             margin-bottom: 10px;
             a{
                 i {
-                    @include setup-font($fontAwsome, white, normal);
                     @include responsive-font(0,4rem);
                     &:hover{
                         color: $primaire-vert;

@@ -24,12 +24,18 @@ global $post; ?>
     <input type="button" class="postuler btn btn-psm-green" value="<?php _e( 'Apply for job', 'wp-job-manager' ); ?>" />
 
     <div class="application_details">
-        <div class="job-manager-info">
-            <?php _e( '<p>Pour postuler, envoyez votre CV et lettre de motivation à <a href="mailto:'
-                . get_post_meta($post->ID, '_application', true) .'">'. get_post_meta($post->ID, '_application', true) .'</a></p>',
-                'wp-job-manager' ); ?>
-        </div>
+        <div class="form-success">
+            <div class="emoji">
+                😉
             </div>
+            <div class="content-text">
+                <?php _e( '<p>Pour postuler, envoyez votre CV et lettre de motivation à <a href="mailto:'
+                    . get_post_meta($post->ID, '_application', true) .'">'. get_post_meta($post->ID, '_application', true) .'</a></p>',
+                    'wp-job-manager' ); ?>
+            </div>
+
+        </div>
+    </div>
     <?php do_action( 'job_application_end', $apply ); ?>
 </div>
 

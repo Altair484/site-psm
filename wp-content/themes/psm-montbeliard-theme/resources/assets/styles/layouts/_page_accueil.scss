@@ -4,30 +4,47 @@
 #welcome-section {
     @include background-image-opacity("../images/dept-mm.jpg", rgba(32, 49, 60, 0.8));
 
+    h1{
+        background-image: url('../assets/images/svg/psm-logo.svg');
+        text-indent: -20000px;
+        height: 70px;
+        @include sm{
+            height: 100px;
+        }
+
+        @include md{
+            height: 150px;
+        }
+
+        @include xl{
+            height: 200px;
+        }
+        background-repeat: no-repeat ;
+    }
     .row {
         position: relative;
         z-index: 1;
         flex-direction: row;
         @include xs-md {
-            flex-direction: column-reverse;
+            //flex-direction: column-reverse;
         }
     }
 
     #welcome-left-collumn {
-        height: 100vh;
+        @include  md{
+            min-height: 100vh;
+        }
         display: flex;
         align-content: center;
         flex-wrap: wrap;
-        @include xs-sm {
-            align-content: flex-start;
-        }
 
         @media screen and (orientation: portrait) {
-            height: 60vh;
+            min-height: 60vh;
         }
 
         #logo-welcome {
-            display: none;
+            //display: none;
+            padding-top: 10px;
             @include lg {
                 display: block;
             }
@@ -39,7 +56,15 @@
         }
 
         #svg-slider-texte {
+            @include md {
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
             overflow: hidden;
+
+            &:hover{
+                cursor: move;
+            }
             #text-slider-container {
                 @include xs-lg {
                     padding-top: 20px;
@@ -50,45 +75,60 @@
 
                 h3 {
                     @include setup-font($lovelo, $primaire-vert, normal);
-                    @include responsive-font(0, 3.6rem, 2.8rem, 2.8rem, 1.8rem, 1.8rem);
                 }
 
                 p {
                     @include setup-font($sourceSansPro, $tertiaire-gris-blanc, normal);
-                    @include responsive-font(0, 2.4rem, 2.4rem, 2.4rem, 1.8rem, 1.8rem);
+                    @include responsive-font(0.2, 2.4rem, 2.4rem, 2.4rem, 1.8rem, 1.8rem);
                 }
             }
         }
 
-        ul#svg-slider-nav {
-            li {
+        div.slider-nav{
+            @include md{
+                padding-top: 15px;
+                padding-bottom: 15px;
+                display: flex;
+                justify-content: center;
+            }
+
+            &:hover{
+                cursor: move;
+            }
+            ul#svg-slider-buttons {
                 @include xs-md {
-                    /*padding-top: 30px;
-                    &:first-of-type,&:last-of-type{
+                    margin: 0;
+                    padding-bottom: 15px;
+                }
+                max-width: 600px;
+                li {
+                    list-style: none;
+                    @include xs-md {
                         display: none;
-                    }*/
-                    display: none;
-                }
-                list-style: none;
-                &:first-of-type i, &:last-of-type i {
-                    font-size: 5rem
-                }
-                i {
-                    @include setup-font($fontAwsome, $tertiaire-gris-blanc, 700);
-                    transition-duration: 0.2s;
-                    &.inactive {
-                        color: $light-grey;
                     }
-                    &.inactive:hover {
-                        color: $light-grey;
-                        cursor: default;
+                    &:first-of-type, &:last-of-type {
+                        display: inline;
                     }
-                    &.selected {
-                        color: $primaire-vert;
+                    &:first-of-type i, &:last-of-type i {
+                        font-size: 5rem;
                     }
-                    &:hover {
-                        cursor: pointer;
-                        color: $primaire-vert;
+                    i {
+                        color: #fff;
+                        transition-duration: 0.2s;
+                        &.inactive {
+                            color: $light-grey;
+                        }
+                        &.inactive:hover {
+                            color: $light-grey;
+                            cursor: default;
+                        }
+                        &.selected {
+                            color: $primaire-vert;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                            color: $primaire-vert;
+                        }
                     }
                 }
             }
@@ -96,7 +136,10 @@
     }
 
     #welcome-right-collumn {
-        height: 100vh;
+        @include  md{
+            min-height: 100vh;
+        }
+
         background-color: $secondaire-bleu;
         //transition-duration: 0.5s;
         overflow: hidden;
@@ -104,11 +147,14 @@
         @include xs-md {
             /* Portrait */
             @media screen and (orientation: portrait) {
-                height: 40vh;
+                min-height: 40vh;
             }
         }
 
         #animations_home {
+            &:hover{
+                cursor: move;
+            }
             display: flex;
             height: 100%;
             .svg-container {
@@ -126,18 +172,10 @@
 
     .mouse {
         display: none;
-        @include md {
+        @include xl {
             display: block;
         }
     }
-
-    .swipe-container {
-        display: block;
-        @include md {
-            display: none;
-        }
-    }
-
 }
 
 /* ---------------------------------------------- /*
