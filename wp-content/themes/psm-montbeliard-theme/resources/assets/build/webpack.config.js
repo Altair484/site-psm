@@ -103,7 +103,7 @@ let webpackConfig = {
                 },
             },
             {
-                test: /\.(ttf|eot|woff2?|png|jpe?g|gif|svg|ico)$/,
+                test: /\.(ttf|eot|woff2?|otf|png|jpe?g|gif|svg|ico)$/,
                 include: /node_modules|bower_components/,
                 loader: 'url',
                 options: {

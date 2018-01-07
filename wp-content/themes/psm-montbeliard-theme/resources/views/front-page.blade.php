@@ -96,13 +96,13 @@
 
 					</div>
 					<div class="col-8 offset-4 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="reunion">
-						{!! get_template_part('../dist/images/svg/inline', 'reunion.svg') !!}
+                        {!! get_template_part('/assets/images/svg/inline', 'reunion.svg') !!}
 					</div>
 					<div class="col-8 offset-4 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="travail">
-						{!! get_template_part('../dist/images/svg/inline', 'travail.svg') !!}
+                        {!! get_template_part('/assets/images/svg/inline', 'travail.svg') !!}
 					</div>
 					<div class="col-8 offset-4 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="deploiement">
-						{!! get_template_part('../dist/images/svg/inline', 'deploiement.svg') !!}
+                        {!! get_template_part('/assets/images/svg/inline', 'deploiement.svg') !!}
 					</div>
 				</div>
 			</div>
@@ -266,7 +266,7 @@
 			<div id="professional-content" class="col-12 col-lg-11">
 				<div class="row">
 					<div id="professional-picture" class="col-12 col-md-4">
-						{!! get_template_part('../dist/images/svg/inline', 'anac3.svg') !!}
+                        {!! get_template_part('/assets/images/svg/inline', 'anac3.svg') !!}
 					</div>
 					<div id="professional-text" class="col-12 col-md-8 d-flex justify-content-center align-items-start flex-column">
 						<h2 class="home_page_professional_section_title">

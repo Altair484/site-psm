@@ -58,7 +58,7 @@ array_map(function ($file) use ($sage_error) {
     if (!locate_template($file, true, true)) {
         $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file), 'File not found');
     }
-}, ['actions', 'helpers', 'setup', 'filters']);
+}, ['actions', 'helpers', 'setup', 'filters', 'divers']);
 
 array_map(function ($file) use ($sage_error) {
     $file = "../app/custom-post-types/{$file}.php";

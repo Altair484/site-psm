@@ -20,7 +20,7 @@ class Mot_de_passe_oublie extends Controller
             if( empty( $email ) ) {
                 $error = 'Entrez une adresse e-mail valide';
             } else if( ! is_email( $email ) || ! email_exists( $email )) {
-                $error = 'Adress e-mail invalide';
+                $error = 'Adresse e-mail invalide';
             } else {
 
                 $random_password = wp_generate_password( 12, false );
@@ -45,10 +45,10 @@ class Mot_de_passe_oublie extends Controller
             }
 
             if( ! empty( $error ) )
-                echo '<div class="form-errors"><p> '. $error .'</p></div>';
+                echo '<div class="form-errors"><div class="emoji">😲</div><div class="content-text"><p>'.$error.'</p></div></div>';
 
             if( ! empty( $success ) )
-                echo '<div class="form-success"><p> '. $success .'</p></div>';
+                echo '<div class="form-success"><div class="emoji">😉</div><div class="content-text"><p>'.$success.'</p></div></div>';
         }
     }
 }

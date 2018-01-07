@@ -324,6 +324,8 @@ export default {
          *
          * @author Federico Borsoi
          */
+
+
         var controllerPresentationMaster2Section = new ScrollMagic.Controller();
 
         var phone_anmas3 = $('#phone-anmas3'),
@@ -351,6 +353,10 @@ export default {
         var allscreens_anmas3 = [password_screen_anmas3, header_anmas3, desktop_anmas3, icones_anmas3];
         var password_tl = new TimelineLite;
         var follow = false;
+
+        $('.choose-training').click(function () {
+            password_tl.time(0);
+        });
 
         screen_anmas3.css("pointer-events", "none");
 

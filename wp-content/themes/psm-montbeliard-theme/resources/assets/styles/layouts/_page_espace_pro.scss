@@ -24,6 +24,9 @@
 /* ---------------------------------------------- */
 #page-espace-pro-section-form{
     background-color: $secondaire-bleu;
+    @include  lg{
+        padding-top: 50px;
+    }
 
     h3{
         @include md{

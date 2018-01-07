@@ -3,7 +3,6 @@
 add_action('init', 'compagny_capabilities');
 function compagny_capabilities()
 {
-
     $roles = array('editor','administrator');
 
     foreach($roles as $the_role) {
@@ -95,15 +94,32 @@ function compagny_capabilities()
     $role_contributor->remove_cap('edit_private_job_listings');
     $role_contributor->remove_cap('edit_published_job_listings');
 
-
-    /*global $wp_roles;
+    /*
     $role = $wp_roles->roles;
     $role = get_role('contributor');
-    var_dump($role);*/
-    if(current_user_can('contributor')){
+    var_dump($role);
+    }*/
+    /*Remove acces to contact form plugin to editors*/
+    if(current_user_can('contributor')|| current_user_can('editor')){
         add_action('admin_menu', function() {
             remove_menu_page('wpcf7');
         });
        ;
+    }
+
+    if( get_role('author') ) {
+        remove_role('author');
+    }
+
+    if( get_role('subscriber') ) {
+        remove_role('subscriber');
+    }
+
+    if( get_role('translator') ) {
+        remove_role('translator');
+    }
+
+    if( get_role('employer') ) {
+        remove_role('employer');
     }
 }

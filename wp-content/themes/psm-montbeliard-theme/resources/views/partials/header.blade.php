@@ -11,7 +11,9 @@
         </div>
         <div id="sidebar" class="{{ $get_menu_class }}" {{ is_admin_bar_showing()? _e('style="top:32px;"') : null  }}>
           <div id="logo-psm-nav" >
-            <img src="{!! _e(get_template_directory_uri().'/../dist/images/svg/psm-logo.svg') !!}" alt="Logo du menu PSM">
+              <a href="{{home_url()}}">
+                  <img src="{!! _e(get_template_directory_uri().'/assets/images/svg/psm-logo.svg') !!}" alt="Logo du menu PSM">
+              </a>
           </div>
             {{ \App\App::get_main_navigation() }}
         </div>
