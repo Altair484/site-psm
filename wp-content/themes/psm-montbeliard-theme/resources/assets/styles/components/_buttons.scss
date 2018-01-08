@@ -16,15 +16,31 @@
     &.btn-psm {
         color: #fff;
         background-color: $secondaire-bleu;
-        &:hover{background-color: $primaire-vert;cursor: pointer}
-        &:active{background-color: $primaire-vert}
+        border-bottom: 3px solid #1A2235;
+        outline: none;
+        box-shadow: none;
+        &:hover,
+        &:active,
+        &:focus{
+            background-color: $primaire-vert;
+            cursor: pointer;
+            border-bottom: 3px solid #759d1b;
+        }
     }
 
     &.btn-psm-white {
-        color: #000;
-        background-color: $tertiaire-gris-blanc;
-        &:hover{background-color: $primaire-vert;color: #fff;cursor: pointer}
-        &:active{background-color: $primaire-vert}
+        color: #fff;
+        background-color: $secondaire-bleu;
+        border-bottom: 3px solid #d6d6d6;
+        outline: none;
+        box-shadow: none;
+        &:hover,
+        &:active,
+        &:focus{
+            background-color: $primaire-vert;
+            cursor: pointer;
+            border-bottom: 3px solid #759d1b;
+        }
     }
 
     &.btn-transparent {
@@ -36,10 +52,19 @@
     }
 
     &.btn-psm-green, &#login_submit {
-        color: #fff;
+        color: white;
         background-color: $primaire-vert;
-        &:hover{background-color: $secondaire-noir;color: #fff;cursor: pointer}
-        &:active{background-color: $secondaire-noir}
+        border-bottom: 3px solid #759d1b;
+        outline: none;
+        box-shadow: none;
+        &:hover,
+        &:active,
+        &:focus{
+            color: black;
+            background-color: $tertiaire-gris-blanc;
+            cursor: pointer;
+            border-bottom: 3px solid $primaire-vert;
+        }
     }
 
     //Social medias

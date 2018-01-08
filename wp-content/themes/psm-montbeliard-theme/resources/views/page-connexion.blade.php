@@ -27,7 +27,7 @@
                     @foreach($get_login_errors ->get_error_messages() as $error)
                         <div class="form-errors">
                             <div class="emoji">
-                                😲
+                                😯
                             </div>
                             <div class="content-text">
                                 <p> {{ $error }}</p>

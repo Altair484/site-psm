@@ -26,6 +26,10 @@
                                     'et de demain.'
                                 ) !!}
                             </p>
+                            <div class="btns-box">
+                                <button class="btn btn-transparent hide-text-slider">Fermer</button>
+                                <button class="btn btn-psm-green next-slide">Suivant</button>
+                            </div>
 						</div>
 						<div id="text-slider-reunion" class="col-12 no-padding text-slider">
                             <h3 class="home_page_welcome_section_slide_2_title">
@@ -43,6 +47,10 @@
                                     'multimédia complexes et innovants.')
                                 !!}
                             </p>
+                            <div class="btns-box">
+                                <button class="btn btn-transparent hide-text-slider">Fermer</button>
+                                <button class="btn btn-psm-green next-slide">Suivant</button>
+                            </div>
 						</div>
 						<div id="text-slider-travail" class="col-12 no-padding text-slider">
                             <h3 class="home_page_welcome_section_slide_3_title">
@@ -60,13 +68,18 @@
                                     'spécifiques de chaque membre d’une équipe, à partager et à communiquer pour mieux réussir.'
                                 )!!}
                             </p>
+                            <div class="btns-box">
+                                <button class="btn btn-transparent hide-text-slider">Fermer</button>
+                                <button class="btn btn-psm-green next-slide">Suivant</button>
+                            </div>
 						</div>
 						<div id="text-slider-deploiement" class="col-12 no-padding text-slider">
                             <h3 class="home_page_welcome_section_slide_4_title">
                                 {{ get_theme_mod(
                                     'home_page_welcome_section_slide_4_title',
                                     'La qualité avant tout'
-                                ) }}</h3>
+                                ) }}
+                            </h3>
                             <p class="home_page_welcome_section_slide_4_text">
                                 {!! get_theme_mod(
                                     'home_page_welcome_section_slide_4_text',
@@ -75,46 +88,72 @@
                                     'aux professionnels du multimédia de demain à bien observer et analyser le marché, à concevoir '.
                                     'et à réaliser des produits et des services visant à proposer la meilleure expérience '.
                                     'utilisateur possible.'
-                                ) !!}</p>
+                                ) !!}
+                            </p>
+                            <div class="btns-box">
+                                <button class="btn btn-transparent hide-text-slider">Fermer</button>
+                            </div>
 						</div>
 					</div>
                   {{--  <div class="swipe-container">
                         {!! get_template_part('../dist/images/svg/inline', 'swipe.svg') !!}
                     </div>--}}
 				</div>
-
-                <div class="slider-nav col-12 col-sm-10 offset-sm-1 no-padding">
-                    <ul id="svg-slider-buttons" class="col-10 offset-1 d-flex no-padding justify-content-between align-items-center">
-                        <li><i id="prev" class="inactive fa fa-angle-double-left "></i></li>
-                        <li><i id="sel_idee" class="selected fa fa-circle"></i></li>
-                        <li><i id="sel_reunion" class="fa fa-circle"></i></li>
-                        <li><i id="sel_travail" class="fa fa-circle"></i></li>
-                        <li><i id="sel_deploiement" class="fa fa-circle"></i></li>
-                        <li><i id="next" class="fa fa-angle-double-right"></i></li>
-                    </ul>
-                </div>
-
 			</div>
-			<div id="welcome-right-collumn" class="col-12 col-md-5">
+			<div id="welcome-right-collumn" class="col-12 col-md-5 ">
 				<div id="animations_home">
-					<div class="col-8 offset-2 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="idee">
+					<div class="col-12 svg-container" id="idee">
 						{!! get_template_part('/assets/images/svg/inline', 'idee.svg') !!}
+                        <button class="btn btn-psm-green show-text-slider">
+                            {{ get_theme_mod(
+                               'home_page_welcome_section_slide_1_title',
+                               'Berceau d\'idées innovantes')
+                           }}
+                        </button>
 					</div>
-					<div class="col-8 offset-4 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="reunion">
+					<div class="col-12 svg-container" id="reunion">
                         {!! get_template_part('/assets/images/svg/inline', 'reunion.svg') !!}
+                        <button class="btn btn-psm-green show-text-slider">
+                            {{ get_theme_mod(
+                                'home_page_welcome_section_slide_2_title',
+                                'Des compétences de leader'
+                            )}}
+                        </button>
 					</div>
-					<div class="col-8 offset-4 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="travail">
+					<div class="col-12 svg-container" id="travail">
                         {!! get_template_part('/assets/images/svg/inline', 'travail.svg') !!}
+                        <button class="btn btn-psm-green show-text-slider">
+                            {{ get_theme_mod(
+                                'home_page_welcome_section_slide_3_title',
+                                'Partager, valoriser, réussir'
+                            ) }}
+                        </button>
 					</div>
-					<div class="col-8 offset-4 col-md-12 offset-md-0  svg-container d-flex align-items-center" id="deploiement">
+					<div class="col-12 svg-container" id="deploiement">
                         {!! get_template_part('/assets/images/svg/inline', 'deploiement.svg') !!}
+                        <button class="btn btn-psm-green show-text-slider">
+                            {{ get_theme_mod(
+                               'home_page_welcome_section_slide_4_title',
+                               'La qualité avant tout'
+                           ) }}
+                        </button>
 					</div>
 				</div>
 			</div>
+            <div class="slider-nav col-12 no-padding">
+                <ul id="svg-slider-buttons" class="col-10">
+                    <li><i id="prev" class="inactive fa fa-angle-double-left "></i></li>
+                    <li><i id="sel_idee" class="selected fa fa-circle"></i></li>
+                    <li><i id="sel_reunion" class="fa fa-circle"></i></li>
+                    <li><i id="sel_travail" class="fa fa-circle"></i></li>
+                    <li><i id="sel_deploiement" class="fa fa-circle"></i></li>
+                    <li><i id="next" class="fa fa-angle-double-right"></i></li>
+                </ul>
+            </div>
 		</div>
-		<div class="mouse">
+		{{--<div class="mouse">
 			<div class="scroll"></div>
-		</div>
+		</div>--}}
 	</section>
 	<!-- Welcome section end -->
 

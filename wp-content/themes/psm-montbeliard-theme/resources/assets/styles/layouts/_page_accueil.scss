@@ -5,9 +5,10 @@
     @include background-image-opacity("../images/dept-mm.jpg", rgba(32, 49, 60, 0.8));
 
     h1{
-        background-image: url('../assets/images/svg/psm-logo.svg');
+        background-image: url('../images/svg/psm-logo.svg');
         text-indent: -20000px;
         height: 70px;
+
         @include sm{
             height: 100px;
         }
@@ -25,25 +26,25 @@
         position: relative;
         z-index: 1;
         flex-direction: row;
-        @include xs-md {
-            //flex-direction: column-reverse;
-        }
     }
 
     #welcome-left-collumn {
-        @include  md{
-            min-height: 100vh;
+        @include xs-sm{
+            background-color: $secondaire-bleu;
+        }
+
+        @include sm{
+            min-height: 40vh;
+        }
+
+        @include md{
+            min-height: calc(100vh - 80px);
         }
         display: flex;
         align-content: center;
         flex-wrap: wrap;
 
-        @media screen and (orientation: portrait) {
-            min-height: 60vh;
-        }
-
         #logo-welcome {
-            //display: none;
             padding-top: 10px;
             @include lg {
                 display: block;
@@ -51,7 +52,6 @@
             svg, object, img {
                 padding-bottom: 5%;
                 width: 75%;
-
             }
         }
 
@@ -79,55 +79,33 @@
 
                 p {
                     @include setup-font($sourceSansPro, $tertiaire-gris-blanc, normal);
-                    @include responsive-font(0.2, 2.4rem, 2.4rem, 2.4rem, 1.8rem, 1.8rem);
+                    @include responsive-font(0.2, 2.4rem, 2.3rem, 2.1rem, 1.9rem, 1.8rem);
+                }
+
+                button{
+                    display: none;
                 }
             }
-        }
 
-        div.slider-nav{
-            @include md{
-                padding-top: 15px;
-                padding-bottom: 15px;
+            /*Responsive */
+            @include xs-sm{
+                height: 0;
                 display: flex;
-                justify-content: center;
-            }
-
-            &:hover{
-                cursor: move;
-            }
-            ul#svg-slider-buttons {
-                @include xs-md {
-                    margin: 0;
-                    padding-bottom: 15px;
-                }
-                max-width: 600px;
-                li {
-                    list-style: none;
-                    @include xs-md {
-                        display: none;
+                align-items: center;
+                position: absolute;
+                background-color: $secondaire-noir;
+                left: 0;
+                z-index: 100;
+                #text-slider-container{
+                    width: 100%;
+                    .text-slider{
+                        padding: 15px!important;
                     }
-                    &:first-of-type, &:last-of-type {
-                        display: inline;
-                    }
-                    &:first-of-type i, &:last-of-type i {
-                        font-size: 5rem;
-                    }
-                    i {
-                        color: #fff;
-                        transition-duration: 0.2s;
-                        &.inactive {
-                            color: $light-grey;
-                        }
-                        &.inactive:hover {
-                            color: $light-grey;
-                            cursor: default;
-                        }
-                        &.selected {
-                            color: $primaire-vert;
-                        }
-                        &:hover {
-                            cursor: pointer;
-                            color: $primaire-vert;
+                    .btns-box{
+                        display: flex;
+                        button{
+                            margin-right: 15px;
+                            display: block;
                         }
                     }
                 }
@@ -136,46 +114,116 @@
     }
 
     #welcome-right-collumn {
-        @include  md{
-            min-height: 100vh;
+        display: flex;
+        align-items: center;
+        @include xs-sm {
+            min-height: calc(100vh - 135px);
         }
-
+        @include sm-md{
+            min-height: calc(60vh - 50px);
+        }
+        @include md{
+            min-height: calc(100vh - 80px);
+        }
         background-color: $secondaire-bleu;
-        //transition-duration: 0.5s;
         overflow: hidden;
 
-        @include xs-md {
-            /* Portrait */
-            @media screen and (orientation: portrait) {
-                min-height: 40vh;
-            }
-        }
-
         #animations_home {
+            width:100%;
             &:hover{
                 cursor: move;
             }
             display: flex;
-            height: 100%;
             .svg-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                @include xs-sm {
+                    justify-content: space-between;
+                }
                 svg, object, img {
                     width: 100%;
-                    max-height: 100%;
-                    @include landscapeTablettePhones {
-                        margin-top: 100px;
-                        height: 60%;
+                    max-height: 90%;
+                    @include xs-sm {
+                        max-width: 70%;
+                    }
+                    @include sm-md {
+                        max-width: 50%;
+                    }
+                }
+                button{
+                    display: none;
+                    @include xs-sm {
+                        display: flex;
+                        justify-content: center;
+                        width:100%;
+                        font-size: 1.6rem;
                     }
                 }
             }
         }
     }
 
-    .mouse {
+    div.slider-nav{
+        background-color: $secondaire-noir;
+        display: flex;
+        justify-content: center;
+        @include md{
+            padding-top: 15px;
+            padding-bottom: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        &:hover{
+            cursor: move;
+        }
+        ul#svg-slider-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            max-width: 600px;
+            li {
+                list-style: none;
+                @include xs-sm {
+                    display: none;
+                }
+                &:first-of-type, &:last-of-type {
+                    display: inline;
+                }
+                &:first-of-type i, &:last-of-type i {
+                    font-size: 5rem;
+                }
+                i {
+                    color: #fff;
+                    transition-duration: 0.2s;
+                    &.inactive {
+                        color: $light-grey;
+                    }
+                    &.inactive:hover {
+                        color: $light-grey;
+                        cursor: default;
+                    }
+                    &.selected {
+                        color: $primaire-vert;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        color: $primaire-vert;
+                    }
+                }
+            }
+        }
+    }
+
+    /*.mouse {
         display: none;
         @include xl {
             display: block;
         }
-    }
+    }*/
 }
 
 /* ---------------------------------------------- /*

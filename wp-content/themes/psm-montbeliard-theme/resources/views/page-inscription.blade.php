@@ -11,7 +11,7 @@
                     @if ($validate_fields)
                         <div class="form-errors">
                             <div class="emoji">
-                                😐
+                                😯
                             </div>
                             <div class="content-text">
                                 @foreach ($validate_fields->get_error_messages() as $error)

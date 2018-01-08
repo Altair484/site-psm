@@ -435,7 +435,7 @@ export default {
         $('#svg-slider-buttons').find('li').find('i').click(function () {
             switch ($(this).attr("id")) {
                 case "prev":
-                    precedent()
+                    precedent();
                     break;
                 case "sel_idee":
                     idee_open();
@@ -594,6 +594,26 @@ export default {
         }
 
         //END SELECT STATE
+
+        //RESPONSIVE WELCOME SECTION (SMARTPHONES, SMALL TABLETS)
+        var text_modal =  $('#welcome-left-collumn').find("#svg-slider-texte");
+        $( "button.show-text-slider" ).click(function() {
+            text_modal.animate({
+                height: "100vh",
+            });
+        });
+        $( "button.hide-text-slider" ).click(function() {
+            text_modal.animate({
+                height: 0,
+            });
+        });
+
+        $( "button.next-slide" ).click(function() {
+            text_modal.animate({
+                height: 0,
+            });
+            suivant();
+        });
 
         /* ==========================================================================
          WELCOME PAGE - SECTION PRENSENTATION

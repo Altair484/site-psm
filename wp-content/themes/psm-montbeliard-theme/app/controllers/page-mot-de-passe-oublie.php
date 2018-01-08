@@ -45,7 +45,7 @@ class Mot_de_passe_oublie extends Controller
             }
 
             if( ! empty( $error ) )
-                echo '<div class="form-errors"><div class="emoji">😲</div><div class="content-text"><p>'.$error.'</p></div></div>';
+                echo '<div class="form-errors"><div class="emoji">😯</div><div class="content-text"><p>'.$error.'</p></div></div>';
 
             if( ! empty( $success ) )
                 echo '<div class="form-success"><div class="emoji">😉</div><div class="content-text"><p>'.$success.'</p></div></div>';

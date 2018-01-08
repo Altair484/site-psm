@@ -254,5 +254,5 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 /*Comment those lines exept if you want to test the website on smarphones*/
-define('WP_HOME','http://localhost/wordpress/site-psm-back/');
-define('WP_SITEURL','http://localhost/wordpress/site-psm-back/');
+/*define('WP_HOME','http://localhost/wordpress/site-psm-back/');
+define('WP_SITEURL','http://localhost/wordpress/site-psm-back/');*/
