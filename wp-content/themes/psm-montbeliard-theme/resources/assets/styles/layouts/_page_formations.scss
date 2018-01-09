@@ -438,6 +438,7 @@
 
                 .accordeon {
                     width: 100%;
+                    box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
                     @include transition(all 1s ease);
 
                     &.show {  display: block;  }
@@ -512,9 +513,9 @@
                         background-color: $secondaire-noir;
                         display: none;
 
-                        hr{
+                        .separator{
                             width: 100px;
-                            border-color: $tertiaire-gris-blanc;
+                            border-bottom: 1px solid $tertiaire-gris-blanc;
                         }
                     }
                 }

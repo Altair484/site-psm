@@ -7,7 +7,7 @@ import common from './routes/common';
 import home from './routes/home';
 import actualites from './routes/actualites';
 import master from './routes/master';
-import licence from './routes/licence';
+import licence3 from './routes/licence3';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -19,7 +19,7 @@ const routes = new Router({
     actualites,
     //Licence and Master pages
     master,
-    licence,
+    licence3,
 });
 
 // Load Events

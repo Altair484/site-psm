@@ -101,8 +101,8 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="picture col-12 col-md-3">
-                            <img src="http://via.placeholder.com/595x842" alt="">
+                        <div class="picture col-12 col-md-3 no-padding">
+                            {{ \App\App::get_image_projects() }}
                         </div>
                     </div>
                 </article>
@@ -115,7 +115,7 @@
                 <article class="content offset-0 offset-md-2 col-12 col-md-9">
                     <div class="row">
                         <div class="picture col-12 col-md-3 no-padding">
-                            <img src="http://via.placeholder.com/595x842" alt="">
+                            {{ \App\App::get_image_projects() }}
                         </div>
                         <div class="text col-12 col-md-9 d-flex justify-content-center align-items-start flex-column">
                             <h2>{!! get_the_title() !!}</h2>

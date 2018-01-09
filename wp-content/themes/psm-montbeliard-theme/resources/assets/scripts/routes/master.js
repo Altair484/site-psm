@@ -3,7 +3,6 @@ import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min';
 
 export default {
     init() {
-
     },
     finalize() {
         /**
@@ -14,30 +13,31 @@ export default {
          * @author Federico Borsoi
          */
 
-        var finger1_anmas1 = $('#finger1-anmas1'),
-                finger2_anmas1 = $('#finger2-anmas1'),
-                finger3_anmas1 = $('#finger3-anmas1'),
-                button_anmas1 = $('#button-anmas1'),
-                ecr_anmas1 = $('#ecr-anmas1'),
-                ecr_ver_anmas1 = $('#ecr-verrouille-anmas1'),
-                heure_anmas1 = $('#heure-anmas1'),
-                deuxpoints_anmas1 = $('#deuxpoints-anmas1'),
-                fleche_anmas1 = $('#fleche-anmas1'),
-                deverrouiller_anmas1 = $('#deverrouiller-anmas1 path'),
-                bleu_rect_anmas1 = $('#bleu-rect-anmas1'),
-                vert_rect_anmas1 = $('#vert-rect-anmas1'),
-                blanc_rect_anmas1 = $('#blanc-rect-anmas1'),
-                ecrAccueil_anmas1 = $('#ecrAccueil-anmas1'),
-                anc_anmas1 = $('#anc-anmas1'),
-                prog_anmas1 = $('#prog-anmas1'),
-                rhiz_anmas1 = $('#rhizome-anmas1'),
-                app_anc_anmas1 = $('#app-anc-anmas1'),
-                app_prog_anmas1 = $('#app-prog-anmas1'),
-                app_rhiz_anmas1 = $('#app-rhizome-anmas1'),
-                title_m1_anmas1 = $('#title-m1-anmas1'),
-                heure_ecr_anmas1 = $('#heure_ecr_anmas1'),
-                head1_anmas1 = $('#head1-anmas1'),
-                head3_anmas1 = $('#head3-anmas1')
+        var device_anmas1 = $('#device-anmas1'),
+            finger1_anmas1 = $('#finger1-anmas1'),
+            finger2_anmas1 = $('#finger2-anmas1'),
+            finger3_anmas1 = $('#finger3-anmas1'),
+            button_anmas1 = $('#button-anmas1'),
+            ecr_anmas1 = $('#ecr-anmas1'),
+            ecr_ver_anmas1 = $('#ecr-verrouille-anmas1'),
+            heure_anmas1 = $('#heure-anmas1'),
+            deuxpoints_anmas1 = $('#deuxpoints-anmas1'),
+            fleche_anmas1 = $('#fleche-anmas1'),
+            deverrouiller_anmas1 = $('#deverrouiller-anmas1 path'),
+            bleu_rect_anmas1 = $('#bleu-rect-anmas1'),
+            vert_rect_anmas1 = $('#vert-rect-anmas1'),
+            blanc_rect_anmas1 = $('#blanc-rect-anmas1'),
+            ecrAccueil_anmas1 = $('#ecrAccueil-anmas1'),
+            anc_anmas1 = $('#anc-anmas1'),
+            prog_anmas1 = $('#prog-anmas1'),
+            rhiz_anmas1 = $('#rhizome-anmas1'),
+            app_anc_anmas1 = $('#app-anc-anmas1'),
+            app_prog_anmas1 = $('#app-prog-anmas1'),
+            app_rhiz_anmas1 = $('#app-rhizome-anmas1'),
+            title_m1_anmas1 = $('#title-m1-anmas1'),
+            heure_ecr_anmas1 = $('#heure_ecr_anmas1'),
+            head1_anmas1 = $('#head1-anmas1'),
+            head3_anmas1 = $('#head3-anmas1')
 
         TweenMax.from(finger1_anmas1, 2, {x: "100", repeat: -1, ease: Power4.easeOut});
         TweenMax.fromTo(finger2_anmas1, 2, {x: "300", repeat: -1, ease: Power4.easeInOut}, {
@@ -94,6 +94,26 @@ export default {
             TweenLite.to([ecr_ver_anmas1, finger2_anmas1], 0.5, {opacity: 1});
             finger1_anmas1.hide();
         })
+
+        if($(window).width() < 992) {
+            device_anmas1.click(function () {
+                TweenLite.set(button_anmas1, {scale: 1.05, transformOrigin: "center"});
+                TweenLite.to([ecr_ver_anmas1, finger2_anmas1], 0.5, {opacity: 1});
+                finger1_anmas1.hide();
+                new Draggable(ecrAccueil_anmas1, {
+                    type: "x",
+                    lockAxis: true,
+                    onDragStart: dragaccStart,
+                    onDragEnd: dragaccEnd,
+                    bounds: {top: 0, left: 0, width: 10, height: 0},
+                });
+                ecr_apparait.reverse();
+                TweenLite.to(ecrAccueil_anmas1, 0.5, {x: "0%"});
+                TweenLite.to(finger2_anmas1, 1, {opacity: 1});
+                TweenLite.to(finger3_anmas1, 1, {opacity: 0});
+                ecrActif = false;
+            })
+        }
         button_anmas1.click(function () {
             new Draggable(ecrAccueil_anmas1, {
                 type: "x",

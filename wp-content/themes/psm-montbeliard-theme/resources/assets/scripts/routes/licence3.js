@@ -14,25 +14,25 @@ export default {
          */
 
         var phone_anlic1 = $('#phone-anlic1'),
-                charg_anlic1 = $('#charger-anlic1'),
-                light_anlic1 = $('#light-anlic1'),
-                chargPort_anlic1 = $('#charger-port-anlic1'),
-                fleche_chargPort_anlic1 = $('#fleche-chargPort-anlic1'),
-                lettres_chargPort_anlic1 = $('#text-chargPort-anlic1 path'),
-                phonePort_anlic1 = $('#phone-port-anlic1'),
-                fleche_phonePort_anlic1 = $('#fleche-phonePort-anlic1'),
-                lettres_phonePort_anlic1 = $('#text-phonePort-anlic1 path'),
-                highbat_anlic1 = $('#highbat-anlic1'),
-                bat1_anlic1 = $('#bat1-anlic1'),
-                bat2_anlic1 = $('#bat2-anlic1'),
-                bat3_anlic1 = $('#bat3-anlic1'),
-                proline_anlic1 = $('#pro-line-anlic1'),
-                apprline_anlic1 = $('#appr-line-anlic1'),
-                staline_anlic1 = $('#sta-line-anlic1'),
-                appr_anlic1 = $('#appr-anlic1'),
-                pro_anlic1 = $('#projet-anlic1'),
-                sta_anlic1 = $('#stage-anlic1'),
-                l3_anlic1 = $('#l3-anlic1 path');
+            charg_anlic1 = $('#charger-anlic1'),
+            light_anlic1 = $('#light-anlic1'),
+            chargPort_anlic1 = $('#charger-port-anlic1'),
+            fleche_chargPort_anlic1 = $('#fleche-chargPort-anlic1'),
+            lettres_chargPort_anlic1 = $('#text-chargPort-anlic1 path'),
+            phonePort_anlic1 = $('#phone-port-anlic1'),
+            fleche_phonePort_anlic1 = $('#fleche-phonePort-anlic1'),
+            lettres_phonePort_anlic1 = $('#text-phonePort-anlic1 path'),
+            highbat_anlic1 = $('#highbat-anlic1'),
+            bat1_anlic1 = $('#bat1-anlic1'),
+            bat2_anlic1 = $('#bat2-anlic1'),
+            bat3_anlic1 = $('#bat3-anlic1'),
+            proline_anlic1 = $('#pro-line-anlic1'),
+            apprline_anlic1 = $('#appr-line-anlic1'),
+            staline_anlic1 = $('#sta-line-anlic1'),
+            appr_anlic1 = $('#appr-anlic1'),
+            pro_anlic1 = $('#projet-anlic1'),
+            sta_anlic1 = $('#stage-anlic1'),
+            l3_anlic1 = $('#l3-anlic1 path');
 
         new Draggable(charg_anlic1, {type:"x", lockAxis:true, onDragStart:chargStart, onDragEnd:chargOk, bounds:{top:0, left:1000, width:880, height:0}});
         var dragPhone = new Draggable(phone_anlic1, {type:"x", lockAxis:true, onDragStart:phoneStart, onDragEnd:phoneOk, bounds:{top:0, left:0, width:1150, height:0}});
@@ -93,12 +93,12 @@ export default {
                 TweenLite.set(highbat_anlic1, {opacity:1});
                 TweenMax.staggerFrom([bat1_anlic1, bat2_anlic1, bat3_anlic1], 1, {opacity:0}, 1)
                 tl_init.set(apprline_anlic1, {opacity:1})
-                .from(apprline_anlic1, 0.5, {scaleX:0, transformOrigin:"right"}, 3)
-                .to(appr_anlic1, 0.5, {opacity:1},3)
-                .to(bat1_anlic1, 0.5, {scaleY:1.5, transformOrigin:"bottom"},3)
-                .to([bat2_anlic1, bat3_anlic1], 0.5, {scaleY:0.75, transformOrigin:"top"},3)
-                .to(bat2_anlic1, 0.5, {y:"-22%"},3)
-                .add(function(){appr_anlic1.show();},3);
+                    .from(apprline_anlic1, 0.5, {scaleX:0, transformOrigin:"right"}, 3)
+                    .to(appr_anlic1, 0.5, {opacity:1},3)
+                    .to(bat1_anlic1, 0.5, {scaleY:1.5, transformOrigin:"bottom"},3)
+                    .to([bat2_anlic1, bat3_anlic1], 0.5, {scaleY:0.75, transformOrigin:"top"},3)
+                    .to(bat2_anlic1, 0.5, {y:"-22%"},3)
+                    .add(function(){appr_anlic1.show();},3);
                 hoverOk(true);
             }else{
                 TweenLite.to(phonePort_anlic1, 0.5, {opacity:1});
@@ -126,10 +126,10 @@ export default {
                     appr_anlic1.show();
                     if(al1){
                         apprlineTl.to(apprline_anlic1, 0.5, {scaleX:1, transformOrigin:"right"})
-                        .to(appr_anlic1, 0.5, {opacity:1}, 0)
-                        .to(bat1_anlic1, 0.5, {scaleY:1.5, transformOrigin:"bottom"}, 0)
-                        .to([bat2_anlic1, bat3_anlic1], 0.5, {scaleY:0.75, transformOrigin:"top"}, 0)
-                        .to(bat2_anlic1, 0.5, {y:"-22%"}, 0);
+                            .to(appr_anlic1, 0.5, {opacity:1}, 0)
+                            .to(bat1_anlic1, 0.5, {scaleY:1.5, transformOrigin:"bottom"}, 0)
+                            .to([bat2_anlic1, bat3_anlic1], 0.5, {scaleY:0.75, transformOrigin:"top"}, 0)
+                            .to(bat2_anlic1, 0.5, {y:"-22%"}, 0);
                         al1=false;
                     } else {
                         apprlineTl.restart();
@@ -154,10 +154,10 @@ export default {
                     prolineTl.restart();
                     if(al2){
                         prolineTl.from(proline_anlic1, 0.5, {scaleX:0, transformOrigin:"right"})
-                        .to(pro_anlic1, 0.5, {opacity:1}, 0)
-                        .to(bat2_anlic1, 0.5, {scaleY:1.5, transformOrigin:"center"}, 0)
-                        .to(bat1_anlic1, 0.5, {scaleY:0.75, transformOrigin:"bottom"}, 0)
-                        .to(bat3_anlic1, 0.5, {scaleY:0.75, transformOrigin:"top"}, 0);
+                            .to(pro_anlic1, 0.5, {opacity:1}, 0)
+                            .to(bat2_anlic1, 0.5, {scaleY:1.5, transformOrigin:"center"}, 0)
+                            .to(bat1_anlic1, 0.5, {scaleY:0.75, transformOrigin:"bottom"}, 0)
+                            .to(bat3_anlic1, 0.5, {scaleY:0.75, transformOrigin:"top"}, 0);
                         al2=false;
                     }
                 }, function(){
@@ -180,10 +180,10 @@ export default {
                     stalineTl.restart();
                     if(al3){
                         stalineTl.from(staline_anlic1, 0.5, {scaleX:0, transformOrigin:"right"})
-                        .to(sta_anlic1, 0.5, {opacity:1}, 0)
-                        .to(bat3_anlic1, 0.5, {scaleY:1.5, transformOrigin:"top"}, 0)
-                        .to([bat2_anlic1, bat1_anlic1], 0.5, {scaleY:0.75, transformOrigin:"bottom"}, 0)
-                        .to(bat2_anlic1, 0.5, {y:"22%"}, 0);
+                            .to(sta_anlic1, 0.5, {opacity:1}, 0)
+                            .to(bat3_anlic1, 0.5, {scaleY:1.5, transformOrigin:"top"}, 0)
+                            .to([bat2_anlic1, bat1_anlic1], 0.5, {scaleY:0.75, transformOrigin:"bottom"}, 0)
+                            .to(bat2_anlic1, 0.5, {y:"22%"}, 0);
                         al3=false;
                     }
 
@@ -214,12 +214,16 @@ export default {
          * @author Federico Borsoi
          */
 
-        //Animation écran d'accueil
-        //tous les éléments de l'écran d'accueil
+            //Animation écran d'accueil
+            //tous les éléments de l'écran d'accueil
         var pizza_acc_anlic2 = $('#pizza-acc-anlic2'),
             slice_anlic2 = $('#slice-anlic2'),
             title_anlic2 = $('#title_anlic2'),
-            start_anlic2 = $('#start-anlic2');
+            start_anlic2 = $('#start-anlic2'),
+            son_anlic2 = $('#son-anlic2'),
+            son_on_anlic2 = $('#son-on-anlic2'),
+            son_off_anlic2 = $('#son-off-anlic2'),
+            sound_anlic2 = false;
         var tl_acc_anlic2 = new TimelineLite();
 
         //Buitages et musiques
@@ -285,18 +289,81 @@ export default {
         pizza_sounds['pizza-termine'].volume=0.1;
 
         tl_acc_anlic2.from(title_anlic2, 1, {y:-1000, ease:Bounce.easeOut})
-        .from(start_anlic2, 1, {y:500, ease:Power4.easeOut, onComplete:acc_charged})
-        .from(pizza_acc_anlic2, 1, {x:-1000, ease:Bounce.easeOut},0)
-        .from(slice_anlic2, 1, {x:-45, y:-43});
+            .from(start_anlic2, 1, {y:500, ease:Power4.easeOut})
+            .from(pizza_acc_anlic2, 1, {x:-1000, ease:Bounce.easeOut},0)
+            .from(slice_anlic2, 1, {x:-45, y:-43});
 
-        function acc_charged(){
-            start_anlic2.click(function(){
-                pizza_sounds['musique'].play();
-                new TimelineLite({onComplete:acc_gone}).to(title_anlic2, 0.5, {y:-800, ease:Power1.easeIn})
-                .to(start_anlic2, 0.5, {y:800, ease:Power1.easeIn},0)
-                .to(pizza_acc_anlic2, 0.5, {x:-800, ease:Power1.ease1},0)
+        son_anlic2.hide();
+        son_off_anlic2.hide();
+
+        son_anlic2.hover(function(){
+            son_anlic2.css('cursor', 'pointer');
+            son_on_anlic2.css('opacity', 1);
+            son_off_anlic2.css('opacity', 1);
+        }, function(){
+            son_on_anlic2.css('opacity', 0.6);
+            son_off_anlic2.css('opacity', 0.6);
+        });
+
+        son_anlic2.click(function(){
+            switch (sound_anlic2) {
+                case true:
+                    desactivateSounds();
+                    son_on_anlic2.hide();
+                    son_off_anlic2.show();
+                    sound_anlic2 = false;
+                    break;
+                case false:
+                    activateSounds();
+                    son_on_anlic2.show();
+                    son_off_anlic2.hide();
+                    sound_anlic2 = true;
+                    break;
+
+            }
+            new TimelineMax().to(son_anlic2, 0.1, {scale:1.2, transformOrigin:"center", ease:Power0.easeNone}).to(son_anlic2, 0.3, {scale:1, ease:Bounce.easeOut})
+        })
+
+        function desactivateSounds() {
+            pizza_sounds['musique'].pause();
+            jQuery.each(pizza_sounds, function(key){
+                pizza_sounds[key].volume=0;
             });
         }
+
+        function activateSounds() {
+            pizza_sounds['musique'].play();
+            jQuery.each(pizza_sounds, function(key){
+                pizza_sounds[key].volume= 0.2;
+            });
+            pizza_sounds['musique'].volume=0.1;
+            pizza_sounds['remplir-recipient-eau'].volume= 0.7;
+            pizza_sounds['remplir-recipient-lait-huile'].volume= 0.7;
+            pizza_sounds['rouleau-a-patisserie'].volume = 1;
+            pizza_sounds['pizza-termine'].volume=0.1;
+        }
+
+
+        start_anlic2.click(function(){
+            if (confirm('Cette animation émet de la musique et du son. Vous pouvez le désactiver à tout moment. Pour la lire plus tard, cliquez sur le bouton "Annuler"')) {
+                sound_anlic2 = true;
+                acc_charged();
+                activateSounds();
+            }
+            else {
+                desactivateSounds();
+            }
+        });
+
+
+        function acc_charged(){
+            son_anlic2.show();
+            pizza_sounds['musique'].play();
+            new TimelineLite({onComplete:acc_gone}).to(title_anlic2, 0.5, {y:-800, ease:Power1.easeIn})
+                .to(start_anlic2, 0.5, {y:800, ease:Power1.easeIn},0)
+                .to(pizza_acc_anlic2, 0.5, {x:-800, ease:Power1.ease1},0)
+        }
+
 
         start_anlic2.hover(function(){
             start_anlic2.css('cursor', 'pointer');
@@ -315,30 +382,30 @@ export default {
 
         //Animation partie ingrédients
         var bol_anlic2 = $('#bol-anlic2'),
-                boule_pateapizza_anlic2 = $('#boule-pateapizza-anlic2'),
-                eau_versee_anlic2 = $('#eau-versee-anlic2'),
-                lait_verse_anlic2 = $('#lait-verse-anlic2'),
-                huile_versee_anlic2 = $('#huile-versee-anlic2'),
-                levure_versee_anlic2 = $('#levure-versee-anlic2'),
-                farine_versee_anlic2 = $('#farine-versee-anlic2'),
-                ingredients_versees_anlic2 = $('#ingredients-versees-anlic2'),
-                //ingrédients
-                verredeau_anlic2 = $('#verredeau-anlic2'),
-                verredelait_anlic2 = $('#verredelait-anlic2'),
-                verredhuile_anlic2 = $('#verredhuile-anlic2'),
-                levure_anlic2 = $('#levure-anlic2'),
-                sel_anlic2 = $('#sel-anlic2'),
-                farine_anlic2 = $('#farine-anlic2'),
-                //instructions
-                fleche_ing_anlic2 = $('#fleche-ing-anlic2'),
-                instr_eau_anlic2 = $('#instr-eau-anlic2'),
-                instr_lait_anlic2 = $('#instr-lait-anlic2'),
-                instr_huile_anlic2 = $('#instr-huile-anlic2'),
-                instr_levure_anlic2 = $('#instr-levure-anlic2'),
-                instr_sel_anlic2 = $('#instr-sel-anlic2'),
-                instr_farine_anlic2 = $('#instr-farine-anlic2'),
-                instr_melange_anlic2 = $('#instr-melange-anlic2'),
-                fleche_melange_anlic2 = $('#fleche-melange-anlic2');
+            boule_pateapizza_anlic2 = $('#boule-pateapizza-anlic2'),
+            eau_versee_anlic2 = $('#eau-versee-anlic2'),
+            lait_verse_anlic2 = $('#lait-verse-anlic2'),
+            huile_versee_anlic2 = $('#huile-versee-anlic2'),
+            levure_versee_anlic2 = $('#levure-versee-anlic2'),
+            farine_versee_anlic2 = $('#farine-versee-anlic2'),
+            ingredients_versees_anlic2 = $('#ingredients-versees-anlic2'),
+            //ingrédients
+            verredeau_anlic2 = $('#verredeau-anlic2'),
+            verredelait_anlic2 = $('#verredelait-anlic2'),
+            verredhuile_anlic2 = $('#verredhuile-anlic2'),
+            levure_anlic2 = $('#levure-anlic2'),
+            sel_anlic2 = $('#sel-anlic2'),
+            farine_anlic2 = $('#farine-anlic2'),
+            //instructions
+            fleche_ing_anlic2 = $('#fleche-ing-anlic2'),
+            instr_eau_anlic2 = $('#instr-eau-anlic2'),
+            instr_lait_anlic2 = $('#instr-lait-anlic2'),
+            instr_huile_anlic2 = $('#instr-huile-anlic2'),
+            instr_levure_anlic2 = $('#instr-levure-anlic2'),
+            instr_sel_anlic2 = $('#instr-sel-anlic2'),
+            instr_farine_anlic2 = $('#instr-farine-anlic2'),
+            instr_melange_anlic2 = $('#instr-melange-anlic2'),
+            fleche_melange_anlic2 = $('#fleche-melange-anlic2');
 
         var tl_apparition_ing = new TimelineLite();
 
@@ -350,8 +417,8 @@ export default {
 
         function ingredientsAppear(){
             tl_apparition_ing.to([bol_anlic2, verredeau_anlic2, fleche_ing_anlic2], 0.5, {x:0, ease:Power2.easeOut})
-            .to(fleche_ing_anlic2, 1, {x:150, repeat:-1, repeatDelay:0.2, ease:Power1.easeOut})
-            .to(instr_eau_anlic2, 0.5, {y:0, ease:Power2.easeOut},0);
+                .to(fleche_ing_anlic2, 1, {x:150, repeat:-1, repeatDelay:0.2, ease:Power1.easeOut})
+                .to(instr_eau_anlic2, 0.5, {y:0, ease:Power2.easeOut},0);
             drag_ing(verredeau_anlic2);
         }
 
@@ -425,11 +492,11 @@ export default {
                         setTimeout(function(){
                             pizza_sounds['tomates'].pause();
                         },1000);
-                        TweenLite.to(tomates_etale_anlic2, 1, {opacity:1, scale:1, transformOrigin:"center", onComplete:nextIng, onCompleteParams:[basilique_anlic2]});
+                        TweenLite.to(tomates_etale_anlic2, 1, {opacity:1, scale:1, transformOrigin:"center", onComplete:nextIng, onCompleteParams:[basilic_anlic2]});
                         break;
-                    case basilique_anlic2:
+                    case basilic_anlic2:
                         pizza_sounds['basilic'].play();
-                        TweenLite.to(basilique_etale_anlic2, 1, {opacity:1, scale:1, transformOrigin:"center", onComplete:enfournerStart});
+                        TweenLite.to(basilic_etale_anlic2, 1, {opacity:1, scale:1, transformOrigin:"center", onComplete:enfournerStart});
                         break;
                     default:
                         break;
@@ -466,8 +533,8 @@ export default {
                     return instr_mozza_anlic2;
                 case tomates_anlic2:
                     return instr_tomates_anlic2;
-                case basilique_anlic2:
-                    return instr_basilique_anlic2;
+                case basilic_anlic2:
+                    return instr_basilic_anlic2;
                 default:
                     return none;
             }
@@ -482,15 +549,17 @@ export default {
 
 
         function finMelange(){
+            /*eslint-disable no-console*/
+            console.log(this.rotation);
             if(this.rotation>720){
                 pizza_sounds['melanger'].pause();
                 new TimelineLite({onComplete:rouleauStart}).set(boule_pateapizza_anlic2, {opacity:1, x:200})
-                .to(ingredients_versees_anlic2, 1, {scale:0})
-                .to(instr_melange_anlic2, 0.5, {y:-800}, 0)
-                .to(boule_pateapizza_anlic2, 0.5, {scale:1.3, transformOrigin:"center"}, 1.5)
-                .to(bol_anlic2, 0.5, {x:1000})
-                .to(boule_pateapizza_anlic2, 0.5, {x:0},2)
-                .to(boule_pateapizza_anlic2, 0.5, {scale:1}, 2.5)
+                    .to(ingredients_versees_anlic2, 1, {scale:0})
+                    .to(instr_melange_anlic2, 0.5, {y:-800}, 0)
+                    .to(boule_pateapizza_anlic2, 0.5, {scale:1.3, transformOrigin:"center"}, 1.5)
+                    .to(bol_anlic2, 0.5, {x:1000})
+                    .to(boule_pateapizza_anlic2, 0.5, {x:0},2)
+                    .to(boule_pateapizza_anlic2, 0.5, {scale:1}, 2.5)
             }else{
                 pizza_sounds['melanger'].pause();
                 hideFleche(fleche_melange_anlic2, false);
@@ -500,23 +569,23 @@ export default {
 
         //Animation pâte étirée
         var clipper_bouleapizza_anlic2 = $('#clipper-bouleapizza-anlic2'), //clipper
-                clipper_patecr1_anlic2 = $('#clipper-patecr1-anlic2'), //clipper
-                clipper_patecr2_anlic2 = $('#clipper-patecr2-anlic2'), //clipper
-                pate_ecr2_anlic2 = $('#pate-ecr2-anlic2'),
-                rouleau_anlic2 = $('#rouleau-anlic2'),
-                rouleau_passe = 0,
-                //instructions
-                instr_ecrase_anlic2 = $('#instr-ecrase-anlic2'),
-                finger1_anlic2 = $('#finger1-anlic2'),
-                finger2_anlic2 = $('#finger2-anlic2');
+            clipper_patecr1_anlic2 = $('#clipper-patecr1-anlic2'), //clipper
+            clipper_patecr2_anlic2 = $('#clipper-patecr2-anlic2'), //clipper
+            pate_ecr2_anlic2 = $('#pate-ecr2-anlic2'),
+            rouleau_anlic2 = $('#rouleau-anlic2'),
+            rouleau_passe = 0,
+            //instructions
+            instr_ecrase_anlic2 = $('#instr-ecrase-anlic2'),
+            finger1_anlic2 = $('#finger1-anlic2'),
+            finger2_anlic2 = $('#finger2-anlic2');
 
         TweenLite.set(rouleau_anlic2, {x:500});
         TweenLite.set([instr_ecrase_anlic2, finger1_anlic2, finger2_anlic2], {y:500});
 
         function rouleauStart(){
             new TimelineMax().to(rouleau_anlic2, 0.5, {x:0})
-            .to([instr_ecrase_anlic2, finger1_anlic2], 0.5, {y:0}, 0)
-            .to([finger1_anlic2], 1, {y:-40, repeat:-1, repeatDelay:0.2, ease:Power1.easeOut});
+                .to([instr_ecrase_anlic2, finger1_anlic2], 0.5, {y:0}, 0)
+                .to([finger1_anlic2], 1, {y:-40, repeat:-1, repeatDelay:0.2, ease:Power1.easeOut});
         }
 
         rouleau_anlic2.hover(function(){
@@ -531,17 +600,17 @@ export default {
             rouleau_passe += 1;
             if(rouleau_passe==1){
                 new TimelineMax().set(rouleau_anlic2, {scale:0.9})
-                .to([rouleau_anlic2, clipper_bouleapizza_anlic2, clipper_patecr1_anlic2], 1, {x:-1200})
-                .to(rouleau_anlic2, 0.5, {scale:1})
-                .to(finger2_anlic2, 0.5, {y:0}, 1)
-                .to(finger2_anlic2, 1, {y:-40, repeat:-1, repeatDelay:0.2, ease:Power1.easeOut}, 1.5);
+                    .to([rouleau_anlic2, clipper_bouleapizza_anlic2, clipper_patecr1_anlic2], 1, {x:-1200})
+                    .to(rouleau_anlic2, 0.5, {scale:1})
+                    .to(finger2_anlic2, 0.5, {y:0}, 1)
+                    .to(finger2_anlic2, 1, {y:-40, repeat:-1, repeatDelay:0.2, ease:Power1.easeOut}, 1.5);
                 finger1_anlic2.hide();
             }else if (rouleau_passe==2) {
                 new TimelineMax({onComplete:garnitureStart}).set(rouleau_anlic2, {scale:0.9})
-                .to(instr_ecrase_anlic2, 0.5, {y:500})
-                .to([rouleau_anlic2, clipper_patecr1_anlic2], 1.5, {x:400},0)
-                .to(clipper_patecr2_anlic2, 1, {x:1200}, 0)
-                .to(rouleau_anlic2, 0.5, {scale:1});
+                    .to(instr_ecrase_anlic2, 0.5, {y:500})
+                    .to([rouleau_anlic2, clipper_patecr1_anlic2], 1.5, {x:400},0)
+                    .to(clipper_patecr2_anlic2, 1, {x:1200}, 0)
+                    .to(rouleau_anlic2, 0.5, {scale:1});
                 finger2_anlic2.hide();
             }
         })
@@ -549,44 +618,44 @@ export default {
 
         //Animation garniture
         var pizza_anlic2 =$('#pizza-anlic2'), //pizza complète
-                //Ingredients étalés
-                sauce_etale_anlic2 = $('#sauce-etale-anlic2'),
-                mozza_etale_anlic2 = $('#mozza-etale-anlic2'),
-                tomates_etale_anlic2 = $('#tomates-etalees-anlic2'),
-                basilique_etale_anlic2 = $('#basilique-etale-anlic2'),
-                //ingredients
-                sauce_anlic2 = $('#sauce-anlic2'),
-                mozza_anlic2 = $('#mozza-anlic2'),
-                tomates_anlic2 = $('#tomates-anlic2'),
-                basilique_anlic2 = $('#basilique-anlic2'),
-                //instructions
-                instr_sauce_anlic2 = $('#instr-sauce-anlic2'),
-                instr_mozza_anlic2 = $('#instr-mozza-anlic2'),
-                instr_tomates_anlic2 = $('#instr-tomates-anlic2'),
-                instr_basilique_anlic2 = $('#instr-basilique-anlic2');
+            //Ingredients étalés
+            sauce_etale_anlic2 = $('#sauce-etale-anlic2'),
+            mozza_etale_anlic2 = $('#mozza-etale-anlic2'),
+            tomates_etale_anlic2 = $('#tomates-etalees-anlic2'),
+            basilic_etale_anlic2 = $('#basilic-etale-anlic2'),
+            //ingredients
+            sauce_anlic2 = $('#sauce-anlic2'),
+            mozza_anlic2 = $('#mozza-anlic2'),
+            tomates_anlic2 = $('#tomates-anlic2'),
+            basilic_anlic2 = $('#basilic-anlic2'),
+            //instructions
+            instr_sauce_anlic2 = $('#instr-sauce-anlic2'),
+            instr_mozza_anlic2 = $('#instr-mozza-anlic2'),
+            instr_tomates_anlic2 = $('#instr-tomates-anlic2'),
+            instr_basilic_anlic2 = $('#instr-basilic-anlic2');
 
-        TweenLite.set([sauce_anlic2, mozza_anlic2, tomates_anlic2, basilique_anlic2], {x:-500})
-        TweenLite.set([instr_sauce_anlic2, instr_mozza_anlic2, instr_tomates_anlic2, instr_basilique_anlic2], {y:500})
-        TweenLite.set([sauce_etale_anlic2, mozza_etale_anlic2, tomates_etale_anlic2, basilique_etale_anlic2], {scale:0, transformOrigin:"center"})
+        TweenLite.set([sauce_anlic2, mozza_anlic2, tomates_anlic2, basilic_anlic2], {x:-500})
+        TweenLite.set([instr_sauce_anlic2, instr_mozza_anlic2, instr_tomates_anlic2, instr_basilic_anlic2], {y:500})
+        TweenLite.set([sauce_etale_anlic2, mozza_etale_anlic2, tomates_etale_anlic2, basilic_etale_anlic2], {scale:0, transformOrigin:"center"})
 
         function garnitureStart (){
-            TweenLite.set([mozza_etale_anlic2, tomates_etale_anlic2, basilique_etale_anlic2], {opacity:0, scale:1.5, transformOrigin:"center"})
+            TweenLite.set([mozza_etale_anlic2, tomates_etale_anlic2, basilic_etale_anlic2], {opacity:0, scale:1.5, transformOrigin:"center"})
             new TimelineLite().to(sauce_anlic2, 0.5, {x:0, ease:Power2.easeOut})
-            .add(function(){hideFleche(fleche_ing_anlic2, false)})
-            .to(instr_sauce_anlic2, 0.5, {y:0, ease:Power2.easeOut},0);
+                .add(function(){hideFleche(fleche_ing_anlic2, false)})
+                .to(instr_sauce_anlic2, 0.5, {y:0, ease:Power2.easeOut},0);
             drag_ing(sauce_anlic2);
         }
 
         //Animation partie four
         var fond_four_anlic2 = $('#fond-four-anlic2'),
-                pelle_four_anlic2 = $('#pelle-four-anlic2'),
-                four_anlic2 = $('#four-anlic2'), //partie haute du four
-                feu_four_anlic2 = $('#feu-four-anlic2'),
-                pizzaetpelle_anlic2 = $('#pizzaetpelle_anlic2'),
-                //Instructions
-                instr_four_anlic2 = $('#instr-four-anlic2'),
-                fleche_four_anlic2 = $('#fleche-four-anlic2'),
-                bravo_anlic2 = $('#bravo-anlic2');
+            pelle_four_anlic2 = $('#pelle-four-anlic2'),
+            four_anlic2 = $('#four-anlic2'), //partie haute du four
+            feu_four_anlic2 = $('#feu-four-anlic2'),
+            pizzaetpelle_anlic2 = $('#pizzaetpelle_anlic2'),
+            //Instructions
+            instr_four_anlic2 = $('#instr-four-anlic2'),
+            fleche_four_anlic2 = $('#fleche-four-anlic2'),
+            bravo_anlic2 = $('#bravo-anlic2');
 
         TweenLite.set([four_anlic2, fond_four_anlic2], {y:-500});
         TweenLite.set(pelle_four_anlic2, {y:1000});
@@ -598,10 +667,10 @@ export default {
 
         function enfournerStart(){
             new TimelineLite({onComplete:fourDrag}).to(pelle_four_anlic2, 0.5, {y:0})
-            .to(pelle_four_anlic2, 0.5, {scale:0.7, transformOrigin:"50% 18%"})
-            .to(pizza_anlic2, 0.5, {scale:0.7, transformOrigin:"center"}, 0.5)
-            .to([pelle_four_anlic2, pizza_anlic2], 0.5, {y:200})
-            .to([four_anlic2, fond_four_anlic2], 0.5, {y:0}, 0.5);
+                .to(pelle_four_anlic2, 0.5, {scale:0.7, transformOrigin:"50% 18%"})
+                .to(pizza_anlic2, 0.5, {scale:0.7, transformOrigin:"center"}, 0.5)
+                .to([pelle_four_anlic2, pizza_anlic2], 0.5, {y:200})
+                .to([four_anlic2, fond_four_anlic2], 0.5, {y:0}, 0.5);
             TweenMax.to(feu_four_anlic2, 0.3, {opacity:0.3, repeat:-1, yoyo:true, ease:Power0.easeNone})
         }
 
@@ -619,12 +688,12 @@ export default {
                 pizzadrag.disable();
                 instr_four_anlic2.hide();
                 new TimelineMax().to(pelle_four_anlic2, 0.5, {y:1000})
-                .to(pate_ecr2_anlic2, 3, {fill:"#e5c480"})
-                .to(pelle_four_anlic2, 0.5, {y:200})
-                .to(pizzaetpelle_anlic2, 0.5, {y:0})
-                .to(pelle_four_anlic2, 1, {y:2000})
-                .to(pizza_anlic2, 1, {x:-300, scale:1.5})
-                .to(bravo_anlic2, 0.5, {scale:1});
+                    .to(pate_ecr2_anlic2, 3, {fill:"#e5c480"})
+                    .to(pelle_four_anlic2, 0.5, {y:200})
+                    .to(pizzaetpelle_anlic2, 0.5, {y:0})
+                    .to(pelle_four_anlic2, 1, {y:2000})
+                    .to(pizza_anlic2, 1, {x:-300, scale:1.5})
+                    .to(bravo_anlic2, 0.5, {scale:1});
 
                 pizza_sounds['four'].play();
                 setTimeout(function(){

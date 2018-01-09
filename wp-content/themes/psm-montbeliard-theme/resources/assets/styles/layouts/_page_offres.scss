@@ -5,6 +5,7 @@ div.job_listings{
     margin: 0;
 }
 #page_offer_section_form{
+    z-index: 2;
     margin-top: -50px;
     background-color: $secondaire-bleu;
     min-height: 200px;

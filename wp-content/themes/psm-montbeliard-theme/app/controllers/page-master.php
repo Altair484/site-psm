@@ -52,8 +52,7 @@ class master_psm extends Controller
             ),
         );
 
-        //todo: Replace "others" with the right name
-        $filter_others_school_subjects = array(
+        $filter_communication_school_subjects = array(
             'orderby' => 'title',
             'order'   => 'ASC',
             'post_type' => 'school-subject',
@@ -67,16 +66,14 @@ class master_psm extends Controller
                 array(
                     'taxonomy' => 'school-subject-cat',
                     'field'    => 'slug',
-                    //todo: Replace "autres" with the right name
-                    'terms'    => 'autres',
+                    'terms'    => 'communication',
                 ),
             ),
         );
 
         $wp_query['school-subject-dev'] = new WP_Query($filter_dev_school_subjects);
         $wp_query['school-subject-project-managment'] = new WP_Query($filter_project_managment_school_subjects);
-        //todo: Replace "others" with the right name
-        $wp_query['school-subject-others'] = new WP_Query($filter_others_school_subjects);
+        $wp_query['school-subject-communication'] = new WP_Query($filter_communication_school_subjects);
 
         return $wp_query;
     }
@@ -120,8 +117,7 @@ class master_psm extends Controller
             ),
         );
 
-        //todo: Replace "others" with the right name
-        $filter_others_school_subjects = array(
+        $filter_communication_school_subjects = array(
             'orderby' => 'title',
             'order'   => 'ASC',
             'post_type' => 'school-subject',
@@ -135,16 +131,14 @@ class master_psm extends Controller
                 array(
                     'taxonomy' => 'school-subject-cat',
                     'field'    => 'slug',
-                    //todo: Replace "autres" with the right name
-                    'terms'    => 'autres',
+                    'terms'    => 'communication',
                 ),
             ),
         );
 
         $wp_query['school-subject-dev'] = new WP_Query($filter_dev_school_subjects);
         $wp_query['school-subject-project-managment'] = new WP_Query($filter_project_managment_school_subjects);
-        //todo: Replace "others" with the right name
-        $wp_query['school-subject-others'] = new WP_Query($filter_others_school_subjects);
+        $wp_query['school-subject-communication'] = new WP_Query($filter_communication_school_subjects);
 
         return $wp_query;
     }

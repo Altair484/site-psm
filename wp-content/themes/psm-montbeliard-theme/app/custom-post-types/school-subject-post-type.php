@@ -8,18 +8,18 @@
 add_action( 'init', 'codex_school_subject_init' );
 function codex_school_subject_init() {
     $labels = array(
-        'name'               => _x( 'Matières', 'post type general name'),
-        'singular_name'      => _x( 'Matière', 'post type singular name'),
+        'name'               => _x( 'Unité d\'enseignement', 'post type general name'),
+        'singular_name'      => _x( 'Unité d\'enseignement', 'post type singular name'),
         'menu_name'          => _x( 'Pédagogie', 'admin menu'),
         'name_admin_bar'     => _x( 'Matières', 'add new on admin bar'),
-        'add_new'            => _x( 'Ajouter une matière', 'school-subject'),
-        'add_new_item'       => __( 'Ajouter une matière'),
-        'new_item'           => __( 'Nouvelle matière'),
-        'edit_item'          => __( 'Éditer une matière'),
-        'view_item'          => __( 'Voir une matière'),
-        'all_items'          => __( 'Toutes les matières'),
-        'search_items'       => __( 'Rechercher une matière'),
-        'parent_item_colon'  => __( 'Matières parentes'),
+        'add_new'            => _x( 'Ajouter une unité d\'enseignement', 'school-subject'),
+        'add_new_item'       => __( 'Ajouter une unité d\'enseignement'),
+        'new_item'           => __( 'Nouvelle unité d\'enseignement'),
+        'edit_item'          => __( 'Éditer une unité d\'enseignement'),
+        'view_item'          => __( 'Voir une unité d\'enseignement'),
+        'all_items'          => __( 'Toutes les unité d\'enseignement'),
+        'search_items'       => __( 'Rechercher une unité d\'enseignement'),
+        'parent_item_colon'  => __( 'Unité d\'enseignement parentes'),
         'not_found'          => __( 'Pas de résultats'),
         'not_found_in_trash' => __( 'Aucune matière trouvée dans la corbeille')
     );
@@ -82,31 +82,6 @@ function create_school_subject_taxonomies() {
         'rewrite'           => array( 'slug' => 'formation' ),
     );
     register_taxonomy( 'formation', array( 'school-subject' ), $args );
-
-    // Ajout d'une taxonomie de type catégorie (UE)
-    $labels = array(
-        'name'              => _x( 'Unités d\'enseignements', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Unité d\'enseignement', 'taxonomy singular name' ),
-        'search_items'      => __( 'Rechercher' ),
-        'all_items'         => __( 'Tout' ),
-        'parent_item'       => __( 'Unité d\'enseignement parente' ),
-        'parent_item_colon' => __( 'Unité d\'enseignement parente' ),
-        'edit_item'         => __( 'Éditer' ),
-        'update_item'       => __( 'Mettre à jour' ),
-        'add_new_item'      => __( 'Ajouter' ),
-        'new_item_name'     => __( 'Nouveau' ),
-        'menu_name'         => __( 'Unités d\'enseignements' ),
-    );
-
-    $args = array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'unite-enseignement' ),
-    );
-    register_taxonomy( 'unite-enseignement', array( 'school-subject' ), $args );
 
     // Ajout d'une taxonomie de type catégorie (Semestre)
     $labels = array(

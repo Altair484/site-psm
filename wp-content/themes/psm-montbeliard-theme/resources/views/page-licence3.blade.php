@@ -11,7 +11,7 @@
                 <div id="player"></div>
             </div>
         </div>
-        <h1 class="licence-page-section-header-title"><i class="fa fa-graduation-cap"></i>&nbsp;{{ get_theme_mod('licence_page_header_section_title', get_the_title().' 3 Produits et Services Multimédia') }}</h1>
+        <h1 class="licence-page-section-header-title"><i class="fa fa-graduation-cap"></i>&nbsp;{{ get_theme_mod('licence_page_header_section_title', get_the_title().' Produits et Services Multimédia') }}</h1>
         <div class="mouse">
             <div class="scroll"></div>
         </div>
@@ -79,7 +79,7 @@
                             <div class="losange no-hover">
                             </div>
                             <div class="losange">
-                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-comments-o"></i>
                                 <h4>{!! $get_school_subjects_list[0]->name !!}</h4>
                             </div>
                             <div class="losange">
@@ -95,16 +95,13 @@
                             @while($get_programme_licence_3['school-subject-dev']->have_posts())
                                 @php
                                     $get_programme_licence_3['school-subject-dev']->the_post();
-                                    $ue = get_the_terms($get_programme_licence_3['school-subject-dev']->ID, 'unite-enseignement')[0]->name;
                                 @endphp
                                 <div class="accordeon-title">
                                     <h4 >{{ get_the_title() }}</h4>
                                     <i class="fa"></i>
                                 </div>
 
-                                <div class="accordeon-content" >
-                                    <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
-                                    <hr>
+                                <div class="accordeon-content">
                                     {!! wpautop( get_the_content() ) !!}
                                 </div>
                             @endwhile
@@ -116,7 +113,6 @@
                             @while($get_programme_licence_3['school-subject-project-managment']->have_posts())
                                 @php
                                     $get_programme_licence_3['school-subject-project-managment']->the_post();
-                                    $ue = get_the_terms($get_programme_licence_3->ID, 'unite-enseignement')[0]->name;
                                 @endphp
                                 <div class="accordeon-title">
                                     <h4 >{{ get_the_title() }}</h4>
@@ -124,8 +120,6 @@
                                 </div>
 
                                 <div class="accordeon-content">
-                                    <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
-                                    <hr>
                                     {!! wpautop( get_the_content() ) !!}
                                 </div>
                             @endwhile
@@ -135,11 +129,9 @@
 
                         <!-- ACCORDEON AUTRES-->
                         <div class="accordeon">
-                            {{--Todo: Remplacer "school-subject-others" par le vrai nom--}}
-                            @while($get_programme_licence_3['school-subject-others']->have_posts())
+                            @while($get_programme_licence_3['school-subject-communication']->have_posts())
                                 @php
-                                    $get_programme_licence_3['school-subject-others']->the_post();
-                                    $ue = get_the_terms($get_programme_licence_3->ID, 'unite-enseignement')[0]->name;
+                                    $get_programme_licence_3['school-subject-communication']->the_post();
                                 @endphp
                                 <div class="accordeon-title">
                                     <h4 >{{ get_the_title() }}</h4>
@@ -147,8 +139,8 @@
                                 </div>
 
                                 <div class="accordeon-content">
-                                    <p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
-                                    <hr>
+                                    {{--<p class="unite-enseignement">Unité d'enseignement : {!! ($ue != null) ? _e($ue) : 'Non renseignée'  !!}</p>
+                                    <div class="separator"></div>--}}
                                     {!! wpautop( get_the_content() ) !!}
                                 </div>
                             @endwhile

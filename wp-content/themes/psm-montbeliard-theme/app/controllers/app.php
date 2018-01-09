@@ -61,6 +61,14 @@ class App extends Controller
         return $default_img;
     }
 
+    public static function get_image_projects() {
+        if(has_post_thumbnail()){
+            the_post_thumbnail();
+        }else{
+            _e('<img src="http://via.placeholder.com/595x842" alt="Placeholder">');
+        }
+    }
+
     public function get_max_post_per_page(){
         $max_post_per_page = get_option( 'posts_per_page' );
         return $max_post_per_page;

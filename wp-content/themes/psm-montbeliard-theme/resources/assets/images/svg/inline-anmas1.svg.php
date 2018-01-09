@@ -44,7 +44,7 @@
     .anmas1_st40{opacity:0.4;fill:#3F3127;}
     .anmas1_st41{fill:#020202;}
     .anmas1_st42{opacity:0.3;fill:#E8E8E8;}
-    .anmas1_st43{font-family:'Lato-Light';}
+    .anmas1_st43{font-family:'Source Sans Pro';}
     .anmas1_st44{font-size:18.1154px;}
     .anmas1_st45{opacity:0.4;}
     .anmas1_st46{font-family:'Source Sans Pro';}
@@ -820,7 +820,7 @@
 					C520.1,166.6,515.2,154.8,505.4,145z M420.3,130.4h-25v124.7h25v-99.8c6.8,0,12.7,2.4,17.6,7.3c4.9,4.9,7.3,10.8,7.3,17.6v74.8
 					h24.9v-74.8c0-13.7-4.9-25.5-14.7-35.2C445.7,135.3,434,130.4,420.3,130.4z"/>
                 </g>
-                <text id="heure-anmas1" transform="matrix(1 0 0 1 678.7881 251.4482)" class="anmas1_st4 anmas1_st43 anmas1_st53">23 02</text>
+                <text id="heure-anmas1" transform="matrix(1 0 0 1 711.7881 251.4482)" class="anmas1_st4 anmas1_st43 anmas1_st53">23 02</text>
                 <g id="deuxpoints-anmas1">
                     <path class="anmas1_st30" d="M871.9,179.9v-6h6v6H871.9z M871.9,220.7v-6h6v6H871.9z"/>
                 </g>

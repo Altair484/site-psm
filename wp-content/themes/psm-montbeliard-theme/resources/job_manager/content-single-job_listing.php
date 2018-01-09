@@ -25,6 +25,7 @@ global $post;
         <div class="col-12 col-xl-6 offset-xl-1 job_listing_preview">
             <div class="row">
                 <div class="col-12 no-padding">
+                    <h1><?php _e( wpjm_the_job_title(), 'wp-job-manager' ); ?></h1>
                     <h2><?php _e( 'Profil recherché', 'wp-job-manager' ); ?></h2>
                     <div class="job_profile">
                         <?php echo(wpautop(get_post_meta($post->ID, '_job_profile', true))) ?>

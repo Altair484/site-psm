@@ -2,6 +2,15 @@
  * Project page - Section PRESENTATION
 /* ---------------------------------------------- */
 #projects-page-presentation-section {
+    background-color: $tertiaire-gris-blanc;
+    .content{
+        background-color: $secondaire-bleu;
+        .text{
+            p{
+                color: #fff;
+            }
+        }
+    }
     #projects-navigation{
         min-height: 200px;
         display: flex;
@@ -10,7 +19,7 @@
         flex-direction: column;
         h4{
             text-align: center;
-            @include setup-font($lovelo, #ffffff, normal);
+            @include setup-font($lovelo, #000, normal);
             @include responsive-font(0, 3.5rem, 3.2rem, 2.9rem, 2.6rem,2.5rem);
         }
 
@@ -46,8 +55,8 @@ section.project {
 
 section.noProjectsResults {
     padding: 50px;
-    background-color: $secondaire-bleu;
+    background-color: $tertiaire-gris-blanc;
     text-align: center;
-    @include setup-font($sourceSansPro, #ffffff, normal);
+    @include setup-font($sourceSansPro, #000, normal);
     @include responsive-font(0, 3rem, 2.8rem, 2.6rem, 2.4rem, 2.2rem);
 }
