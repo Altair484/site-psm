@@ -1,23 +1,23 @@
 @extends('layouts.app')
-
 @section('content')
-	<section id="welcome-section" style="background-image: url('{!! get_theme_mod('home_page_welcome_section_img',\App\App::get_image_page_header('dept-mm', 'jpg')) !!}')">
-		<div class="filter"></div>
-		<div class="row">
-			<div id="welcome-left-collumn" class="col-12 col-md-7">
-				<div id="logo-welcome" class="col-9 col-sm-7 offset-sm-1 no-padding hidden-md-down">
-					<h1>{{bloginfo()}}</h1>
-				</div>
-				<div id="svg-slider-texte" class="col-12 col-sm-10 offset-sm-1 no-padding">
-					<div id="text-slider-container">
-						<div id="text-slider-idee" class="col-12 no-padding text-slider">
-							<h3 class="home_page_welcome_section_slide_1_title">
+
+    <section id="welcome-section" style="background-image: url('{!! get_theme_mod('home_page_welcome_section_img',\App\App::get_image_page_header('dept-mm', 'jpg')) !!}')">
+        <div class="filter"></div>
+        <div class="row">
+            <div id="welcome-left-collumn" class="col-12 col-md-7">
+                <div id="logo-welcome" class="col-9 col-sm-7 offset-sm-1 no-padding hidden-md-down">
+                    <h1>{{bloginfo()}}</h1>
+                </div>
+                <div id="svg-slider-texte" class="col-12 col-sm-10 offset-sm-1 no-padding">
+                    <div id="text-slider-container">
+                        <div id="text-slider-idee" class="col-12 no-padding text-slider">
+                            <h3 class="home_page_welcome_section_slide_1_title">
                                 {{ get_theme_mod(
                                     'home_page_welcome_section_slide_1_title',
                                     'Berceau d\'idées innovantes')
                                 }}
                             </h3>
-							<p class="home_page_welcome_section_slide_1_text">
+                            <p class="home_page_welcome_section_slide_1_text">
                                 {!! get_theme_mod(
                                     'home_page_welcome_section_slide_1_text',
                                     'Les plus grandes innovations naissent d\'idées simples. Les étudiants de PSM sont encouragés à '.
@@ -30,8 +30,8 @@
                                 <button class="btn btn-transparent hide-text-slider">Fermer</button>
                                 <button class="btn btn-psm-green next-slide">Suivant</button>
                             </div>
-						</div>
-						<div id="text-slider-reunion" class="col-12 no-padding text-slider">
+                        </div>
+                        <div id="text-slider-reunion" class="col-12 no-padding text-slider">
                             <h3 class="home_page_welcome_section_slide_2_title">
                                 {{ get_theme_mod(
                                     'home_page_welcome_section_slide_2_title',
@@ -51,8 +51,8 @@
                                 <button class="btn btn-transparent hide-text-slider">Fermer</button>
                                 <button class="btn btn-psm-green next-slide">Suivant</button>
                             </div>
-						</div>
-						<div id="text-slider-travail" class="col-12 no-padding text-slider">
+                        </div>
+                        <div id="text-slider-travail" class="col-12 no-padding text-slider">
                             <h3 class="home_page_welcome_section_slide_3_title">
                                 {{ get_theme_mod(
                                     'home_page_welcome_section_slide_3_title',
@@ -72,8 +72,8 @@
                                 <button class="btn btn-transparent hide-text-slider">Fermer</button>
                                 <button class="btn btn-psm-green next-slide">Suivant</button>
                             </div>
-						</div>
-						<div id="text-slider-deploiement" class="col-12 no-padding text-slider">
+                        </div>
+                        <div id="text-slider-deploiement" class="col-12 no-padding text-slider">
                             <h3 class="home_page_welcome_section_slide_4_title">
                                 {{ get_theme_mod(
                                     'home_page_welcome_section_slide_4_title',
@@ -93,25 +93,25 @@
                             <div class="btns-box">
                                 <button class="btn btn-transparent hide-text-slider">Fermer</button>
                             </div>
-						</div>
-					</div>
-                  {{--  <div class="swipe-container">
-                        {!! get_template_part('../dist/images/svg/inline', 'swipe.svg') !!}
-                    </div>--}}
-				</div>
-			</div>
-			<div id="welcome-right-collumn" class="col-12 col-md-5 ">
-				<div id="animations_home">
-					<div class="col-12 svg-container" id="idee">
-						{!! get_template_part('/assets/images/svg/inline', 'idee.svg') !!}
+                        </div>
+                    </div>
+                    {{--  <div class="swipe-container">
+                          {!! get_template_part('../dist/images/svg/inline', 'swipe.svg') !!}
+                      </div>--}}
+                </div>
+            </div>
+            <div id="welcome-right-collumn" class="col-12 col-md-5 ">
+                <div id="animations_home">
+                    <div class="col-12 svg-container" id="idee">
+                        {!! get_template_part('/assets/images/svg/inline', 'idee.svg') !!}
                         <button class="btn btn-psm-green show-text-slider">
                             {{ get_theme_mod(
                                'home_page_welcome_section_slide_1_title',
                                'Berceau d\'idées innovantes')
                            }}
                         </button>
-					</div>
-					<div class="col-12 svg-container" id="reunion">
+                    </div>
+                    <div class="col-12 svg-container" id="reunion">
                         {!! get_template_part('/assets/images/svg/inline', 'reunion.svg') !!}
                         <button class="btn btn-psm-green show-text-slider">
                             {{ get_theme_mod(
@@ -119,8 +119,8 @@
                                 'Des compétences de leader'
                             )}}
                         </button>
-					</div>
-					<div class="col-12 svg-container" id="travail">
+                    </div>
+                    <div class="col-12 svg-container" id="travail">
                         {!! get_template_part('/assets/images/svg/inline', 'travail.svg') !!}
                         <button class="btn btn-psm-green show-text-slider">
                             {{ get_theme_mod(
@@ -128,8 +128,8 @@
                                 'Partager, valoriser, réussir'
                             ) }}
                         </button>
-					</div>
-					<div class="col-12 svg-container" id="deploiement">
+                    </div>
+                    <div class="col-12 svg-container" id="deploiement">
                         {!! get_template_part('/assets/images/svg/inline', 'deploiement.svg') !!}
                         <button class="btn btn-psm-green show-text-slider">
                             {{ get_theme_mod(
@@ -137,9 +137,9 @@
                                'La qualité avant tout'
                            ) }}
                         </button>
-					</div>
-				</div>
-			</div>
+                    </div>
+                </div>
+            </div>
             <div class="slider-nav col-12 no-padding">
                 <ul id="svg-slider-buttons" class="col-10">
                     <li><i id="prev" class="inactive fa fa-angle-double-left "></i></li>
@@ -150,27 +150,27 @@
                     <li><i id="next" class="fa fa-angle-double-right"></i></li>
                 </ul>
             </div>
-		</div>
-		{{--<div class="mouse">
-			<div class="scroll"></div>
-		</div>--}}
-	</section>
-	<!-- Welcome section end -->
+        </div>
+        {{--<div class="mouse">
+            <div class="scroll"></div>
+        </div>--}}
+    </section>
+    <!-- Welcome section end -->
 
-	<!-- Presentation section start -->
-	<section id="presentation-section" class="section-image-left-content-right">
-		<div class="row justify-content-center align-items-center">
-			<div class="losange"></div>
-			<div class="losange"></div>
-			<div class="losange"></div>
-			<div class="losange"></div>
-			<div class="content offset-0 offset-md-2 col-12 col-md-9">
-				<div class="row">
-					<div class="picture col-12 col-md-4 no-padding">
-                            {!! get_template_part('/assets/images/svg/inline', 'anac1.svg') !!}
-					</div>
-					<div class="text col-12 col-md-8 d-flex justify-content-center align-items-start flex-column">
-						<h2 class="home_page_presentation_section_title">
+    <!-- Presentation section start -->
+    <section id="presentation-section" class="section-image-left-content-right">
+        <div class="row justify-content-center align-items-center">
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="content offset-0 offset-md-2 col-12 col-md-9">
+                <div class="row">
+                    <div class="picture col-12 col-md-4 no-padding">
+                        {!! get_template_part('/assets/images/svg/inline', 'anac1.svg') !!}
+                    </div>
+                    <div class="text col-12 col-md-8 d-flex justify-content-center align-items-start flex-column">
+                        <h2 class="home_page_presentation_section_title">
                             {{ get_theme_mod(
                                 'home_page_presentation_section_title',
                                 'PASSIONNÉS ET SUPER MOTIVÉS !'
@@ -195,60 +195,60 @@
                             </a>
                         </span>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Presentation section end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Presentation section end -->
 
-	<!-- Formation section start -->
-	<section id="formations-section">
-		<div class="row formations ">
-			<a href="{{ site_url().'/licence' }}" style="background-image:url('{{ get_theme_mod(
+    <!-- Formation section start -->
+    <section id="formations-section">
+        <div class="row formations ">
+            <a href="{{ site_url().'/licence' }}" style="background-image:url('{{ get_theme_mod(
 			        'home_page_formations_section_img_1',
 			        get_template_directory_uri(). '/../dist/images/960-960-city-1.jpg'
 			    ) }}')" class="formation home_page_formations_section_img_1">
-				<div class="filter"></div>
-				<h2>L<span class="writing-letter">ICENCE</span>3</h2>
-			</a>
+                <div class="filter"></div>
+                <h2>L<span class="writing-letter">ICENCE</span>3</h2>
+            </a>
 
-			<a href="{{add_query_arg( 'formation', 'm1', site_url().'/master' )}}" style="background-image:url('{{ get_theme_mod(
+            <a href="{{add_query_arg( 'formation', 'm1', site_url().'/master' )}}" style="background-image:url('{{ get_theme_mod(
 			        'home_page_formations_section_img_2',
 			        get_template_directory_uri(). '/../dist/images/960-960-city-2.jpg'
 			    )}}')" class="formation home_page_formations_section_img_2">
-				<div class="filter"></div>
-				<h2 class="formation-title">M<span class="writing-letter">ASTER</span>1</h2>
-			</a>
+                <div class="filter"></div>
+                <h2 class="formation-title">M<span class="writing-letter">ASTER</span>1</h2>
+            </a>
 
-			<a href="{{add_query_arg( 'formation', 'm2', site_url().'/master' )}}" style="background-image:url('{{ get_theme_mod(
+            <a href="{{add_query_arg( 'formation', 'm2', site_url().'/master' )}}" style="background-image:url('{{ get_theme_mod(
 			        'home_page_formations_section_img_3',
 			           get_template_directory_uri(). '/../dist/images/960-960-city-3.jpg'
 			    )}}')" class="formation home_page_formations_section_img_3">
-				<div class="filter"></div>
-				<h2 class="formation-title">M<span class="writing-letter">ASTER</span>2</h2>
-			</a>
-		</div>
-	</section>
-	<!-- Formation section end -->
+                <div class="filter"></div>
+                <h2 class="formation-title">M<span class="writing-letter">ASTER</span>2</h2>
+            </a>
+        </div>
+    </section>
+    <!-- Formation section end -->
 
-	<!-- Projects section start -->
-	<section id="projects-section" class="section-image-right-content-left">
-		<div class="row justify-content-center align-items-center">
-			<div class="losange"></div>
-			<div class="losange"></div>
-			<div class="losange"></div>
-			<div class="losange"></div>
-			<div class="content col-12 col-md-9">
-				<div class="row">
-					<div class="text col-12 col-md-8 d-flex justify-content-center align-items-start flex-column">
-						<h2 class="home_page_projects_section_title">
+    <!-- Projects section start -->
+    <section id="projects-section" class="section-image-right-content-left">
+        <div class="row justify-content-center align-items-center">
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="content col-12 col-md-9">
+                <div class="row">
+                    <div class="text col-12 col-md-8 d-flex justify-content-center align-items-start flex-column">
+                        <h2 class="home_page_projects_section_title">
                             {{ get_theme_mod(
                                'home_page_projects_section_title',
                                'Des formations orientées projet !'
                            ) }}
                         </h2>
-						<p class="home_page_projects_section_text">
+                        <p class="home_page_projects_section_text">
                             {!! get_theme_mod(
                                 'home_page_projects_section_text',
                                 'Les <b>projets multimédia</b> sont le pain quotidien des étudiants de PSM. Chaque année, ils sont amenés à
@@ -258,8 +258,8 @@
                                 à des résultats remarquables.<br />
                                 Découvrez les projets réalisés au fil des années par nos étudiant dans la section dédiée de ce site !'
                             )!!}
-						</p>
-						<div class="btns-box">
+                        </p>
+                        <div class="btns-box">
                             <span class="home_page_projects_section_rhizome_page">
                                  <a class="btn btn-psm" href="{!! site_url() .'/?p='. get_theme_mod(
                                     'home_page_projects_section_rhizome_page',
@@ -272,51 +272,51 @@
                                     '1868'
                                 ) !!}">Projets fin d'études</a>
                             </span>
-						</div>
-					</div>
-					<div class="picture col-12 col-md-4">
+                        </div>
+                    </div>
+                    <div class="picture col-12 col-md-4">
                         {!! get_template_part('/assets/images/svg/inline', 'anac2.svg') !!}
-					</div>
-				</div>
-			</div>
-			<div class="col-md-2"></div>
-		</div>
-	</section>
-	<!-- Projects section end -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </section>
+    <!-- Projects section end -->
 
-	<!-- News section start -->
-	<section id="news-section">
-		<div class="row justify-content-around">
+    <!-- News section start -->
+    <section id="news-section">
+        <div class="row justify-content-around">
             {!! \App\FrontPage::get_three_news() !!}
             <div class="row w-100">
-				<div class="see-all-news  d-flex justify-content-center align-items-center col-12">
-					<a href="#" class="btn btn-psm">Voir toutes les actualités</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- News section end -->
+                <div class="see-all-news  d-flex justify-content-center align-items-center col-12">
+                    <a href="#" class="btn btn-psm">Voir toutes les actualités</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- News section end -->
 
-	<!-- Professional section start -->
-	<section id="professional-section">
-         <div class="row justify-content-center align-items-center">
-			<div class="losange"></div>
-			<div class="losange"></div>
-			<div class="losange"></div>
-			<div class="losange"></div>
-			<div id="professional-content" class="col-12 col-lg-11">
-				<div class="row">
-					<div id="professional-picture" class="col-12 col-md-4">
+    <!-- Professional section start -->
+    <section id="professional-section">
+        <div class="row justify-content-center align-items-center">
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div class="losange"></div>
+            <div id="professional-content" class="col-12 col-lg-11">
+                <div class="row">
+                    <div id="professional-picture" class="col-12 col-md-4">
                         {!! get_template_part('/assets/images/svg/inline', 'anac3.svg') !!}
-					</div>
-					<div id="professional-text" class="col-12 col-md-8 d-flex justify-content-center align-items-start flex-column">
-						<h2 class="home_page_professional_section_title">
+                    </div>
+                    <div id="professional-text" class="col-12 col-md-8 d-flex justify-content-center align-items-start flex-column">
+                        <h2 class="home_page_professional_section_title">
                             {{ get_theme_mod(
                                'home_page_professional_section_title',
                                'Un tremplin vers le monde du travail'
                             ) }}
                         </h2>
-						<p class="home_page_professional_section_text">
+                        <p class="home_page_professional_section_text">
                             {!! get_theme_mod(
                              'home_page_professional_section_text',
                              'La force de PSM est la <b>réussite</b> de ses étudiants dans le monde du travail. Pour atteindre ce but,
@@ -327,30 +327,30 @@
                              Vous êtes un professionnel et vous souhaitez soumettre une offre de stage / emploi à nos étudiants ?
                              Un formulaire est disponible pour vous dans la section <a href="#">Espace Pro</a>.'
                             )!!}
-						</p>
+                        </p>
                         <span class="home_page_professional_section_link_page_pro">
                              <a class="btn btn-psm" href="{!! site_url() .'/?p='. get_theme_mod(
                                 'home_page_professional_section_link_page_pro',
                                 '1868'
                             ) !!}">Espace pro</a>
                         </span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Professional section end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Professional section end -->
 
-	{{--  @if (!have_posts())
-			<div class="alert alert-warning">
-				{{ __('Sorry, no results were found.', 'sage') }}
-			</div>
-			{!! get_search_form(false) !!}
-		@endif
+    {{--  @if (!have_posts())
+            <div class="alert alert-warning">
+                {{ __('Sorry, no results were found.', 'sage') }}
+            </div>
+            {!! get_search_form(false) !!}
+        @endif
 
-		@while (have_posts()) @php(the_post())
-		@include('partials.content-'.get_post_type())
-		@endwhile
+        @while (have_posts()) @php(the_post())
+        @include('partials.content-'.get_post_type())
+        @endwhile
 
-		{!! get_the_posts_navigation() !!}--}}
+        {!! get_the_posts_navigation() !!}--}}
 @endsection

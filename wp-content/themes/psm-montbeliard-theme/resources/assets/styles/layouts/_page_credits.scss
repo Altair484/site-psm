@@ -1,0 +1,146 @@
+.is-not-home{
+    background-color: $secondaire-bleu!important;
+}
+#page-credits-section-team{
+    background-color: $secondaire-noir;
+    min-height: 100vh;
+    .row:nth-of-type(1){
+        padding-top: 40px;
+        @include lg{
+            padding-top: 125px;
+        }
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1{
+            text-align: center;
+            color: #fff;
+        }
+    }
+    .row:nth-of-type(2) {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .team-member-wrapper {
+            background-color: $tertiaire-gris-blanc;
+            box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            .team-member-content {
+                margin-top: 25px;
+                margin-bottom: 25px;
+                text-align: center;
+                padding: 50px 15px 50px 15px;
+
+                .team-member-name {
+                    h2 {
+                        @include transition(all 0.5s ease);
+                        padding-top: 15px;
+                        color: $secondaire-bleu;
+                    }
+                }
+                .team-member-desc {
+                    h3{
+                        @include transition(all 0.5s ease);
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                        @include setup-font($sourceSansPro, #888, 300);
+                        text-transform: inherit;
+                        font-style: italic;
+                    }
+
+                    h4 {
+                        @include transition(all 0.5s ease);
+                        padding-bottom: 15px;
+                        color: $secondaire-bleu;
+                    }
+
+                    ul{
+                        list-style: circle;
+                        padding-bottom: 15px;
+                        li{
+                            @include transition(all 0.5s ease);
+                            text-align: left;
+                            @include setup-font($sourceSansPro, #888, 300);
+                            @include responsive-font(0, 2rem);
+                            text-transform: inherit;
+                            font-style: italic;
+                        }
+                    }
+
+                }
+                .team-member-social-networks {
+                    display: flex;
+                    justify-content: center;
+                    a{
+                        &:nth-of-type(2){
+                            padding-left: 50px;
+                        }
+                        .fa{
+                            color: #888;
+                            font-size: 30px;
+                            @include transition(all 0.5s ease);
+                            &:hover{
+                                transform: scale(1.1);
+                                color: $primaire-vert;
+                                font-size: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include transition(all 0.5s ease);
+            &:hover{
+                background-color: $secondaire-bleu;
+                .team-member-content{
+                    .team-member-name{
+                        h2{
+                            color: $primaire-vert;
+                        }
+                    }
+                    .team-member-desc{
+                        h3{
+                            color: #fff;
+                        }
+
+                        h4{
+                            color: $primaire-vert;
+                        }
+
+                        li{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#page-credits-section-thanks {
+    background-color: $secondaire-bleu;
+    .row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        h2{
+            padding-top: 15px;
+            padding-bottom: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        p{
+            @include setup-font($sourceSansPro, $tertiaire-gris-blanc, 300);
+            font-style: italic;
+            font-size: 2rem;
+        }
+    }
+    .row:nth-of-type(2){
+
+    }
+}

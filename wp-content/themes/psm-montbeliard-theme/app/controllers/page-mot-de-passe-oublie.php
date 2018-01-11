@@ -5,6 +5,11 @@ namespace App;
 use wpdb;
 use Sober\Controller\Controller;
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
 class Mot_de_passe_oublie extends Controller
 {
     public static function forgot_password(){

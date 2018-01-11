@@ -2,6 +2,12 @@
 
 namespace App;
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
+
 /**
  * Add <body> classes
  */
@@ -98,9 +104,7 @@ add_filter( 'wp_get_nav_menu_items',function( $items) {
     return $items;
 }, 11, 3 );
 
-/**
- * Redirections
- */
+
 
 
 

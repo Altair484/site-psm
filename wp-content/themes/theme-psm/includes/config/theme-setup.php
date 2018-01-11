@@ -28,8 +28,8 @@ function wp_enqueue_styles_and_scripts(){
 	wp_enqueue_script( 'theme-psm-general.js');
 
 	if( is_home() || is_front_page()){
-		wp_register_script( 'theme-psm-home.js', get_template_directory_uri().'/assets/js/home.js','','1.1', true );
-		wp_enqueue_script( 'theme-psm-home.js');
+		wp_register_script( 'theme-psm-front-page.js', get_template_directory_uri().'/assets/js/front-page.js','','1.1', true );
+		wp_enqueue_script( 'theme-psm-front-page.js');
 	}else if( is_page('master') || is_page('licence') ){
 		wp_register_script( 'theme-psm-master.js', get_template_directory_uri().'/assets/js/master.js','','1.1', true );
 		wp_enqueue_script( 'theme-psm-master.js');

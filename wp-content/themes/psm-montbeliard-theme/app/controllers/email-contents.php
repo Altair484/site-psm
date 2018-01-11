@@ -4,6 +4,11 @@ namespace App;
 
 use Sober\Controller\Controller;
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
 class Email_contents extends Controller
 {
     private function get_sender(){

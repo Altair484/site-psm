@@ -11,6 +11,11 @@ namespace App;
 use WP_Query;
 use Sober\Controller\Controller;
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
 class Projets_rhizomes extends Controller
 {
     public function get_projects(){

@@ -4,7 +4,7 @@
 <section id="connexion_page_section_form">
     <div class="row justify-content-center">
         <div class="col-12 col-lg-6 col-xl-4 form-content">
-            <img src="{!! _e(get_template_directory_uri().'/../dist/images/svg/psm-logo.svg') !!}" alt="Vignette de connexion, image d'un étudiant.">
+            <img src="{{ App\App::get_random_svg_face() }}" alt="Vignette de connexion, image d'un étudiant.">
 
             <!-- Trys left -->
             @if($get_trys == 0 && get_option('activate_login_brute_force_protection') == 'true')

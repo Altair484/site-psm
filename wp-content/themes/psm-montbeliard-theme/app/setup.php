@@ -7,6 +7,12 @@ use Roots\Sage\Assets\JsonManifest;
 use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
+
 /**
  * Theme assets
  */
@@ -256,3 +262,7 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 /*Comment those lines exept if you want to test the website on smarphones*/
 /*define('WP_HOME','http://localhost/wordpress/site-psm-back/');
 define('WP_SITEURL','http://localhost/wordpress/site-psm-back/');*/
+
+
+
+

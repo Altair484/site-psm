@@ -10,6 +10,12 @@ namespace App\theme_customiser;
 
 use WP_Customize_Control;
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
+
 class Wysiwyg_editor_custom_control extends WP_Customize_Control
 {
     /**

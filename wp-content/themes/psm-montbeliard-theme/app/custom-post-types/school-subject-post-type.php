@@ -1,5 +1,11 @@
 <?php
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
+
 /**
  * Register Pédagogie Post Type
  *

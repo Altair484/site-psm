@@ -6,6 +6,11 @@ use WP_Customize_Image_Control;
 use WP_Customize_Upload_Control;
 use App\theme_customiser\Wysiwyg_editor_custom_control;
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
 /**
  * Theme customizer
  */
@@ -244,27 +249,3 @@ add_action('customize_register',  function( $wp_customize ) {
         }
     ]);
 });
-
-
-/**
- * Live preview modifications
- */
-/*add_action('customize_register', function (\WP_Customize_Manager $wp_customize) {
-    // Add postMessage support
-    $wp_customize->get_setting('blogname')->transport = 'postMessage';
-    $wp_customize->selective_refresh->add_partial('blogname', [
-        'selector' => '.brand',
-        'render_callback' => function () {
-            bloginfo('name');
-        }
-    ]);
-});*/
-
-/**
- * Customizer JS
- */
-/*add_action('customize_controls_enqueue_scripts', function () {
-    wp_enqueue_script('sage/customizer.js', asset_path('scripts/customizer.js'), ['customize-preview'], null, true);
-});*/
-
-

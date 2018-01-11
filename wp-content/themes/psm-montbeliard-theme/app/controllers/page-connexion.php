@@ -12,6 +12,11 @@ use Sober\Controller\Controller;
 use App\Auth\AntiBruteForce;
 use WP_Error;
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
 class Connexion extends Controller
 {
     /**

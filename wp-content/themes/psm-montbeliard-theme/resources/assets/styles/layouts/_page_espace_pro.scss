@@ -102,8 +102,7 @@
 
             h2{
                 padding: 20px 0 20px 0;
-                @include setup-font($lovelo, #000, 300);
-                @include responsive-font(0,3.6rem, 3.2rem, 2.8rem, 2.8rem, 2.8rem)
+                @include setup-font($lovelo, $secondaire-bleu, 300);
             }
         }
         .job_listing_preview{

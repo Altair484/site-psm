@@ -5,6 +5,11 @@ define('MM_BRUTE_FILE', get_template_directory().'/../app/auth/brute.txt');
 define('MM_BRUTE_WINDOW', 900);
 define('MM_BRUTE_ATTEMPTS', 5);
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
 class AntiBruteForce {
 
 	//call with no parameters to get a true/false response. If true, do not process login.

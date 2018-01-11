@@ -106,12 +106,11 @@ header {
             }
 
             #logo-psm-nav {
+                @include lg{
+                    padding-left: 15px;
+                }
                 &.show-logo {
                     opacity: 1;
-
-                    @include lg{
-                        opacity: 1;
-                    }
                 }
             }
         }
@@ -177,7 +176,7 @@ header {
 
                 a,p {
                     @include setup-font($sourceSansPro, white, normal);
-                    @include responsive-font(1,1.8rem, 1.8rem, 3rem, 2.5rem, 2.5rem);
+                    @include responsive-font(1,1.8rem, 1.8rem, 3rem, 2rem, 2rem);
 
                     text-transform: uppercase;
                     display: inline-block;

@@ -6,6 +6,12 @@ use WP_Customize_Image_Control;
 use WP_Customize_Upload_Control;
 use App\theme_customiser\Wysiwyg_editor_custom_control;
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
+
 /**
  * Theme customizer
  */

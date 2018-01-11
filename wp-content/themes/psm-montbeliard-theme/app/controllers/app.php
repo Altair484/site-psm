@@ -1,10 +1,13 @@
 <?php
 
 namespace App;
-
-use WP_Query;
 use Sober\Controller\Controller;
 
+//Protect the file to direct Access wia url
+if ( ! defined( 'ABSPATH' )) {
+    header('Location: http://tinyurl.com/ydek4vj2');
+    exit; // Exit if accessed directly
+}
 class App extends Controller
 {
     public function siteName()
@@ -67,6 +70,11 @@ class App extends Controller
         }else{
             _e('<img src="http://via.placeholder.com/595x842" alt="Placeholder">');
         }
+    }
+
+    public static function get_random_svg_face() {
+        $random_svg = get_template_directory_uri().'/../dist/images/svg/visages/perso0'. rand(1,7).'.svg';
+        return $random_svg;
     }
 
     public function get_max_post_per_page(){
