@@ -47,7 +47,7 @@ h4 {
 }
 
 h5 {
-    @include responsive-font(0, 2rem);
+    @include responsive-font(0, 1.8 rem, 1.7rem, 1.6rem, 1.5rem, 1.4rem );
 }
 
 h6 {
@@ -111,7 +111,7 @@ b {
     z-index: 10;
     width: 22px;
     height: 42px;
-    bottom: 40px;
+    bottom: 100px;
     left: 50%;
     margin-left: -12px;
     border-radius: 15px;
@@ -393,7 +393,9 @@ section {
             }
 
             .btns-box {
-
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
                 @include xs-sm() {
                     display: flex;
                     justify-content: center;
@@ -614,6 +616,70 @@ section {
             border: none;
             background-color: $primaire-vert;
             color: #fff;
+        }
+    }
+}
+
+/**
+ *
+ * Cookie Accept
+ *
+ **/
+
+.cookie-container{
+    position: fixed;
+    z-index: 15;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    left: -250px;
+    @include transition(all 0.4s ease-out);
+    &.active{
+        left:0px;
+    }
+    .cookie-content{
+        background-color: $secondaire-bleu;
+        border-top: 3px solid $primaire-vert;
+        width: 250px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        ul{
+            padding: 16px;
+        }
+        p,li{
+            color: white;
+            text-align: left;
+            font-size: 1.6rem;
+        }
+
+        .btns-box{
+            display: flex;
+            justify-content: space-around;
+            .btn{
+                min-width: inherit;
+                font-size: 1.6rem;
+            }
+        }
+    }
+    .cookie-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        height: 80px;
+        width: 80px;
+        @include xs-md{
+            height: 50px;
+            width: 50px;
+        }
+        background-color: $secondaire-bleu;
+        &:hover{
+            cursor: pointer;
+        }
+        &.clicked{
+
         }
     }
 }

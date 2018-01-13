@@ -16,6 +16,8 @@
         @include responsive-font(0,2.4rem)
     }
 
+
+
     .wpcf7-form{
         position: relative;
         padding-top: 50px;
@@ -26,6 +28,10 @@
             margin-top: 100px;
             margin-bottom: 50px;
         }
+        .send-button-container {
+            display: flex;
+            justify-content: center;
+        }
         input[type='submit']{
             &.btn-psm-green{
                 position: absolute;
@@ -34,4 +40,5 @@
         }
 
     }
+
 }

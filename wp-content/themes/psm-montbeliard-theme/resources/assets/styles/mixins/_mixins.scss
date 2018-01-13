@@ -40,7 +40,7 @@
 
 //Mixin for background image opacity, no hover
 @mixin background-image-opacity($imgUrl:null, $backgroundColor:false, $z-index:false) {
-  @if $imgUrl != null {
+  @if $imgUrl {
     background-image: url($imgUrl);
     background-position: center center;
     background-size: cover;

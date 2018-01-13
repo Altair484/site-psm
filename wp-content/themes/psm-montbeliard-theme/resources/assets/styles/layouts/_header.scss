@@ -139,6 +139,16 @@ header {
             }
         }
 
+        &.is-credits{
+            @include lg {
+                background-color: $secondaire-bleu;
+
+                &.dark-menu{
+                    background-color: $secondaire-bleu;
+                }
+            }
+        }
+
 
         &.open-sidebar {
             right: 0!important;

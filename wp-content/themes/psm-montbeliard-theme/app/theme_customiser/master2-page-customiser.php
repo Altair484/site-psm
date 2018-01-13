@@ -213,7 +213,7 @@ add_action('customize_register',  function( $wp_customize ) {
 
     //Projet Projet fin d'études Page Dropdown Settings
     $wp_customize->add_setting( 'master2_page_projects_section_link_page_pfe', array(
-        'default'           => '1866',
+        'default'           => '1868',
         'sanitize_callback' => 'absint'
     ) );
 

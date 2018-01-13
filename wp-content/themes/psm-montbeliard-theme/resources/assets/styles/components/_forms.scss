@@ -51,7 +51,7 @@ select, textarea, input:not([type='checkbox']):not([type='submit']){
     padding-left: 20px;
 
     @include setup-font($sourceSansPro, black, 300);
-    @include responsive-font(0.5, 2rem, 2rem, 2rem, 1.6rem, 1.4rem);
+    @include responsive-font(0.5, 2rem);
 }
 
 input[type='checkbox']{

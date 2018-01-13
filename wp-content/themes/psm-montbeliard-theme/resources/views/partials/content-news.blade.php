@@ -4,7 +4,7 @@
             @if (has_post_thumbnail())
                 {{ the_post_thumbnail() }}
             @else
-                <img src="{!! \App\App::get_default_image_article_thumbnail() !!}">
+                <img src="{!! \App\App::get_default_image_article_thumbnail() !!}" alt="Image d'écriture d'un article wordpress">
             @endif
         </a>
         <span class="line"></span>

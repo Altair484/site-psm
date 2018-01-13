@@ -174,11 +174,11 @@ add_action('customize_register',  function( $wp_customize ) {
 
     //Admission link
     $wp_customize->add_setting( 'licence_page_presentation_section_admission_link', array(
-        'default' => '',
+        'default' => 'http://formations.univ-fcomte.fr/ws?_profil=ufc&_cmd=getFormation&_oid=CDM-KPROG8&_onglet=admission&_redirect=voir_fiche_program',
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'esc_url'
-    ) );
+    ));
 
     //Button link control
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'licence_page_presentation_section_admission_link', array(

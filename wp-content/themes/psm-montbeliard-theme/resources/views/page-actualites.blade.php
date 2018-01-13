@@ -8,21 +8,21 @@
     @endphp
 
     <section id="page_news_section_header" class="page-header">
-        <div class="row header" style="background-image: url('{!! get_theme_mod('news_page_header_section_img',\App\App::get_image_page_header()) !!}')">
+        <div class="row header" style="background-image: url('{!! get_theme_mod('news_page_header_section_img',\App\App::get_image_page_header('actualites','jpg')) !!}')">
             <div class="filter"></div>
             <div class="header-content">
                 <span class="d-flex justify-content-center" style="width: 100%;">
-                    <div class="offer_page_header_section_img" style="width: 1px"></div>
+                    <div class="news_page_header_section_img" style="width: 1px"></div>
                 </span>
-                <h1 class="offer_page_header_section_title">
+                <h1 class="news_page_header_section_subtitle">
                     {{ get_theme_mod(
-                        'offer_page_header_section_title',
+                        'news_page_header_section_title',
                         get_the_title()
                     ) }}
                 </h1>
-                <p class="formation offer_page_header_section_subtitle">
+                <p class="formation news_page_header_section_subtitle">
                     {{get_theme_mod(
-                        'offer_page_header_section_subtitle',
+                        'news_page_header_section_subtitle',
                         'Les dernières nouveautés de la formation'
                     )}}
                 </p>

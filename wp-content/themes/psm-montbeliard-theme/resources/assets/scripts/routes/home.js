@@ -608,11 +608,14 @@ export default {
             });
         });
 
-        $( "button.next-slide" ).click(function() {
+        $("button.next-slide").click(function() {
             text_modal.animate({
                 height: 0,
             });
             suivant();
+            if($(this).hasClass('last-slide')){
+                TweenLite.to(window, 0.5, {scrollTo: "#presentation-section"});
+            }
         });
 
         /* ==========================================================================
@@ -643,8 +646,8 @@ export default {
             tl_losange1_presentation.to(losange_presentation_1, 0.5, {scale: 3, ease: Linear.easeNone});
             tl_losange2_presentation.to(losange_presentation_2, 0.5, {top: "-100px", ease: Linear.easeNone});
             tl_losange3_presentation.to(losange_presentation_3, 0.5, {top: "-75px", ease: Linear.easeNone});
-            tl_losange4_presentation.to(losange_presentation_4, 1, {bottom: "0px", ease: Linear.easeNone})
-                .to(losange_presentation_4, 1, {rotation: 180, transformOrigin: "50%", ease: Linear.easeNone}, '-=1');
+            tl_losange4_presentation.to(losange_presentation_4, 1, {bottom: "0px", ease: Linear.easeNone});
+
 
 
             //Geometric 1 Scene
@@ -654,7 +657,7 @@ export default {
                 triggerHook: 0.5,
             })
                 .setTween(tl_losange1_presentation)
-                .addIndicators({name: "losange 1 scale"}) // add indicators (requires plugin)
+                //.addIndicators({name: "losange 1 scale"}) // add indicators (requires plugin)
                 .addTo(controllerPresentationSection);
 
             //Geometric 2 Scene
@@ -664,7 +667,7 @@ export default {
                 triggerHook: 0.5,
             })
                 .setTween(tl_losange2_presentation)
-                .addIndicators({name: "losange 2 translate", indent: 200}) // add indicators (requires plugin)
+                //.addIndicators({name: "losange 2 translate", indent: 200}) // add indicators (requires plugin)
                 .addTo(controllerPresentationSection);
 
             //Geometric 3 Scene
@@ -674,7 +677,7 @@ export default {
                 triggerHook: 0.5,
             })
                 .setTween(tl_losange3_presentation)
-                .addIndicators({name: "losange 3 translate", indent: 300}) // add indicators (requires plugin)
+                //.addIndicators({name: "losange 3 translate", indent: 300}) // add indicators (requires plugin)
                 .addTo(controllerPresentationSection);
 
             //Geometric 4 Scene
@@ -684,7 +687,7 @@ export default {
                 triggerHook: 0.5,
             })
                 .setTween(tl_losange4_presentation)
-                .addIndicators({name: "losange 4 translate", indent: 500}) // add indicators (requires plugin)
+                //.addIndicators({name: "losange 4 translate", indent: 500}) // add indicators (requires plugin)
                 .addTo(controllerPresentationSection);
         }
         // END PRESENTATION BACKGROUND ELEMENTS ANIMATION
@@ -768,7 +771,7 @@ export default {
             triggerHook: "0.5",
             reverse: false,
         })
-            .addIndicators({name: "Writing guy", indent: 300}) // add indicators (requires plugin)
+            //.addIndicators({name: "Writing guy", indent: 300}) // add indicators (requires plugin)
             .addTo(controllerPresentationSection)
             .setTween(tl_anac1);
 
@@ -871,7 +874,7 @@ export default {
             })
                 .setClassToggle('.formation:nth-of-type(1) .filter', 'activeScroll')//Addclass to .navbar
                 .setTween(tl_writting_letters_formations_licence.play())
-                .addIndicators({name: 'licence 3 anim', colorTrigger: 'red', indent: 200, colorStart: '#75CC395'})
+                //.addIndicators({name: 'licence 3 anim', colorTrigger: 'red', indent: 200, colorStart: '#75CC395'})
                 .addTo(Scroll_formations_section);
 
 
@@ -883,7 +886,7 @@ export default {
             })
                 .setClassToggle('.formation:nth-of-type(2) .filter', 'activeScroll')//Addclass to .navbar
                 .setTween(tl_writting_letters_formations_master1.play())
-                .addIndicators({name: 'Master 1 anim', colorTrigger: 'red', indent: 200, colorStart: '#75CC395'})
+                //.addIndicators({name: 'Master 1 anim', colorTrigger: 'red', indent: 200, colorStart: '#75CC395'})
                 .addTo(Scroll_formations_section);
 
 
@@ -895,7 +898,7 @@ export default {
             })
                 .setClassToggle('.formation:nth-of-type(3) .filter', 'activeScroll')//Addclass to .navbar
                 .setTween(tl_writting_letters_formations_master2.play())
-                .addIndicators({name: 'Master 2 anim', colorTrigger: 'red', indent: 200, colorStart: '#75CC395'})
+                //.addIndicators({name: 'Master 2 anim', colorTrigger: 'red', indent: 200, colorStart: '#75CC395'})
                 .addTo(Scroll_formations_section);
         }
 
@@ -924,12 +927,8 @@ export default {
 
             //Set the animation they will execute
             tl_losange1_projects.to(losange_projects_1, 0.5, {top: "-100px", ease: Linear.easeNone});
-            tl_losange2_projects.to(losange_projects_2, 0.5, {top: "200px", ease: Linear.easeNone});
-            tl_losange3_projects.to(losange_projects_3, 1, {bottom: "-300px", right: "60%", ease: Linear.easeNone})
-                .to(losange_projects_3, 1, {
-                    css: {scaleX: 0.1, scaleY: 0.1, rotation: 30},
-                    ease: Power3.easeOut,
-                }, '-=1');
+            tl_losange2_projects.to(losange_projects_2, 0.5, {top: "700px", ease: Linear.easeNone});
+            tl_losange3_projects.to(losange_projects_3, 0.5, {top: "200px", ease: Linear.easeNone});
 
             //Geometric 1 Scene
             new ScrollMagic.Scene({
@@ -938,7 +937,7 @@ export default {
                 triggerHook: 0.5,
             })
                 .setTween(tl_losange1_projects)
-                .addIndicators({name: "losange 1 scale"}) // add indicators (requires plugin)
+                //.addIndicators({name: "losange 1 scale"}) // add indicators (requires plugin)
                 .addTo(controllerProjectsSection);
 
             //Geometric 2 Scene
@@ -948,7 +947,7 @@ export default {
                 triggerHook: 0.5,
             })
                 .setTween(tl_losange2_projects)
-                .addIndicators({name: "losange 2 translate", indent: 200}) // add indicators (requires plugin)
+                //.addIndicators({name: "losange 2 translate", indent: 200}) // add indicators (requires plugin)
                 .addTo(controllerProjectsSection);
 
             //Geometric 3 Scene
@@ -958,7 +957,7 @@ export default {
                 triggerHook: 0.5,
             })
                 .setTween(tl_losange3_projects)
-                .addIndicators({name: "losange 3 translate", indent: 300}) // add indicators (requires plugin)
+                //.addIndicators({name: "losange 3 translate", indent: 300}) // add indicators (requires plugin)
                 .addTo(controllerProjectsSection);
         }
         // END PROJECTS BACKGROUND ELEMENTS ANIMATION
@@ -1053,8 +1052,9 @@ export default {
         new ScrollMagic.Scene({
             triggerElement: "#projects-section .picture",
             triggerHook: "0.5",
+            reverse: false,
         })
-            .addIndicators({name: "Rocket", indent: 800}) // add indicators (requires plugin)
+            //.addIndicators({name: "Rocket", indent: 800}) // add indicators (requires plugin)
             .addTo(controllerProjectsSection)
             .setTween(fusee_tl);
 
@@ -1099,7 +1099,7 @@ export default {
                 triggerHook: 0.5,
             })
                 .setTween(tl_losange1_professional)
-                .addIndicators({name: "losange 1 scale"}) // add indicators (requires plugin)
+                //.addIndicators({name: "losange 1 scale"}) // add indicators (requires plugin)
                 .addTo(controllerProfessionalSection);
 
             //Geometric 2 Scene
@@ -1109,7 +1109,7 @@ export default {
                 triggerHook: 0.5,
             })
                 .setTween(tl_losange2_professional)
-                .addIndicators({name: "losange 2 translate", indent: 200}) // add indicators (requires plugin)
+                //.addIndicators({name: "losange 2 translate", indent: 200}) // add indicators (requires plugin)
                 .addTo(controllerProfessionalSection);
 
             //Geometric 3 Scene
@@ -1119,7 +1119,7 @@ export default {
                 triggerHook: 0.5,
             })
                 .setTween(tl_losange3_professional)
-                .addIndicators({name: "losange 3 translate", indent: 300}) // add indicators (requires plugin)
+                //.addIndicators({name: "losange 3 translate", indent: 300}) // add indicators (requires plugin)
                 .addTo(controllerProfessionalSection);
         }
         // END professional BACKGROUND ELEMENTS ANIMATION
@@ -1314,8 +1314,9 @@ export default {
         new ScrollMagic.Scene({
             triggerElement: "#professional-section #",
             triggerHook: "0.5",
+            reverse: false,
         })
-            .addIndicators({name: "Professional", indent: 600}) // add indicators (requires plugin)
+            //.addIndicators({name: "Professional", indent: 600}) // add indicators (requires plugin)
             .addTo(controllerProfessionalSection)
             .setTween(anac3_tl);
     },

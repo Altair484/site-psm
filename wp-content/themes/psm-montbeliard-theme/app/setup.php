@@ -23,6 +23,50 @@ add_action('wp_enqueue_scripts', function () {
 }, 100);
 
 /**
+ *
+ * Contact Form acivate on contact page
+ *
+ **/
+add_action( 'wp_enqueue_scripts',function(){
+    //  Edit page IDs here
+    if(! is_page('contact') )
+    {
+        wp_dequeue_script('contact-form-7'); // Dequeue JS Script file.
+        wp_dequeue_style('contact-form-7');  // Dequeue CSS file.
+    }
+});
+
+
+/**
+ * Clean up output of stylesheet <link> tags
+ */
+
+add_filter( 'style_loader_tag',  function( $input ) {
+    preg_match_all( "!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!", $input, $matches );
+    if ( empty( $matches[2] ) ) {
+        return $input;
+    }
+    // Only display media if it is meaningful
+    $media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
+
+    return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
+});
+
+
+/**
+ * Clean up output of <script> tags
+ */
+add_filter( 'script_loader_tag', function( $input ) {
+    $input = str_replace( "type='text/javascript' ", '', $input );
+
+    return str_replace( "'", '"', $input );
+});
+
+
+
+
+
+/**
  * Theme setup
  */
 add_action('after_setup_theme', function () {

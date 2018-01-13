@@ -58,7 +58,7 @@
                                 <span class="master1_page_presentation_section_admission_link">
                                     <a class="btn btn-psm" href="{!! get_theme_mod(
                                         'master1_page_presentation_section_admission_link',
-                                        '#'
+                                        'http://formations.univ-fcomte.fr/ws?_profil=ufc&_cmd=getFormation&_oid=CDM-KPROG107&_onglet=admission&_redirect=voir_fiche_program'
                                     ) !!}" target="_blank">ADMISSION
                                     </a>
                                 </span>
@@ -110,7 +110,7 @@
                                     /*$ue = get_the_terms($get_programme_master_1['school-subject-dev']->ID, 'unite-enseignement')[0]->name;*/
                                 @endphp
                                     <div class="accordeon-title">
-                                        <h4 >{{ get_the_title() }}</h4>
+                                        <h5>{{ get_the_title() }}</h5>
                                         <i class="fa"></i>
                                     </div>
 
@@ -130,7 +130,7 @@
                                         $get_programme_master_1['school-subject-project-managment']->the_post();
                                     @endphp
                                     <div class="accordeon-title">
-                                        <h4 >{{ get_the_title() }}</h4>
+                                        <h5>{{ get_the_title() }}</h5>
                                         <i class="fa"></i>
                                     </div>
 
@@ -149,7 +149,7 @@
                                 $get_programme_master_1['school-subject-communication']->the_post();
                                 @endphp
                                     <div class="accordeon-title">
-                                        <h4 >{{ get_the_title() }}</h4>
+                                        <h5>{{ get_the_title() }}</h5>
                                         <i class="fa"></i>
                                     </div>
 
@@ -229,13 +229,13 @@
                                          consequat, vel illum dolore eu feugiat nulla facilisis.'
                                     ) !!}
                                 </p>
-                                <span class="master2_page_presentation_section_admission_link">
+                                {{--<span class="master2_page_presentation_section_admission_link">
                                     <a class="btn btn-psm" href="{!! get_theme_mod(
                                         'master2_page_presentation_section_admission_link',
                                         '#'
                                     ) !!}" target="_blank">ADMISSION
                                     </a>
-                                </span>
+                                </span>--}}
                             </div>
                         </div>
                     </div>
@@ -283,7 +283,7 @@
                                         $get_programme_master_2['school-subject-dev']->the_post();
                                     @endphp
                                     <div class="accordeon-title">
-                                        <h4 >{{ get_the_title() }}</h4>
+                                        <h5>{{ get_the_title() }}</h5>
                                         <i class="fa"></i>
                                     </div>
 
@@ -301,7 +301,7 @@
                                         $get_programme_master_2['school-subject-project-managment']->the_post();
                                     @endphp
                                     <div class="accordeon-title">
-                                        <h4 >{{ get_the_title() }}</h4>
+                                        <h5>{{ get_the_title() }}</h5>
                                         <i class="fa"></i>
                                     </div>
 
@@ -320,7 +320,7 @@
                                         $get_programme_master_2['school-subject-communication']->the_post();
                                     @endphp
                                     <div class="accordeon-title">
-                                        <h4 >{{ get_the_title() }}</h4>
+                                        <h5>{{ get_the_title() }}</h5>
                                         <i class="fa"></i>
                                     </div>
 
@@ -361,7 +361,7 @@
                                     <span class="master2_page_projects_section_link_page_rhizomes">
                                          <a class="btn btn-psm-white" href="{!! site_url() .'/?p='. get_theme_mod(
                                             'master2_page_projects_section_link_page_pfe',
-                                            '1866'
+                                            '1868'
                                         ) !!}">Projets de fin d'études</a>
                                     </span>
                                 </div>

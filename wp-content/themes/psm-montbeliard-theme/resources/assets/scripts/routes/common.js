@@ -40,14 +40,54 @@ export default {
         /* ==========================================================================
          GENERAL
          ========================================================================== */
-            /**
-             * NEWS THUMBNAIL ANIMATION
-             *
-             * @description Desktop : Hover add a class 'active', the css does the animate
-             * Small devices : Scroll add a class 'active', the css does the animate
-             *
-             * @author Jeff Jardon
-             */
+
+        /**
+         * Accept COOKIES
+         */
+        var cookie_image = $('.cookie-image');
+
+        var tl_cookie = new TimelineMax({repeat: -1, repeatDelay: 3});
+        TweenLite.set(cookie_image, {y: 0});
+        tl_cookie.to(cookie_image, 0.2, {y: -30, ease: Power2.easeOut})
+                 .to(cookie_image, 0.8, {y: 0, ease: Bounce.easeOut}, "+=0.2")
+                 .to(cookie_image, 1, {rotation:90, ease:Power2.easeOut},"-=1.2");
+
+        var today = new Date();
+        var nextMonth = new Date();
+        nextMonth.setDate(today.getDate()+30);
+
+        var cookieValues =  "Cookie=AcceptCookies;expires=" + nextMonth;
+
+        cookie_image.on("click", function(){
+            $('.cookie-container').toggleClass('active');
+            cookie_image.toggleClass('clicked');
+        });
+
+        function cookieDisplay() {
+            //If the add has already been closed
+            if (document.cookie.match('AcceptCookies') == 'AcceptCookies') {
+                $('.cookie-container').animate({
+                    left: "-500px",
+                });
+            }else {
+                $('.cookie-container').show();
+            }
+        }
+        cookieDisplay();
+
+        $(".accept-cookies").on("click", function(){
+            document.cookie = cookieValues;
+            cookieDisplay();
+        });
+
+        /**
+         * NEWS THUMBNAIL ANIMATION
+         *
+         * @description Desktop : Hover add a class 'active', the css does the animate
+         * Small devices : Scroll add a class 'active', the css does the animate
+         *
+         * @author Jeff Jardon
+         */
 
             //Declare new Scroll Magic Controller
             var news_section_animation_controller = new ScrollMagic.Controller;
@@ -71,7 +111,7 @@ export default {
                         triggerHook: 0.5,
                     })
                     .setClassToggle(this, 'active')//Addclass to .navbar
-                    .addIndicators({name: 'Active anim on scroll', colorTrigger: 'red', indent: 200, colorStart: '#75CC395'})
+                    //.addIndicators({name: 'Active anim on scroll', colorTrigger: 'red', indent: 200, colorStart: '#75CC395'})
                     .addTo(news_section_animation_controller);
                 });
             }
@@ -87,13 +127,13 @@ export default {
             //Show the background (black) of the main navigation
             new ScrollMagic.Scene({triggerElement: 'section:nth-child(2), #masters, .job_listings > section:nth-child(1)', triggerHook: 0.5})
             .setClassToggle('#sidebar', 'dark-menu')
-            .addIndicators({name: 'dark menu show', colorTrigger: 'red', indent: 700, colorStart: 'pink'})
+            //.addIndicators({name: 'dark menu show', colorTrigger: 'red', indent: 700, colorStart: 'pink'})
             .addTo(ScrollMenuBackgroundController);
 
             //Show the logo of the main navigation
             new ScrollMagic.Scene({triggerElement: 'section:nth-child(2), #masters, .job_listings > section:nth-child(1)', triggerHook: 0.5})
             .setClassToggle('#logo-psm-nav', 'show-logo')
-            .addIndicators({name: 'logo show', colorTrigger: 'red', indent: 600, colorStart: 'pink'})
+            //.addIndicators({name: 'logo show', colorTrigger: 'red', indent: 600, colorStart: 'pink'})
             .addTo(ScrollMenuBackgroundController);
             //END SCROLLING MENU ANIMATIONS
 
@@ -161,8 +201,6 @@ export default {
              *  @author Jeff Jardon
              */
 
-
-
             /*var sections = $('section > .row').map(function(){
              return $(this).length;
              }).get();
@@ -175,7 +213,7 @@ export default {
                 sections.each(function () {
                     var tl_parralax_sections = new TimelineMax;
                     var current_element = this;
-                    var section_name = "Parralax Section : " + $(this).parent().parent().attr('id');
+                    //var section_name = "Parralax Section : " + $(this).parent().parent().attr('id');
                     var section = this.parentNode;
 
                     tl_parralax_sections.from(current_element, 1, {y: 100, opacity: 0, ease: Power4.easeOut});
@@ -185,7 +223,7 @@ export default {
                         triggerHook: 0.6,
                     })
                         .setTween(tl_parralax_sections)
-                        .addIndicators({name: section_name}) // add indicators (requires plugin)
+                        //.addIndicators({name: section_name}) // add indicators (requires plugin)
                         .addTo(controllerParralaxSections);
                 });
             }
@@ -202,7 +240,7 @@ export default {
             //Show the background (black) of the main navigation
             new ScrollMagic.Scene({triggerElement: '#masters, #licence', triggerHook: 0})
             .setClassToggle('.video-background', 'miniature')
-            .addIndicators({name: 'miniature video', colorTrigger: 'red', indent: 700, colorStart: 'pink'})
+            //.addIndicators({name: 'miniature video', colorTrigger: 'red', indent: 700, colorStart: 'pink'})
             .addTo(ScrollVideoController);
 
             /**
@@ -402,7 +440,7 @@ export default {
                     triggerHook: 0.5,
                 })
                 .setTween(tl_hexagones)
-                .addIndicators({name: 'hexagones_anim'}) // add indicators (requires plugin)
+                //.addIndicators({name: 'hexagones_anim'}) // add indicators (requires plugin)
                 .addTo(controllerTestimonySection);
             }else {
                 hexagones.each(function () {
@@ -413,7 +451,7 @@ export default {
                         triggerHook: 0.5,
                     })
                     .setTween(tl_hexagones)
-                    .addIndicators({name: ('hexagone_anim_mobile' +$(this).index())}) // add indicators (requires plugin)
+                    //.addIndicators({name: ('hexagone_anim_mobile' +$(this).index())}) // add indicators (requires plugin)
                     .addTo(controllerTestimonySection);
                 });
             }

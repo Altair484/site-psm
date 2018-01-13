@@ -1,9 +1,9 @@
 @php
-
 $args = array(
     'post_type' => 'post',
     'orderby' => 'rand',
     'showposts' => 2,
+    'post__not_in' => array($post->ID),
 );
 
 $the_query = new WP_Query($args);
@@ -13,12 +13,11 @@ $the_query = new WP_Query($args);
         @php($the_query->the_post())
         <div class="thumbnail">
             <figure>
-                <a href="{!!  get_the_permalink() !!}">
-                    @php($default_img = get_template_directory_uri().'/../dist/images/960-540-abstract-'. rand(1,6).'.jpg')
+                <a href="{{ the_permalink() }}">
                     @if (has_post_thumbnail())
                         {{ the_post_thumbnail() }}
                     @else
-                        <img src="{{ $default_img }}">
+                        <img src="{!! \App\App::get_default_image_article_thumbnail() !!}" alt="Image d'écriture d'un article wordpress">
                     @endif
                 </a>
             </figure>
@@ -28,7 +27,7 @@ $the_query = new WP_Query($args);
     @endwhile
     @php(wp_reset_postdata())
 @else
-    <p>Il n'y a pas d'actualité pour ce post.</p>
+    <p>Aucune actualité symilaire à afficher.</p>
 @endif
 
 

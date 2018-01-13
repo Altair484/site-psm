@@ -23,7 +23,7 @@ add_action('customize_register',  function( $wp_customize ) {
     /* ---------------------------------------------- */
 
     $wp_customize->add_panel( 'news_page_sections_panel', array(
-        'priority' => 11,
+        'priority' => 15,
         'capability' => 'edit_theme_options',
         'theme_supports' => '',
         'title' => __( 'Page Actualités', 'textdomain' ),
@@ -35,7 +35,7 @@ add_action('customize_register',  function( $wp_customize ) {
     /* ---------------------------------------------- */
 
     $wp_customize->add_section( 'news_page_header_section', array(
-        'priority' => 11,
+        'priority' => 15,
         'capability' => 'edit_theme_options',
         'theme_supports' => '',
         'title' => __( 'Section - Page Entête', 'textdomain' ),
@@ -51,7 +51,7 @@ add_action('customize_register',  function( $wp_customize ) {
     $wp_customize->add_setting( 'news_page_header_section_img', array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'default' => \App\App::get_image_page_header(),
+        'default' => \App\App::get_image_page_header('actualites','jpg'),
     ));
 
     //Image Licence control

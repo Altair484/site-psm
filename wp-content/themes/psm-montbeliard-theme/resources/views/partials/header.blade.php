@@ -29,4 +29,21 @@
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
 </div>
+<div class="cookie-container">
+    <div class="cookie-content">
+        <p>En poursuivant votre navigation sur ce site, vous acceptez l’utilisation des cookies pour réaliser des statistiques de visite.</p>
+       {{-- <ul>
+            <li>Google Analytics</li>
+            <li>Réseaux Sociaux</li>
+        </ul>--}}
+        <div class="btns-box">
+            <button class="btn btn-psm-green accept-cookies">
+                Accepter
+            </button>
+        </div>
+    </div>
+    <div class="cookie-image">
+        🍪
+    </div>
+</div>
 

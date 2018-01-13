@@ -5,12 +5,15 @@ div.job_listings{
     margin: 0;
 }
 #page_offer_section_form{
-    z-index: 2;
     margin-top: -50px;
     background-color: $secondaire-bleu;
     min-height: 200px;
-    input{
-        margin-left: 0;
+    form{
+        position: relative;
+        z-index: 10;
+        input{
+            margin-left: 0;
+        }
     }
 }
 

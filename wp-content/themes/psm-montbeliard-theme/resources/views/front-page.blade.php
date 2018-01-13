@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <section id="welcome-section" style="background-image: url('{!! get_theme_mod('home_page_welcome_section_img',\App\App::get_image_page_header('dept-mm', 'jpg')) !!}')">
+    <section id="welcome-section" style="background-image: url('{!! get_theme_mod('home_page_welcome_section_img',\App\App::get_image_page_header('batiment-psm', 'jpg')) !!}')">
         <div class="filter"></div>
         <div class="row">
             <div id="welcome-left-collumn" class="col-12 col-md-7">
@@ -92,6 +92,7 @@
                             </p>
                             <div class="btns-box">
                                 <button class="btn btn-transparent hide-text-slider">Fermer</button>
+                                <button class="btn btn-psm-green next-slide last-slide">Suivant</button>
                             </div>
                         </div>
                     </div>
@@ -184,16 +185,33 @@
                                 'multimédia et les nouvelles technologies, nous allons vous transmettre les <b>outils</b> et les <b>expériences</b> '.
                                 'nécessaires à faire de vous un professionnel qualifié dans votre domaine de prédilection. '.
                                 'Vous visez <b>l’excellence</b> pour la poursuite de vos études en <b>BAC+3</b> ou en <b>Master</b> ? PSM pourrait être la '.
-                                'réponse : venez découvrir nos <a href="#">formations</a> et nos <a href="">modalités d’admission</a>. '
+                                'réponse : venez découvrir nos <b>ormations</b> et nos <b>modalités d’admission</b>. '
                             ) !!}
                         </p>
-                        <span class="home_page_presentation_section_admission_link">
+                        <div class="btns-box">
+                            <span class="home_page_presentation_section_admission_licence_link">
                             <a class="btn btn-psm" href="{!! get_theme_mod(
-                                'home_page_presentation_section_admission_link',
-                                '#'
-                            ) !!}" target="_blank">ADMISSION
+                                'home_page_presentation_section_admission_licence_link',
+                                'http://formations.univ-fcomte.fr/ws?_profil=ufc&_cmd=getFormation&_oid=CDM-KPROG8&_onglet=admission&_redirect=voir_fiche_program'
+                            ) !!}" target="_blank">ADMISSION LICENCE
                             </a>
                         </span>
+                        <span class="home_page_presentation_section_admission_master_link">
+                            <a class="btn btn-psm" href="{!! get_theme_mod(
+                                'home_page_presentation_section_admission_master_link',
+                                'http://formations.univ-fcomte.fr/ws?_profil=ufc&_cmd=getFormation&_oid=CDM-KPROG107&_onglet=admission&_redirect=voir_fiche_program'
+                            ) !!}" target="_blank">ADMISSION MASTER
+                            </a>
+                        </span>
+                        <span class="home_page_presentation_section_apply_link">
+                            <a class="btn btn-psm-green" href="{!! get_theme_mod(
+                                'home_page_presentation_section_apply_link',
+                                'https://scolarite.univ-fcomte.fr/ecandidat/#!accueilView'
+                            ) !!}" target="_blank">CANDIDATER
+                            </a>
+                        </span>
+                        </div>
+
 
                     </div>
                 </div>
@@ -207,7 +225,7 @@
         <div class="row formations ">
             <a href="{{ site_url().'/licence' }}" style="background-image:url('{{ get_theme_mod(
 			        'home_page_formations_section_img_1',
-			        get_template_directory_uri(). '/../dist/images/960-960-city-1.jpg'
+			        get_template_directory_uri(). '/../dist/images/formations/Licence3-psm.jpg'
 			    ) }}')" class="formation home_page_formations_section_img_1">
                 <div class="filter"></div>
                 <h2>L<span class="writing-letter">ICENCE</span>3</h2>
@@ -215,7 +233,7 @@
 
             <a href="{{add_query_arg( 'formation', 'm1', site_url().'/master' )}}" style="background-image:url('{{ get_theme_mod(
 			        'home_page_formations_section_img_2',
-			        get_template_directory_uri(). '/../dist/images/960-960-city-2.jpg'
+			         get_template_directory_uri(). '/../dist/images/formations/Master1-psm.jpg'
 			    )}}')" class="formation home_page_formations_section_img_2">
                 <div class="filter"></div>
                 <h2 class="formation-title">M<span class="writing-letter">ASTER</span>1</h2>
@@ -223,7 +241,7 @@
 
             <a href="{{add_query_arg( 'formation', 'm2', site_url().'/master' )}}" style="background-image:url('{{ get_theme_mod(
 			        'home_page_formations_section_img_3',
-			           get_template_directory_uri(). '/../dist/images/960-960-city-3.jpg'
+			           get_template_directory_uri(). '/../dist/images/formations/Master2-psm.jpg'
 			    )}}')" class="formation home_page_formations_section_img_3">
                 <div class="filter"></div>
                 <h2 class="formation-title">M<span class="writing-letter">ASTER</span>2</h2>
@@ -290,7 +308,12 @@
             {!! \App\FrontPage::get_three_news() !!}
             <div class="row w-100">
                 <div class="see-all-news  d-flex justify-content-center align-items-center col-12">
-                    <a href="#" class="btn btn-psm">Voir toutes les actualités</a>
+                    <span class="home_page_news_section_news_page">
+                        <a class="btn btn-psm" href="{!! site_url() .'/?p='. get_theme_mod(
+                        'home_page_news_section_news_page',
+                        '16'
+                    ) !!}" >Voir toutes les actualités</a>
+                    </span>
                 </div>
             </div>
         </div>

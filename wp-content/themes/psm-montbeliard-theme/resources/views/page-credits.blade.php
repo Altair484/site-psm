@@ -97,8 +97,7 @@
     </section>
     <section id="page-credits-section-thanks">
         <div class="row">
-            <div class="col-12 col-sm-10">
-                <h2>Au final :</h2>
+            <div class="col-12 col-lg-8 col-xl-4">
                 @while(have_posts())
                     @php(the_post())
                     {!! the_content() !!}

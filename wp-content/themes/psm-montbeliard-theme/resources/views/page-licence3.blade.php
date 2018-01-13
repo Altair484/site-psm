@@ -46,7 +46,7 @@
                             <span class="licence_page_presentation_section_admission_link">
                                 <a class="btn btn-psm" href="{!! get_theme_mod(
                                     'licence_page_presentation_section_admission_link',
-                                    '#'
+                                    'http://formations.univ-fcomte.fr/ws?_profil=ufc&_cmd=getFormation&_oid=CDM-KPROG8&_onglet=admission&_redirect=voir_fiche_program'
                                 ) !!}" target="_blank">ADMISSION
                                 </a>
                             </span>
@@ -97,7 +97,7 @@
                                     $get_programme_licence_3['school-subject-dev']->the_post();
                                 @endphp
                                 <div class="accordeon-title">
-                                    <h4 >{{ get_the_title() }}</h4>
+                                    <h5>{{ get_the_title() }}</h5>
                                     <i class="fa"></i>
                                 </div>
 
@@ -115,7 +115,7 @@
                                     $get_programme_licence_3['school-subject-project-managment']->the_post();
                                 @endphp
                                 <div class="accordeon-title">
-                                    <h4 >{{ get_the_title() }}</h4>
+                                    <h5>{{ get_the_title() }}</h5>
                                     <i class="fa"></i>
                                 </div>
 
@@ -134,7 +134,7 @@
                                     $get_programme_licence_3['school-subject-communication']->the_post();
                                 @endphp
                                 <div class="accordeon-title">
-                                    <h4 >{{ get_the_title() }}</h4>
+                                    <h5>{{ get_the_title() }}</h5>
                                     <i class="fa"></i>
                                 </div>
 

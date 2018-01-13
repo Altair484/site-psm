@@ -38,14 +38,17 @@ class App extends Controller
     public function get_menu_class(){
         if (is_home()|| is_front_page()) {
             $menu_class = 'is-home';
-        }else {
+        }else if(is_page('credits')){
+            $menu_class = 'is-credits';
+        }else{
             $menu_class = 'is-not-home';
         }
         return $menu_class;
     }
 
     public static function get_default_image_article_thumbnail() {
-        $default_img = get_template_directory_uri().'/../dist/images/960-540-abstract-'. rand(1,6).'.jpg';
+        //$default_img = get_template_directory_uri().'/../dist/images/960-540-abstract-'. rand(1,6).'.jpg';
+        $default_img = get_template_directory_uri().'/../dist/images/articles/default-article/blogger-news.jpg';
         return $default_img;
     }
 

@@ -50,7 +50,7 @@ export default {
         TweenMax.from(deuxpoints_anmas1, 0.4, {opacity: 0, repeat: -1, ease: Power0.easeNone, repeatDelay: 0.6})
         var tl_dev_anmas1 = new TimelineMax({repeat: -1, timeScale: 0.5})
         tl_dev_anmas1.staggerTo(deverrouiller_anmas1, 0.05, {fill: '#e8e8e8'}, -0.05)
-        .staggerTo(deverrouiller_anmas1, 0.05, {fill: '#ffffff'}, -0.05, 0.5);
+            .staggerTo(deverrouiller_anmas1, 0.05, {fill: '#ffffff'}, -0.05, 0.5);
 
         TweenLite.set([ecr_anmas1, ecr_ver_anmas1, finger2_anmas1, finger3_anmas1], {opacity: 0});
 
@@ -64,18 +64,18 @@ export default {
             opacity: 0,
             transformOrigin: "center",
         }, 0.1)
-        .from([title_m1_anmas1, head1_anmas1, heure_ecr_anmas1, head3_anmas1], 1, {opacity: 0}, 0.3);
+            .from([title_m1_anmas1, head1_anmas1, heure_ecr_anmas1, head3_anmas1], 1, {opacity: 0}, 0.3);
 
         //timeline pour le finger3
         var finger3_tl = new TimelineMax({repeat: -1, repeatDelay: 2});
 
         finger3_tl.to(finger3_anmas1, 0.5, {x: 150})
-        .to(finger3_anmas1, 0.2, {y: -100, scale: 0.9, transformOrigin: "center", repeat: 1, yoyo: true})
-        .to(finger3_anmas1, 0.5, {x: 500}, 1.5)
-        .to(finger3_anmas1, 0.2, {y: -100, scale: 0.9, transformOrigin: "center", repeat: 1, yoyo: true})
-        .to(finger3_anmas1, 0.5, {x: 850}, 2.8)
-        .to(finger3_anmas1, 0.2, {y: -100, scale: 0.9, transformOrigin: "center", repeat: 1, yoyo: true})
-        .to(finger3_anmas1, 0.5, {x: 0}, 4.2);
+            .to(finger3_anmas1, 0.2, {y: -100, scale: 0.9, transformOrigin: "center", repeat: 1, yoyo: true})
+            .to(finger3_anmas1, 0.5, {x: 500}, 1.5)
+            .to(finger3_anmas1, 0.2, {y: -100, scale: 0.9, transformOrigin: "center", repeat: 1, yoyo: true})
+            .to(finger3_anmas1, 0.5, {x: 850}, 2.8)
+            .to(finger3_anmas1, 0.2, {y: -100, scale: 0.9, transformOrigin: "center", repeat: 1, yoyo: true})
+            .to(finger3_anmas1, 0.5, {x: 0}, 4.2);
 
         //fonctions pour gérer le bouton
         button_anmas1.hover(function () {
@@ -221,9 +221,9 @@ export default {
             triggerElement: ".psm-formations-presentation-section .picture",
             triggerHook: "0.5",
         })
-        .addIndicators({name: "Augmented reality guy", indent: 300}) // add indicators (requires plugin)
-        .addTo(controllerPresentationMaster2Section)
-        .setTween(password_tl);
+            //.addIndicators({name: "Augmented reality guy", indent: 300}) // add indicators (requires plugin)
+            .addTo(controllerPresentationMaster2Section)
+            .setTween(password_tl);
 
         /**
          * ANIMATION N°2 M1 PROJETS RHIZOMES
@@ -235,30 +235,30 @@ export default {
         var controllerProjetRhizomeMaster1Section = new ScrollMagic.Controller();
 
         var clip_anmas2 = $('#clip-anmas2'),
-                rhizome_anmas2 = $('#rhizome-anmas2'),
-                mac_anmas2 = $('#mac-anmas2'),
-                desktop_anmas2 = $('#desktop-anmas2'),
-                iphone_anmas2 = $('#iphone-anmas2'),
-                ipad_anmas2 = $('#ipad-anmas2'),
-                moulin_anmas2 = $('#moulin-anmas2'),
-                clouds_anmas2 = $('#clouds-anmas2'),
-                sunshine_anmas2 = $('#sunshine-anmas2'),
-                ventre_taupe_anmas2 = $('#ventre-taupe-anmas2'),
-                day1_anmas2 = $('#day1-anmas2'),
-                day2_anmas2 = $('#day2-anmas2'),
-                day3_anmas2 = $('#day3-anmas2'),
-                day4_anmas2 = $('#day4-anmas2'),
-                day5_anmas2 = $('#day5-anmas2'),
-                day6_anmas2 = $('#day6-anmas2'),
-                day7_anmas2 = $('#day7-anmas2'),
-                day8_anmas2 = $('#day8-anmas2'),
-                leftLeaves_anmas2 = $('#left-leaves-anmas2'),
-                rightLeaves_anmas2 = $('#right-leaves-anmas2'),
-                tige_anmas2 = $('#tige-anmas2'),
-                graine_anmas2 = $('#seed-anmas2'),
-                herbe_day6 = $('#herbe-day6'),
-                herbe_day7 = $('#herbe-day7'),
-                herbe_day8 = $('#herbe-day8');
+            rhizome_anmas2 = $('#rhizome-anmas2'),
+            mac_anmas2 = $('#mac-anmas2'),
+            desktop_anmas2 = $('#desktop-anmas2'),
+            iphone_anmas2 = $('#iphone-anmas2'),
+            ipad_anmas2 = $('#ipad-anmas2'),
+            moulin_anmas2 = $('#moulin-anmas2'),
+            clouds_anmas2 = $('#clouds-anmas2'),
+            sunshine_anmas2 = $('#sunshine-anmas2'),
+            ventre_taupe_anmas2 = $('#ventre-taupe-anmas2'),
+            day1_anmas2 = $('#day1-anmas2'),
+            day2_anmas2 = $('#day2-anmas2'),
+            day3_anmas2 = $('#day3-anmas2'),
+            day4_anmas2 = $('#day4-anmas2'),
+            day5_anmas2 = $('#day5-anmas2'),
+            day6_anmas2 = $('#day6-anmas2'),
+            day7_anmas2 = $('#day7-anmas2'),
+            day8_anmas2 = $('#day8-anmas2'),
+            leftLeaves_anmas2 = $('#left-leaves-anmas2'),
+            rightLeaves_anmas2 = $('#right-leaves-anmas2'),
+            tige_anmas2 = $('#tige-anmas2'),
+            graine_anmas2 = $('#seed-anmas2'),
+            herbe_day6 = $('#herbe-day6'),
+            herbe_day7 = $('#herbe-day7'),
+            herbe_day8 = $('#herbe-day8');
 
         var anmas2_tl = new TimelineMax();
         var anmas2_screen_tl = new TimelineMax({repeat: -1});
@@ -269,41 +269,41 @@ export default {
             repeat: 2,
             ease: Power0.easeNone,
         })
-        .to(sunshine_anmas2, 1, {
-            scale: 1.2,
-            repeat: 13,
-            yoyo: true,
-            transformOrigin: 'center',
-            ease: Power0.easeNone,
-        }, 0)
-        .to(ventre_taupe_anmas2, 1.5, {
-            scale: 1.15,
-            repeat: 8,
-            yoyo: true,
-            transformOrigin: 'bottom',
-            ease: Power1.easeInOut,
-        }, 0)
-        .from(graine_anmas2, 1, {y: -300, ease: Power3.easeIn}, 0)
-        .from(tige_anmas2, 1, {scaleY: 0, transformOrigin: 'bottom'}, 2)
-        .from(leftLeaves_anmas2, 1, {x: "100%", scale: 0, transformOrigin: 'bottom-right'}, 3)
-        .from(rightLeaves_anmas2, 1, {x: "-100%", scale: 0, transformOrigin: 'bottom-left'}, 4)
-        .to(day1_anmas2, 0.1, {opacity: 0}, 6.1)
-        .from(day2_anmas2, 0.1, {opacity: 0}, 6)
-        .to(day2_anmas2, 0.1, {opacity: 0}, 7.1)
-        .from(day3_anmas2, 0.1, {opacity: 0}, 7)
-        .to(day3_anmas2, 0.1, {opacity: 0}, 8.1)
-        .from(day4_anmas2, 0.1, {opacity: 0}, 8)
-        .to(day4_anmas2, 0.1, {opacity: 0}, 9.1)
-        .from(day5_anmas2, 0.1, {opacity: 0}, 9)
-        .to(day5_anmas2, 0.1, {opacity: 0}, 10.1)
-        .from(herbe_day6, 0.2, {y: "100%"}, 10)
-        .from(day6_anmas2, 0.1, {opacity: 0}, 10)
-        .to(day6_anmas2, 0.1, {opacity: 0}, 11.1)
-        .from(herbe_day7, 0.2, {y: "100%"}, 11)
-        .from(day7_anmas2, 0.1, {opacity: 0}, 11)
-        .to(day7_anmas2, 0.1, {opacity: 0}, 12.1)
-        .from(herbe_day8, 0.2, {y: "100%"}, 12)
-        .from(day8_anmas2, 0.1, {opacity: 0}, 12)
+            .to(sunshine_anmas2, 1, {
+                scale: 1.2,
+                repeat: 13,
+                yoyo: true,
+                transformOrigin: 'center',
+                ease: Power0.easeNone,
+            }, 0)
+            .to(ventre_taupe_anmas2, 1.5, {
+                scale: 1.15,
+                repeat: 8,
+                yoyo: true,
+                transformOrigin: 'bottom',
+                ease: Power1.easeInOut,
+            }, 0)
+            .from(graine_anmas2, 1, {y: -300, ease: Power3.easeIn}, 0)
+            .from(tige_anmas2, 1, {scaleY: 0, transformOrigin: 'bottom'}, 2)
+            .from(leftLeaves_anmas2, 1, {x: "100%", scale: 0, transformOrigin: 'bottom-right'}, 3)
+            .from(rightLeaves_anmas2, 1, {x: "-100%", scale: 0, transformOrigin: 'bottom-left'}, 4)
+            .to(day1_anmas2, 0.1, {opacity: 0}, 6.1)
+            .from(day2_anmas2, 0.1, {opacity: 0}, 6)
+            .to(day2_anmas2, 0.1, {opacity: 0}, 7.1)
+            .from(day3_anmas2, 0.1, {opacity: 0}, 7)
+            .to(day3_anmas2, 0.1, {opacity: 0}, 8.1)
+            .from(day4_anmas2, 0.1, {opacity: 0}, 8)
+            .to(day4_anmas2, 0.1, {opacity: 0}, 9.1)
+            .from(day5_anmas2, 0.1, {opacity: 0}, 9)
+            .to(day5_anmas2, 0.1, {opacity: 0}, 10.1)
+            .from(herbe_day6, 0.2, {y: "100%"}, 10)
+            .from(day6_anmas2, 0.1, {opacity: 0}, 10)
+            .to(day6_anmas2, 0.1, {opacity: 0}, 11.1)
+            .from(herbe_day7, 0.2, {y: "100%"}, 11)
+            .from(day7_anmas2, 0.1, {opacity: 0}, 11)
+            .to(day7_anmas2, 0.1, {opacity: 0}, 12.1)
+            .from(herbe_day8, 0.2, {y: "100%"}, 12)
+            .from(day8_anmas2, 0.1, {opacity: 0}, 12)
 
 
         //apparition logo rhizome
@@ -312,29 +312,29 @@ export default {
             scale: 4,
             transformOrigin: 'center',
         })
-        .from(rhizome_anmas2, 1, {x: "330%", y: "130%"}, 2)
-        .to(rhizome_anmas2, 1, {scale: 1}, 2)
-        //apparition devices
-        .from(desktop_anmas2, 1, {opacity: 0, x: "100%"}, 3)
-        .from(iphone_anmas2, 1, {opacity: 0, x: "-100%"}, 3)
-        .from(mac_anmas2, 1, {opacity: 0, y: "100%"}, 3)
-        .from(ipad_anmas2, 1, {opacity: 0, y: "-100%"}, 3)
-        //allume écran
-        .from(clip_anmas2, 1, {opacity: 0}, 5)
-        .fromTo(clouds_anmas2, 50, {x: "-80%", ease: Power0.easeNone, repeat: -1}, {
-            x: "100%",
-            ease: Power0.easeNone,
-            repeat: -1,
-        }, 5)
-        .add(anmas2_screen_tl, 5);
+            .from(rhizome_anmas2, 1, {x: "330%", y: "130%"}, 2)
+            .to(rhizome_anmas2, 1, {scale: 1}, 2)
+            //apparition devices
+            .from(desktop_anmas2, 1, {opacity: 0, x: "100%"}, 3)
+            .from(iphone_anmas2, 1, {opacity: 0, x: "-100%"}, 3)
+            .from(mac_anmas2, 1, {opacity: 0, y: "100%"}, 3)
+            .from(ipad_anmas2, 1, {opacity: 0, y: "-100%"}, 3)
+            //allume écran
+            .from(clip_anmas2, 1, {opacity: 0}, 5)
+            .fromTo(clouds_anmas2, 50, {x: "-80%", ease: Power0.easeNone, repeat: -1}, {
+                x: "100%",
+                ease: Power0.easeNone,
+                repeat: -1,
+            }, 5)
+            .add(anmas2_screen_tl, 5);
 
         new ScrollMagic.Scene({
             triggerElement: "#master-1 .psm-formations-project-section .picture",
             triggerHook: "0.5",
         })
-        .addIndicators({name: "Rhizome animation", indent: 150}) // add indicators (requires plugin)
-        .addTo(controllerProjetRhizomeMaster1Section)
-        .setTween(anmas2_tl);
+            //.addIndicators({name: "Rhizome animation", indent: 150}) // add indicators (requires plugin)
+            .addTo(controllerProjetRhizomeMaster1Section)
+            .setTween(anmas2_tl);
 
 
         /**
@@ -349,25 +349,25 @@ export default {
         var controllerPresentationMaster2Section = new ScrollMagic.Controller();
 
         var phone_anmas3 = $('#phone-anmas3'),
-                screen_anmas3 = $('#screen-anmas3'),
-                clipper_anmas3 = $('#clipper-anmas3'),
-                password_screen_anmas3 = $('#password-screen-anmas3'),
-                header_anmas3 = $('#header-anmas3'),
-                desktop_anmas3 = $('#desktop-anmas3'),
-                icones_anmas3 = $('#icones-anmas3'),
-                type_cursor_anmas3 = $('#type-cursor-anmas3'),
-                mdp_anmas3 = $('#mdp-anmas3 circle'),
-                saisiemdp_anmas3 = $('#saisiemdp-anmas3'),
-                chargement_anmas3 = $('#chargement-anmas3 path'),
-                go_anmas3 = $('#go-anmas3 path'),
-                ico_prog_anmas3 = $('#ico-prog-anmas3'),
-                ico_proj_anmas3 = $('#ico-proj-anmas3'),
-                ico_anc_anmas3 = $('#ico-anc-anmas3'),
-                app_anc_anmas3 = $('#app-anc-anmas3'),
-                app_prog_anmas3 = $('#app-prog-anmas3'),
-                app_pfe_anmas3 = $('#app-pfe-anmas3'),
-                heure_anmas3 = $('#heure-anmas3'),
-                heure2_anmas3 = $('#heure2-anmas3');
+            screen_anmas3 = $('#screen-anmas3'),
+            clipper_anmas3 = $('#clipper-anmas3'),
+            password_screen_anmas3 = $('#password-screen-anmas3'),
+            header_anmas3 = $('#header-anmas3'),
+            desktop_anmas3 = $('#desktop-anmas3'),
+            icones_anmas3 = $('#icones-anmas3'),
+            type_cursor_anmas3 = $('#type-cursor-anmas3'),
+            mdp_anmas3 = $('#mdp-anmas3 circle'),
+            saisiemdp_anmas3 = $('#saisiemdp-anmas3'),
+            chargement_anmas3 = $('#chargement-anmas3 path'),
+            go_anmas3 = $('#go-anmas3 path'),
+            ico_prog_anmas3 = $('#ico-prog-anmas3'),
+            ico_proj_anmas3 = $('#ico-proj-anmas3'),
+            ico_anc_anmas3 = $('#ico-anc-anmas3'),
+            app_anc_anmas3 = $('#app-anc-anmas3'),
+            app_prog_anmas3 = $('#app-prog-anmas3'),
+            app_pfe_anmas3 = $('#app-pfe-anmas3'),
+            heure_anmas3 = $('#heure-anmas3'),
+            heure2_anmas3 = $('#heure2-anmas3');
 
         var myPhone_anmas3 = [phone_anmas3, screen_anmas3, clipper_anmas3];
         var allscreens_anmas3 = [password_screen_anmas3, header_anmas3, desktop_anmas3, icones_anmas3];
@@ -383,36 +383,36 @@ export default {
         TweenMax.from(type_cursor_anmas3, 0.5, {opacity: 0, repeat: -1, repeatDelay: 0.5, ease: Power0.easeNone});
         TweenLite.set(screen_anmas3, {y: -1});
         password_tl.set(allscreens_anmas3, {opacity: 0})
-        .to(password_screen_anmas3, 2, {opacity: 1})
-        .set(allscreens_anmas3, {opacity: 1})
-        .set(saisiemdp_anmas3, {opacity: 0}, 2)
-        .staggerFrom(mdp_anmas3, 0.01, {opacity: 0, ease: Power0.easeNone}, 0.1)
-        .to(type_cursor_anmas3, 0.01, {x: 25, ease: Power0.easeNone}, 2)
-        .to(type_cursor_anmas3, 0.01, {x: 50, ease: Power0.easeNone}, 2.1)
-        .to(type_cursor_anmas3, 0.01, {x: 75, ease: Power0.easeNone}, 2.2)
-        .to(type_cursor_anmas3, 0.01, {x: 100, ease: Power0.easeNone}, 2.3)
-        .to(type_cursor_anmas3, 0.01, {x: 125, ease: Power0.easeNone}, 2.4)
-        .to(type_cursor_anmas3, 0.01, {x: 150, ease: Power0.easeNone}, 2.5)
-        .to(type_cursor_anmas3, 0.01, {x: 175, ease: Power0.easeNone}, 2.6)
-        .to(type_cursor_anmas3, 0.01, {x: 200, ease: Power0.easeNone}, 2.7)
-        .to(type_cursor_anmas3, 0.01, {x: 225, ease: Power0.easeNone}, 2.8)
-        .to([mdp_anmas3, go_anmas3], 0.1, {fill: "#bbbbbb"}, 3)
-        .to(type_cursor_anmas3, 0.01, {scale: 0, ease: Power0.easeNone}, 3)
-        .from(chargement_anmas3, 0.5, {opacity: 0}, 3)
-        .add(
+            .to(password_screen_anmas3, 2, {opacity: 1})
+            .set(allscreens_anmas3, {opacity: 1})
+            .set(saisiemdp_anmas3, {opacity: 0}, 2)
+            .staggerFrom(mdp_anmas3, 0.01, {opacity: 0, ease: Power0.easeNone}, 0.1)
+            .to(type_cursor_anmas3, 0.01, {x: 25, ease: Power0.easeNone}, 2)
+            .to(type_cursor_anmas3, 0.01, {x: 50, ease: Power0.easeNone}, 2.1)
+            .to(type_cursor_anmas3, 0.01, {x: 75, ease: Power0.easeNone}, 2.2)
+            .to(type_cursor_anmas3, 0.01, {x: 100, ease: Power0.easeNone}, 2.3)
+            .to(type_cursor_anmas3, 0.01, {x: 125, ease: Power0.easeNone}, 2.4)
+            .to(type_cursor_anmas3, 0.01, {x: 150, ease: Power0.easeNone}, 2.5)
+            .to(type_cursor_anmas3, 0.01, {x: 175, ease: Power0.easeNone}, 2.6)
+            .to(type_cursor_anmas3, 0.01, {x: 200, ease: Power0.easeNone}, 2.7)
+            .to(type_cursor_anmas3, 0.01, {x: 225, ease: Power0.easeNone}, 2.8)
+            .to([mdp_anmas3, go_anmas3], 0.1, {fill: "#bbbbbb"}, 3)
+            .to(type_cursor_anmas3, 0.01, {scale: 0, ease: Power0.easeNone}, 3)
+            .from(chargement_anmas3, 0.5, {opacity: 0}, 3)
+            .add(
                 new TimelineMax({repeat: -1, repeatDelay: -0.2}).staggerTo(chargement_anmas3, 0.2, {
                     fill: '#eeeeee',
                     yoyo: true,
                     repeat: 1,
                     ease: Power0.easeNone,
                 }, -0.1)
-        )
-        .to(password_screen_anmas3, 0.5, {opacity: 0, onComplete: chargementtermine}, 5)
-        .set(password_screen_anmas3, {scale: 0})
-        .from([$('#screen-anmas3 path'), $('#screen-anmas3 rect'), $('#screen-anmas3 text'), $('#screen-anmas3 tspan')], 0.5, {
-            fill: '#000000',
-            opacity: 1,
-        })
+            )
+            .to(password_screen_anmas3, 0.5, {opacity: 0, onComplete: chargementtermine}, 5)
+            .set(password_screen_anmas3, {scale: 0})
+            .from([$('#screen-anmas3 path'), $('#screen-anmas3 rect'), $('#screen-anmas3 text'), $('#screen-anmas3 tspan')], 0.5, {
+                fill: '#000000',
+                opacity: 1,
+            })
 
         function chargementtermine() {
             follow = true;
@@ -490,9 +490,9 @@ export default {
             triggerElement: "#master-2 .psm-formations-presentation-section .picture",
             triggerHook: "0.5",
         })
-        .addIndicators({name: "Augmented reality guy", indent: 300}) // add indicators (requires plugin)
-        .addTo(controllerPresentationMaster2Section)
-        .setTween(password_tl);
+            //.addIndicators({name: "Augmented reality guy", indent: 300}) // add indicators (requires plugin)
+            .addTo(controllerPresentationMaster2Section)
+            .setTween(password_tl);
 
         /**
          * GENERAL FUNCTIONS

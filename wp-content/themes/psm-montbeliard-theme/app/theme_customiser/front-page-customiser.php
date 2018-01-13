@@ -103,7 +103,7 @@ add_action('customize_register',  function( $wp_customize ) {
     $wp_customize->add_setting( 'home_page_welcome_section_img', array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'default' => \App\App::get_image_page_header('dept-mm', 'jpg'),
+        'default' => \App\App::get_image_page_header('batiment-psm', 'jpg'),
     ));
 
     //Image Licence control
@@ -268,7 +268,7 @@ add_action('customize_register',  function( $wp_customize ) {
             'multimédia et les nouvelles technologies, nous allons vous transmettre les <b>outils</b> et les <b>expériences</b> '.
             'nécessaires à faire de vous un professionnel qualifié dans votre domaine de prédilection. '.
             'Vous visez <b>l’excellence</b> pour la poursuite de vos études en <b>BAC+3</b> ou en <b>Master</b> ? PSM pourrait être la '.
-            'réponse : venez découvrir nos <a href="#">formations</a> et nos <a href="">modalités d’admission</a>. ',
+            'réponse : venez découvrir nos <b>formations</b> et nos <b>modalités d’admission</b>. ',
         'transport' => 'postMessage',
     ));
 
@@ -279,24 +279,86 @@ add_action('customize_register',  function( $wp_customize ) {
         'label' => 'Texte section présentation'
     )));
 
-    //Admission link
-    $wp_customize->add_setting( 'home_page_presentation_section_admission_link', array(
-        'default' => '',
+    //Admission licence link
+    $wp_customize->add_setting( 'home_page_presentation_section_admission_licence_link', array(
+        'default' => 'http://formations.univ-fcomte.fr/ws?_profil=ufc&_cmd=getFormation&_oid=CDM-KPROG8&_onglet=admission&_redirect=voir_fiche_program',
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'esc_url'
     ) );
 
-    //Button link control
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'home_page_presentation_section_admission_link', array(
-        'label'    => __( 'Url de la page d\'admission', 'textdomain' ),
-        'settings' => 'home_page_presentation_section_admission_link',
+    //Admission licence link control
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'home_page_presentation_section_admission_licence_link', array(
+        'label'    => __( 'Url de la page d\'admission licence', 'textdomain' ),
+        'settings' => 'home_page_presentation_section_admission_licence_link',
         'section'  => 'home_page_presentation_section',
         'input_attrs' => array(
-            'placeholder' => __( 'ex: http://site/admission.pdf' ),
+            'placeholder' => __( 'ex: http://site/admission' ),
         ),
-        'type' => 'url',
+        'type' => 'textarea',
     )));
+
+    // Little pencil logo pointer shortcut
+    $wp_customize->selective_refresh->add_partial('home_page_presentation_section_admission_licence_link', [
+        'selector' => '.home_page_presentation_section_admission_licence_link',
+        'render_callback' => function () {
+            return get_theme_mod('home_page_presentation_section_admission_licence_link');
+        }
+    ]);
+
+    //Admission master link
+    $wp_customize->add_setting( 'home_page_presentation_section_admission_master_link', array(
+        'default' => 'http://formations.univ-fcomte.fr/ws?_profil=ufc&_cmd=getFormation&_oid=CDM-KPROG107&_onglet=admission&_redirect=voir_fiche_program',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'esc_url'
+    ) );
+
+    //Admission master link control
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'home_page_presentation_section_admission_master_link', array(
+        'label'    => __( 'Url de la page d\'admission master', 'textdomain' ),
+        'settings' => 'home_page_presentation_section_admission_master_link',
+        'section'  => 'home_page_presentation_section',
+        'input_attrs' => array(
+            'placeholder' => __( 'ex: http://site/admission' ),
+        ),
+        'type' => 'textarea',
+    )));
+
+    // Little pencil logo pointer shortcut
+    $wp_customize->selective_refresh->add_partial('home_page_presentation_section_admission_master_link', [
+        'selector' => '.home_page_presentation_section_admission_master_link',
+        'render_callback' => function () {
+            return get_theme_mod('home_page_presentation_section_admission_master_link');
+        }
+    ]);
+
+    //Apply link
+    $wp_customize->add_setting( 'home_page_presentation_section_apply_link', array(
+        'default' => 'https://scolarite.univ-fcomte.fr/ecandidat/',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'esc_url'
+    ) );
+
+    //Apply link control
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'home_page_presentation_section_apply_link', array(
+        'label'    => __( 'Url de la page de candidature', 'textdomain' ),
+        'settings' => 'home_page_presentation_section_apply_link',
+        'section'  => 'home_page_presentation_section',
+        'input_attrs' => array(
+            'placeholder' => __( 'ex: http://site/admission' ),
+        ),
+        'type' => 'textarea',
+    )));
+
+    // Little pencil logo pointer shortcut
+    $wp_customize->selective_refresh->add_partial('home_page_presentation_section_apply_link', [
+        'selector' => '.home_page_presentation_section_apply_link',
+        'render_callback' => function () {
+            return get_theme_mod('home_page_presentation_section_apply_link');
+        }
+    ]);
 
     // Little pencil logo pointer shortcut
     $wp_customize->selective_refresh->add_partial('home_page_presentation_section_title', [
@@ -318,13 +380,28 @@ add_action('customize_register',  function( $wp_customize ) {
      * HOMEPAGE - FORMATIONS SECTION FIELDS
     /* ---------------------------------------------- */
 
+    //Image Licence
+    $wp_customize->add_setting( 'home_page_formations_section_img_1', array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => get_template_directory_uri(). '/../dist/images/formations/Licence3-psm.jpg',
+    ));
+
+    //Image Licence
+    $wp_customize->add_setting( 'home_page_formations_section_img_2', array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => get_template_directory_uri(). '/../dist/images/formations/Master1-psm.jpg',
+    ));
+
+    //Image Licence
+    $wp_customize->add_setting( 'home_page_formations_section_img_3', array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => get_template_directory_uri(). '/../dist/images/formations/Master2-psm.jpg',
+    ));
+
     for ( $count = 1; $count <= 3; $count++ ) {
-        //Image Licence
-        $wp_customize->add_setting( 'home_page_formations_section_img_'. $count, array(
-            'type' => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'default' => get_template_directory_uri(). '/../dist/images/960-960-city-'. $count .'.jpg',
-        ));
 
         //Image Licence control
         $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'home_page_formations_section_image_'. $count .'_controller', array(
@@ -348,6 +425,30 @@ add_action('customize_register',  function( $wp_customize ) {
     $wp_customize->selective_refresh->add_partial('home_page_formations_section_img_3', [
         'selector' => '.home_page_formations_section_img_3'
     ]);
+
+    /**---------------------------------------------- /*
+     * HOMEPAGE - PROJECTS SECTION NEWS
+    /* ---------------------------------------------- */
+
+    //NEWS Page Dropdown Settings
+    $wp_customize->add_setting( 'home_page_news_section_news_page', array(
+        'default'           => '',
+        'sanitize_callback' => 'absint'
+    ) );
+
+    //Projet Rhizome Page control
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'home_page_news_section_news_page', array(
+        'label'    => __( 'Page des actualités', 'textdomain' ),
+        'settings' => 'home_page_news_section_news_page',
+        'section'  => 'home_page_news_section',
+        'type' => 'dropdown-pages',
+    )));
+
+    // Little pencil logo pointer shortcut
+    $wp_customize->selective_refresh->add_partial('home_page_news_section_news_page', [
+        'selector' => '.home_page_news_section_news_page'
+    ]);
+
 
     /**---------------------------------------------- /*
      * HOMEPAGE - PROJECTS SECTION FIELDS
