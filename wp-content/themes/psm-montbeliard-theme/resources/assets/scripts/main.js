@@ -7,7 +7,9 @@ import common from './routes/common';
 import home from './routes/home';
 import master from './routes/master';
 import licence3 from './routes/licence3';
-import projetsRhizomes from './routes/anmas2'
+import projetsRhizomes from './routes/projetsRhizomes';
+import projetsFinDetudes from './routes/projetsFinDetudes';
+import espacePro from './routes/professional';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -19,7 +21,10 @@ const routes = new Router({
     //Licence and Master pages
     master,
     licence3,
+    espacePro,
     projetsRhizomes,
+    projetsFinDetudes,
+
 });
 
 // Load Events

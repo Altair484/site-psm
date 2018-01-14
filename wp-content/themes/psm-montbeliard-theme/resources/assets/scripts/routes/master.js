@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
+
 import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min';
-
-
 export default {
     init() {
     },
@@ -263,11 +262,15 @@ export default {
 
         var anmas2_tl = new TimelineMax();
         var anmas2_screen_tl = new TimelineMax({repeat: -1});
-       /* if(navigator.appCodeName == "Mozzilla") {
 
-        }*/
-       /*eslint-disable no-console*/
-       console.log($.browser.chrome);
+        $('#master-1 .psm-formations-project-section .picture svg').hover(function(){
+            TweenLite.set(this, {cursor: "pointer"});
+        });
+
+        $('#master-1 .psm-formations-project-section .picture svg').click(function () {
+            anmas2_tl.restart();
+        });
+
         anmas2_screen_tl.to(moulin_anmas2, 5, {
             rotation: 360,
             transformOrigin: 'center',
@@ -336,6 +339,7 @@ export default {
         new ScrollMagic.Scene({
             triggerElement: "#master-1 .psm-formations-project-section .picture",
             triggerHook: "0.5",
+            reverse:false,
         })
             //.addIndicators({name: "Rhizome animation", indent: 150}) // add indicators (requires plugin)
             .addTo(controllerProjetRhizomeMaster1Section)
@@ -380,7 +384,7 @@ export default {
         var follow = false;
 
         $('.choose-training').click(function () {
-            password_tl.time(0);
+            password_tl.restart();
         });
 
         screen_anmas3.css("pointer-events", "none");
@@ -495,6 +499,7 @@ export default {
         new ScrollMagic.Scene({
             triggerElement: "#master-2 .psm-formations-presentation-section .picture",
             triggerHook: "0.5",
+            reverse:false,
         })
             //.addIndicators({name: "Augmented reality guy", indent: 300}) // add indicators (requires plugin)
             .addTo(controllerPresentationMaster2Section)
@@ -530,8 +535,73 @@ export default {
             return i;
         }
 
-
         setInterval(heureActuelle, 1000);
+
+        /**
+         * ANIMATION N°1 M2 NAV
+         *
+         * @description: Trigger the svg animation of the presentation section of master 2 SECTION
+         *
+         * @author Federico Borsoi
+         */
+
+
+
+
+        var avantbras_g_anmas4 = $("#avantbras-g-anmas4"),
+            avantbras_d_anmas4 = $("#avantbras-d-anmas4"),
+            drone_anmas4 = $('#drone-anmas4'),
+            drone_img_anmas4 = $('#drone_img_anmas4'),
+            bras_fille_anmas4 = $('#bras-fille-anmas4'),
+            printer_arm_anmas4 = $('#printer-arm-anmas4'),
+            clipper_drone_printer_anmas4 = $('#clipper-drone-printer-anmas4'),
+            drone_printer_anmas4 = $('#drone_printer_anmas4'),
+            heliceD_anmas4 = $('#heliceD-anmas4'),
+            heliceG_anmas4 = $('#heliceG-anmas4');
+
+        var tl_anmas4 = new TimelineMax({repeat:-1});
+
+        tl_anmas4.timeScale(4);
+
+        var time_anmas4=8,
+            positionArm_anmas4 = 185,
+            positionClip_anmas4 = 0;
+
+        drone_anmas4.css('opacity', 0);
+
+        tl_anmas4.set(printer_arm_anmas4, {x:0, y:0})
+            .set(drone_img_anmas4, {scale:0, transformOrigin:"center"})
+            .to(avantbras_g_anmas4, 0.4, {rotation:10, repeat:55, yoyo:true, transformOrigin:"100% 0", ease:Power0.easeNone},0)
+            .to(bras_fille_anmas4, 1, {rotation:-3, transformOrigin:"bottom right", yoyo:true, repeat:10, repeatDelay:1, ease:Bounce.easeOut}, 0)
+            .to(avantbras_d_anmas4, 0.4, {rotation:-10, repeat:55, yoyo:true, ease:Power0.easeNone}, 0.4)
+            .to(drone_img_anmas4, 2, {scale:1, ease:Elastic.easeOut}, 3)
+            .to(printer_arm_anmas4, 0.5, {x:-120}, 5)
+            .to(printer_arm_anmas4, 1, {y:185}, 6)
+            .to(printer_arm_anmas4, 1, {x:150, repeat:10, yoyo:true, repeatDelay:0.5, ease:Power0.easeNone}, 7)
+            .add(printer_arm_controller, 8)
+            .to(printer_arm_anmas4, 1, {x:0, y:0, ease:Power0.easeNone})
+            .set(drone_anmas4, {opacity:1})
+            .set(drone_printer_anmas4, {opacity:0})
+            .to([heliceG_anmas4, heliceD_anmas4], 0.1, {x:100, ease:Power0.easeNone, repeat:150}, 24)
+            .to(drone_anmas4, 1, {y:-30, ease:Back.easeOut}, 25)
+            .to(drone_anmas4, 0.5, {y:-20, ease:Power1.easeInOut, repeat:8, yoyo:true},26)
+            .to(drone_anmas4, 1, {scale:3, transformOrigin:"center"}, 26.5)
+            .to(drone_anmas4, 1, {x:-600, y:-400, scale:2, ease:Power1.easeOut}, 30)
+            .to(drone_anmas4, 1, {x:-800, y:-300, scale:0.6, ease:Power1.easeOut}, 32)
+            .to(drone_anmas4, 1, {x:-500, scale:5, ease:Power0.easeNone}, 34)
+            .to(drone_anmas4, 1, {scale:0, x:200, y:-500}, 36)
+            .add(function(){time_anmas4=8; positionArm_anmas4=185; positionClip_anmas4=0;})
+
+
+        function printer_arm_controller(){
+            while(positionArm_anmas4>0){
+                tl_anmas4.to(printer_arm_anmas4, 0.2, {y:positionArm_anmas4, ease:Power0.easeNone}, time_anmas4);
+                tl_anmas4.to(clipper_drone_printer_anmas4, 0.2, {y:positionClip_anmas4, ease:Power0.easeNone}, time_anmas4);
+                positionArm_anmas4 -= 18.5;
+                positionClip_anmas4 -= 18.5;
+                time_anmas4 += 1.5;
+            }
+        }
     },
 };
 

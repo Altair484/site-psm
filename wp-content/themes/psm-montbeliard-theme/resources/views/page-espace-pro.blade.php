@@ -28,7 +28,7 @@
             <div class="content offset-0 offset-md-2 col-12 col-md-9">
                 <div class="row">
                     <div class="picture col-12 col-md-3 no-padding">
-                        <img src="http://via.placeholder.com/960x540" alt="">
+                        {!! get_template_part('/assets/images/svg/inline', 'anpro.svg') !!}
                     </div>
                     <div class="text col-12 col-md-9 d-flex justify-content-center align-items-start flex-column">
                         <h2 class="professional_page_presentation_section_title">

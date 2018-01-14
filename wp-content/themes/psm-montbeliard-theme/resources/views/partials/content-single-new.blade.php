@@ -33,7 +33,7 @@
             </div>
             <div class="other-news">
                 @include('partials/social-medias')
-                <h3>Autres articles</h3>
+                <h3>Lire aussi :</h3>
                 @include('partials/random-posts')
             </div>
         </div>

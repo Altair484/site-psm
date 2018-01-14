@@ -186,9 +186,12 @@
     }
 
     #master-1,#master-2 {
-        display: none;
+        opacity: 0;
+        height: 0;
         &.selected {
+            opacity:1;
             display: block!important;
+            height: 100%;
         }
     }
 }

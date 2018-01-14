@@ -707,6 +707,13 @@ export default {
             bouche_anac1 = $('#bouche-anac1');
 
         var tl_anac1 = new TimelineMax;
+        $('#corps-anac1, #jambes-anac1').hover(function(){
+            TweenLite.set(this, {cursor: "pointer"});
+        });
+
+        $('#corps-anac1, #jambes-anac1').click(function () {
+            tl_anac1.restart();
+        });
 
         var comptxP = -600,
             comptxI = 500,
@@ -997,6 +1004,14 @@ export default {
 
         var fusee_tl = new TimelineMax();
 
+        $('#projects-section .content .picture svg').hover(function(){
+            TweenLite.set(this, {cursor: "pointer"});
+        });
+
+        $('#projects-section .content .picture svg ').click(function () {
+            fusee_tl.restart();
+        });
+
         fusee_tl.set(div_anac2, {border: 'solid 2px #e8e8e8'})
             .fromTo([pointe_fusee, p1_anac2, bras_p1_anac2], 1, {opacity: 0, y: -200}, {opacity: 1, y: -150})
             .to(bras_g_p1_anac2, 0.2, {rotation: 10, transformOrigin: "100% 0%", ease: Power1.easeOut}, 0.8)
@@ -1125,10 +1140,9 @@ export default {
         // END professional BACKGROUND ELEMENTS ANIMATION
 
         //START PROFESSIONAL ANIMATION SVG
-
-        var anac3_1 = $('#1-anac3'),
-            anac3_2 = $('#2-anac3'),
-            anac3_3 = $('#3-anac3'),
+        var anac3_1 = $('#anac3-1'),
+            anac3_2 = $('#anac3-2'),
+            anac3_3 = $('#anac3-3'),
             balle_jeff = $('#balle-jeff-anac3'),
             jeff_anac3 = $('#jeff-anac3'),
             fede_anac3 = $('#fede-anac3'),

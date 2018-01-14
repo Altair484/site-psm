@@ -352,8 +352,8 @@ section {
         .picture {
             svg, object, img {
                 width: 100%;
+                height: auto;
                 @include md() {
-                    height: auto;
                     width: 150%;
                     position: absolute;
                     margin: auto;
@@ -366,6 +366,9 @@ section {
 
         .text {
 
+            img{
+                max-width: 100%;
+            }
             @include setup-font($sourceSansPro, black, 300);
             @include responsive-font(1, 2rem);
 
@@ -380,7 +383,6 @@ section {
 
             h2 {
                 @include setup-font($lovelo, $primaire-vert, 300);
-                @include responsive-font(0, 3rem)
             }
 
             h2,h3,h4,h4,h5,h6{

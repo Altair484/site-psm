@@ -449,8 +449,10 @@
 
 #news-section {
     background-color: $tertiaire-gris-blanc;
-    padding-top: 75px;
-
+    h2{
+        padding: 50px 15px 50px 15px;
+        text-align: center;
+    }
     .see-all-news {
         padding: 50px 0 50px 0;
     }
@@ -512,7 +514,6 @@
             h2 {
                 padding-top: 30px;
                 @include setup-font($lovelo, $primaire-vert, 300);
-                @include responsive-font(0, 2.4rem)
             }
 
             p {

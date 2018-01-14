@@ -96,7 +96,7 @@
                             </div>
                         </div>
                     </div>
-                    {{--  <div class="swipe-container">
+                    {{--<div class="swipe-container">
                           {!! get_template_part('../dist/images/svg/inline', 'swipe.svg') !!}
                       </div>--}}
                 </div>
@@ -304,6 +304,7 @@
 
     <!-- News section start -->
     <section id="news-section">
+        <h2>Actualités</h2>
         <div class="row justify-content-around">
             {!! \App\FrontPage::get_three_news() !!}
             <div class="row w-100">

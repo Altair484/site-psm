@@ -20,7 +20,7 @@
     <!-- Masters toggles start -->
     <div id="masters">
         <!-- Background video section start -->
-        <section id="toggle-masters">
+        <div id="toggle-masters">
             <div class="row">
                 <div class="choose-training col-6 no-padding <?php if (isset($_GET['formation']) and $_GET['formation'] == 'm1'){echo('active');} ?>">
                     <button>Première année</button>
@@ -29,7 +29,7 @@
                     <button>Deuxième année</button>
                 </div>
             </div>
-        </section>
+        </div>
         <div id="master-1" class="<?php if (isset($_GET['formation']) and $_GET['formation'] == 'm1'){echo('selected');} ?>">
             <section class="psm-formations-presentation-section section-image-left-content-right">
                 <div class="row justify-content-center align-items-center">
@@ -458,7 +458,7 @@
                         @php($image_hex_1 = get_theme_mod('master_page_testimony_section_image_first_student', get_template_directory_uri(). '/../dist/images/user_graduated.png'))
                         <div class="hexagone img--1 master_page_testimony_section_image_first_student" style="background-image: url('{{$image_hex_1}}')">
                             <div class="hexTop master_page_testimony_section_image_first_student" style="background-image: url('{{$image_hex_1}}')"></div>
-                            <div class="hexBottom master_page_testimony_section_image_first_student"style="background-image: url('{{$image_hex_1}}')"></div>
+                            <div class="hexBottom master_page_testimony_section_image_first_student" style="background-image: url('{{$image_hex_1}}')"></div>
                         </div>
                     </div>
 
@@ -491,13 +491,13 @@
                         @php($image_hex_2 = get_theme_mod('master_page_testimony_section_image_second_student', get_template_directory_uri(). '/../dist/images/user_graduated.png'))
                         <div class="hexagone img--1 master_page_testimony_section_image_second_student" style="background-image: url('{{$image_hex_2}}')">
                             <div class="hexTop master_page_testimony_section_image_second_student" style="background-image: url('{{$image_hex_2}}')"></div>
-                            <div class="hexBottom master_page_testimony_section_image_second_student"style="background-image: url('{{$image_hex_2}}')"></div>
+                            <div class="hexBottom master_page_testimony_section_image_second_student" style="background-image: url('{{$image_hex_2}}')"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-    <script type="text/javascript"> var you_video_tube_id = '{{ get_theme_mod('master_page_header_section_video_id','rY1iA0ulO-0')}}'</script>
-    <script type="text/javascript" src="{!!  get_template_directory_uri() . '/assets/scripts/you-tube-api.js' !!}"></script>
+    <script> var you_video_tube_id = '{{ get_theme_mod('master_page_header_section_video_id','rY1iA0ulO-0')}}'</script>
+    <script src="{!!  get_template_directory_uri() . '/assets/scripts/you-tube-api.js' !!}"></script>
 @endsection

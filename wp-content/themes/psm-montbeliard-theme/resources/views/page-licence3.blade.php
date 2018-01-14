@@ -274,7 +274,7 @@
                         @php($image_hex_1 = get_theme_mod('licence_page_testimony_section_image_first_student', get_template_directory_uri(). '/../dist/images/user_graduated.png'))
                         <div class="hexagone img--1 licence_page_testimony_section_image_first_student" style="background-image: url('{{$image_hex_1}}')">
                             <div class="hexTop licence_page_testimony_section_image_first_student" style="background-image: url('{{$image_hex_1}}')"></div>
-                            <div class="hexBottom licence_page_testimony_section_image_first_student"style="background-image: url('{{$image_hex_1}}')"></div>
+                            <div class="hexBottom licence_page_testimony_section_image_first_student" style="background-image: url('{{$image_hex_1}}')"></div>
                         </div>
                     </div>
 
@@ -307,14 +307,14 @@
                         @php($image_hex_2 = get_theme_mod('licence_page_testimony_section_image_second_student', get_template_directory_uri(). '/../dist/images/user_graduated.png'))
                         <div class="hexagone img--1 licence_page_testimony_section_image_second_student" style="background-image: url('{{$image_hex_2}}')">
                             <div class="hexTop licence_page_testimony_section_image_second_student" style="background-image: url('{{$image_hex_2}}')"></div>
-                            <div class="hexBottom licence_page_testimony_section_image_second_student"style="background-image: url('{{$image_hex_2}}')"></div>
+                            <div class="hexBottom licence_page_testimony_section_image_second_student" style="background-image: url('{{$image_hex_2}}')"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-    <script type="text/javascript"> var you_video_tube_id = '{{ get_theme_mod('licence_page_header_section_video_id','rY1iA0ulO-0')}}'</script>
-    <script type="text/javascript"> var theme_url = '{{ get_template_directory_uri() }}';</script>
-    <script type="text/javascript" src="{!!  get_template_directory_uri() . '/assets/scripts/you-tube-api.js' !!}"></script>
+    <script> var you_video_tube_id = '{{ get_theme_mod('licence_page_header_section_video_id','rY1iA0ulO-0')}}'</script>
+    <script> var theme_url = '{{ get_template_directory_uri() }}';</script>
+    <script src="{!!  get_template_directory_uri() . '/assets/scripts/you-tube-api.js' !!}"></script>
 @endsection

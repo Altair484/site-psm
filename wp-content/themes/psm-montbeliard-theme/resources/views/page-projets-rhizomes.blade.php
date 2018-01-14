@@ -5,9 +5,9 @@
         <div class="row header" style="background-image: url('{!! get_theme_mod('projets_rhizome_page_header_section_img',\App\App::get_image_page_header('projets_rhizome', 'jpg')) !!}')">
             <div class="filter"></div>
             <div class="header-content">
-                <span class="d-flex justify-content-center" style="width: 100%;">
-                    <div class="projets_rhizome_page_header_section_img" style="width: 1px"></div>
-                </span>
+                <div class="d-flex justify-content-center" style="width: 100%;">
+                    <span class="projets_rhizome_page_header_section_img" style="width: 1px"></span>
+                </div>
                 <h1 class="projets_rhizome_page_header_section_title">
                     {{ get_theme_mod(
                         'projets_rhizome_page_header_section_title',
@@ -61,12 +61,12 @@
             </div>
             <div id="projects-navigation" class="col-12">
                 <h4>Sélectionne une année : </h4>
-                <span class="d-flex justify-content-center" style="width: 100%;">
-                    <div class="projets_rhizome_page_projects_section_years_dropdown_list" style="width: 1px"></div>
-                </span>
+                <div class="d-flex justify-content-center" style="width: 100%;">
+                    <span class="projets_rhizome_page_projects_section_years_dropdown_list" style="width: 1px"></span>
+                </div>
                 <select>
                     @php($option_number =  get_theme_mod('projets_rhizome_page_projects_section_years_dropdown_list','6'))
-                    <option style="display: none"></option>
+                    <option style="display: none">&nbsp;</option>
                     @for($i=$option_number-1; $i >= 0;  $i--)
                         <option value="{{ date('Y') - $i}}">{{ date('Y') - $i}}</option>
                     @endfor
@@ -76,7 +76,7 @@
     </section>
     <div class="scrollToProjects"></div>
     <section class="noProjectsResults">
-        Désolé, les projets de cette année n'ont pas encore été publiés.
+        <h4>Désolé, les projets de cette année n'ont pas encore été publiés.</h4>
     </section>
     @while($get_projects->have_posts()) @php($get_projects->the_post())
     @php( $year = get_post_meta(get_the_ID(),'_project_year',true))
@@ -86,7 +86,7 @@
         @php($theme = wp_get_post_terms(get_the_ID(), 'project_theme')[0]->name)
         <section data-year="{{ $year }}" class="project section-image-right-content-left">
             <div class="row justify-content-center align-items-center">
-                <article class="content col-12 col-md-9">
+                <div class="content col-12 col-md-9">
                     <div class="row">
                         <div class="text col-12 col-md-9 d-flex justify-content-center align-items-start flex-column">
                             <h2>{!! get_the_title() !!}</h2>
@@ -105,14 +105,14 @@
                             {{ \App\App::get_image_projects() }}
                         </div>
                     </div>
-                </article>
+                </div>
                 <div class="col-md-2"></div>
             </div>
         </section>
     @else
         <section style="background-color: #17232d" data-year="{{ $year }}" class="project section-image-left-content-right">
             <div class="row justify-content-center align-items-center">
-                <article class="content offset-0 offset-md-2 col-12 col-md-9">
+                <div class="content offset-0 offset-md-2 col-12 col-md-9">
                     <div class="row">
                         <div class="picture col-12 col-md-3 no-padding">
                             {{ \App\App::get_image_projects() }}
@@ -131,7 +131,7 @@
                             </div>
                         </div>
                     </div>
-                </article>
+                </div>
             </div>
         </section>
     @endif
