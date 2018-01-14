@@ -29,13 +29,13 @@ export default {
 
         //Timeline
         var tl_idee = new TimelineMax;
-        tl_idee.to(tete_idee, 0.5, {rotation: 30, transformOrigin: "90% 100%"})
-            .to(bras_droit_idee, 0.3, {rotation: 70, transformOrigin: "15% 90%"}, 0.5)
-            .to(bras_gauche_idee, 0.3, {rotation: 120, transformOrigin: "90% 30%"}, 0.5)
-            .set(tung_al, {className: "+=show"}, 0.7)
-            .set(tung_et, {className: "+=hidden"}, 0.7)
-            .set(eteinte, {className: "+=hidden"}, 0.7)
-            .set(allumee, {className: "+=show"}, 0.7)
+        tl_idee.to(tete_idee, 0.5, {rotation: 30, transformOrigin: "90% 100%"}, 3)
+            .to(bras_droit_idee, 0.3, {rotation: 70, transformOrigin: "15% 90%"}, 3.5)
+            .to(bras_gauche_idee, 0.3, {rotation: 120, transformOrigin: "90% 30%"}, 3.5)
+            .set(tung_al, {className: "+=show"}, 3.7)
+            .set(tung_et, {className: "+=hidden"}, 3.7)
+            .set(eteinte, {className: "+=hidden"}, 3.7)
+            .set(allumee, {className: "+=show"}, 3.7)
             .fromTo(ampoule, 0.15, {rotation: -10, transformOrigin: "50%, 50%"}, {
                 rotation: 10,
                 transformOrigin: "50%, 50%",

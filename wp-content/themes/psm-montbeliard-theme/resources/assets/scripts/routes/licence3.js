@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-
 export default {
     init() {
 
@@ -549,8 +548,6 @@ export default {
 
 
         function finMelange(){
-            /*eslint-disable no-console*/
-            console.log(this.rotation);
             if(this.rotation>720){
                 pizza_sounds['melanger'].pause();
                 new TimelineLite({onComplete:rouleauStart}).set(boule_pateapizza_anlic2, {opacity:1, x:200})

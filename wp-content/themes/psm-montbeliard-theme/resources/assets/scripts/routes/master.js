@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min';
 
+
 export default {
     init() {
     },
@@ -262,7 +263,11 @@ export default {
 
         var anmas2_tl = new TimelineMax();
         var anmas2_screen_tl = new TimelineMax({repeat: -1});
+       /* if(navigator.appCodeName == "Mozzilla") {
 
+        }*/
+       /*eslint-disable no-console*/
+       console.log($.browser.chrome);
         anmas2_screen_tl.to(moulin_anmas2, 5, {
             rotation: 360,
             transformOrigin: 'center',
@@ -462,6 +467,7 @@ export default {
         app_anc_anmas3.hover(scaleUp, scaleDown);
         app_prog_anmas3.hover(scaleUp, scaleDown);
         app_pfe_anmas3.hover(scaleUp, scaleDown);
+
 
         //fonctions pour le click sur les app
         app_anc_anmas3.click(function () {

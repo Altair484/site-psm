@@ -3,9 +3,10 @@
 // import external dependencies
 import 'jquery';
 //import 'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min';
+import 'gsap/CSSPlugin';
 import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min';
-import 'gsap/TweenMax';
-import 'gsap/CSSPlugin'
+import 'gsap/src/minified/TweenMax.min';
+
 import 'gsap/Draggable';
 import 'gsap/ScrollToPlugin';
 
