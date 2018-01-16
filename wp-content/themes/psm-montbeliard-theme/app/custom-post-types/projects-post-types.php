@@ -57,6 +57,9 @@ function codex_project_init() {
 		'menu_icon'          => 'dashicons-media-interactive', //icon
 		'supports'           => array( 'title', 'editor', 'thumbnail')
 	);
+    if(current_user_can('editor') && get_option('activate_editor_access_to_projects') == 'false'){
+        $args['show_ui'] = false;
+    }
 	register_post_type( 'project', $args );
 }
 

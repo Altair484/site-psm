@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: PSM_Settings
+Plugin Name: Réglages PSM
 Plugin Url : No url at the moment
-Description: This is the starter project for a plugin
-Version: 0.1
+Description: Plugin de réglages supplémentaires spécifiques au thème PSM Montbéliard
+Version: 1.0
 Author: Jeff Jardon
 License: Free to use, in developpement
 */

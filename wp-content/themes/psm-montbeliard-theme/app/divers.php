@@ -13,3 +13,8 @@ function emoji_metabox(){
 function emoji_metabox_link(){
     echo ('<a href="https://getemoji.com/" target="_blank">Faites des copier coller depuis ce site</a>');
 }
+
+// Move Yoast to bottom
+add_filter( 'wpseo_metabox_prio', function () {
+    return 'low';
+});

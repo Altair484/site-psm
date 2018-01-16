@@ -14,15 +14,16 @@ class PSM_Settings_class
     public function __construct() {
         defined( 'ABSPATH') or die ( 'Hey, you cant access to this file, you silly human !');
         //Will show the <meta type="description"> tag in html if activated
-        add_filter('init', array($this,'my_function'),1 );
+        add_filter('init', array($this,'automatic_plugins_update'),1 );
     }
 
     /**
      * Function always called when wordpress init
      */
-    public function my_function(){
-        //die("My_function is working");
-        //Write here the first things to do
+    public function automatic_plugins_update(){
+        if(get_option('activate_automatic_plugin_updates') == 'true'){
+            add_filter( 'auto_update_plugin', '__return_true' );
+        }
     }
 
     public function set_values($values) {
@@ -75,6 +76,36 @@ class PSM_Settings_class
         /*Theme*/
         if (isset($values['reset_theme_mods'])){
             remove_theme_mods();
+        }
+
+        /*Users rights*/
+        /*Editor -> Wp_job*/
+        if (isset($values['activate_editor_access_to_job_offer'])){
+            update_option('activate_editor_access_to_job_offer', $values['activate_editor_access_to_job_offer']);
+        }else{
+            update_option('activate_editor_access_to_job_offer', 'false');
+        }
+
+        /*Editor -> School subjects*/
+        if (isset($values['activate_editor_access_to_school_subjects'])){
+            update_option('activate_editor_access_to_school_subjects', $values['activate_editor_access_to_school_subjects']);
+        }else{
+            update_option('activate_editor_access_to_school_subjects', 'false');
+        }
+
+        /*Editor -> School subjects*/
+        if (isset($values['activate_editor_access_to_projects'])){
+            update_option('activate_editor_access_to_projects', $values['activate_editor_access_to_projects']);
+        }else{
+            update_option('activate_editor_access_to_projects', 'false');
+        }
+
+
+        /*Plugins*/
+        if (isset($values['activate_automatic_plugin_updates'])){
+            update_option('activate_automatic_plugin_updates', $values['activate_automatic_plugin_updates']);
+        }else{
+            update_option('activate_automatic_plugin_updates', 'false');
         }
     }
 }

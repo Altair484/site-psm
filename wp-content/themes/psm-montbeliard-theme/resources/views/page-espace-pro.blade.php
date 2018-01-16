@@ -4,9 +4,9 @@
         <div class="row header" style="background-image: url('{!! get_theme_mod('',\App\App::get_image_page_header('offer_page', 'jpg')) !!}')">
             <div class="filter"></div>
             <div class="header-content">
-                <span class="d-flex justify-content-center" style="width: 100%;">
-                    <div class="professional_page_header_section_img" style="width: 1px"></div>
-                </span>
+                <div class="d-flex justify-content-center" style="width: 100%;">
+                    <span class="professional_page_header_section_img" style="width: 1px"></span>
+                </div>
                 <h1 class="professional_page_header_section_title">
                     {{ get_theme_mod(
                         'professional_page_header_section_title',

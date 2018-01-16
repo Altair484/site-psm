@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' )) {
  *
  * @link http://codex.wordpress.org/Function_Reference/register_post_type
  */
-add_action( 'init', 'codex_compagny_init' );
+/*add_action( 'init', 'codex_compagny_init' );
 function codex_compagny_init() {
     $labels = array(
         'name'               => _x( 'Entreprises', 'post type general name'),
@@ -55,19 +55,19 @@ function codex_compagny_init() {
         'supports'           => array( 'title', 'editor', 'thumbnail')
     );
     register_post_type( 'compagny', $args );
-}
+}*/
 
 /**
  * Meta box - Custom compagny post meta managment
  */
-add_action('add_meta_boxes','init_compagny_metabox');
+/*add_action('add_meta_boxes','init_compagny_metabox');
 function init_compagny_metabox(){
     //Initialisation Meta-box
     add_meta_box('info_client', 'Informations sur l\'entreprise', 'info_client', 'compagny', 'normal');
-}
+}*/
 
 //Creating form with recieved data outpout
-function info_client($post){
+/*function info_client($post){
     $adresse  = get_post_meta($post->ID,'_compagny_adress',true);
     $mail     = get_post_meta($post->ID,'_compagny_mail',true);
     $phone      = get_post_meta($post->ID,'_compagny_phone',true);
@@ -82,10 +82,10 @@ function info_client($post){
     <label for="site-web" style="display: block; padding-top: 10px">Site web</label>
     <input id="site" type="url" name="website" value="<?php echo $website; ?>" />
     <?php
-}
+}*/
 
 //Saving form datas
-add_action('save_post','save_metabox');
+/*add_action('save_post','save_metabox');
 function save_metabox($post_id){
     if(isset($_POST['adresse'])){
         update_post_meta($post_id, '_compagny_adress', esc_textarea($_POST['adresse']));
@@ -99,13 +99,13 @@ function save_metabox($post_id){
     if(isset($_POST['website'])){
         update_post_meta($post_id, '_compagny_website', esc_html($_POST['website']));
     }
-}
+}*/
 
 
 /**
  * Adding custom post-meta collumn in the post-type list page
  */
-add_filter('manage_compagny_posts_columns','filter_compagny_columns');
+/*add_filter('manage_compagny_posts_columns','filter_compagny_columns');
 function filter_compagny_columns( $columns ) {
     $columns = array(
         'title' => 'Title',
@@ -118,9 +118,9 @@ function filter_compagny_columns( $columns ) {
     );
 
     return $columns;
-}
+}*/
 
-add_action( 'manage_posts_custom_column','action_custom_columns_content', 10, 2);
+/*add_action( 'manage_posts_custom_column','action_custom_columns_content', 10, 2);
 function action_custom_columns_content ( $column_id, $post_id ) {
     //run a switch statement for all of the custom columns created
     switch( $column_id ) {
@@ -137,7 +137,7 @@ function action_custom_columns_content ( $column_id, $post_id ) {
             echo ($value = get_post_meta($post_id, '_compagny_website', true )) ? $value : 'No WebsiteGiven';
             break;
     }
-}
+}*/
 
 //Register a new compagny in compagny post-type
 //Call this function in the wp-job job form register

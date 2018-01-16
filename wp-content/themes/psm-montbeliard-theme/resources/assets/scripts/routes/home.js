@@ -644,9 +644,9 @@ export default {
 
             //Set the animation they will execute
             tl_losange1_presentation.to(losange_presentation_1, 0.5, {scale: 3, ease: Linear.easeNone});
-            tl_losange2_presentation.to(losange_presentation_2, 0.5, {top: "-100px", ease: Linear.easeNone});
-            tl_losange3_presentation.to(losange_presentation_3, 0.5, {top: "-75px", ease: Linear.easeNone});
-            tl_losange4_presentation.to(losange_presentation_4, 1, {bottom: "0px", ease: Linear.easeNone});
+            tl_losange2_presentation.to(losange_presentation_2, 0.5, {y: "-100px", ease: Linear.easeNone});
+            tl_losange3_presentation.to(losange_presentation_3, 0.5, {y: "-75px", ease: Linear.easeNone});
+            tl_losange4_presentation.to(losange_presentation_4, 1, {y: "0px", ease: Linear.easeNone});
 
 
 
@@ -933,9 +933,9 @@ export default {
                 losange_projects_3 = $('#projects-section').find('.losange:nth-child(3)');
 
             //Set the animation they will execute
-            tl_losange1_projects.to(losange_projects_1, 0.5, {top: "-100px", ease: Linear.easeNone});
-            tl_losange2_projects.to(losange_projects_2, 0.5, {top: "700px", ease: Linear.easeNone});
-            tl_losange3_projects.to(losange_projects_3, 0.5, {top: "200px", ease: Linear.easeNone});
+            tl_losange1_projects.to(losange_projects_1, 0.5, {y: "-100px", ease: Linear.easeNone});
+            tl_losange2_projects.to(losange_projects_2, 0.5, {y: "700px", ease: Linear.easeNone});
+            tl_losange3_projects.to(losange_projects_3, 0.5, {y: "200px", ease: Linear.easeNone});
 
             //Geometric 1 Scene
             new ScrollMagic.Scene({
@@ -1103,9 +1103,9 @@ export default {
                 losange_professional_3 = $('#professional-section').find('.losange:nth-child(3)');
 
             //Set the animation they will execute
-            tl_losange1_professional.to(losange_professional_1, 0.5, {top: "-100px", ease: Linear.easeNone});
-            tl_losange2_professional.to(losange_professional_2, 0.5, {top: "200px", ease: Linear.easeNone});
-            tl_losange3_professional.to(losange_professional_3, 0.5, {top: "60%", ease: Linear.easeNone});
+            tl_losange1_professional.to(losange_professional_1, 0.5, {y: "-100px", ease: Linear.easeNone});
+            tl_losange2_professional.to(losange_professional_2, 0.5, {y: "200px", ease: Linear.easeNone});
+            tl_losange3_professional.to(losange_professional_3, 0.5, {y: "60%", ease: Linear.easeNone});
 
             //Geometric 1 Scene
             new ScrollMagic.Scene({

@@ -157,4 +157,10 @@ class master_psm extends Controller
 
         return $cat_school_subjects;
     }
+
+    public function redirectToParams(){
+        if (!$_GET['formation']){
+            wp_redirect(esc_url( add_query_arg( 'formation', 'm1', get_site_url().'/master/' ) ));
+        }
+    }
 }

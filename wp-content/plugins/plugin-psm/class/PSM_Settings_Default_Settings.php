@@ -73,6 +73,34 @@ class PSM_Settings_Default_Settings
         }else{
             update_option( 'activate_comments_managment', 'false');
         }
+
+        /*Users rights*/
+        /*Editors -> WP job manager*/
+        if (!get_option( 'activate_editor_access_to_job_offer') ){
+            add_option( 'activate_editor_access_to_job_offer', 'true');
+        }else{
+            update_option( 'activate_editor_access_to_job_offer', 'true');
+        }
+        /*Editors -> School subjects*/
+        if (!get_option( 'activate_editor_access_to_school_subjects') ){
+            add_option( 'activate_editor_access_to_school_subjects', 'true');
+        }else{
+            update_option( 'activate_editor_access_to_school_subjects', 'true');
+        }
+
+        /*Editors -> Project*/
+        if (!get_option( 'activate_editor_access_to_projects') ){
+            add_option( 'activate_editor_access_to_projects', 'true');
+        }else{
+            update_option( 'activate_editor_access_to_projects', 'true');
+        }
+
+        /*Plugins*/
+        if (!get_option( 'activate_automatic_plugin_updates') ){
+            add_option( 'activate_automatic_plugin_updates', 'true');
+        }else{
+            update_option( 'activate_automatic_plugin_updates', 'false');
+        }
     }
 }
 new PSM_Settings_Default_Settings();

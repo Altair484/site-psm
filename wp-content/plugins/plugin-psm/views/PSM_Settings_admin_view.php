@@ -135,24 +135,74 @@ if(isset($_POST['PSM_Settings_update'])){
                         <td>
                             <input type="checkbox" id="activate_comments_managment" name="activate_comments_managment"
                                 <?php  get_option('activate_comments_managment') == 'true' ? _e('checked') : _e('') ?> value="true" />
-                            <p class="description">Si cette case est côchée,vous pourrez gérer les commentaires depuis l'administration.</p>
+                            <p class="description">Si cette case est côchée,vous pourrez gérer les commentaires existant depuis l'administration. <br />
+                            Cependant, il n'est pas prévu que les visiteurs puissent en poster.</p>
                         </td>
                     </tr>
 
                     <!-- Comments -->
 
-                    <!-- Strudents rights-->
+                    <!-- Users rights-->
                     <tr>
                         <td colspan="2">
-                            <h2><strong>Droits des comptes étudiants</strong></h2>
-                            <p>Définissez les actions qu'ils peuvent effectuer ou non.</p>
+                            <h2><strong>Droits des utilisateurs</strong></h2>
+                            <h4>Comptes éditeurs</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="activate_editor_access_to_job_offer">Activer l'accès aux offres de stages ou emploi</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="activate_editor_access_to_job_offer" name="activate_editor_access_to_job_offer"
+                                <?php  get_option('activate_editor_access_to_job_offer') == 'true' ? _e('checked') : _e('') ?> value="true" />
+                            <p class="description">En cochant cette case les comptes éditeurs peuvent valider, consulter, modifier et supprimer les offres de stage ou emploi de la rublrique "Postes".</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="activate_editor_access_to_school_subjects">Activer l'accès aux matières et contenus de formation</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="activate_editor_access_to_school_subjects" name="activate_editor_access_to_school_subjects"
+                                <?php  get_option('activate_editor_access_to_school_subjects') == 'true' ? _e('checked') : _e('') ?> value="true" />
+                            <p class="description">En cochant cette case les comptes éditeurs peuvent valider, consulter, modifier et supprimer les élements de la rubrique "Pédagogie".</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="activate_editor_access_to_projects">Activer l'accès aux projets rhizomes/pfe</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="activate_editor_access_to_projects" name="activate_editor_access_to_projects"
+                                <?php  get_option('activate_editor_access_to_projects') == 'true' ? _e('checked') : _e('') ?> value="true" />
+                            <p class="description">En cochant cette case les comptes éditeurs peuvent valider, consulter, modifier et supprimer les élements de la rubrique "Projets".</p>
+                        </td>
+                    </tr>
+
+                    <!-- Plugins-->
+                    <tr>
+                        <td colspan="2">
+                            <h2><strong>Plugins</strong></h2>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="activate_automatic_plugin_updates">Les plugins se mettent à jour automatiquement</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="activate_automatic_plugin_updates" name="activate_automatic_plugin_updates"
+                                <?php  get_option('activate_automatic_plugin_updates') == 'true' ? _e('checked') : _e('') ?> value="true" />
+                            <p class="description">En cochant cette case les plugins se metteront à jour automatiquement.</p>
                         </td>
                     </tr>
 
                     <!-- END Student rights-->
 
                     <!-- Theme-->
-                    <tr>
+                    <!--<tr>
                         <td colspan="2">
                             <h2><strong>Thème</strong></h2>
                         </td>
@@ -167,7 +217,7 @@ if(isset($_POST['PSM_Settings_update'])){
                             <p class="description">Si cette case est cochée, tous les paramètres <u>personnalisables</u> du site seront remis à zéro (images, textes, titres...).</p>
                             <p style="color: red;" class="description"><span class="dashicons dashicons-warning"></span> Cette action est irréversible</p>
                         </td>
-                    </tr>
+                    </tr>-->
 
                     <!-- End Theme -->
 

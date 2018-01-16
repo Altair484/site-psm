@@ -22,6 +22,7 @@ function compagny_capabilities()
         $role->add_cap( 'delete_compagny' );
 
         //Give access to projects
+        //Watch also custom post type file around line 60
         $role->add_cap( 'edit_project');
         $role->add_cap( 'edit_projects' );
         $role->add_cap( 'edit_other_projects' );
@@ -30,31 +31,39 @@ function compagny_capabilities()
         $role->add_cap( 'read_private_projects' );
         $role->add_cap( 'delete_project' );
 
-        //Give access to school-subjects
-        $role->add_cap( 'edit_school-subject');
-        $role->add_cap( 'edit_school-subjects' );
-        $role->add_cap( 'edit_other_school-subjects' );
-        $role->add_cap( 'publish_school-subjects' );
-        $role->add_cap( 'read_school-subject' );
-        $role->add_cap( 'read_private_school-subjects' );
-        $role->add_cap( 'delete_school-subject' );
-
-        //Give rights to manage jobs offers
-        $role->add_cap('edit_job_listing');
-        $role->add_cap('read_job_listing');
-        $role->add_cap('delete_job_listing');
-        $role->add_cap('edit_job_listings');
-        $role->add_cap('edit_others_job_listings');
-        $role->add_cap('publish_job_listings');
-        $role->add_cap('read_private_job_listings');
-        $role->add_cap('delete_job_listings');
-        $role->add_cap('delete_private_job_listings');
-        $role->add_cap('delete_published_job_listings');
-        $role->add_cap('delete_others_job_listings');
-        $role->add_cap('edit_private_job_listings');
-        $role->add_cap('edit_published_job_listings');
+        if( $the_role == 'editor' && get_option('activate_editor_access_to_job_offer') == 'false'){
+            //Give rights to manage jobs offers
+            $role->remove_cap('edit_job_listing');
+            $role->remove_cap('read_job_listing');
+            $role->remove_cap('delete_job_listing');
+            $role->remove_cap('edit_job_listings');
+            $role->remove_cap('edit_others_job_listings');
+            $role->remove_cap('publish_job_listings');
+            $role->remove_cap('read_private_job_listings');
+            $role->remove_cap('delete_job_listings');
+            $role->remove_cap('delete_private_job_listings');
+            $role->remove_cap('delete_published_job_listings');
+            $role->remove_cap('delete_others_job_listings');
+            $role->remove_cap('edit_private_job_listings');
+            $role->remove_cap('edit_published_job_listings');
+        }else{
+            //Give rights to manage jobs offers
+            $role->add_cap('edit_job_listing');
+            $role->add_cap('read_job_listing');
+            $role->add_cap('delete_job_listing');
+            $role->add_cap('edit_job_listings');
+            $role->add_cap('edit_others_job_listings');
+            $role->add_cap('publish_job_listings');
+            $role->add_cap('read_private_job_listings');
+            $role->add_cap('delete_job_listings');
+            $role->add_cap('delete_private_job_listings');
+            $role->add_cap('delete_published_job_listings');
+            $role->add_cap('delete_others_job_listings');
+            $role->add_cap('edit_private_job_listings');
+            $role->add_cap('edit_published_job_listings');
+        }
     }
-    
+
     $role_contributor = get_role('contributor');
 
     //Remove access to companies
@@ -108,6 +117,7 @@ function compagny_capabilities()
     if(current_user_can('contributor')|| current_user_can('editor')){
         add_action('admin_menu', function() {
             remove_menu_page('wpcf7');
+            remove_menu_page( 'tools.php' );
         });
        ;
     }

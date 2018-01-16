@@ -47,8 +47,11 @@
                 @endif
                 {{ \App\Connexion::login_form() }}
                 <div class="login-links">
-                    <a href="{!! site_url().'/mot-de-passe-oublie' !!}">Mot de passe oublié?</a> <span> / </span>
+                    <a href="{!! site_url().'/mot-de-passe-oublie' !!}">Mot de passe oublié?</a>
+                    @if( get_option( 'users_can_register' ) )
+                    <span> / </span>
                     <a href="{!! wp_registration_url() !!}">Inscription</a>
+                    @endif
                 </div>
             @endif
         </div>

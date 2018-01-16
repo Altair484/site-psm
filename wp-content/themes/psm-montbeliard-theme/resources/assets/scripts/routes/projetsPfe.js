@@ -4,6 +4,7 @@ export default {
 
     },
     finalize() {
+        /*eslint-disable no-undef*/
         var controllerProjetPFESection = new ScrollMagic.Controller();
         var top_circ_anpfe = $('#top_circ_anpfe'),
             tirets_anpfe = $('#tirets_anpfe'),
@@ -38,5 +39,6 @@ export default {
         //.addIndicators({name: "Rhizome animation", indent: 150}) // add indicators (requires plugin)
             .addTo(controllerProjetPFESection)
             .setTween(pfe_tl);
+        /*eslint-enable no-undef*/
     },
 };

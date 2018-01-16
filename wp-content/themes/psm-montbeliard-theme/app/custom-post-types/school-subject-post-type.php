@@ -52,13 +52,15 @@ function codex_school_subject_init() {
         ),
         'map_meta_cap' => true, // Set to `false`, if users are not allowed to edit/delete existing posts
         /*End*/
-
         'has_archive'        => false, // Enables post type archives
         'hierarchical'       => false, // Parents to be specified
         'menu_position'      => null,  // Position in admin (5 - below Posts, 10 - below Media, 15 - below Links...)
         'menu_icon'          => 'dashicons-welcome-learn-more', //icon
         'supports'           => array( 'title', 'editor', 'thumbnail')
     );
+    if(current_user_can('editor') && get_option('activate_editor_access_to_school_subjects') == 'false'){
+        $args['show_ui'] = false;
+    }
     register_post_type( 'school-subject', $args );
 }
 

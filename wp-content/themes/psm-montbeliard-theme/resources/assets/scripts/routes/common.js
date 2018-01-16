@@ -67,7 +67,7 @@ export default {
             //If the add has already been closed
             if (document.cookie.match('AcceptCookies') == 'AcceptCookies') {
                 $('.cookie-container').animate({
-                    left: "-500px",
+                    x: "-500px",
                 });
             }else {
                 $('.cookie-container').show();

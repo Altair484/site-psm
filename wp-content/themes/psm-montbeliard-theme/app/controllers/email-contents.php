@@ -4,11 +4,6 @@ namespace App;
 
 use Sober\Controller\Controller;
 
-//Protect the file to direct Access wia url
-if ( ! defined( 'ABSPATH' )) {
-    header('Location: http://tinyurl.com/ydek4vj2');
-    exit; // Exit if accessed directly
-}
 class Email_contents extends Controller
 {
     private function get_sender(){
@@ -31,7 +26,7 @@ class Email_contents extends Controller
 
     public static function register_email($userFirstName, $userLastName, $userLogin, $userEmail){
         $subject = '['. get_bloginfo().']'.' Inscription réussie !';
-        $message = ' 
+        $message = '
         <html>
             <body>
                 <table>
@@ -40,12 +35,12 @@ class Email_contents extends Controller
                             <p>Bonjour '. $userFirstName . ' ' . $userLastName.',</p>
                             <p>Merci de vous être inscrit en tant qu\'étudiant sur le site de PSM.</p>
                             <p>Votre login : <b>'.$userLogin.'</b> ou <b>'.$userEmail.'</b>,<br/>
-                            Votre mot de passe : Vous seul le savez</p>
+                            Votre mot de passe : Vous seul le savez !</p>
                             <p>Grâce à ce compte, vous aurez le droit de :</p>
-                            <p>★ Publier des essais d\'articles qui ensuite pourront être approbés par les modérateurs du site.
-                            C\'est pour vous l\'occasion de parler de l\'actualité de PSM, d\'une technologie vue en cours ou de ce qui vous passionne dans le multimédia.
-                            Ceux qui s\'investiront à une rédaction de contenu validée par les modérateurs seront répompensés avec un bonus* de moyenne (~0.2 points).</p>
-                            <p>★ Consulter les offres de stages/CDD/CDI. Vous aurez accès a un espace privilégié où les anciens de PSM et les entreprises déposeront leurs offres.</p>
+                            <p>★ Proposer des brouillons d\'articles et les soumettre à une validation par les modérateurs du site. Ils pourront ensuite être publiés dans la section "Actualités" du site.
+                            C\'est pour vous l\'occasion de parler de l\'actualité de PSM, d\'une technologie qui vous passionne particulièrement (vue en cours ou non) ou tout autre sujet en relation avec l\'univers du multimédia.
+                            Ceux qui s\'investiront à une rédaction de contenu validée par les modérateurs seront récompensés avec un bonus* de moyenne (~0.2 points) !</p>
+                            <p>★ Consulter des offres de stages/CDD/CDI adaptées aux étudiants de PSM. Vous aurez accès a un espace privilégié où les anciens de PSM et les entreprises déposeront leurs offres d\'emploi.</p>
                         </td>
                     </tr>
                     <tr>
@@ -68,7 +63,7 @@ class Email_contents extends Controller
                 <table>
                     <tr>
                         <td>
-                            <p>Votre nouveau mot de passe est: '.$random_password.'<br/>
+                            <p>Votre nouveau mot de passe provisoire est: '.$random_password.'<br/>
                             Pour le modifier, rendez-vous sur votre <a href="'.$redirection.'" target="_blank">espace personnel.</a></p>
                         </td>
                     </tr>
@@ -95,9 +90,9 @@ class Email_contents extends Controller
                     <tr>
                         <td>
                             <p>Bonjour '. $name.',</p>
-                            <p>La formation Produits et Services Multimédia du département Multimédia de Montbéliard vous remercie d\'avoir déposé l\'offre : <b>'. get_the_title($post) .'</b><br/>
-                            Votre offre est soumise à modération et sera visible par les étudiants après validation. Lorsque celle-ci sera acceptée, vous recevrez une notification par email<br/>
-                            A compter de ce moment, l\'offre expirera dans un mois.</p>
+                            <p>La formation Produits et Services Multimédia de l\'UFR STGI de Montbéliard vous remercie d\'avoir déposé l\'offre "<b>'. get_the_title($post) .'</b>"<br/>
+                            Votre proposition est soumise à modération et sera visible par les étudiants après validation. Lorsque celle-ci sera acceptée, vous recevrez un e-mail de notification.<br/>
+                            L\'offre expirera dans un mois, à compter de ce moment.</p>
                         </td>
                     </tr>
                     <tr>
@@ -120,7 +115,7 @@ class Email_contents extends Controller
                             <p>Bonjour '. Email_contents::get_sender() .',</p>
                             <p>Une nouvelle offre de stage, CDI ou CDD a été déposée sur le site <a href="'. site_url().'">'. get_bloginfo() .'</a><br/>
                                L\'offre n\'est pas encore visible sur le site et demande une modération de votre part. Vous avez la possibilité d\'accepter ou non cette publication.<br/>
-                               Pour se faire, merci de vous connecter ici <a href="'.$redirection.'" target="_blank">ici</a></a>
+                               Pour ce faire, merci de vous connecter <a href="'.$redirection.'" target="_blank">ici</a></a>
                             </p>
                         </td>
                     </tr>
@@ -150,7 +145,7 @@ class Email_contents extends Controller
     public static function job_manager_offer_accepted($post, $name, $email, $date_expire){
         $subject = '['. get_bloginfo().']'.' Votre offre est en ligne !';
 
-        $message = ' 
+        $message = '
         <html>
             <body>
                 <table>
@@ -158,7 +153,7 @@ class Email_contents extends Controller
                         <td>
                             <p>Bonjour '. $name.',</p>
                             <p>Votre offre, <b>'.$post->post_title.'</b> vient juste d\'être approuvée sur <a href="'. site_url() . '" target="_blank">'. site_url() . '</a> et sera valide pendant une durée de <b>30 jours</b> jusqu\'au <b>'.$date_expire.'</b>.</p>
-                            <p>Nous vous remercions d\'avoir choisi PSM pour le dépôt de votre offre.</p>
+                            <p>Merci d\'avoir choisi PSM pour le dépôt de votre offre !</p>
                         </td>
                     </tr>
                     <tr>
@@ -171,5 +166,3 @@ class Email_contents extends Controller
         wp_mail($email, $subject, $message,$headers);
     }
 }
-
-

@@ -8,7 +8,7 @@ import home from './routes/home';
 import master from './routes/master';
 import licence3 from './routes/licence3';
 import projetsRhizomes from './routes/projetsRhizomes';
-import projetsFinDetudes from './routes/projetsFinDetudes';
+import projetsFinDetudes from './routes/projetsPfe';
 import espacePro from './routes/professional';
 
 /** Populate Router instance with DOM routes */
