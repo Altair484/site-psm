@@ -17,14 +17,17 @@
 @mixin sm { @media (min-width: #{$screen-sm}) { @content; } }
 // Medium to large
 @mixin md-lg { @media (min-width: #{$screen-md}) and (max-width: #{$screen-lg}) { @content; } }
+@mixin md-xl { @media (min-width: #{$screen-md}) and (max-width: #{$screen-xl}) { @content; } }
 // Medium and more
 @mixin md { @media (min-width: #{$screen-md}) { @content; } }
 // Large to extra large
 @mixin lg-xl { @media (min-width: #{$screen-lg}) and (max-width: #{$screen-xl}) { @content; } }
 // Large and more
 @mixin lg { @media (min-width: #{$screen-lg}) { @content; } }
-// TV large devices
+// Big screens
 @mixin xl { @media (min-width: #{$screen-xl}) { @content; } }
+@mixin xl-xxl { @media (min-width: #{$screen-xl}) and (max-width: #{$screen-xxl}) { @content; } }
+@mixin xxl { @media (min-width: #{$screen-xxl}) { @content; } }
 
 @mixin landscapeTablettePhones(){
   @media (min-width: #{1px}) and (max-width:#{$screen-xl}) and (orientation: #{landscape}){

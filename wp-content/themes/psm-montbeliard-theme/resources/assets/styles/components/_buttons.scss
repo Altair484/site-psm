@@ -1,7 +1,9 @@
 .btn, #login_submit {
     @include setup-font($sourceSansPro, inherit, 300);
     @include responsive-font(0,2.1rem);
-
+    @include xl-xxl{
+        @include responsive-font(0, 1.6rem);
+    }
     min-width: 200px;
 
 

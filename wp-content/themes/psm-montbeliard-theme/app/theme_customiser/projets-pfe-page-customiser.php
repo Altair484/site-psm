@@ -222,7 +222,7 @@ add_action('customize_register',  function( $wp_customize ) {
     /* ---------------------------------------------- */
 
     //Number years
-    $wp_customize->add_setting( 'projets_pfe_page_projects_section_years_dropdown_list', array(
+    /*$wp_customize->add_setting( 'projets_pfe_page_projects_section_years_dropdown_list', array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
         'default' => '6',
@@ -248,7 +248,7 @@ add_action('customize_register',  function( $wp_customize ) {
         'render_callback' => function () {
             return get_theme_mod('projets_pfe_page_projects_section_years_dropdown_list');
         }
-    ]);
+    ]);*/
 });
 
 

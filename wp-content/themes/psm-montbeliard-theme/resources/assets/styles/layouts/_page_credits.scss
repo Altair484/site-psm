@@ -60,6 +60,9 @@
                             text-align: left;
                             @include setup-font($sourceSansPro, #888, 300);
                             @include responsive-font(0, 2rem);
+                            @include xl-xxl{
+                                @include responsive-font(0.2, 1.6rem);
+                            }
                             text-transform: inherit;
                             font-style: italic;
                         }

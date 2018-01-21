@@ -18,12 +18,15 @@ footer{
         padding: 30px;
         h4{
             color: #fff;
-            padding: 10px 0 10px 0;
+            padding: 20px 0 10px 0;
+            margin: 0;
         }
         p, a {
             @include setup-font($sourceSansPro, white, normal);
             @include responsive-font(0,2rem);
-
+            @include xl-xxl{
+                @include responsive-font(0.2, 1.6rem);
+            }
         }
         a:hover{
             color: $primaire-vert;
@@ -45,6 +48,31 @@ footer{
                 max-width: 122px;
                 align-self: center;
             }
+        }
+        .search{
+            width: 100%;
+            form{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                input{
+                    width: auto;
+                }
+                span.ico{
+                    &:after{
+                        font-family: FontAwesome;
+                        content: "\f004"; /* Value may need to be changed in newer version of font awesome*/
+                        font-size: 13px;
+                        pointer-events: none;
+                    }
+                }
+                button[type="submit"]{
+                    margin: 10px 0 10px 0;
+                    height: 50px;
+                    min-width: 50px;
+                }
+            }
+
         }
     }
 }

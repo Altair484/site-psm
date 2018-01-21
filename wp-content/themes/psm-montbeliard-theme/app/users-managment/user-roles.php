@@ -31,6 +31,14 @@ function compagny_capabilities()
         $role->add_cap( 'read_private_projects' );
         $role->add_cap( 'delete_project' );
 
+        $role->add_cap( 'edit_school-subject');
+        $role->add_cap( 'edit_school-subjects' );
+        $role->add_cap( 'edit_other_school-subjects' );
+        $role->add_cap( 'publish_school-subjects' );
+        $role->add_cap( 'read_school-subject' );
+        $role->add_cap( 'read_private_school-subjects' );
+        $role->add_cap( 'delete_school-subject' );
+
         if( $the_role == 'editor' && get_option('activate_editor_access_to_job_offer') == 'false'){
             //Give rights to manage jobs offers
             $role->remove_cap('edit_job_listing');

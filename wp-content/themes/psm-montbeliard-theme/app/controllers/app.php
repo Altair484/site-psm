@@ -48,7 +48,13 @@ class App extends Controller
 
     public static function get_default_image_article_thumbnail() {
         //$default_img = get_template_directory_uri().'/../dist/images/960-540-abstract-'. rand(1,6).'.jpg';
-        $default_img = get_template_directory_uri().'/../dist/images/articles/default-article/blogger-news.jpg';
+        if(get_post_type() == 'project' && wp_get_post_terms(get_the_ID(), 'project_type')[0]->name == 'Projets Rhizome') {
+            $default_img = get_template_directory_uri() . '/../dist/images/projets/projets-rhizome/projets-rhizomes.png';
+        }else if(get_post_type() == 'project' && wp_get_post_terms(get_the_ID(), 'project_type')[0]->name == 'Projets Rhizome'){
+            $default_img = get_template_directory_uri().'/../dist/images/projets/projets-pfe/projets-pfe.png';
+        }else{
+            $default_img = get_template_directory_uri().'/../dist/images/articles/default-article/blogger-news.jpg';
+        }
         return $default_img;
     }
 
@@ -58,20 +64,34 @@ class App extends Controller
             $default_img = get_template_directory_uri().$image_directory.$image.'.'.$format;
         }else{
             if(has_post_thumbnail()){
-                $default_img = the_post_thumbnail_url();
+                if(get_post_type() != 'project'){
+                    $default_img = the_post_thumbnail_url('large');
+                }else{
+                    $default_img = get_template_directory_uri().'/../dist/images/page_image_placeholder.jpg';
+                }
             }else{
                 $default_img = get_template_directory_uri().'/../dist/images/page_image_placeholder.jpg';
             }
         }
-
         return $default_img;
     }
 
-    public static function get_image_projects() {
+
+    public static function get_image_projects_rhizomes() {
         if(has_post_thumbnail()){
-            the_post_thumbnail();
+            the_post_thumbnail( 'medium' );
         }else{
-            _e('<img src="http://via.placeholder.com/595x842" alt="Placeholder">');
+            $image = get_template_directory_uri().'/../dist/images/projets/projets-rhizome/projets-rhizomes.png';
+            _e('<img src="'.$image.'" alt="Projet Rhizome">');
+        }
+    }
+
+    public static function get_image_projects_pfe() {
+        if(has_post_thumbnail()){
+            the_post_thumbnail( 'medium' );
+        }else{
+            $image = get_template_directory_uri().'/../dist/images/projets/projets-rhizome/projets-rhizomes.png';
+            _e('<img src="'.$image.'" alt="Projet fin d\'études">');
         }
     }
 

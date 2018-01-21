@@ -59,5 +59,8 @@ wp.customizerCtrlEditor = {
 
 };
 
-wp.customizerCtrlEditor.init();
+wp.customizerCtrlEditor.init({
+    paste_as_text: true,
+    plugins: "paste",
+});
 /* eslint-enable*/

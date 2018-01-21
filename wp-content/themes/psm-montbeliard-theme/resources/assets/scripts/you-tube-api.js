@@ -6,7 +6,7 @@
  *
  * @author: Google, used by Jeff Jardon
  */
-    // 1. This code loads the IFrame Player API code asynchronously.
+// 1. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -66,7 +66,7 @@ document.addEventListener("mozfullscreenchange", onFullScreenChange, false);
 function onFullScreenChange() {
     var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
     if(fullscreenElement == null){
-        //player.mute();
+        player.mute();
     }else {
         player.seekTo(0);
         player.playVideo();

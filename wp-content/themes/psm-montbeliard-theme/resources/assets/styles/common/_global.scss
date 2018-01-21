@@ -54,7 +54,10 @@ h6 {
 
 p{
     @include setup-font($sourceSansPro, inherit, 300);
-    @include responsive-font(0, 2rem);
+    @include responsive-font(0.2, 2rem);
+    @include xl-xxl{
+        @include responsive-font(0.2, 1.6rem);
+    }
 }
 
 .row {
@@ -190,6 +193,10 @@ body::-webkit-scrollbar-thumb {
     z-index: 1000;
 }
 
+#tinymce .mceContentBody p {
+    font-size: 1.4rem!important;
+}
+
 
 /* ---------------------------------------------- /*
  * Thumbnail hover
@@ -270,15 +277,12 @@ section {
 
         p.date{
             @include setup-font($sourceSansPro, black, 300);
-
             font-style: italic;
 
-            @include responsive-font(0, 2rem);
         }
 
         p.excerpt{
             @include setup-font($sourceSansPro, black, 300);
-            @include responsive-font(0.5, 2rem);
         }
     }
 }
@@ -289,6 +293,10 @@ section {
         width: 100%;
         .text {
             @include lg{
+                padding: 25px 25px 25px 0;
+            }
+
+            @include xxl{
                 padding: 100px 100px 100px 0;
             }
         }
@@ -309,6 +317,10 @@ section {
         }
         .text {
             @include lg{
+                padding: 25px 0 25px 25px;
+            }
+
+            @include xxl{
                 padding: 100px 0 100px 100px;
             }
         }
@@ -346,7 +358,7 @@ section {
         }
 
         @include md {
-            min-height: 50vh;
+            min-height: 450px;
             flex-direction: row;
             margin-top: 50px;
             margin-bottom: 50px;
@@ -376,7 +388,6 @@ section {
                 max-width: 100%;
             }
             @include setup-font($sourceSansPro, black, 300);
-            @include responsive-font(1, 2rem);
 
             @include xs() {
                 justify-content: center !important;
@@ -397,7 +408,6 @@ section {
 
             p{
                 @include setup-font($sourceSansPro, black, 300);
-                @include responsive-font(1, 2rem);
             }
 
             p.theme{
@@ -690,7 +700,6 @@ section {
             height: 50px;
             width: 50px;
         }
-        background-color: $secondaire-bleu;
         &:hover{
             cursor: pointer;
         }

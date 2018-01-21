@@ -509,7 +509,6 @@
                         border-bottom: 1px solid $tertiaire-gris-blanc;
                         p{
                             @include setup-font($sourceSansPro,white,300);
-                            @include responsive-font(0,2rem);
                             padding: 15px 0 15px 0;
                         }
 

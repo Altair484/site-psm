@@ -75,8 +75,6 @@
 
         .job_listing_preview, .modality_listing_preview{
             p{
-                @include responsive-font(0.5,2rem);
-
                 span , a {
                     display: inline-block;
                     text-transform: lowercase;

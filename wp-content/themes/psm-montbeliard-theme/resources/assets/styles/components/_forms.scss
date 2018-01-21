@@ -26,22 +26,22 @@ textarea.wp-editor-area{
 /* do not group these rules */
 *::-webkit-input-placeholder {
     @include setup-font($sourceSansPro, lightgray, 300);
-    @include responsive-font(0.5, 2rem, 2rem, 2rem, 1.6rem, 1.4rem);
+    @include responsive-font(0.5, 1.6rem, 1.6rem, 1.6rem, 1.6rem, 1.4rem);
 }
 *:-moz-placeholder {
     /* FF 4-18 */
     @include setup-font($sourceSansPro, lightgray, 300);
-    @include responsive-font(0.5, 2rem, 2rem, 2rem, 1.6rem, 1.4rem);
+    @include responsive-font(0.5, 1.6rem, 1.6rem, 1.6rem, 1.6rem, 1.4rem);
 }
 *::-moz-placeholder {
     /* FF 19+ */
     @include setup-font($sourceSansPro, lightgray, 300);
-    @include responsive-font(0.5, 2rem, 2rem, 2rem, 1.6rem, 1.4rem);
+    @include responsive-font(0.5, 1.6rem, 1.6rem, 1.6rem, 1.6rem, 1.4rem);
 }
 *:-ms-input-placeholder {
     /* IE 10+ */
     @include setup-font($sourceSansPro, lightgray, 300);
-    @include responsive-font(0.5, 2rem, 2rem, 2rem, 1.6rem, 1.4rem);
+    @include responsive-font(0.5, 1.6rem, 1.6rem, 1.6rem, 1.6rem, 1.4rem);
 }
 select, textarea, input:not([type='checkbox']):not([type='submit']){
     width: 100%;
@@ -52,6 +52,9 @@ select, textarea, input:not([type='checkbox']):not([type='submit']){
 
     @include setup-font($sourceSansPro, black, 300);
     @include responsive-font(0.5, 2rem);
+    @include xl-xxl{
+        @include responsive-font(0.2, 1.6rem);
+    }
 }
 
 input[type='checkbox']{
@@ -92,6 +95,9 @@ label {
     text-transform: uppercase;
     @include setup-font($sourceSansPro, black, 400);
     @include responsive-font(0.5, 2rem);
+    @include xl-xxl{
+        @include responsive-font(0.2, 1.6rem);
+    }
 }
 
 
@@ -120,7 +126,6 @@ label {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
         a{
             display: block;
             font-size: 2rem;
@@ -189,6 +194,9 @@ label {
     text-align: center;
     @include setup-font($sourceSansPro, inherit, 300);
     @include responsive-font(0.5, 2rem);
+    @include xl-xxl{
+        @include responsive-font(0.2, 1.6rem);
+    }
 }
 
 .job-manager-error {
@@ -213,6 +221,9 @@ label {
     margin: 15px 0 15px 0 !important;
     color: #000;
     @include responsive-font(0,2rem);
+    @include xl-xxl{
+        @include responsive-font(0.2, 1.6rem);
+    }
     &:before{
         font-size: 50px;
         content: "😕";
@@ -234,6 +245,9 @@ label {
     margin: 15px 0 15px 0 !important;
     color: #000;
     @include responsive-font(0,2rem);
+    @include xl-xxl{
+        @include responsive-font(0.2, 1.6rem);
+    }
     &:before{
         font-size: 50px;
         content: "😃";

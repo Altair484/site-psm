@@ -37,7 +37,7 @@
                                 'Lorem ipsum dolores'
                             ) }}
                         </h2>
-                        <p class="projets_pfe_page_presentation_section_text">
+                        <div class="projets_pfe_page_presentation_section_text">
                             {!! get_theme_mod(
                                 'projets_pfe_page_presentation_section_text',
                                 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
@@ -46,7 +46,7 @@
                                  consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
                                  consequat, vel illum dolore eu feugiat nulla facilisis.'
                             ) !!}
-                        </p>
+                        </div>
                         <div class="btns-box">
                             <span class="projets_pfe_page_presentation_section_link_page_master_1">
                                  <a class="btn btn-psm-green" href="{!! site_url() .'/?p='. get_theme_mod(
@@ -64,10 +64,14 @@
                     <span class="projets_pfe_page_projects_section_years_dropdown_list" style="width: 1px"></span>
                 </div>
                 <select>
-                    @php($option_number =  get_theme_mod('projets_pfe_page_projects_section_years_dropdown_list','6'))
+                    {{--@php($option_number =  get_theme_mod('projets_pfe_page_projects_section_years_dropdown_list','6'))
                     <option style="display: none">&nbsp;</option>
                     @for($i=$option_number-1; $i >= 0;  $i--)
                         <option value="{{ date('Y') - $i}}">{{ date('Y') - $i}}</option>
+                    @endfor--}}
+                    <option style="display: none">&nbsp;</option>
+                    @for($i=date('Y'); $i >= 2006;  $i--)
+                        <option value="{{ $i }}">{{$i}}</option>
                     @endfor
                 </select>
             </div>
@@ -101,7 +105,7 @@
                             </div>
                         </div>
                         <div class="picture col-12 col-md-3 no-padding">
-                            {{ \App\App::get_image_projects() }}
+                            {{ \App\App::get_image_projects_pfe() }}
                         </div>
                     </div>
                 </div>
@@ -114,7 +118,7 @@
                 <article class="content offset-0 offset-md-2 col-12 col-md-9">
                     <div class="row">
                         <div class="picture col-12 col-md-3 no-padding">
-                            {{ \App\App::get_image_projects() }}
+                            {{ \App\App::get_image_projects_pfe() }}
                         </div>
                         <div class="text col-12 col-md-9 d-flex justify-content-center align-items-start flex-column">
                             <h2>{!! get_the_title() !!}</h2>
@@ -135,5 +139,10 @@
         </section>
     @endif
     @endwhile
+    <div class="scrollToProjetsSelection">
+        <button class="btn btn-psm-green">
+            <a href="#projects-navigation">Choisis une autre année !</a>
+        </button>
+    </div>
     @php(wp_reset_postdata())
 @endsection

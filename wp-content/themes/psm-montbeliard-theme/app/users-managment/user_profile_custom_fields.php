@@ -35,7 +35,7 @@ function extra_user_profile_fields($user)
                 <th><label for="studies_period">Période de formation</label></th>
                 <td>
                     <select id="studies_period" name="user_studies_period" required="">
-                        <?php for ($i = -5; $i < 0; $i++) {
+                        <?php for ($i = -5; $i <= 0; $i++) {
                             $date_value = date('Y') + $i;
                             $date_value_plus_one = $date_value + 1;
                             $dates_to_string = $date_value . "/" . $date_value_plus_one;

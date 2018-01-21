@@ -21,6 +21,7 @@ class Projets_pfe extends Controller
     public function get_projects(){
         $args = array(
             'post_type' => 'project',
+            'posts_per_page' => '100',
             'tax_query' => array(
                 array (
                     'taxonomy' => 'project_type',

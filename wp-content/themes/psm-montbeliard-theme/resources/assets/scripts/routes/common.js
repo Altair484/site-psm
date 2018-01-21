@@ -22,11 +22,11 @@ export default {
                 }
             }
 
-            $( document ).ready(function () {
-                setTimeout(function () {
-                    $('body').toggleClass('loaded');
-                }, 500);
-            });
+            /*$( document ).ready(function () {*/
+            setTimeout(function () {
+                $('body').toggleClass('loaded');
+            }, 200);
+            /*});*/
         });
 
         imgLoad.on( 'progress', function() {
@@ -67,7 +67,7 @@ export default {
             //If the add has already been closed
             if (document.cookie.match('AcceptCookies') == 'AcceptCookies') {
                 $('.cookie-container').animate({
-                    x: "-500px",
+                    left: "-500px",
                 });
             }else {
                 $('.cookie-container').show();
@@ -125,13 +125,13 @@ export default {
         //Init ScrollMagic
         var ScrollMenuBackgroundController = new ScrollMagic.Controller();
         //Show the background (black) of the main navigation
-        new ScrollMagic.Scene({triggerElement: 'section:nth-child(2), #masters, .job_listings > section:nth-child(1)', triggerHook: 0.5})
+        new ScrollMagic.Scene({triggerElement: 'section:nth-child(2),#licence, #masters, .job_listings > section:nth-child(1)', triggerHook: 0.5})
         .setClassToggle('#sidebar', 'dark-menu')
         //.addIndicators({name: 'dark menu show', colorTrigger: 'red', indent: 700, colorStart: 'pink'})
         .addTo(ScrollMenuBackgroundController);
 
         //Show the logo of the main navigation
-        new ScrollMagic.Scene({triggerElement: 'section:nth-child(2), #masters, .job_listings > section:nth-child(1)', triggerHook: 0.5})
+        new ScrollMagic.Scene({triggerElement: 'section:nth-child(2), #licence, #masters, .job_listings > section:nth-child(1)', triggerHook: 0.5})
         .setClassToggle('#logo-psm-nav', 'show-logo')
         //.addIndicators({name: 'logo show', colorTrigger: 'red', indent: 600, colorStart: 'pink'})
         .addTo(ScrollMenuBackgroundController);
@@ -429,11 +429,11 @@ export default {
 
         if ($(window).width() > 992) {
             var tl_hexagones = new TimelineMax;
-            tl_hexagones.from(hexagones.eq(0), 1, {y: -200, x:-200,opacity: 0,ease: Bounce.easeOut});
-            tl_hexagones.from(hexagones.eq(1), 1, {y: -200, x:200,opacity: 0, ease: Bounce.easeOut},'-=1');
-            tl_hexagones.from(hexagones.eq(2), 1, {y: 200, x:-200,opacity: 0, ease: Bounce.easeOut},'-=1');
-            tl_hexagones.from(hexagones.eq(3), 1, {y: 200, x:0,opacity: 0, ease: Bounce.easeOut},'-=1');
-            tl_hexagones.from(hexagones.eq(4), 1, {y: 200, x:200,opacity: 0, ease: Bounce.easeOut},'-=1');
+            tl_hexagones.from(hexagones.eq(0), 1, {y: -200, x:-200,opacity: 0, display:'none',ease: Bounce.easeOut});
+            tl_hexagones.from(hexagones.eq(1), 1, {y: -200, x:200,opacity: 0, display:'none', ease: Bounce.easeOut},'-=1');
+            tl_hexagones.from(hexagones.eq(2), 1, {y: 200, x:-200,opacity: 0, display:'none', ease: Bounce.easeOut},'-=1');
+            tl_hexagones.from(hexagones.eq(3), 1, {y: 200, x:0,opacity: 0, display:'none', ease: Bounce.easeOut},'-=1');
+            tl_hexagones.from(hexagones.eq(4), 1, {y: 200, x:200,opacity: 0, display:'none', ease: Bounce.easeOut},'-=1');
 
             new ScrollMagic.Scene({
                 triggerElement: '.hexagone-container',
@@ -483,6 +483,8 @@ export default {
         var select = $('#projects-navigation').find('select');
         var projects = $('section.project');
         var noProjectsResults = $('.noProjectsResults');
+        var scrollToPorjectsSelection = $('div.scrollToProjetsSelection');
+        scrollToPorjectsSelection.hide();
         noProjectsResults.hide();
         projects.hide();
 
@@ -507,11 +509,24 @@ export default {
                 }
             });
 
-            noProjectsResults.hide();
+
             if(countDisplayedProjects == 0){
-                noProjectsResults.show()
+                noProjectsResults.show();
+                scrollToPorjectsSelection.hide();
+            }else{
+                noProjectsResults.hide();
+                scrollToPorjectsSelection.css("display","flex");
             }
         }
+
+        /*PAGE PROJECTS BACK TO TOP*/
+        $('div.scrollToProjetsSelection > button').click(function () {
+            if($(window).width() > 992){
+                TweenLite.to(window, 1, {scrollTo: {y:"#projects-navigation", offsetY:100}});
+            }else{
+                TweenLite.to(window, 1, {scrollTo: "#projects-navigation"});
+            }
+        })
     },
 };
 

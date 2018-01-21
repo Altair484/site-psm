@@ -9,8 +9,11 @@
 namespace App;
 
 use Sober\Controller\Controller;
-use App\Auth\AntiBruteForce;
 use WP_Error;
+
+define('MM_BRUTE_FILE', get_template_directory().'/../app/auth/brute.txt');
+define('MM_BRUTE_WINDOW', 300);
+define('MM_BRUTE_ATTEMPTS', 5);
 
 //Protect the file to direct Access wia url
 if ( ! defined( 'ABSPATH' )) {
@@ -83,16 +86,72 @@ class Connexion extends Controller
         return $login_errors;
     }
 
+    public static function bruteCheck($failed_attempt = false) {
+
+        $deny_login = false;
+        if(!file_exists(MM_BRUTE_FILE)) touch(MM_BRUTE_FILE);
+        $cache = unserialize(Connexion::fileToString(MM_BRUTE_FILE));
+        if(!$cache) $cache = array();
+
+        if($failed_attempt) {  //register the new failed attempt and timestamp
+            if(!isset($cache[$_SERVER['REMOTE_ADDR']])) {
+                $cache[$_SERVER['REMOTE_ADDR']] = array();
+            }
+            $cache[$_SERVER['REMOTE_ADDR']][] = time();
+            if(count($cache[$_SERVER['REMOTE_ADDR']]) > MM_BRUTE_ATTEMPTS) array_shift($cache[$_SERVER['REMOTE_ADDR']]);
+        }
+
+        //get the number of failed attempts in the last 15 minutes
+        if(!isset($cache[$_SERVER['REMOTE_ADDR']])) {
+            $deny_login = false;
+        } else {
+            $attempts = $cache[$_SERVER['REMOTE_ADDR']];
+            if(count($attempts) < MM_BRUTE_ATTEMPTS) {
+                $deny_login = false;
+            } else {
+                if($attempts[0] + MM_BRUTE_WINDOW > time()) {
+                    $deny_login = true;
+                } else {
+                    $deny_login = false;
+                }
+            }
+        }
+
+        //cleanup the cache so it doesn't get too large over time
+        foreach($cache as $ip=>$attempts) {
+            if($attempts) {
+                if($attempts[count($attempts)-1] + MM_BRUTE_WINDOW < time()) {
+                    unset($cache[$ip]);
+                }
+            }
+        }
+
+        Connexion::stringToFile(MM_BRUTE_FILE, serialize($cache));
+
+        return $deny_login;
+    }
+
+    public static function fileToString($filename) {
+        return file_get_contents($filename);
+    }
+
+    public static function stringToFile($filename, $data) {
+        $file = fopen ($filename, "w");
+        fwrite($file, $data);
+        fclose ($file);
+        return true;
+    }
+
     public function get_trys()
     {
-        AntiBruteForce::bruteCheck();
-        $cache = unserialize(AntiBruteForce::fileToString(MM_BRUTE_FILE));
+        Connexion::bruteCheck();
+        $cache = unserialize(Connexion::fileToString(MM_BRUTE_FILE));
         $remaining_attempts = MM_BRUTE_ATTEMPTS - count($cache[$_SERVER['REMOTE_ADDR']]);
         return $remaining_attempts;
 	}
 
     public function get_remaining_time () {
-        $cache = unserialize(AntiBruteForce::fileToString(MM_BRUTE_FILE));
+        $cache = unserialize(Connexion::fileToString(MM_BRUTE_FILE));
         $attempts = $cache[$_SERVER['REMOTE_ADDR']];
         $time_left = array(
             'time_left' => floor(($attempts[0] + MM_BRUTE_WINDOW - time())/60),
@@ -107,7 +166,48 @@ class Connexion extends Controller
         }
         return $time_left;
     }
+}
 
+/** ==========================================================================
+ *ACTIONS CONNEXION PAGE
+========================================================================== */
+//If the custom login page is activated, then...
+if( !function_exists('is_plugin_active') ) {
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+}
+if (get_option('init_custom_login_page_admin') == 'true' && is_plugin_active("plugin-psm/index.php")) {
 
-    //Check if the administrator uses the custom login page
+    /**
+     * Overriding login_init
+     * When a user try to get wp-login?action=login, redirect to our custom login page
+     */
+    add_action('login_init', function() {
+        if (get_option('init_custom_login_page_admin') == 'true') {
+            $location = get_site_url() . '/connexion';
+            wp_redirect($location);
+        }
+    });
+
+    /**Overriding wp_login_failed
+     * Fires after a user login has failed.
+     * ->Add an url argument when login and password missmatch
+     * @link https://developer.wordpress.org/reference/hooks/wp_login_failed/
+     */
+
+    add_action('wp_login_failed', function () {
+        Connexion::bruteCheck(true);
+        //redirect to home_url/connexion/?login=failed
+        wp_redirect(esc_url(add_query_arg('login', 'failed', home_url() . "/connexion")));
+        exit;
+    });
+
+    /**Overriding wp_logout
+     * Log the current user out, by destroying the current user session.
+     * ->Add an url argument when the user log off
+     */
+    add_action('wp_logout', function () {
+        //redirect to home_url/connexion/?login=false
+        wp_redirect(esc_url(add_query_arg('login', 'false', home_url() . "/connexion")));
+        exit;
+    });
 }

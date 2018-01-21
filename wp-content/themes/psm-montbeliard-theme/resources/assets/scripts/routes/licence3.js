@@ -228,7 +228,7 @@ export default {
         //Buitages et musiques
         var pizza_sounds = {};
         pizza_sounds['musique'] = new Audio();
-        pizza_sounds['musique'].src = theme_url + "/assets/musiques/letto-la-dona.mp3";
+        pizza_sounds['musique'].src = theme_url + "/assets/musiques/musique.mp3";
 
         pizza_sounds['remplir-recipient-eau'] = new Audio();
         pizza_sounds['remplir-recipient-eau'].src = theme_url + "/assets/musiques/remplir-recipient-eau.mp3";
@@ -269,8 +269,8 @@ export default {
         pizza_sounds['pizza-termine'] = new Audio();
         pizza_sounds['pizza-termine'].src = theme_url + "/assets/musiques/pizza-termine.mp3";
 
-        pizza_sounds['mamamia'] = new Audio();
-        pizza_sounds['mamamia'].src = theme_url + "/assets/musiques/mamamia.mp3";
+        //pizza_sounds['mamamia'] = new Audio();
+        //pizza_sounds['mamamia'].src = theme_url + "/assets/musiques/mamamia.mp3";
 
 
         jQuery.each(pizza_sounds, function(key){
@@ -335,11 +335,11 @@ export default {
             jQuery.each(pizza_sounds, function(key){
                 pizza_sounds[key].volume= 0.2;
             });
-            pizza_sounds['musique'].volume=0.1;
+            pizza_sounds['musique'].volume=0.3;
             pizza_sounds['remplir-recipient-eau'].volume= 0.7;
             pizza_sounds['remplir-recipient-lait-huile'].volume= 0.7;
             pizza_sounds['rouleau-a-patisserie'].volume = 1;
-            pizza_sounds['pizza-termine'].volume=0.1;
+            pizza_sounds['pizza-termine'].volume=0.3;
         }
 
 
@@ -680,7 +680,7 @@ export default {
         }
 
         function fourDragEnd(){
-            if(this.endY<-666){
+            if(this.endY<-500){
 
                 pizzadrag.disable();
                 instr_four_anlic2.hide();
@@ -699,12 +699,11 @@ export default {
 
                 setTimeout(function(){
                     pizza_sounds['musique'].pause();
-                    pizza_sounds['pizza-termine'].play();
-                },6000);
+                },6500);
 
                 setTimeout(function(){
-                    pizza_sounds['mamamia'].play();
-                },7000);
+                    pizza_sounds['pizza-termine'].play();
+                },6500);
             }else{
                 hideFleche(fleche_four_anlic2, false);
             }

@@ -16,11 +16,12 @@ if ( ! defined( 'ABSPATH' )) {
     header('Location: http://tinyurl.com/ydek4vj2');
     exit; // Exit if accessed directly
 }
-class Projets_rhizomes extends Controller
+class Projets_rhizome extends Controller
 {
     public function get_projects(){
         $args = array(
             'post_type' => 'project',
+            'posts_per_page' => '100',
             'tax_query' => array(
             array (
                 'taxonomy' => 'project_type',

@@ -58,7 +58,7 @@ class PSM_Settings_Default_Settings
         if (!get_option( 'activate_user_register_ldap_filter') ){
             add_option( 'activate_user_register_ldap_filter', 'true');
         }else{
-            update_option( 'activate_user_register_ldap_filter', 'true');
+            update_option( 'activate_user_register_ldap_filter', 'false');
         }
 
         if (!get_option( 'user_register_key') ){

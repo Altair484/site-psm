@@ -5,7 +5,7 @@
         <div class="filter"></div>
         <div class="row">
             <div id="welcome-left-collumn" class="col-12 col-md-7">
-                <div id="logo-welcome" class="col-9 col-sm-7 offset-sm-1 no-padding hidden-md-down">
+                <div id="logo-welcome" class="col-9 col-sm-7 offset-sm-1 col-xl-6 no-padding hidden-md-down">
                     <h1>{{bloginfo()}}</h1>
                 </div>
                 <div id="svg-slider-texte" class="col-12 col-sm-10 offset-sm-1 no-padding">
@@ -80,7 +80,7 @@
                                     'La qualité avant tout'
                                 ) }}
                             </h3>
-                            <p class="home_page_welcome_section_slide_4_text">
+                            <div class="home_page_welcome_section_slide_4_text">
                                 {!! get_theme_mod(
                                     'home_page_welcome_section_slide_4_text',
                                     'Un produit ou un service de qualité est un produit qui sait répondre aux besoins et aux '.
@@ -89,7 +89,7 @@
                                     'et à réaliser des produits et des services visant à proposer la meilleure expérience '.
                                     'utilisateur possible.'
                                 ) !!}
-                            </p>
+                            </div>
                             <div class="btns-box">
                                 <button class="btn btn-transparent hide-text-slider">Fermer</button>
                                 <button class="btn btn-psm-green next-slide last-slide">Suivant</button>
@@ -177,7 +177,7 @@
                                 'PASSIONNÉS ET SUPER MOTIVÉS !'
                             ) }}
                         </h2>
-                        <p class="home_page_presentation_section_text">
+                        <div class="home_page_presentation_section_text">
                             {!! get_theme_mod(
                                 'home_page_presentation_section_text',
                                 'Chez PSM, votre <b>passion</b> sera la clé de votre réussite. Que vous ayez un profil de graphiste, communicant, '.
@@ -187,7 +187,7 @@
                                 'Vous visez <b>l’excellence</b> pour la poursuite de vos études en <b>BAC+3</b> ou en <b>Master</b> ? PSM pourrait être la '.
                                 'réponse : venez découvrir nos <b>ormations</b> et nos <b>modalités d’admission</b>. '
                             ) !!}
-                        </p>
+                        </div>
                         <div class="btns-box">
                             <span class="home_page_presentation_section_admission_licence_link">
                             <a class="btn btn-psm" href="{!! get_theme_mod(
@@ -211,8 +211,6 @@
                             </a>
                         </span>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -225,7 +223,7 @@
         <div class="row formations ">
             <a href="{{ site_url().'/licence' }}" style="background-image:url('{{ get_theme_mod(
 			        'home_page_formations_section_img_1',
-			        get_template_directory_uri(). '/../dist/images/formations/Licence3-psm.jpg'
+			        get_template_directory_uri(). '/../dist/images/formations/licence3-psm.jpg'
 			    ) }}')" class="formation home_page_formations_section_img_1">
                 <div class="filter"></div>
                 <h2>L<span class="writing-letter">ICENCE</span>3</h2>
@@ -233,7 +231,7 @@
 
             <a href="{{add_query_arg( 'formation', 'm1', site_url().'/master' )}}" style="background-image:url('{{ get_theme_mod(
 			        'home_page_formations_section_img_2',
-			         get_template_directory_uri(). '/../dist/images/formations/Master1-psm.jpg'
+			         get_template_directory_uri(). '/../dist/images/formations/master1-psm.jpg'
 			    )}}')" class="formation home_page_formations_section_img_2">
                 <div class="filter"></div>
                 <h2 class="formation-title">M<span class="writing-letter">ASTER</span>1</h2>
@@ -241,7 +239,7 @@
 
             <a href="{{add_query_arg( 'formation', 'm2', site_url().'/master' )}}" style="background-image:url('{{ get_theme_mod(
 			        'home_page_formations_section_img_3',
-			           get_template_directory_uri(). '/../dist/images/formations/Master2-psm.jpg'
+			           get_template_directory_uri(). '/../dist/images/formations/master2-psm.jpg'
 			    )}}')" class="formation home_page_formations_section_img_3">
                 <div class="filter"></div>
                 <h2 class="formation-title">M<span class="writing-letter">ASTER</span>2</h2>
@@ -266,7 +264,7 @@
                                'Des formations orientées projet !'
                            ) }}
                         </h2>
-                        <p class="home_page_projects_section_text">
+                        <div class="home_page_projects_section_text">
                             {!! get_theme_mod(
                                 'home_page_projects_section_text',
                                 'Les <b>projets multimédia</b> sont le pain quotidien des étudiants de PSM. Chaque année, ils sont amenés à
@@ -276,13 +274,13 @@
                                 à des résultats remarquables.<br />
                                 Découvrez les projets réalisés au fil des années par nos étudiant dans la section dédiée de ce site !'
                             )!!}
-                        </p>
+                        </div>
                         <div class="btns-box">
                             <span class="home_page_projects_section_rhizome_page">
                                  <a class="btn btn-psm" href="{!! site_url() .'/?p='. get_theme_mod(
                                     'home_page_projects_section_rhizome_page',
                                     '1866'
-                                ) !!}">Projets rhizomes</a>
+                                ) !!}">Projets rhizome</a>
                             </span>
                             <span class="home_page_projects_section_pfe_page">
                                  <a class="btn btn-psm" href="{!! site_url() .'/?p='. get_theme_mod(
@@ -322,25 +320,25 @@
     <!-- News section end -->
 
     <!-- Professional section start -->
-    <section id="professional-section">
+    <section id="professional-section" class="section-image-left-content-right">
         <div class="row justify-content-center align-items-center">
             <div class="losange"></div>
             <div class="losange"></div>
             <div class="losange"></div>
             <div class="losange"></div>
-            <div id="professional-content" class="col-12 col-lg-11">
+            <div class="content offset-0 offset-md-2 col-12 col-md-9">
                 <div class="row">
-                    <div id="professional-picture" class="col-12 col-md-4">
+                    <div class="picture col-12 col-md-4 no-padding">
                         {!! get_template_part('/assets/images/svg/inline', 'anac3.svg') !!}
                     </div>
-                    <div id="professional-text" class="col-12 col-md-8 d-flex justify-content-center align-items-start flex-column">
+                    <div class="text col-12 col-md-8 d-flex justify-content-center align-items-start flex-column">
                         <h2 class="home_page_professional_section_title">
                             {{ get_theme_mod(
                                'home_page_professional_section_title',
                                'Un tremplin vers le monde du travail'
                             ) }}
                         </h2>
-                        <p class="home_page_professional_section_text">
+                        <div class="home_page_professional_section_text">
                             {!! get_theme_mod(
                              'home_page_professional_section_text',
                              'La force de PSM est la <b>réussite</b> de ses étudiants dans le monde du travail. Pour atteindre ce but,
@@ -351,7 +349,7 @@
                              Vous êtes un professionnel et vous souhaitez soumettre une offre de stage / emploi à nos étudiants ?
                              Un formulaire est disponible pour vous dans la section <a href="#">Espace Pro</a>.'
                             )!!}
-                        </p>
+                        </div>
                         <span class="home_page_professional_section_link_page_pro">
                              <a class="btn btn-psm" href="{!! site_url() .'/?p='. get_theme_mod(
                                 'home_page_professional_section_link_page_pro',
@@ -364,17 +362,4 @@
         </div>
     </section>
     <!-- Professional section end -->
-
-    {{--  @if (!have_posts())
-            <div class="alert alert-warning">
-                {{ __('Sorry, no results were found.', 'sage') }}
-            </div>
-            {!! get_search_form(false) !!}
-        @endif
-
-        @while (have_posts()) @php(the_post())
-        @include('partials.content-'.get_post_type())
-        @endwhile
-
-        {!! get_the_posts_navigation() !!}--}}
 @endsection

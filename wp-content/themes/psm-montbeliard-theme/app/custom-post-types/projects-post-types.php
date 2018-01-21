@@ -32,8 +32,8 @@ function codex_project_init() {
 	$args = array(
 		'labels'             => $labels, //An array of labels for this post type
 		'description'        => __( 'Description.'), //A short descriptive summary of what the post type is.
-		'public'             => false, // Hide to visitors search engine
-		'publicly_queryable' => false, // Whether queries can be performed on the front end as part of parse_request()
+		'public'             => true, // Hide to visitors search engine
+		'publicly_queryable' => true, // Whether queries can be performed on the front end as part of parse_request()
 		'show_ui'            => true, // Show in admin
 		'show_in_menu'       => true, // Show in menus
 		'query_var'          => true, // Showing the post page for visitors
@@ -51,7 +51,7 @@ function codex_project_init() {
 		),
 		'map_meta_cap' => true, // Set to `false`, if users are not allowed to edit/delete existing posts
 		/*End*/
-		'has_archive'        => false, // Enables post type archives
+		'has_archive'        => true, // Enables post type archives
 		'hierarchical'       => false, // Parents to be specified
 		'menu_position'      => null,  // Position in admin (5 - below Posts, 10 - below Media, 15 - below Links...)
 		'menu_icon'          => 'dashicons-media-interactive', //icon
@@ -85,7 +85,7 @@ function info_project($post){
 	<label for="project_year">Année de sortie</label>
 	<select id="project_year" style="width: 100%;" name="project_year" value="<?php echo $year;?>">
 		<?php
-		for($i = (date('Y')-5) ; $i <= (date('Y')+1); $i++){ ?>
+		for($i = 2006 ; $i <= (date('Y')+1); $i++){ ?>
 			<option value='<?php _e($i)?>' <?php $year == $i ? _e('selected') : ''; ?>><?php _e($i) ?></option>";
 		<?php }?>
 	</select>
@@ -158,39 +158,68 @@ function create_project_type_taxonomie() {
     );
     register_taxonomy( 'project_theme', array( 'project' ), $args );
 }
-/**
- * Adding custom post-meta collumn in the post-type list page
- */
-/*add_filter('manage_compagny_posts_columns','filter_compagny_columns');
-function filter_compagny_columns( $columns ) {
-	$columns = array(
-		'title' => 'Title',
-		'adresse' => 'Adresse',
-		'email' => 'Email',
-		'phone' => 'Téléphone',
-		'website' => 'Site web',
-		//'thumb' => __('Thumb'),
-		'date' => __( 'Date' )
-	);
+add_filter('manage_project_posts_columns','filter_project_columns');
+function filter_project_columns( $columns ) {
+    $columns = array(
+        'title' => 'Title',
+        'project_type' => 'Type du projet',
+        'project_theme' => 'Thème de l\'année',
+        'date_project' => 'Année de sortie',
+        'date' => __( 'Date' )
+    );
 
-	return $columns;
-}*/
+    return $columns;
+}
 
-/*add_action( 'manage_posts_custom_column','action_custom_columns_content', 10, 2);
+add_action( 'manage_posts_custom_column','action_custom_columns_content', 10, 2);
 function action_custom_columns_content ( $column_id, $post_id ) {
-	//run a switch statement for all of the custom columns created
-	switch( $column_id ) {
-		case 'adresse':
-			echo ($value = get_post_meta($post_id, '_compagny__adress', true )) ? $value : 'No Adress Given';
-			break;
-		case 'email':
-			echo ($value = get_post_meta($post_id, '_compagny_email', true )) ? $value : 'No Email Given';
-			break;
-		case 'phone':
-			echo ($value = get_post_meta($post_id, '_compagny_phone', true )) ? $value : 'No Phone Given';
-			break;
-		case 'website':
-			echo ($value = get_post_meta($post_id, '_compagny_website', true )) ? $value : 'No WebsiteGiven';
-			break;
-	}
-}*/
+    //run a switch statement for all of the custom columns created
+    switch( $column_id ) {
+        case 'date_project':
+            echo ($value = get_post_meta($post_id, '_project_year', true )) ? $value : 'Aucune date de sortie';
+            break;
+        case 'project_type':
+            $term = wp_get_post_terms($post_id, 'project_type');
+            echo ($term[0]->name);
+            break;
+        case 'project_theme':
+            $term = wp_get_post_terms($post_id, 'project_theme');
+            echo ($term[0]->name);
+            break;
+    }
+}
+
+function filter_cars_by_taxonomies( $post_type, $which ) {
+
+    // Apply this only on a specific post type
+    if ( 'project' !== $post_type )
+        return;
+
+    // A list of taxonomy slugs to filter by
+    $taxonomies = array( 'project_type', 'project_theme');
+
+    foreach ( $taxonomies as $taxonomy_slug ) {
+
+        // Retrieve taxonomy data
+        $taxonomy_obj = get_taxonomy( $taxonomy_slug );
+        $taxonomy_name = $taxonomy_obj->labels->name;
+
+        // Retrieve taxonomy terms
+        $terms = get_terms( $taxonomy_slug );
+
+        // Display filter HTML
+        echo "<select name='{$taxonomy_slug}' id='{$taxonomy_slug}' class='postform'>";
+        echo '<option value="">' . sprintf( esc_html__( 'Tous les %s', 'text_domain' ), $taxonomy_name ) . '</option>';
+        foreach ( $terms as $term ) {
+            printf(
+                '<option value="%1$s" %2$s>%3$s (%4$s)</option>',
+                $term->slug,
+                ( ( isset( $_GET[$taxonomy_slug] ) && ( $_GET[$taxonomy_slug] == $term->slug ) ) ? ' selected="selected"' : '' ),
+                $term->name,
+                $term->count
+            );
+        }
+        echo '</select>';
+    }
+}
+add_action( 'restrict_manage_posts', 'filter_cars_by_taxonomies' , 10, 2);

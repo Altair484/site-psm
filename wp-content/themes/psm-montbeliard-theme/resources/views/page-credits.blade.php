@@ -42,7 +42,7 @@
                             <img src="{{ get_template_directory_uri() }}. '/../dist/images/svg/visages/federico-borsoi.svg'" alt="Image de profil : Anne-lise Pricaz">
                         </div>
                         <div class="team-member-name">
-                            <h2>Fédérico Borsoi</h2>
+                            <h2>Federico Borsoi</h2>
                         </div>
                         <div class="team-member-desc">
                             <h3>Chargé de communication</h3>

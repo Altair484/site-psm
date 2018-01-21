@@ -38,16 +38,44 @@ section.project {
     &.section-image-right-content-left{
         .picture{
             svg,img,figure{
-                width: 100%!important;
-                left: 50%!important;
+                @include xl{
+                    max-width: 300px!important;
+                    left: 50%!important;
+                }
+
+                @include md-xl{
+                    max-width: 300px!important;
+                    left: 50%!important;
+                }
+
+                @include xs-md{
+                    max-width: 50%;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         }
     }
     &.section-image-left-content-right{
         .picture{
             svg,img,figure{
-                width: 100%!important;
-                right: 50%!important;
+                @include xl{
+                    max-width: 300px!important;
+                    right: 50%!important;
+                }
+
+                @include md-xl{
+                    max-width: 300px!important;
+                    right: 50%!important;
+                }
+
+                @include xs-md{
+                    max-width: 50%;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         }
     }
@@ -59,4 +87,21 @@ section.noProjectsResults {
     text-align: center;
     @include setup-font($sourceSansPro, #000, normal);
     @include responsive-font(0, 3rem, 2.8rem, 2.6rem, 2.4rem, 2.2rem);
+}
+
+div.scrollToProjetsSelection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: $tertiaire-gris-blanc;
+    a{
+        color: white;
+    }
+
+    button:hover{
+        a{
+            color: $primaire-vert;
+        }
+    }
 }

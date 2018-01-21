@@ -70,7 +70,7 @@
                     <div class="field_container">
                         <label for="studies_period">Période de formation<span style="color:#B81C23"> *</span></label>
                         <select id="studies_period" name="user_studies_period" required="">
-                            @for ( $i = -5; $i < 0; $i++ )
+                            @for ( $i = -5; $i <= 0; $i++ )
                                 @php($date_value = date('Y')+$i)
                                 @php($date_value_plus_one = $date_value+1)
                                 @php($dates_to_string = $date_value ."/". $date_value_plus_one)

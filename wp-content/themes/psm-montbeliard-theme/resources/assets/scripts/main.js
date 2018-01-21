@@ -1,5 +1,5 @@
 // Import everything from autoload
-import "./autoload/**/*"
+import "./autoload/_general"
 
 // import local dependencies
 import Router from './util/Router';
@@ -7,7 +7,7 @@ import common from './routes/common';
 import home from './routes/home';
 import master from './routes/master';
 import licence3 from './routes/licence3';
-import projetsRhizomes from './routes/projetsRhizomes';
+import projetsRhizome from './routes/projetsRhizome';
 import projetsFinDetudes from './routes/projetsPfe';
 import espacePro from './routes/professional';
 
@@ -22,7 +22,7 @@ const routes = new Router({
     master,
     licence3,
     espacePro,
-    projetsRhizomes,
+    projetsRhizome,
     projetsFinDetudes,
 
 });

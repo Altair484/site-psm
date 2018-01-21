@@ -8,10 +8,10 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/wordpress/site-psm-back/wp-content/themes/psm-montbeliard-theme",
-  "devUrl": "http://localhost/wordpress/site-psm-back",
+  "publicPath": "/wp-content/themes/psm-montbeliard-theme",
+  "devUrl": "https://psm-montbeliard.fr",
   "proxyUrl": "http://localhost:3000",
-  "cacheBusting": "[name]_[hash:8]",
+  "cacheBusting": "[name]",
   "__comment" : "For production, remove _[hash:8] of cacheBusting.",
   "watch": [
     "app/**/*.php",

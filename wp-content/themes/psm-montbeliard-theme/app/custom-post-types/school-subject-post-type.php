@@ -104,12 +104,19 @@ function create_school_subject_taxonomies() {
         'add_new_item'      => __( 'Ajouter une catégorie de matière' ),
         'new_item_name'     => __( 'Nouvelle catégorie de matière' ),
         'menu_name'         => __( 'Catégorie de matière' ),
+        'capabilities' => array(
+            'manage_terms' => '',
+            'edit_terms' => '',
+            'delete_terms' => '',
+            'assign_terms' => 'edit_posts'
+        ),
     );
 
     $args = array(
+        'public'            => false,
         'hierarchical'      => true,
         'labels'            => $labels,
-        'show_ui'           => true,
+        'show_ui'           => false, //Set to true if you want to see in admin
         'show_admin_column' => true,
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'school-subject-cat' ),

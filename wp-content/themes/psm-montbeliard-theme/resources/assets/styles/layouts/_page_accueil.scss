@@ -14,11 +14,11 @@
         }
 
         @include md{
-            height: 150px;
+            height: 125px;
         }
 
         @include xl{
-            height: 200px;
+            height: 150px;
         }
         background-repeat: no-repeat ;
     }
@@ -48,7 +48,7 @@
             padding-top: 10px;
             @include lg {
                 display: block;
-                padding-bottom: 50px;
+                padding-bottom: 30px;
             }
             svg, object, img {
                 padding-bottom: 5%;
@@ -402,6 +402,11 @@
 
 #projects-section {
 
+    .text{
+        @include xl-xxl{
+            padding: 100px 0 25px 100px;
+        }
+    }
     .picture{
         svg, img, figure{
             @include md() {
@@ -462,63 +467,16 @@
  * Welcome page - Section PROFESSIONAL
 /* ---------------------------------------------- */
 #professional-section {
-    overflow: hidden;
-    .row {
-        position: relative;
-        z-index: 1;
-    }
-    @include xs-md {
-        min-height: 100vh;
-    }
-    @include md {
-        height: 100vh;
-    }
-    width: 100%;
     background-color: $secondaire-bleu;
 
-    #professional-content {
-        height: 100%;
-        position: relative;
-        z-index: 1;
-
-        @include xs-md {
-            padding: 30px 0 30px 0;
-            min-height: 100vh;
-        }
-
-        @include md {
-            flex-direction: row;
-            height: 75vh;
-        }
-
-        @include xl() {
-            height: 50vh;
-        }
-
-        background-color: $tertiaire-gris-blanc;
-        #professional-picture {
-            height: 100%;
-            svg, object, img {
-                padding: 25px;
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        #professional-text {
-
-            @include xs-md() {
-                justify-content: center !important;
-                align-items: center !important;
-            }
-            h2 {
-                padding-top: 30px;
-                @include setup-font($lovelo, $primaire-vert, 300);
-            }
-
-            p {
-                @include setup-font($sourceSansPro, black, 300);
-                @include responsive-font(1, 2rem)
+    .picture{
+        svg, object, img {
+            padding: 25px;
+            width: 100%;
+            max-height: 100%;
+            right:50%;
+            @include xl-xxl{
+                width: 120%;
             }
         }
     }
@@ -531,7 +489,7 @@
             left: 18%;
             height: 30vw;
             width: 30vw;
-            background-color: $secondaire-noir;
+            background-color: $primaire-vert;
         }
 
         &:nth-of-type(2) {
@@ -548,7 +506,7 @@
             left: 15%;
             height: 10vw;
             width: 10vw;
-            background-color: $primaire-vert;
+            background-color: $secondaire-noir
         }
 
         position: absolute;

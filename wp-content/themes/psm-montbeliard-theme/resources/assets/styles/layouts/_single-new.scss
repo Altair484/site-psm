@@ -14,11 +14,17 @@
         p, li,table,dd,dt,li > span,li > em{
             @include setup-font($sourceSansPro, #000000, 300);
             @include responsive-font(0.4, 2rem);
+            @include xl-xxl{
+                @include responsive-font(0.2, 1.6rem);
+            }
         }
 
         .wp-caption-text{
             @include setup-font($sourceSansPro, #666666, 300);
             @include responsive-font(0.4, 2rem);
+            @include xl-xxl{
+                @include responsive-font(0.2, 1.6rem);
+            }
         }
         table{width: 100%}
         th:first-child, td:first-child {  padding-left: 0; }
@@ -50,7 +56,8 @@
             margin-right: 1.5em;
         }
         img, video {
-            margin-top: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
             height: auto;
             max-width: 100%;
         }
@@ -103,10 +110,12 @@
         background-color: $tertiaire-gris-blanc;
         h3 {
             margin-top: 30px;
+            margin-bottom: 30px;
         }
         h4 {
-            color: $primaire-vert;
+            color: $secondaire-bleu;
             padding: 5px 0 15px 0;
+            text-align: center;
         }
         img{
             width: 100%;
@@ -118,6 +127,9 @@
                 display: inline-block;
                 @include setup-font($sourceSansPro, $primaire-vert, normal);
                 @include responsive-font(0,2rem);
+                @include xl-xxl{
+                    @include responsive-font(0.2, 1.6rem);
+                }
                 margin: 10px 5px 0 0;
                 padding:10px;
                 border: 2px solid $primaire-vert;

@@ -58,6 +58,8 @@ if(isset($_POST['PSM_Settings_update'])){
                             <input type="checkbox" id="activate_login_ldap_filter" name="activate_login_ldap_filter" class="regular-text"
                             <?php  get_option('activate_login_ldap_filter') == 'true' ? _e('checked') : _e('') ?> value="true" />
                             <p class="description">Seules les personnes possédant un compte universitaire peuvent se connecter.</p>
+                            <p style="color:orange">Attention, avant d'activer cette fonctionnalité, il faut au préalable demander l'autorisation d'utiliser le CAS. <br/>
+                                Pour ce faire, le représentant de l'établissement doit faire la demande à : ldapmaster@univ-fcomte.fr</p>
                         </td>
                     </tr>
                     <!-- END Activate custom ldap filter on login page-->
@@ -104,6 +106,8 @@ if(isset($_POST['PSM_Settings_update'])){
                             <input type="checkbox" id="activate_user_register_ldap_filter" name="activate_user_register_ldap_filter"
                             <?php  get_option('activate_user_register_ldap_filter') == 'true' ? _e('checked') : _e('') ?> value="true" />
                             <p class="description">Seules les personnes possédant un compte universitaire peuvent s'inscrire.</p>
+                            <p style="color:orange">Attention, avant d'activer cette fonctionnalité, il faut au préalable demander l'autorisation d'utiliser le CAS. <br/>
+                            Pour ce faire, le représentant de l'établissement doit faire la demande à : ldapmaster@univ-fcomte.fr</p>
                         </td>
                     </tr>
                     <!-- END Activate custom ldap filter on login page-->

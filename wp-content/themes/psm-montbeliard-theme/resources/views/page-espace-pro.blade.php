@@ -37,7 +37,7 @@
                                 get_the_title()
                             ) }}
                         </h2>
-                        <p class="professional_page_presentation_section_text">
+                        <div class="professional_page_presentation_section_text">
                             {!! get_theme_mod(
                                 'professional_page_presentation_section_text',
                                 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
@@ -46,7 +46,7 @@
                                  consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
                                  consequat, vel illum dolore eu feugiat nulla facilisis.'
                             ) !!}
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>

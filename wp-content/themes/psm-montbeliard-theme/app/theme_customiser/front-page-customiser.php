@@ -276,7 +276,7 @@ add_action('customize_register',  function( $wp_customize ) {
     $wp_customize->add_control( new Wysiwyg_editor_custom_control($wp_customize, 'home_page_presentation_section_text', array(
         'section' => 'home_page_presentation_section',
         'settings' => 'home_page_presentation_section_text',
-        'label' => 'Texte section présentation'
+        'label' => 'Texte section présentation',
     )));
 
     //Admission licence link
@@ -284,7 +284,7 @@ add_action('customize_register',  function( $wp_customize ) {
         'default' => 'http://formations.univ-fcomte.fr/ws?_profil=ufc&_cmd=getFormation&_oid=CDM-KPROG8&_onglet=admission&_redirect=voir_fiche_program',
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'esc_url'
+        'sanitize_callback' => 'esc_url',
     ) );
 
     //Admission licence link control
@@ -384,21 +384,21 @@ add_action('customize_register',  function( $wp_customize ) {
     $wp_customize->add_setting( 'home_page_formations_section_img_1', array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'default' => get_template_directory_uri(). '/../dist/images/formations/Licence3-psm.jpg',
+        'default' => get_template_directory_uri(). '/../dist/images/formations/licence3-psm.jpg',
     ));
 
     //Image Licence
     $wp_customize->add_setting( 'home_page_formations_section_img_2', array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'default' => get_template_directory_uri(). '/../dist/images/formations/Master1-psm.jpg',
+        'default' => get_template_directory_uri(). '/../dist/images/formations/master1-psm.jpg',
     ));
 
     //Image Licence
     $wp_customize->add_setting( 'home_page_formations_section_img_3', array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'default' => get_template_directory_uri(). '/../dist/images/formations/Master2-psm.jpg',
+        'default' => get_template_directory_uri(). '/../dist/images/formations/master2-psm.jpg',
     ));
 
     for ( $count = 1; $count <= 3; $count++ ) {

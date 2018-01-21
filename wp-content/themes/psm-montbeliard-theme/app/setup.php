@@ -309,7 +309,7 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
  **/
 
 remove_action('wp_head', 'wp_generator');
-add_action( 'after_setup_theme', function() {
+/*add_action( 'after_setup_theme', function() {
 
     // Remove the REST API lines from the HTML Header
     remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
@@ -331,8 +331,8 @@ add_action( 'after_setup_theme', function() {
     remove_action( 'wp_head', 'wp_oembed_add_host_js' );
 
     // Remove all embeds rewrite rules.
-    add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
-});
+    //add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
+});*/
 
 
 

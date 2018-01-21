@@ -12,6 +12,7 @@
 
     article{
         background-color: $tertiaire-gris-blanc;
+        margin-top: 20px;
         margin-bottom: 20px;
         .thumnail-search{
             display: flex;
@@ -42,13 +43,41 @@
     }
 
     .nav-links{
-        @include sm{
-            display: flex;
-        }
+        padding: 30px 15px 30px 15px;
+        display: flex;
+        flex-wrap: wrap;
 
         a{
-            margin:0 10px 15px 10px;
-            border:1px solid #fff;
+            margin-right: 10px;
+            padding: 15px;
+            @include xs-sm{
+                padding: 15px 7px 15px 7px;
+            }
+            border: 1px solid white;
+            text-transform: uppercase;
+            @include setup-font($sourceSansPro, #fff, 300);
+            @include responsive-font(0, 2rem);
+        }
+        span.current{
+            margin-right: 10px;
+            background-color: $primaire-vert;
+            padding: 15px;
+            @include xs-sm{
+                padding: 15px 7px 15px 7px;
+            }
+            border: 1px solid white;
+            text-transform: uppercase;
+            @include setup-font($sourceSansPro, #fff, 300);
+            @include responsive-font(0, 2rem);
+        }
+
+        span.dots{
+            margin-right: 10px;
+            padding: 15px;
+            @include setup-font($sourceSansPro, #fff, 300);
+            @include responsive-font(0, 2rem);
         }
     }
+
+
 }

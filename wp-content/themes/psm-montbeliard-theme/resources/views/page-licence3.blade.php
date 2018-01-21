@@ -33,7 +33,7 @@
                                     'La licence en bref'
                                 ) }}
                             </h2>
-                            <p class="licence_page_presentation_section_text">
+                            <div class="licence_page_presentation_section_text">
                                 {!! get_theme_mod(
                                     'licence_page_presentation_section_text',
                                     'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
@@ -42,7 +42,7 @@
                                      consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
                                      consequat, vel illum dolore eu feugiat nulla facilisis.'
                                 ) !!}
-                            </p>
+                            </div>
                             <span class="licence_page_presentation_section_admission_link">
                                 <a class="btn btn-psm" href="{!! get_theme_mod(
                                     'licence_page_presentation_section_admission_link',
@@ -65,7 +65,7 @@
                             'Programme'
                         ) }}
                     </h2>
-                    <h3>Développement</h3>
+                    <h3>{!! $get_school_subjects_list[0]->name !!}</h3>
                 </div>
             </div>
             <div class="row programme-container">
@@ -74,17 +74,17 @@
                         <div class="losange-origine">
                             <div class="losange active">
                                 <i class="fa fa-code"></i>
-                                <h4>{!! $get_school_subjects_list[1]->name !!}</h4>
+                                <h4>{!! $get_school_subjects_list[0]->name !!}</h4>
                             </div>
                             <div class="losange no-hover">
                             </div>
                             <div class="losange">
                                 <i class="fa fa-comments-o"></i>
-                                <h4>{!! $get_school_subjects_list[0]->name !!}</h4>
+                                <h4>{!! $get_school_subjects_list[2]->name !!}</h4>
                             </div>
                             <div class="losange">
                                 <i class="fa fa-tasks"></i>
-                                <h4>{!! $get_school_subjects_list[2]->name !!}</h4>
+                                <h4>{!! $get_school_subjects_list[1]->name !!}</h4>
                             </div>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
                                    'Des formations orientées projet !'
                                ) }}
                             </h2>
-                            <p class="licence_page_projects_section_text">
+                            <div class="licence_page_projects_section_text">
                                 {!! get_theme_mod(
                                     'licence_page_projects_section_text',
                                     'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
@@ -172,7 +172,7 @@
                                      consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
                                      consequat, vel illum dolore eu feugiat nulla facilisis.'
                                 )!!}
-                            </p>
+                            </div>
                             {{--<div class="btns-box">
                                 <span class="licence_page_projects_section_link_page_opi">
                                      <a class="btn btn-psm-white" href="{!! site_url() .'/?p='. get_theme_mod(
