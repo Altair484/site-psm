@@ -65,7 +65,7 @@
                             'Programme'
                         ) }}
                     </h2>
-                    <h3>{!! $get_school_subjects_list[0]->name !!}</h3>
+                    <h3>{!! $get_school_subjects_list[1]->name !!}</h3>
                 </div>
             </div>
             <div class="row programme-container">
@@ -74,17 +74,17 @@
                         <div class="losange-origine">
                             <div class="losange active">
                                 <i class="fa fa-code"></i>
-                                <h4>{!! $get_school_subjects_list[0]->name !!}</h4>
+                                <h4>{!! $get_school_subjects_list[1]->name !!}</h4>
                             </div>
                             <div class="losange no-hover">
                             </div>
                             <div class="losange">
                                 <i class="fa fa-comments-o"></i>
-                                <h4>{!! $get_school_subjects_list[2]->name !!}</h4>
+                                <h4>{!! $get_school_subjects_list[0]->name !!}</h4>
                             </div>
                             <div class="losange">
                                 <i class="fa fa-tasks"></i>
-                                <h4>{!! $get_school_subjects_list[1]->name !!}</h4>
+                                <h4>{!! $get_school_subjects_list[2]->name !!}</h4>
                             </div>
                         </div>
                     </div>

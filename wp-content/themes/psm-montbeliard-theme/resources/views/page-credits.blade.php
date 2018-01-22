@@ -10,7 +10,7 @@
                 <div class="team-member-wrapper">
                     <div class="team-member-content col-xl-10 offset-xl-1">
                         <div class="team-member-picture">
-                            <img src="{{ get_template_directory_uri() }}. '/../dist/images/svg/visages/anne-lise-pricaz.svg'" alt="Image de profil : Anne-lise Pricaz">
+                            <img src="{{ get_template_directory_uri() }}/../dist/images/svg/visages/anne-lise-pricaz.svg" alt="Image de profil : Anne-lise Pricaz">
                         </div>
                         <div class="team-member-name">
                             <h2>Anne-lise Pricaz</h2>
@@ -39,7 +39,7 @@
                 <div class="team-member-wrapper">
                     <div class="team-member-content col-xl-10 offset-xl-1">
                         <div class="team-member-picture">
-                            <img src="{{ get_template_directory_uri() }}. '/../dist/images/svg/visages/federico-borsoi.svg'" alt="Image de profil : Anne-lise Pricaz">
+                            <img src="{{ get_template_directory_uri() }}/../dist/images/svg/visages/federico-borsoi.svg" alt="Image de profil : Anne-lise Pricaz">
                         </div>
                         <div class="team-member-name">
                             <h2>Federico Borsoi</h2>
@@ -68,7 +68,7 @@
                 <div class="team-member-wrapper">
                     <div class="team-member-content col-xl-10 offset-xl-1">
                         <div class="team-member-picture">
-                            <img src="{{ get_template_directory_uri() }}. '/../dist/images/svg/visages/jeff-jardon.svg'" alt="Image de profil : Anne-lise Pricaz">
+                            <img src="{{ get_template_directory_uri() }}/../dist/images/svg/visages/jeff-jardon.svg" alt="Image de profil : Anne-lise Pricaz">
                         </div>
                         <div class="team-member-name">
                             <h2>Jeff Jardon</h2>

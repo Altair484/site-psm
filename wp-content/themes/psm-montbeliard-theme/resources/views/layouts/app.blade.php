@@ -23,19 +23,19 @@ if ( ! defined( 'ABSPATH' )) {
                 @php(do_action('get_footer'))
                 @include('partials.footer')
             </div>
-        <script type="application/ld+json">
+        {{--<script type="application/ld+json">
             {
             "@context": "http://schema.org",
             "@type": "EducationalOrganization",
             "name" : "Formation Produits et Services Multimédia",
-            "url": "https://psm-montbeliard.fr"{{--,
+            "url": "https://psm-montbeliard.fr"--}}{{--,
             "sameAs" : [
             "https://www.facebook.com/neumarkets",
             "https://www.instagram.com/neumarkets",
             "https://www.linkedin.com/company/neumarkets-inc-",
             "https://plus.google.com/+Neumarkets"
-            ]--}} }
-        </script>
+            ]--}}{{-- }
+        </script>--}}
 
         <script type="application/ld+json">
         {

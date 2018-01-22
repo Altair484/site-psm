@@ -36,7 +36,7 @@ add_filter('body_class', function (array $classes) {
  * Add "… Continued" to the excerpt
  */
 add_filter('excerpt_more', function () {
-    return '<a href="' . get_permalink() . '">' . __('&nbsp;[&hellip;]', 'sage') . '</a>';
+    return '<a class="continue-to-read" href="' . get_permalink() . '">' . __('&nbsp;[&hellip;]', 'sage') . '</a>';
 });
 
 /**

@@ -205,7 +205,7 @@ export default {
             if($(window).width() > 992){
                 TweenLite.to(window, 0.5, {scrollTo: {y:"#master-1 .psm-formations-programme-section", offsetY:99}});
             }else{
-                TweenLite.to(window, 0.5, {scrollTo: "#master-1.psm-formations-programme-section"});
+                TweenLite.to(window, 0.5, {scrollTo: "#master-1. psm-formations-programme-section"});
             }
         })
         app_rhiz_anmas1.click(function () {

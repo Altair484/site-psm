@@ -4,6 +4,10 @@
             width: 15px;
         }
     }
+
+    .header-content{
+      pointer-events: none;
+    }
 }
 #page-contact-section-contact-form{
     background-color: $secondaire-bleu;

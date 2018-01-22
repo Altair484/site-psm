@@ -93,8 +93,7 @@
                     <div class="row">
                         <div class="text col-12 col-md-9 d-flex justify-content-center align-items-start flex-column">
                             <h2>{!! get_the_title() !!}</h2>
-                            <p class="theme">Thème de l'année : {{ $theme }}</p>
-                            {!! get_the_content() !!}
+                            {!!  \App\App::get_the_excerpt_theme() !!}
                             <div class="btns-box">
                                 @if($site != null)
                                     <a class="btn btn-psm" href="{{ $site }}" target="_blank">Voir le site</a>
@@ -105,7 +104,7 @@
                             </div>
                         </div>
                         <div class="picture col-12 col-md-3 no-padding">
-                            {{ \App\App::get_image_projects_pfe() }}
+                            <a href="{{the_permalink()}}">{{ \App\App::get_image_projects_pfe() }}</a>
                         </div>
                     </div>
                 </div>
@@ -118,12 +117,12 @@
                 <article class="content offset-0 offset-md-2 col-12 col-md-9">
                     <div class="row">
                         <div class="picture col-12 col-md-3 no-padding">
-                            {{ \App\App::get_image_projects_pfe() }}
+                            <a href="{{the_permalink()}}">{{ \App\App::get_image_projects_pfe() }}</a>
                         </div>
                         <div class="text col-12 col-md-9 d-flex justify-content-center align-items-start flex-column">
                             <h2>{!! get_the_title() !!}</h2>
-                            <p class="theme">Thème de l'année : {{ $theme }}</p>
-                            {!! get_the_content() !!}
+                            @php($excerpt = get_the_excerpt())
+                            {!!  \App\App::get_the_excerpt_theme() !!}
                             <div class="btns-box">
                                 @if($site != null)
                                     <a class="btn btn-psm" href="{{ $site }}" target="_blank">Voir le site</a>

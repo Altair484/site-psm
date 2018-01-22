@@ -22,8 +22,8 @@ var geojson = {
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/dark-v9',
-    center: [6.804415, 47.495072],
-    zoom: 17.99,
+    center: [6.804637, 47.495716],
+    zoom: 16.91,
     pitch: 20.00,
     bearing: 12.7,
     hash: false,

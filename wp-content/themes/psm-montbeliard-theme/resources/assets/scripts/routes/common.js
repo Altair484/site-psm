@@ -182,10 +182,12 @@ export default {
          * @description The user click on a menu items composed by several sub menus. Those ones will be shown in a dropdown
          * @author Jeff Jardon
          * */
-        $(".menu-item-has-children > a").click(function(e) {
+        var link_dropdown = $('.menu-item-has-children');
+        link_dropdown.hover(function(e) {
             e.preventDefault();
-            var dropdown = $(this).parent().find('.sub-menu');
-            dropdown.toggleClass("open-dropdown");
+            $(this).find('ul').addClass("open-dropdown");
+        },function () {
+            $(this).find('ul').removeClass("open-dropdown");
         });
         //END CLICK DROPDOWNS
 

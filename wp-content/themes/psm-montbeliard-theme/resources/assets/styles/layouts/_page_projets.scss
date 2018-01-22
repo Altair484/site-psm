@@ -35,9 +35,15 @@
 section.project {
     background-color: $secondaire-bleu;
 
+    .continue-to-read{
+        color: $primaire-vert;
+    }
     &.section-image-right-content-left{
         .picture{
             svg,img,figure{
+                &:not(.has-no-borders){
+                    border: 1px solid $tertiaire-gris-blanc;
+                }
                 @include xl{
                     max-width: 300px!important;
                     left: 50%!important;
@@ -60,6 +66,9 @@ section.project {
     &.section-image-left-content-right{
         .picture{
             svg,img,figure{
+                &:not(.has-no-borders){
+                    border: 1px solid $tertiaire-gris-blanc;
+                }
                 @include xl{
                     max-width: 300px!important;
                     right: 50%!important;

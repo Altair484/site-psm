@@ -80,7 +80,7 @@
                                     'La qualité avant tout'
                                 ) }}
                             </h3>
-                            <div class="home_page_welcome_section_slide_4_text">
+                            <p class="home_page_welcome_section_slide_4_text">
                                 {!! get_theme_mod(
                                     'home_page_welcome_section_slide_4_text',
                                     'Un produit ou un service de qualité est un produit qui sait répondre aux besoins et aux '.
@@ -89,7 +89,7 @@
                                     'et à réaliser des produits et des services visant à proposer la meilleure expérience '.
                                     'utilisateur possible.'
                                 ) !!}
-                            </div>
+                            </p>
                             <div class="btns-box">
                                 <button class="btn btn-transparent hide-text-slider">Fermer</button>
                                 <button class="btn btn-psm-green next-slide last-slide">Suivant</button>

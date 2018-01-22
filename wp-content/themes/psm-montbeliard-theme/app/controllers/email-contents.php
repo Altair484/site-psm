@@ -10,15 +10,15 @@ class Email_contents extends Controller
         return $sender = get_option('name');
     }
 
-    private function get_header($userEmail){
+    private function get_header(){
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-        $headers .= 'From: '. Email_contents::get_sender() .' < '.$userEmail.'>' . "\r\n";
+        $headers .= 'From: '. Email_contents::get_sender() .' <contact@psm-montbeliard.fr>' . "\r\n";
         return $headers;
     }
 
     private function get_signature(){
-        $signature = '<p>- L\'équipe pédagogique et administrative du Master et Licence PSM.<br/>
+        $signature = '<p>- L\'équipe pédagogique et administrative de la Licence et Master PSM.<br/>
                       Ceci est un message automatique, merci de ne pas y répondre.</p>
                       <p><a href="'. site_url() .'"></a></p>';
         return $signature;
@@ -49,7 +49,7 @@ class Email_contents extends Controller
                 </table>
             </body>
         </html>';
-        $headers = Email_contents::get_header($userEmail);
+        $headers = Email_contents::get_header();
 
         wp_mail($userEmail, $subject, $message, $headers);
     }
@@ -74,7 +74,7 @@ class Email_contents extends Controller
             </body>
         </html>';
 
-        $headers = Email_contents::get_header($userEmail);
+        $headers = Email_contents::get_header();
 
         wp_mail( $userEmail, $subject, $message, $headers );
     }
@@ -113,9 +113,9 @@ class Email_contents extends Controller
                     <tr>
                         <td>
                             <p>Bonjour '. Email_contents::get_sender() .',</p>
-                            <p>Une nouvelle offre de stage, CDI ou CDD a été déposée sur le site <a href="'. site_url().'">'. get_bloginfo() .'</a><br/>
+                            <p>Une nouvelle offre de stage, CDI ou CDD a été déposée sur le site <a href="'. site_url().'">'. get_bloginfo() .'.</a><br/>
                                L\'offre n\'est pas encore visible sur le site et demande une modération de votre part. Vous avez la possibilité d\'accepter ou non cette publication.<br/>
-                               Pour ce faire, merci de vous connecter <a href="'.$redirection.'" target="_blank">ici</a></a>
+                               Pour ce faire, merci de vous connecter <a href="'.$redirection.'" target="_blank">ici</a>
                             </p>
                         </td>
                     </tr>
@@ -126,12 +126,9 @@ class Email_contents extends Controller
             </body>
         </html>';
 
-        //Envoie le mail à l'administrateur
-        wp_mail(get_option('admin_email'), $subject, $messageForAdmin, $headers);
-
-        //Envoi du mail à tous les contributeurs
+        //Envoi du mail à tous les éditeurs et admins
         $args = array(
-            'role' => 'Editor',
+            'role__in' => array('Administrator','Editor'),
             'orderby' => 'user_nicename',
             'order' => 'ASC'
         );
@@ -151,8 +148,8 @@ class Email_contents extends Controller
                 <table>
                     <tr>
                         <td>
-                            <p>Bonjour '. $name.',</p>
-                            <p>Votre offre, <b>'.$post->post_title.'</b> vient juste d\'être approuvée sur <a href="'. site_url() . '" target="_blank">'. site_url() . '</a> et sera valide pendant une durée de <b>30 jours</b> jusqu\'au <b>'.$date_expire.'</b>.</p>
+                            <p>Bonjour '. get_option('admin_email').',</p>
+                            <p>Votre offre, <b>'.$post->post_title.'</b> vient juste d\'être approuvée sur <a href="'. site_url() . '" target="_blank">'. site_url() . '</a> et sera valide pendant une durée de <b>'. get_option('job_manager_submission_duration',true).' jours</b> jusqu\'au <b>'.utf8_encode($date_expire).'</b>.</p>
                             <p>Merci d\'avoir choisi PSM pour le dépôt de votre offre !</p>
                         </td>
                     </tr>
@@ -162,7 +159,101 @@ class Email_contents extends Controller
                 </table>
             </body>
         </html>';
-        $headers = Email_contents::get_header($email);
+        $headers = Email_contents::get_header();
         wp_mail($email, $subject, $message,$headers);
     }
+
+    public static function new_pending_post($new_status, $old_status, $post){
+        $name = get_the_author_meta('first_name',$post->post_author);
+        $lastName = get_the_author_meta('last_name',$post->post_author);
+        $studentEmail = get_the_author_meta('email',$post->post_author);
+        $redirection = site_url().'/connexion/?redirection='. get_admin_url(). 'post.php?post='.$post->ID.'&action=edit';
+
+        if ( $new_status === "pending" && $post->post_type == 'post') {
+            $subject = '['. get_bloginfo().']'.' Un nouvel article attend votre validation !';
+
+            $message = '
+                <html>
+                    <body>
+                        <table>
+                            <tr>
+                                <td>
+                                    <p>Bonjour '. get_option('admin_email').',</p>
+                                    <p>L\'utilisateur '. $name . ' '. $lastName.' vient de poster un article nommé <b>"'. $post->post_title .'"</b> et celui-ci requiert une relecture de votre part avant d\'être publié.</p>
+                                    <p>Pour le consulter, rendez-vous <a href="'.$redirection.'" target="_blank">ici</a></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>'. Email_contents::get_signature() .'</td>
+                            </tr>
+                        </table>
+                    </body>
+                </html>';
+            $headers = Email_contents::get_header();
+
+            $args = array(
+                'role__in' => array('Administrator','Editor'),
+                'orderby' => 'user_nicename',
+                'order' => 'ASC'
+            );
+            $users = get_users($args);
+            foreach ($users as $user) {
+                wp_mail($user->user_email, $subject, $message, $headers);
+            }
+        }
+    }
+
+    public static function pending_post_validated($new_status, $old_status, $post){
+        if ( $new_status === "publish" && $old_status === "pending" && $post->post_type == 'post') {
+            $name = get_the_author_meta('first_name',$post->post_author);
+            $lastName = get_the_author_meta('last_name',$post->post_author);
+            $studentEmail = get_the_author_meta('email',$post->post_author);
+            $redirection = site_url().'/connexion/?redirection='. get_site_url(). '/?p='.$post->ID;
+
+            $subject = '['. get_bloginfo().']'.' Votre article a été validé !';
+
+            $message = '
+            <html>
+                <body>
+                    <table>
+                        <tr>
+                            <td>
+                                <p>Bonjour '. $name .' '. $lastName.',</p>
+                                <p>Votre article<b>"'. $post->post_title .'"</b> vient d\'être approbé par les administrateurs du site PSM. Nous vous remercions pour votre travail.</p>
+                                <p>Pour le consulter, rendez-vous <a href="'.$redirection.'" target="_blank">ici.</a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>'. Email_contents::get_signature() .'</td>
+                        </tr>
+                    </table>
+                </body>
+            </html>';
+            $headers = Email_contents::get_header();
+
+            wp_mail($studentEmail, $subject, $message, $headers);
+        }
+    }
 }
+
+add_action( 'transition_post_status', function($new_status, $old_status, $post) {
+    Email_contents::new_pending_post($new_status, $old_status, $post);
+}, 10, 3);
+
+
+
+add_action( 'transition_post_status',function( $new_status, $old_status, $post ) {
+    Email_contents::pending_post_validated($new_status, $old_status, $post);
+}, 'pending_post_status', 10, 3 );
+
+// Function to change email address
+
+add_filter( 'wp_mail_from',function( $original_email_address ) {
+    return 'contact@psm-montbeliard.fr';
+});
+
+// Function to change sender name
+add_filter( 'wp_mail_from_name',function($original_email_from ) {
+    return 'Formation PSM';
+});
+

@@ -35,6 +35,33 @@ class App extends Controller
         return get_the_title();
     }
 
+    public static function get_the_excerpt_theme() {
+
+        //Retrieve the post content.
+        $text = get_the_content('');
+        $text = strip_shortcodes( $text );
+        $text = apply_filters('the_content', $text);
+        $text = str_replace(']]&gt;', ']]&gt;', $text);
+
+        // the code below sets the excerpt length to 55 words. You can adjust this number for your own blog.
+        $excerpt_length = apply_filters('excerpt_length', 50);
+
+        // the code below sets what appears at the end of the excerpt, in this case ...
+        $excerpt_more = '<a class="continue-to-read" href="' . get_permalink() . '">' . __('&nbsp;[&hellip;]', 'sage') . '</a>';
+
+        $words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+        if ( count($words) > $excerpt_length ) {
+            array_pop($words);
+            $text = implode(' ', $words);
+            $text .= $excerpt_more;
+            $text = force_balance_tags( $text );
+        } else {
+            $text = implode(' ', $words);
+        }
+
+        return $text;
+    }
+
     public function get_menu_class(){
         if (is_home()|| is_front_page()) {
             $menu_class = 'is-home';
@@ -63,12 +90,12 @@ class App extends Controller
         if ($image != null && $format != null) {
             $default_img = get_template_directory_uri().$image_directory.$image.'.'.$format;
         }else{
-            if(has_post_thumbnail()){
-                if(get_post_type() != 'project'){
-                    $default_img = the_post_thumbnail_url('large');
-                }else{
-                    $default_img = get_template_directory_uri().'/../dist/images/page_image_placeholder.jpg';
-                }
+            if(has_post_thumbnail() && get_post_type() != 'project') {
+                $default_img = the_post_thumbnail_url();
+            }else if(get_post_type() == 'project' && wp_get_post_terms(get_the_ID(), 'project_type')[0]->name == 'Projets Rhizome') {
+                $default_img = get_template_directory_uri() . '/../dist/images/projets/projets-rhizome/projets_rhizomes_banner.jpg';
+            }else if(get_post_type() == 'project' && wp_get_post_terms(get_the_ID(), 'project_type')[0]->name == 'Projets fin d\'études') {
+                $default_img = get_template_directory_uri().'/../dist/images/page_image_placeholder.jpg';
             }else{
                 $default_img = get_template_directory_uri().'/../dist/images/page_image_placeholder.jpg';
             }
@@ -82,7 +109,7 @@ class App extends Controller
             the_post_thumbnail( 'medium' );
         }else{
             $image = get_template_directory_uri().'/../dist/images/projets/projets-rhizome/projets-rhizomes.png';
-            _e('<img src="'.$image.'" alt="Projet Rhizome">');
+            _e('<img class="has-no-borders" src="'.$image.'" alt="Projet Rhizome">');
         }
     }
 
@@ -91,7 +118,7 @@ class App extends Controller
             the_post_thumbnail( 'medium' );
         }else{
             $image = get_template_directory_uri().'/../dist/images/projets/projets-rhizome/projets-rhizomes.png';
-            _e('<img src="'.$image.'" alt="Projet fin d\'études">');
+            _e('<img class="has-no-borders" src="'.$image.'" alt="Projet fin d\'études">');
         }
     }
 

@@ -23,7 +23,7 @@ $the_query = new WP_Query($args);
             </figure>
             <span class="line"></span>
         </div>
-        <a href="{!! the_permalink()!!}"><h4>{!!  the_title() !!}</h4></a>
+        <a href="{!! the_permalink()!!}"><h4>{!!  the_title() !!} ({{ get_post_meta(get_the_ID(), '_project_year', true)}})</h4></a>
     @endwhile
     @php(wp_reset_postdata())
 @else

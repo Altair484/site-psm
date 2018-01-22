@@ -263,7 +263,7 @@ function listing_published_send_email($post) {
     $timestamp = strtotime('+'.$job_manager_submission_duration. 'days', $timestamp);
     update_post_meta($post->ID,'_job_expires',utf8_encode(strftime('%Y-%m-%d', $timestamp)));
 
-    {{ App\Email_contents::job_manager_offer_accepted($post, $name, $email, utf8_encode(strftime('%A %d %B %Y, %H:%M', $timestamp)));}}
+    {{ App\Email_contents::job_manager_offer_accepted($post, $name, $email, utf8_encode(strftime('%A %d %m %Y, %H:%M', $timestamp)));}}
 }
 
 

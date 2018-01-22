@@ -27,13 +27,13 @@ class master_psm extends Controller
                 'relation' => 'AND',
                 array(
                     'taxonomy' => 'formation',
-                    'field' => 'slug',
-                    'terms' => 'master-1-psm',
+                    'field'    => 'term_id',
+                    'terms'    => array('19'),
                 ),
                 array(
                     'taxonomy' => 'school-subject-cat',
-                    'field'    => 'slug',
-                    'terms'    => 'developpement',
+                    'field'    => 'term_id',
+                    'terms'    => array('22'),
                 ),
             ),
         );
@@ -46,13 +46,13 @@ class master_psm extends Controller
                 'relation' => 'AND',
                 array(
                     'taxonomy' => 'formation',
-                    'field' => 'slug',
-                    'terms' => 'master-1-psm',
+                    'field'    => 'term_id',
+                    'terms'    => array('19'),
                 ),
                 array(
                     'taxonomy' => 'school-subject-cat',
-                    'field'    => 'slug',
-                    'terms'    => 'gestion-de-projets',
+                    'field'    => 'term_id',
+                    'terms'    => array('23'),
                 ),
             ),
         );
@@ -65,13 +65,13 @@ class master_psm extends Controller
                 'relation' => 'AND',
                 array(
                     'taxonomy' => 'formation',
-                    'field' => 'slug',
-                    'terms' => 'master-1-psm',
+                    'field'    => 'term_id',
+                    'terms'    => array('19'),
                 ),
                 array(
                     'taxonomy' => 'school-subject-cat',
-                    'field'    => 'slug',
-                    'terms'    => 'communication',
+                    'field'    => 'term_id',
+                    'terms'    => array('21'),
                 ),
             ),
         );
@@ -92,13 +92,13 @@ class master_psm extends Controller
                 'relation' => 'AND',
                 array(
                     'taxonomy' => 'formation',
-                    'field' => 'slug',
-                    'terms' => 'master-2-psm',
+                    'field'    => 'term_id',
+                    'terms'    => array('20'),
                 ),
                 array(
                     'taxonomy' => 'school-subject-cat',
-                    'field'    => 'slug',
-                    'terms'    => 'developpement',
+                    'field'    => 'term_id',
+                    'terms'    => array('22'),
                 ),
             ),
         );
@@ -111,13 +111,13 @@ class master_psm extends Controller
                 'relation' => 'AND',
                 array(
                     'taxonomy' => 'formation',
-                    'field' => 'slug',
-                    'terms' => 'master-2-psm',
+                    'field'    => 'term_id',
+                    'terms'    => array('20'),
                 ),
                 array(
                     'taxonomy' => 'school-subject-cat',
-                    'field'    => 'slug',
-                    'terms'    => 'gestion-de-projets',
+                    'field'    => 'term_id',
+                    'terms'    => array('23'),
                 ),
             ),
         );
@@ -130,13 +130,13 @@ class master_psm extends Controller
                 'relation' => 'AND',
                 array(
                     'taxonomy' => 'formation',
-                    'field' => 'slug',
-                    'terms' => 'master-2-psm',
+                    'field'    => 'term_id',
+                    'terms'    => array('20'),
                 ),
                 array(
                     'taxonomy' => 'school-subject-cat',
-                    'field'    => 'slug',
-                    'terms'    => 'communication',
+                    'field'    => 'term_id',
+                    'terms'    => array('21'),
                 ),
             ),
         );
@@ -152,6 +152,13 @@ class master_psm extends Controller
         $cat_school_subjects = get_terms(
             array(
                 'taxonomy' => 'school-subject-cat',
+                'tax_query' =>
+                    array(
+                        'taxonomy' => 'formation',
+                        'field'    => 'term_id',
+                        'terms'    => array('18','19','20'),
+                    ),
+                'orderby' => 'id',
                 'hide_empty' => false,
             ));
 

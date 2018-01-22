@@ -82,7 +82,8 @@ header {
 
         #logo-psm-nav {
             height: 100px;
-            //opacity: 1;
+            display: flex;
+            align-items: center;
             @include transition(all 1s ease);
 
             svg,object,img {
@@ -90,7 +91,7 @@ header {
                 @include lg{
                     padding-left: 30px;
                 }
-                max-height: 100%;
+                max-height: 90px;
                 width: 100%;
             }
         }
@@ -100,11 +101,14 @@ header {
                 &.dark-menu{
                     background-color: $secondaire-noir;
                 }
-
                 background-color: transparent;
 
                 #logo-psm-nav {
                     opacity: 0;
+                }
+
+                .open-dropdown{
+                    border: 1px solid white;
                 }
             }
 
@@ -129,6 +133,10 @@ header {
                 #logo-psm-nav {
                     opacity: 1;
                 }
+
+                .open-dropdown{
+                    border: 1px solid white;
+                }
             }
 
             #logo-psm-nav {
@@ -147,7 +155,12 @@ header {
                 background-color: $secondaire-bleu;
 
                 &.dark-menu{
-                    background-color: $secondaire-bleu;
+                    background-color: $secondaire-noir;
+                }
+
+                .open-dropdown{
+                    border: none!important;
+                    background-color: $secondaire-bleu!important;
                 }
             }
         }
@@ -177,11 +190,17 @@ header {
             @include lg {
                 justify-content: space-around;
                 flex-direction: row;
-                min-width: 800px;
-            }
-
-            @include lg {
                 min-width: 900px;
+
+                li.menu-item-has-children{
+                    height: 100px;
+                    display: flex;
+                    align-items: center;
+
+                    &:last-of-type{
+                        width: 50px;
+                    }
+                }
             }
 
             li {
@@ -246,7 +265,6 @@ header {
                             height: auto;
                             top: 0;
                             position: absolute;
-                            border: solid 1px white;
                             left: 0;
                             width: 190px;
                         }
@@ -266,7 +284,7 @@ header {
                         transform: scaleY(1)!important;
                         height: auto !important;
                         opacity: 1 !important;
-                        top: 63px !important;
+                        top: 100px !important;
                         display: inline!important;
                     }
                 }

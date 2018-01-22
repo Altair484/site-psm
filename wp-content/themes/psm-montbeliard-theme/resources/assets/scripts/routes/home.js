@@ -117,7 +117,7 @@ export default {
             main_graph = $('#main_graph_travail'),
             bras_graph = $('#bras-droit_graph_travail'),
             brasg_graph = $('#bras-gauche_graph_travail'),
-            code_dev = $('#code_dev_travail rect'),
+            code_dev = $('#code_dev_travail path'),
             brasd_dev = $('#bras-droit_dev'),
             brasg_dev = $('#bras-gauche_dev');
 

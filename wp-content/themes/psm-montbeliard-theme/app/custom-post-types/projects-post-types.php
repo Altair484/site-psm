@@ -110,8 +110,8 @@ add_action( 'init', 'create_project_type_taxonomie' );
 function create_project_type_taxonomie() {
 	// Ajout d'une taxonomie de type catégorie (Formations)
 	$labels = array(
-		'name'              => _x( 'Type de projet', 'taxonomy general name' ),
-		'singular_name'     => _x( 'Type de projet', 'taxonomy singular name' ),
+		'name'              => _x( 'types de projets', 'taxonomy general name' ),
+		'singular_name'     => _x( 'types de projets', 'taxonomy singular name' ),
 		'search_items'      => __( 'Rechercher un type de projet' ),
 		'all_items'         => __( 'Tout' ),
 		'parent_item'       => __( 'Type de projet parente' ),
@@ -135,8 +135,8 @@ function create_project_type_taxonomie() {
 
     // Ajout d'une taxonomie de type catégorie (Formations)
     $labels = array(
-        'name'              => _x( 'Thème de l\'année', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Thème de l\'année', 'taxonomy singular name' ),
+        'name'              => _x( 'thèmes de l\'année', 'taxonomy general name' ),
+        'singular_name'     => _x( 'thèmes de l\'année', 'taxonomy singular name' ),
         'search_items'      => __( 'Rechercher un Thème de l\'année' ),
         'all_items'         => __( 'Tout' ),
         'parent_item'       => __( 'Thème de l\'année parente' ),
@@ -189,7 +189,7 @@ function action_custom_columns_content ( $column_id, $post_id ) {
     }
 }
 
-function filter_cars_by_taxonomies( $post_type, $which ) {
+function filter_projects_by_taxonomies( $post_type, $which ) {
 
     // Apply this only on a specific post type
     if ( 'project' !== $post_type )
@@ -222,4 +222,4 @@ function filter_cars_by_taxonomies( $post_type, $which ) {
         echo '</select>';
     }
 }
-add_action( 'restrict_manage_posts', 'filter_cars_by_taxonomies' , 10, 2);
+add_action( 'restrict_manage_posts', 'filter_projects_by_taxonomies' , 10, 2);
